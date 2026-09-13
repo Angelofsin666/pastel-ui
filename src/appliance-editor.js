@@ -1,10 +1,13 @@
 import {html} from 'lit-element';
 import {BaseCard} from './base-card.js';
 import {PROFILES,METRICS,ROBOT_PROFILES} from './profiles.js';
-import {getRegistry} from './discovery.js';
+import {getRegistry,discoverAppliances} from './discovery.js';
 import {propose,profileMetrics} from './profiles.js';
 export class ApplianceEditor extends BaseCard {
  static get properties(){return {...super.properties,suggestion:{},loading:{},registry:{},showAllMetrics:{}}}
+ updated(){if(this.hass&&!this._discoveryStarted){this._discoveryStarted=true;this.loadDevices()}}
+ chooseCandidate(key){const item=this.detected().find(d=>d.key===key);if(!item)return;this.emit({device_id:item.device_id,entity:item.entity,profile:item.profile,metrics:{},controls:[],map_entity:'',zones:[],status_entities:[]});this.suggestion={...propose(this.hass,this.registry,item),profile:item.profile}}
+ detected(){return this.hass&&this.registry?discoverAppliances(this.hass,this.registry,{robot:!!this.constructor.robot}):[]}
  setConfig(c){super.setConfig(c);this.config={...c,metrics:{...(c.metrics||{})},controls:[...(c.controls||[])]}}
  emit(patch){this.config={...this.config,...patch};this.dispatchEvent(new CustomEvent('config-changed',{detail:{config:this.config},bubbles:true,composed:true}))}
  async scan(){this.loading=true;this.error='';this.suggestion=null;const identity=`${this.config.entity}|${this.config.device_id}`;try{const registry=await getRegistry(this.hass,{refresh:true});this.registry=registry;if(identity===`${this.config.entity}|${this.config.device_id}`)this.suggestion=propose(this.hass,registry,this.config)}catch{this.error='Impossibile leggere i dispositivi. Puoi comunque associare tutte le entità manualmente.'}finally{this.loading=false}}
@@ -13,9 +16,13 @@ export class ApplianceEditor extends BaseCard {
  entitySelect(value,onChange,domains,label='Entità'){return html`<select aria-label=${label} .value=${value||''} @change=${e=>onChange(e.target.value)}><option value="">Nessuna</option>${this.options(domains).map(s=>html`<option value=${s.entity_id} ?selected=${value===s.entity_id}>${s.attributes.friendly_name||s.entity_id} · ${s.entity_id}</option>`)}</select>`}
  render(){if(!this.config||!this.hass)return html``;const c=this.config,s=this.suggestion,robot=this.constructor.robot;
  return html`<div class="editor" style=${this.palette(c.color)}>
+  <label>Elettrodomestici rilevati${this.loading?html`<span class="hint">Ricerca automatica in corso…</span>`:html`<select aria-label="Elettrodomestici rilevati" @change=${e=>this.chooseCandidate(e.target.value)}><option value="">Scegli un dispositivo rilevato</option>${this.detected().map(d=>html`<option value=${d.key} ?selected=${d.device_id?c.device_id===d.device_id:c.entity===d.entity}>${PROFILES[d.profile][0]} · ${d.name} (${d.count} entità)</option>`)}</select>`}</label>
+  <p class="hint">${this.registry&&!this.detected().length?'Nessun elettrodomestico riconosciuto. Puoi scegliere il dispositivo manualmente.':'Scegli un elettrodomestico: sensori e comandi collegati vengono proposti automaticamente. Verifica le associazioni prima di applicarle.'}</p>
+  <details><summary>Scelta manuale o dispositivo non riconosciuto</summary>
   <label>Dispositivo <button ?disabled=${this.loading} @click=${()=>this.loadDevices()}>Carica elenco dispositivi</button>${this.registry?html`<select aria-label="Dispositivo" .value=${c.device_id||''} @change=${e=>{this.suggestion=null;this.emit({device_id:e.target.value,entity:'',metrics:{},controls:[],map_entity:'',zones:[],status_entities:[]})}}><option value="">Seleziona tramite entità</option>${this.registry.devices.map(d=>html`<option value=${d.id} ?selected=${c.device_id===d.id}>${d.name_by_user||d.name||d.model||d.id}</option>`)}</select>`:''}</label>
   <label>Entità principale ${this.entitySelect(c.entity,v=>{this.suggestion=null;this.emit({entity:v,device_id:'',metrics:{},controls:[],map_entity:'',zones:[],status_entities:[]})},null,'Entità principale')}</label>
   <button ?disabled=${this.loading||(!c.entity&&!c.device_id)} @click=${()=>this.scan()}>${this.loading?'Ricerca in corso…':'Cerca entità e controlli associati'}</button>
+  </details>
   ${s?html`<div class="hint">${s.siblings.length} entità associate. Profilo proposto: <strong>${PROFILES[s.profile][0]}</strong>. Le associazioni verranno salvate solo quando le applichi. ${s.ambiguous.length?`Da scegliere manualmente: ${s.ambiguous.map(r=>METRICS[r][0]).join(', ')}.`:''}</div><button @click=${()=>{const {siblings,ambiguous,...mapping}=s;this.emit({...mapping,profile:robot&&!ROBOT_PROFILES.includes(s.profile)?'vacuum':s.profile});this.suggestion=null}}>Applica le associazioni proposte</button>`:''}
   <div class="pair"><label>Nome<input aria-label="Nome" .value=${c.title||''} @change=${e=>this.emit({title:e.target.value})}></label><label>Colore<select aria-label="Colore" @change=${e=>this.emit({color:e.target.value})}>${['blue','mint','peach','lavender','pink','amber'].map(v=>html`<option value=${v} ?selected=${(c.color||'blue')===v}>${v}</option>`)}</select></label></div>
   <label>Tipo dispositivo<select aria-label="Tipo dispositivo" @change=${e=>this.emit({profile:e.target.value})}>${Object.entries(PROFILES).filter(([k])=>!robot||ROBOT_PROFILES.includes(k)||k==='generic').map(([k,p])=>html`<option value=${k} ?selected=${c.profile===k}>${p[0]}</option>`)}</select></label>

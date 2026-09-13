@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {propose,inferProfile,nativeActions,validMetric,numeric,PROFILES} from '../src/profiles.js';
-import {getRegistry} from '../src/discovery.js';
+import {getRegistry,discoverAppliances} from '../src/discovery.js';
 const entity=(id,state='idle',attributes={})=>({entity_id:id,state,attributes});
 const fixture=()=>({states:{'sensor.washer_state':entity('sensor.washer_state','washing'), 'sensor.washer_power':entity('sensor.washer_power','750',{device_class:'power',unit_of_measurement:'W'}),'button.washer_pause':entity('button.washer_pause'),'sensor.oven_power':entity('sensor.oven_power','2400',{device_class:'power',unit_of_measurement:'W'})}});
 const registry={entities:[{entity_id:'sensor.washer_state',device_id:'washer'},{entity_id:'sensor.washer_power',device_id:'washer'},{entity_id:'button.washer_pause',device_id:'washer'},{entity_id:'sensor.oven_power',device_id:'oven'}],devices:[{id:'washer',name:'Washing machine'}]};
@@ -21,3 +21,8 @@ test('registry caches concurrent calls and retries on errors',async()=>{let n=0;
 test('profiles cover all agreed appliance types including water purifier',()=>{for(const key of ['washer','dryer','dishwasher','refrigerator','dehumidifier','hood','hob','water_purifier','vacuum','floor_cleaner','lawn_mower'])assert.ok(PROFILES[key])});
 test('cycle energy is never proposed as total energy',()=>{const h={states:{'sensor.washer_cycle_energy':entity('sensor.washer_cycle_energy','0.2',{friendly_name:'Energia ciclo',device_class:'energy',unit_of_measurement:'kWh'})}};const p=propose(h,{}, {entity:'sensor.washer_cycle_energy'});assert.equal(p.metrics.energy,undefined);assert.equal(p.metrics.cycle_energy,'sensor.washer_cycle_energy')});
 test('maintenance statuses are proposed only from the selected device',()=>{const h=fixture();h.states['binary_sensor.washer_door']=entity('binary_sensor.washer_door','off');h.states['binary_sensor.fridge_door']=entity('binary_sensor.fridge_door','on');const r=propose(h,{...registry,entities:[...registry.entities,{entity_id:'binary_sensor.washer_door',device_id:'washer'},{entity_id:'binary_sensor.fridge_door',device_id:'fridge'}]},{entity:'sensor.washer_state'});assert.deepEqual(r.status_entities,['binary_sensor.washer_door'])});
+
+test('automatic list groups device entities and excludes unrelated sensors',()=>{const h=fixture();h.states['sensor.backup']=entity('sensor.backup');const list=discoverAppliances(h,registry);assert.equal(list.length,2);assert.equal(list.find(d=>d.profile==='washer').count,3)});
+test('automatic list excludes disabled entries and keeps devices separate',()=>{const h=fixture();const r={...registry,entities:registry.entities.map(e=>({...e,disabled_by:e.device_id==='oven'?'user':null}))};assert.equal(discoverAppliances(h,r).length,1)});
+test('automatic list recognizes Italian hob and every profile label',()=>{for(const [profile,[name]] of Object.entries(PROFILES)){if(profile==='generic')continue;const id='sensor.example';const h={states:{[id]:entity(id,'idle',{friendly_name:name})}};assert.equal(discoverAppliances(h,{entities:[],devices:[]})[0]?.profile,profile,name)}assert.equal(inferProfile(entity('sensor.pianocottura_power')),'hob')});
+test('robot editor filters appliance candidates',()=>{const h=fixture();h.states['vacuum.robot']=entity('vacuum.robot');assert.deepEqual(discoverAppliances(h,registry,{robot:true}).map(d=>d.entity),['vacuum.robot'])});

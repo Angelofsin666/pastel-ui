@@ -23,7 +23,7 @@ The bundle contains its rendering libraries: there are no runtime CDN imports. Y
 
 ### Installation
 
-Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.1`, or explicitly download `main`.
+Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.2`, or explicitly download `main`.
 
 Verify that the JavaScript module resource is registered as:
 
@@ -32,7 +32,7 @@ url: /hacsfiles/pastel-ui/pastel-ui.js
 type: module
 ```
 
-Reload the frontend, then add a **Pastel Appliance** or **Pastel Robot** card through the visual editor. Select a device or primary entity and use the discovery button. Review the proposed profile, measurements and controls before applying them. The beta editor currently uses Italian labels; the installation and card documentation are bilingual.
+Reload the frontend, then add a **Pastel Appliance** or **Pastel Robot** card through the visual editor. The editor automatically lists recognized appliances. Choose one to review its related sensors and controls; manual selection remains available. Review the proposed profile, measurements and controls before applying them. The beta editor currently uses Italian labels; the installation and card documentation are bilingual.
 
 Already using individual Pastel cards? Read the [migration guide](docs/migration.md) before switching resources. You should not need to rebuild the dashboard, but resource paths and custom image overrides must be checked.
 
@@ -61,7 +61,7 @@ Il pacchetto include le librerie grafiche, senza scaricarle da CDN durante l'uso
 
 ### Installazione
 
-Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.1`, oppure scarica esplicitamente `main`.
+Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.2`, oppure scarica esplicitamente `main`.
 
 Verifica la risorsa JavaScript Module `/hacsfiles/pastel-ui/pastel-ui.js`, poi ricarica l'interfaccia. Aggiungi **Pastel Appliance** o **Pastel Robot** dall'editor visuale, seleziona dispositivo o entità principale e avvia la ricerca. Controlla profilo, dati e comandi proposti prima di applicarli.
 

@@ -10,7 +10,7 @@ export const PROFILES = {
   microwave: ['Microonde','mdi:microwave','peach','microwave|microonde'],
   coffee: ['Macchina del caffè','mdi:coffee-maker-outline','peach','coffee|caffe|caffè'],
   hood: ['Cappa','mdi:air-filter','mint','hood|cappa'],
-  hob: ['Piano induzione','mdi:stove','peach','hob|cooktop|induzione'],
+  hob: ['Piano induzione','mdi:stove','peach','hob|cooktop|induzione|piano cottura|pianocottura'],
   dehumidifier: ['Deumidificatore','mdi:air-humidifier-off','blue','dehumidifier|deumidificatore'],
   humidifier: ['Umidificatore','mdi:air-humidifier','blue','humidifier|umidificatore'],
   air_purifier: ['Purificatore aria','mdi:air-purifier','mint','air purifier|purificatore aria'],
@@ -21,7 +21,7 @@ export const PROFILES = {
   vacuum: ['Robot pulizia','mdi:robot-vacuum','lavender','vacuum|aspirapolvere|robot pulizia'],
   floor_cleaner: ['Lavapavimenti','mdi:vacuum-outline','lavender','floor cleaner|lavapavimenti|aspirapavimenti'],
   lawn_mower: ['Tagliaerba','mdi:robot-mower-outline','mint','lawn mower|tagliaerba'],
-  robot_dock: ['Base di pulizia','mdi:robot-vacuum','lavender','dock|base lavaggio|base svuotamento'],
+  robot_dock: ['Base di pulizia','mdi:robot-vacuum','lavender','dock|base lavaggio|base svuotamento|base di pulizia'],
   generic: ['Dispositivo','mdi:devices','blue','^$'],
 };
 export const ROBOT_PROFILES = ['vacuum','floor_cleaner','lawn_mower','robot_dock'];
@@ -39,7 +39,7 @@ export function inferProfile(entity, device = {}) {
   const domain=domainOf(entity?.entity_id);
   if (domain==='vacuum'||domain==='lawn_mower'||domain==='water_heater') return domain;
   if(domain==='humidifier') return entity.attributes?.device_class==='dehumidifier'?'dehumidifier':'humidifier';
-  const text=[device.name_by_user,device.name,device.model,entity?.attributes?.friendly_name,entity?.entity_id].filter(Boolean).join(' ').toLowerCase().replaceAll('_',' ');
+  const text=[device.name_by_user,device.name,device.model,entity?.attributes?.friendly_name,entity?.entity_id].filter(Boolean).join(' ').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replaceAll('_',' ');
   const matches=Object.entries(PROFILES).filter(([key,v])=>key!=='generic'&&new RegExp(`(^|\\b)(${v[3]})(\\b|$)`,'i').test(text));
   return matches.length===1?matches[0][0]:'generic';
 }

@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-beta.2
+
+### English
+
+- Automatically discover recognized appliances when opening the editor. Selecting one immediately proposes associated sensors and controls.
+- Keep manual selection for unrecognized devices and external meters.
+- Recognize Italian hob names and accented coffee names. Filter robot discovery to robot profiles.
+- Add four discovery regression tests. Real-device testing remains ongoing.
+
+### Italiano
+
+- Ricerca automatica degli elettrodomestici all’apertura dell’editor. La selezione propone subito sensori e controlli associati.
+- Scelta manuale disponibile per dispositivi non riconosciuti e misuratori esterni.
+- Riconoscimento di pianocottura e nomi accentati; ricerca robot filtrata.
+- Quattro nuovi test di regressione. Test sui dispositivi reali ancora in corso.
+
 ## 0.1.0-beta.1
 
 ### English
