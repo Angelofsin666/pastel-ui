@@ -1,0 +1,285 @@
+[
+  [
+    "appliance",
+    "Pastel Appliance",
+    {
+      "type": "custom:pastel-appliance-card",
+      "profile": "washer",
+      "title": "Lavatrice",
+      "entity": "sensor.demo_washer",
+      "metrics": {
+        "remaining": "sensor.demo_washer_remaining",
+        "power": "sensor.demo_washer_power",
+        "cycle_energy": "sensor.demo_washer_energy",
+        "progress": "sensor.demo_washer_progress"
+      },
+      "controls": [
+        {
+          "entity": "select.demo_washer_program",
+          "name": "Programma"
+        },
+        {
+          "entity": "button.demo_washer_pause",
+          "name": "Pausa"
+        }
+      ]
+    }
+  ],
+  [
+    "water",
+    "Water purifier",
+    {
+      "type": "custom:pastel-appliance-card",
+      "profile": "water_purifier",
+      "entity": "sensor.demo_water",
+      "metrics": {
+        "water_quality": "sensor.demo_water_tds_out",
+        "water_input": "sensor.demo_water_tds_inlet",
+        "filter": "sensor.demo_water_filter_remaining",
+        "power": "sensor.demo_water_power"
+      },
+      "controls": [
+        {
+          "entity": "button.demo_water_flush",
+          "name": "Risciacquo"
+        }
+      ]
+    }
+  ],
+  [
+    "robot",
+    "Pastel Robot",
+    {
+      "type": "custom:pastel-robot-card",
+      "profile": "vacuum",
+      "entity": "vacuum.demo_robot",
+      "metrics": {
+        "battery": "sensor.demo_robot_battery",
+        "area": "sensor.demo_robot_area"
+      },
+      "controls": [
+        {
+          "entity": "select.demo_robot_zone",
+          "name": "Stanza"
+        }
+      ],
+      "map_entity": "image.demo_map",
+      "zones": [
+        {
+          "entity": "button.demo_zone_kitchen",
+          "name": "Pulisci cucina"
+        }
+      ]
+    }
+  ],
+  [
+    "climate",
+    "Pastel Climate",
+    {
+      "type": "custom:pastel-climate-card",
+      "entity": "climate.demo",
+      "title": "Climatizzatore"
+    }
+  ],
+  [
+    "lights",
+    "Pastel Lights",
+    {
+      "type": "custom:pastel-lights-card",
+      "title": "Luci",
+      "color": "teal",
+      "entities": [
+        "light.demo_reading",
+        "light.demo_ceiling"
+      ]
+    }
+  ],
+  [
+    "button",
+    "Pastel Button",
+    {
+      "type": "custom:pastel-button-card",
+      "title": "Scorciatoie",
+      "buttons": [
+        {
+          "label": "Luci",
+          "icon": "mdi:lightbulb",
+          "color": "amber",
+          "action": {
+            "type": "toggle",
+            "entity_id": "light.demo_reading"
+          }
+        },
+        {
+          "label": "Comfort",
+          "icon": "mdi:thermostat",
+          "color": "blue",
+          "action": {
+            "type": "more_info",
+            "entity_id": "climate.demo"
+          }
+        }
+      ]
+    }
+  ],
+  [
+    "openings",
+    "Pastel Openings",
+    {
+      "type": "custom:pastel-openings-card",
+      "title": "Aperture",
+      "color": "blue",
+      "entities": [
+        "binary_sensor.demo_door",
+        "binary_sensor.demo_window"
+      ]
+    }
+  ],
+  [
+    "doors-windows",
+    "Pastel Doors & Windows",
+    {
+      "type": "custom:pastel-doors-windows-card",
+      "title": "Porte e finestre",
+      "color": "purple",
+      "entities": [
+        "binary_sensor.demo_door",
+        "binary_sensor.demo_window"
+      ]
+    }
+  ],
+  [
+    "motion-presence",
+    "Pastel Motion & Presence",
+    {
+      "type": "custom:pastel-motion-presence-card",
+      "title": "Presenza",
+      "color": "teal",
+      "entities": [
+        "binary_sensor.demo_motion"
+      ]
+    }
+  ],
+  [
+    "water-leak",
+    "Pastel Water Leak",
+    {
+      "type": "custom:pastel-water-leak-card",
+      "title": "Perdite acqua",
+      "color": "blue",
+      "entities": [
+        "binary_sensor.demo_leak"
+      ]
+    }
+  ],
+  [
+    "smoke-co",
+    "Pastel Smoke & CO",
+    {
+      "type": "custom:pastel-smoke-co-card",
+      "title": "Fumo e CO",
+      "color": "purple",
+      "entities": [
+        "binary_sensor.demo_smoke"
+      ]
+    }
+  ],
+  [
+    "temp",
+    "Pastel Temperature",
+    {
+      "type": "custom:pastel-temp-card",
+      "title": "Temperature",
+      "color": "blue",
+      "show_trend": false,
+      "rooms": [
+        {
+          "name": "Soggiorno",
+          "temp_entity": "sensor.demo_temp",
+          "hum_entity": "sensor.demo_humidity"
+        }
+      ]
+    }
+  ],
+  [
+    "temp-humidity",
+    "Pastel Temperature & Humidity",
+    {
+      "type": "custom:pastel-temp-humidity-card",
+      "title": "Ambienti",
+      "color": "green",
+      "rooms": [
+        {
+          "entity": "sensor.demo_room",
+          "name": "Soggiorno"
+        }
+      ]
+    }
+  ],
+  [
+    "thermostat",
+    "Pastel Thermostat",
+    {
+      "type": "custom:pastel-thermostat-card",
+      "title": "Termostato",
+      "temperature_entity": "sensor.demo_temp",
+      "humidity_entity": "sensor.demo_humidity",
+      "target_entity": "sensor.demo_target",
+      "target_service": "climate.set_temperature"
+    }
+  ],
+  [
+    "clima",
+    "Pastel Climate · custom actions",
+    {
+      "type": "custom:pastel-clima-card",
+      "title": "Clima IR",
+      "color": "blue",
+      "temp_entity": "sensor.demo_temp",
+      "hum_entity": "sensor.demo_humidity",
+      "power_entity": "switch.demo_ac",
+      "buttons": [
+        {
+          "name": "Accendi",
+          "icon": "mdi:power",
+          "color": "green",
+          "action": {
+            "action": "perform-action",
+            "perform_action": "script.demo_on"
+          }
+        },
+        {
+          "name": "Spegni",
+          "icon": "mdi:power",
+          "color": "red",
+          "action": {
+            "action": "perform-action",
+            "perform_action": "script.demo_off"
+          }
+        }
+      ]
+    }
+  ],
+  [
+    "dishwasher",
+    "Pastel Dishwasher",
+    {
+      "type": "custom:pastel-dishwasher-card",
+      "title": "Lavastoviglie",
+      "color": "blue",
+      "detection_mode": "power",
+      "power_entity": "sensor.demo_washer_power"
+    }
+  ],
+  [
+    "lawn-mower",
+    "Pastel Lawn Mower",
+    {
+      "type": "custom:pastel-lawn-mower-card",
+      "title": "Tagliaerba",
+      "mower_entity": "lawn_mower.demo",
+      "battery_entity": "sensor.demo_mower_battery",
+      "image_url": "../dist/lawn-mower.png"
+    }
+  ]
+]

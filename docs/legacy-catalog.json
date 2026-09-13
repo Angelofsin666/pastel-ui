@@ -1,0 +1,72 @@
+[
+  {
+    "file": "pastel-openings-card.js",
+    "repository": "Pastel-Openings-Card",
+    "type": "pastel-openings-card"
+  },
+  {
+    "file": "pastel-lawn-mower-card.js",
+    "repository": "Pastel-Lawn-Mower-Card",
+    "type": "pastel-lawn-mower-card"
+  },
+  {
+    "file": "pastel-doors-windows-card.js",
+    "repository": "Pastel-Doors-and-Windows-Card",
+    "type": "pastel-doors-windows-card"
+  },
+  {
+    "file": "pastel-clima-card.js",
+    "repository": "Pastel-Ac-card",
+    "type": "pastel-clima-card"
+  },
+  {
+    "file": "pastel-water-leak-card.js",
+    "repository": "Pastel-Water-Leak-card",
+    "type": "pastel-water-leak-card"
+  },
+  {
+    "file": "pastel-motion-presence-card.js",
+    "repository": "Pastel-Motion-Presence-card",
+    "type": "pastel-motion-presence-card"
+  },
+  {
+    "file": "pastel-button-card.js",
+    "repository": "Pastel-Button-Card",
+    "type": "pastel-button-card"
+  },
+  {
+    "file": "pastel-smoke-co-card.js",
+    "repository": "Pastel-Smoke-Co-card",
+    "type": "pastel-smoke-co-card"
+  },
+  {
+    "file": "pastel-temp-card.js",
+    "repository": "Pastel-Temp-Card",
+    "type": "pastel-temp-card"
+  },
+  {
+    "file": "pastel-temp-humidity-card.js",
+    "repository": "Pastel-Temp-Humidity-Card",
+    "type": "pastel-temp-humidity-card"
+  },
+  {
+    "file": "pastel-dishwasher-card.js",
+    "repository": "Pastel-Dishwasher-card",
+    "type": "pastel-dishwasher-card"
+  },
+  {
+    "file": "pastel-thermostat-card.js",
+    "repository": "Pastel-Thermostat-Card",
+    "type": "pastel-thermostat-card"
+  },
+  {
+    "file": "pastel-climate-card.js",
+    "repository": "Pastel-Climate-Card",
+    "type": "pastel-climate-card-editor"
+  },
+  {
+    "file": "pastel-lights-card.js",
+    "repository": "pastel-lights-card",
+    "type": "pastel-lights-card"
+  }
+]
