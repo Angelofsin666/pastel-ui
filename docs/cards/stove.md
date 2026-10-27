@@ -1,12 +1,14 @@
 # Pastel Stufa / Pellet Stove
 
-`custom:pastel-stove-card` · Added in **v0.1.0-beta.3**.
+`custom:pastel-stove-card` · Added in **v0.1.0-beta.3**, editor updated in **v0.1.0-beta.4**.
 
 ![Pastel Stufa with simulated Home Assistant data](../images/stove.png)
 
 ## Italiano
 
 Una card nello stile delle altre Pastel, con illustrazione a contorno, palette condivisa, stati configurabili, sensore pellet e controlli comandati da script. Dopo l’aggiornamento HACS, ricarica il frontend e scegli **Pastel Stufa** in “Aggiungi card”.
+
+I campi entità consentono ricerca per nome e inserimento diretto dell’ID. I suggerimenti dei comandi mostrano solo script; il campo pellet accetta qualsiasi entità. Minimo e massimo dei controlli −/+ sono sempre liberi e opzionali.
 
 L’editor visuale permette di:
 
@@ -110,7 +112,7 @@ Per i sensori: `temperature_attribute`, `pellet_attribute`, `ambient_attribute`;
 
 ## English
 
-A configurable pellet-stove card matching the shared Pastel theme. Install **v0.1.0-beta.3** through HACS (pre-releases enabled), reload the frontend and choose **Pastel Stufa** in the card picker.
+A configurable pellet-stove card matching the shared Pastel theme. Install **v0.1.0-beta.4** through HACS (pre-releases enabled), reload the frontend and choose **Pastel Stufa** in the card picker.
 
 The visual editor supports appearance, arbitrary wrapping action buttons, independent minus/plus script controls, optional pellet and temperature readings, and ordered state rules with AND/OR conditions. Each stepper needs a value entity and separate minus/plus actions. Values update from Home Assistant, never from optimistic frontend increments. Scripts, integrations and helpers remain responsible for operating the stove and reporting its state.
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0-beta.4
+
+- Replace stove entity dropdowns with searchable suggestions and free entity-ID input.
+- Script action fields suggest scripts only; pellet accepts any entity ID and temperature/value fields suggest numeric entity domains.
+- Keep minimum/maximum limits optional and entirely user-defined. Existing configurations remain valid.
+- Correzioni editor Stufa: ricerca e inserimento entità, suggerimenti dei soli script per i comandi, limiti −/+ liberi e opzionali.
+
 ## 0.1.0-beta.3
 
 - Add Pastel Stufa / pellet stove with a full visual editor, configurable action buttons and independent minus/plus script controls.
