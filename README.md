@@ -14,6 +14,8 @@ A coordinated collection of Home Assistant cards for lights, climate, appliances
 
 ### What's inside
 
+- **Pellet Stove:** configurable script buttons, independent minus/plus controls, pellet percentage and ordered state rules with timers. [Configuration](docs/cards/stove.md).
+
 - **Appliance:** choose a device or entity, review related sensors and controls, and save the associations. Profiles cover laundry, kitchen appliances, air treatment, water heaters and water purifiers.
 - **Robot:** capability-based vacuum and mower controls, optional map image, and room/zone selectors or existing scripts/buttons.
 - **Climate:** controls derived from the climate entity's modes, temperature limits and supported features. The separate custom-action/IR card remains available.
@@ -23,7 +25,7 @@ The bundle contains its rendering libraries: there are no runtime CDN imports. Y
 
 ### Installation
 
-Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.2`, or explicitly download `main`.
+Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.3`, or explicitly download `main`.
 
 Verify that the JavaScript module resource is registered as:
 
@@ -52,6 +54,8 @@ If you try the beta, please report the integration name, device model and which 
 
 ### Cosa include
 
+- **Stufa a pellet:** pulsanti script configurabili, controlli −/+, percentuale pellet e regole di stato con timer. [Configurazione](docs/cards/stove.md).
+
 - **Appliance:** scegli un dispositivo o un'entità, controlla sensori e comandi associati, poi salva. I profili comprendono lavanderia, cucina, trattamento aria, scaldacqua e depuratori d'acqua.
 - **Robot:** comandi per aspirapolvere e tagliaerba basati sulle capacità dichiarate, immagine della mappa opzionale e selettori o script/pulsanti per stanze e zone.
 - **Climate:** modalità, limiti di temperatura e controlli letti dall'entità clima. Resta disponibile anche la card con azioni personalizzate/IR.
@@ -61,7 +65,7 @@ Il pacchetto include le librerie grafiche, senza scaricarle da CDN durante l'uso
 
 ### Installazione
 
-Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.2`, oppure scarica esplicitamente `main`.
+Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.3`, oppure scarica esplicitamente `main`.
 
 Verifica la risorsa JavaScript Module `/hacsfiles/pastel-ui/pastel-ui.js`, poi ricarica l'interfaccia. Aggiungi **Pastel Appliance** o **Pastel Robot** dall'editor visuale, seleziona dispositivo o entità principale e avvia la ricerca. Controlla profilo, dati e comandi proposti prima di applicarli.
 

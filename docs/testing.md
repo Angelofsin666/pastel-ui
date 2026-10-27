@@ -1,5 +1,11 @@
 # Compatibility and testing / Compatibilità e test
 
+## Stove validation — v0.1.0-beta.3
+
+Twelve additional unit tests cover the original six-phase priority, combined ignition conditions, missing data, AND/OR and attribute comparisons, numeric readings, timers, script dispatch and limits/config editing. The full existing test suite and distribution build pass.
+
+Chromium checks with simulated Home Assistant data verify script calls and reactive flame/temperature values, 320px/390px layouts in light and dark themes, fourteen wrapping action buttons, and adding/saving controls, steppers and state rules through the visual editor. No physical stove was operated. HACS installation and real-device validation remain pending.
+
 ## English
 
 This beta has been validated in a local browser with simulated Home Assistant objects, not against a live Home Assistant installation. No real appliances have been operated by these tests.

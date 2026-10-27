@@ -4,10 +4,11 @@
 
 ## English
 
-Sixteen card types, including the fourteen existing types and the new Appliance and Robot families. The water-purifier example uses Appliance. Each page contains a rendered example, configuration and Italian translation.
+Seventeen card types, including Appliance, Robot and Pellet Stove. The water-purifier example uses Appliance. Each page contains a rendered example, configuration and Italian translation.
 
 | Card | Type |
 |---|---|
+| [Pastel Stufa](cards/stove.md) | `custom:pastel-stove-card` |
 | [Pastel Appliance](cards/appliance.md) | `custom:pastel-appliance-card` |
 | [Water purifier](cards/water.md) | `custom:pastel-appliance-card` |
 | [Pastel Robot](cards/robot.md) | `custom:pastel-robot-card` |
@@ -28,4 +29,4 @@ Sixteen card types, including the fourteen existing types and the new Appliance 
 
 ## Italiano
 
-Sedici tipi di card: i quattordici esistenti più Appliance e Robot. L’esempio del depuratore usa Appliance. Ogni pagina contiene immagine, configurazione e traduzione italiana. Tutte le immagini usano dati fittizi.
+Diciassette tipi di card, inclusa la nuova Pastel Stufa. L’esempio del depuratore usa Appliance. Ogni pagina contiene immagine, configurazione e traduzione italiana. Tutte le immagini usano dati fittizi.

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.3
+
+- Add Pastel Stufa / pellet stove with a full visual editor, configurable action buttons and independent minus/plus script controls.
+- Add ordered state rules with AND/OR conditions, timer countdowns and missing-data handling.
+- Add pellet percentage, configurable warning threshold, shared Pastel palettes and optional custom background/colors.
+- Include a stove demo and regression tests; existing card types are preserved.
+- Nuova Pastel Stufa con editor visuale, script, sensori, regole di stato e timer. Test con dati simulati; suite ancora in beta.
+
 ## 0.1.0-beta.2
 
 ### English

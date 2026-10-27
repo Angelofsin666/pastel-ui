@@ -1,5 +1,9 @@
 # Configuration / Configurazione
 
+## Pastel Stufa / Pellet Stove
+
+See the [Stove configuration and visual editor guide](cards/stove.md) for script buttons, minus/plus controls, pellet sensors and state rules.
+
 ## English
 
 ### Appliance and Robot
