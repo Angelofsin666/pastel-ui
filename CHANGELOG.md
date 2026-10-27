@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0-beta.5
+
+- Expose a clearly labelled numeric-helper field in every stove minus/plus control; suggestions include only counter and input_number helpers.
+- Add an explicit link from a temperature control’s helper to the upper target-temperature reading, keeping both values synchronized from Home Assistant.
+- Preserve existing `entity` configurations and optional user-defined bounds; no optimistic counter changes or extra counter service calls.
+- Aiutante del valore per ogni controllo, ricerca dei soli aiutanti numerici e collegamento opzionale alla temperatura impostata in alto.
+
 ## 0.1.0-beta.4
 
 - Replace stove entity dropdowns with searchable suggestions and free entity-ID input.

@@ -1,5 +1,9 @@
 # Compatibility and testing / Compatibilità e test
 
+## Helper synchronization — v0.1.0-beta.5
+
+Unit coverage verifies per-control helper filtering, a shared helper source for the control and upper temperature metric, compatibility with prior configurations, and exclusive/removable temperature linkage. Chromium checks verify selecting and saving helpers, real script service dispatch with simulated counter updates, external counter changes, and unavailable values. All checks use simulated Home Assistant data, without operating a physical stove.
+
 ## Stove validation — v0.1.0-beta.3
 
 Twelve additional unit tests cover the original six-phase priority, combined ignition conditions, missing data, AND/OR and attribute comparisons, numeric readings, timers, script dispatch and limits/config editing. The full existing test suite and distribution build pass.

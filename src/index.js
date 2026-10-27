@@ -23,6 +23,6 @@ window.customCards=window.customCards||[];
 for(const [type,name,description] of [['pastel-appliance-card','Pastel Appliance','Elettrodomestici, aria e acqua. Associa i controlli del tuo dispositivo.'],['pastel-robot-card','Pastel Robot','Pulizia e giardino, con mappa e zone quando disponibili.'],['pastel-climate-card','Pastel Climate','Temperatura e modalità supportate dal climatizzatore.']])if(!window.customCards.some(c=>c.type===type))window.customCards.push({type,name,description,preview:true});
 for(const [name,Class] of [['pastel-stove-card',StoveCard],['pastel-stove-card-editor',StoveEditor]])if(!customElements.get(name))customElements.define(name,Class);
 if(!window.customCards.some(c=>c.type==='pastel-stove-card'))window.customCards.push({type:'pastel-stove-card',name:'Pastel Stufa',description:'Stufa a pellet: script, controlli −/+, stati e livello pellet configurabili.',preview:true});
-console.info('Pastel UI 0.1.0-beta.4');
+console.info('Pastel UI 0.1.0-beta.5');
 
 window.customCards=window.customCards.filter((card,index,all)=>all.findIndex(c=>c.type===card.type)===index);

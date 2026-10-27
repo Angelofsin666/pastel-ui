@@ -1,16 +1,17 @@
 ## Italiano
 
-Corregge l’editor di **Pastel Stufa**:
+Correzione della configurazione e sincronizzazione dei valori in **Pastel Stufa**.
 
-- Entità ricercabili per nome e inseribili direttamente scrivendo/incollando l’ID.
-- Per pulsanti e tasti −/+ i suggerimenti mostrano solo gli script.
-- Il livello pellet permette di scegliere qualsiasi entità; i valori numerici continuano a essere letti dallo stato o dall’attributo configurato.
-- Minimo e massimo dei controlli −/+ restano campi liberi e opzionali, senza valori imposti dalla card.
+- Ogni controllo −/+ espone **Aiutante del valore** con ricerca e suggerimenti dei soli `counter` e `input_number`.
+- Seleziona l’aiutante modificato dagli script: il numero tra i tasti segue il suo stato in Home Assistant, anche per modifiche esterne.
+- Per la temperatura attiva **Mostra questo aiutante anche come temperatura impostata**: il riquadro superiore e il controllo leggono la stessa sorgente.
+- Script +/− e aiutante visualizzato rimangono associazioni distinte. La card non modifica direttamente i counter.
+- Minimo e massimo restano liberi e opzionali. Le associazioni già salvate restano compatibili.
 
-Dopo l’aggiornamento **ricarica completamente l’interfaccia Home Assistant** per caricare il nuovo editor. Le configurazioni già salvate restano valide. Per questa release abilita le versioni preliminari di Pastel UI in HACS; se non appare subito, usa “Aggiorna informazioni”.
+Dopo l’aggiornamento **ricarica completamente il frontend Home Assistant**, poi apri la configurazione di ogni controllo −/+ e associa il relativo aiutante. Non devi ricreare la card. Seleziona la spunta temperatura solo sul controllo che deve alimentare il riquadro superiore.
 
-Verifiche: suite automatica, compilazione del pacchetto e controlli browser con dati simulati. Nessun dispositivo reale azionato.
+Per questa release abilita le versioni preliminari di Pastel UI in HACS; se non compare, usa “Aggiorna informazioni”. Test automatici e browser eseguiti con dati simulati: nessun dispositivo reale azionato.
 
 ## English
 
-Fixes the Pastel Stove editor: searchable entity suggestions and direct entity-ID input, script-only action suggestions, unrestricted pellet entity input, and user-defined optional minus/plus bounds. Existing configurations remain valid. Reload the frontend after updating. HACS pre-releases must be enabled for this beta. Validation uses simulated Home Assistant data.
+Each stove stepper now exposes a clearly labelled numeric-helper field with counter/input_number suggestions. Link one stepper to the upper target-temperature metric using `show_as_temperature: true` so both displays follow the same Home Assistant helper. Script actions remain separate and no optimistic increments or direct counter commands are introduced. Existing configurations and optional user-defined bounds are preserved. Reload the frontend after updating, then select the helper in each stepper. Automated and browser tests use simulated Home Assistant data; HACS pre-releases must be enabled.

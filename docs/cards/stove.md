@@ -1,6 +1,6 @@
 # Pastel Stufa / Pellet Stove
 
-`custom:pastel-stove-card` · Added in **v0.1.0-beta.3**, editor updated in **v0.1.0-beta.4**.
+`custom:pastel-stove-card` · Added in **v0.1.0-beta.3**, editor updated in **v0.1.0-beta.5**.
 
 ![Pastel Stufa with simulated Home Assistant data](../images/stove.png)
 
@@ -19,6 +19,14 @@ L’editor visuale permette di:
 - Definire stati in ordine di priorità. Una regola richiede tutte le condizioni (**E**) oppure almeno una (**O**). Puoi confrontare stato o attributo con “uguale” o “diverso”. Un timer attivo usato nelle condizioni viene mostrato automaticamente; puoi anche selezionarlo esplicitamente.
 
 Gli script devono già gestire il dispositivo e aggiornare i suoi helper/sensori. La card non crea automazioni e non avvia comandi durante la configurazione. Il timer usa `finishes_at` di Home Assistant e non controlla la stufa. Se mancano dati necessari per una regola prioritaria, viene mostrato “Stato non disponibile”.
+
+### Aiutante per ogni controllo −/+
+
+In **Controlli −/+**, ogni sezione ha il campo **Aiutante del valore**: cerca o inserisci il counter/input_number modificato dai suoi script. I suggerimenti mostrano solo questi aiutanti numerici. Per esempio, seleziona `counter.example_flame` per Fiamma e `counter.example_temperature` per Temperatura.
+
+Per il controllo della temperatura, attiva **Mostra questo aiutante anche come temperatura impostata**: il numero tra i tasti e il riquadro in alto leggono lo stesso aiutante. Solo un controllo può essere collegato al riquadro temperatura. Gli aggiornamenti arrivano da Home Assistant anche se il valore cambia tramite un’altra automazione. Gli script +/− restano indipendenti dall’aiutante visualizzato: devono già modificarlo.
+
+In YAML l’aiutante si salva nel campo `entity` del controllo (compatibile con le configurazioni precedenti); il collegamento al riquadro usa `show_as_temperature: true`. Se nessun controllo è collegato, il riquadro continua a usare `temperature_entity`. Minimo e massimo restano facoltativi e non vengono preimpostati.
 
 ### Esempio
 
@@ -52,6 +60,7 @@ steppers:
   - name: Temperatura
     entity: counter.example_temperature
     unit: °
+    show_as_temperature: true
     minus:
       entity: script.example_temperature_down
     plus:
@@ -112,10 +121,12 @@ Per i sensori: `temperature_attribute`, `pellet_attribute`, `ambient_attribute`;
 
 ## English
 
-A configurable pellet-stove card matching the shared Pastel theme. Install **v0.1.0-beta.4** through HACS (pre-releases enabled), reload the frontend and choose **Pastel Stufa** in the card picker.
+A configurable pellet-stove card matching the shared Pastel theme. Install **v0.1.0-beta.5** through HACS (pre-releases enabled), reload the frontend and choose **Pastel Stufa** in the card picker.
 
 The visual editor supports appearance, arbitrary wrapping action buttons, independent minus/plus script controls, optional pellet and temperature readings, and ordered state rules with AND/OR conditions. Each stepper needs a value entity and separate minus/plus actions. Values update from Home Assistant, never from optimistic frontend increments. Scripts, integrations and helpers remain responsible for operating the stove and reporting its state.
 
 The YAML example above uses fictional entities. `states` are evaluated in order; conditions support `entity`, optional `attribute`, `state`, and `operator: equals|not_equals`. The first matching rule wins. Missing data that could affect a higher-priority rule produces an unavailable status. Active timer conditions automatically expose the remaining time from Home Assistant’s `finishes_at`; `timer_entity` can override the timer shown. No command runs during setup.
 
 `controls` has no fixed item limit. Each supports `name`, `icon`, `entity` (script/button/scene), or explicit `action`, `data`, `target`; optional `color` and `background` override the theme. `steppers` support `name`, `entity`, optional `attribute`, `icon`, `unit`, `min`, `max`, `minus`, `plus`. Palette overrides are `tint_color`, `accent_color`, `background_color`. Missing measurements show a dash; pellet bars clamp to 0–100 and warnings default to below 20%. Test coverage uses simulated Home Assistant data; physical stove operation has not been verified by these tests.
+
+Since v0.1.0-beta.5 each stepper exposes a numeric-helper picker (counter/input_number suggestions) using its existing `entity` field. Enable `show_as_temperature: true` on one stepper to make the upper target-temperature reading use the very same source, overriding `temperature_entity` while linked. Both readings follow Home Assistant updates, including changes made outside this card; no optimistic increments are applied.

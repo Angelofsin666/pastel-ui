@@ -6,6 +6,10 @@ export function readNumber(hass, entity, attribute) {
  if(value===null||value===undefined||String(value).trim()===''||typeof value==='boolean')return null;
  const n=Number(value);return Number.isFinite(n)?n:null;
 }
+export function stoveTemperatureSource(config) {
+ const step=(config.steppers||[]).find(s=>s.show_as_temperature&&s.entity);
+ return step?{entity:step.entity,attribute:step.attribute}:{entity:config.temperature_entity,attribute:config.temperature_attribute};
+}
 export function conditionResult(hass,condition) {
  const s=hass?.states?.[condition.entity];
  if(!s)return null;
