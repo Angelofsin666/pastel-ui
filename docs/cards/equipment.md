@@ -2,7 +2,7 @@
 
 ## English
 
-Pastel UI 1.1 added nine cards and the 1.2 preview adds eleven more. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
+Pastel UI 1.1 added nine cards and version 1.2 adds eleven more. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
 
 | Card | Type | Main reading and optional metrics |
 |---|---|---|
@@ -53,7 +53,7 @@ buttons:
 
 ## Italiano
 
-Pastel UI 1.1 ha aggiunto nove card e l’anteprima 1.2 ne aggiunge altre undici, tutte comode sul telefono: valore principale aggiornato, stato opzionale, altri valori facoltativi e quanti pulsanti servono. Ogni valore arriva dall'entità Home Assistant scelta; se manca o non è disponibile appare `—`. I pulsanti senza comando associato restano disabilitati.
+Pastel UI 1.1 ha aggiunto nove card e la versione 1.2 ne aggiunge altre undici, tutte comode sul telefono: valore principale aggiornato, stato opzionale, altri valori facoltativi e quanti pulsanti servono. Ogni valore arriva dall'entità Home Assistant scelta; se manca o non è disponibile appare `—`. I pulsanti senza comando associato restano disabilitati.
 
 Le card sono **Pool** (piscina), **Sump Pumps** (pompe anti-allagamento del sotterraneo), **Water Booster** (pompa di rilancio), **Coffee Machine**, **Air Fryer**, **Boiler** (caldaia del riscaldamento), **Hot Water** (acqua calda sanitaria), **EV Charger** e **Pool Robot**. La tabella inglese sopra indica gli ID e i valori previsti.
 

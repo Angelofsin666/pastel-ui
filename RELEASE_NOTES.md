@@ -1,16 +1,16 @@
-# Pastel UI v1.2.0 — preview, not released
+# Pastel UI v1.2.0
 
 ## English
 
-Eleven new cards are being prepared: 3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery. Each has a dedicated Pastel illustration, selectable readings and customizable controls. Irrigation supports any number of zones with independent state, start and stop commands. Percentage-based main readings include a level bar. The existing 29 card types remain compatible.
+**Eleven new cards:** 3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery. Each has a dedicated Pastel illustration, selectable readings and customizable controls. The final Litter Robot illustration shows a seated cat, and Chicken Feeder includes a hen. Irrigation supports any number of zones with independent state, start and stop commands. Percentage-based main readings include a level bar. The existing 29 card types and saved configurations remain compatible; Pastel UI now offers **40 card types**.
 
-The local bundle and simulated browser demo pass verification. The designs and real-device integrations are awaiting review; this preview has not been published to HACS.
+The bundle and automated tests pass; all eleven cards were rendered in a simulated browser at phone width. Physical devices were not operated. [Read the full changelog](CHANGELOG.md) and [configuration guide](docs/cards/equipment.md). Update Pastel UI to v1.2.0 through HACS, then reload the Home Assistant frontend. The project welcomes [card requests and contributions](CONTRIBUTING.md) and was developed with AI assistance under maintainer review.
 
 ## Italiano
 
-Sono in preparazione undici nuove card: stampante 3D, stampante, raccolta acqua piovana, VMC, cappa cucina, lettiera robot, ciotole acqua/cibo, mangiatoia galline, irrigazione, fotovoltaico e batterie di accumulo. Ognuna ha un disegno Pastel dedicato, valori selezionabili e comandi personalizzabili. Irrigation gestisce un numero libero di zone con stato, avvio e arresto indipendenti. I valori principali in percentuale mostrano una barra di livello. I 29 tipi già esistenti restano compatibili.
+**Undici nuove card:** stampante 3D, stampante, raccolta acqua piovana, VMC, cappa cucina, lettiera robot, ciotole acqua/cibo, mangiatoia galline, irrigazione, fotovoltaico e batterie di accumulo. Ognuna ha un disegno Pastel dedicato, valori selezionabili e comandi personalizzabili. La lettiera mostra un gatto seduto e la mangiatoia include una gallina. Irrigation gestisce un numero libero di zone con stato, avvio e arresto indipendenti. I valori principali in percentuale mostrano una barra di livello. I 29 tipi precedenti e le configurazioni salvate restano compatibili: Pastel UI comprende ora **40 tipi di card**.
 
-Pacchetto locale e demo simulata sono stati verificati. Grafica e integrazioni sui dispositivi reali attendono revisione; questa anteprima non è stata pubblicata su HACS.
+Il pacchetto e i test automatici passano; tutte le undici card sono state renderizzate nella demo simulata a larghezza telefono. Nessun dispositivo fisico è stato comandato. Consulta il [changelog completo](CHANGELOG.md) e la [guida alla configurazione](docs/cards/equipment.md). Aggiorna Pastel UI alla v1.2.0 da HACS, poi ricarica l'interfaccia Home Assistant. Sono benvenute [richieste di card e contributi](CONTRIBUTING.md); lo sviluppo ha ricevuto l'aiuto dell'IA sotto la revisione del manutentore.
 
 ---
 

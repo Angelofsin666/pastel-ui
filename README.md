@@ -29,7 +29,7 @@ The [gallery](docs/catalog.md) shows every card with fictional example entities.
 
 **New in 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger and Pool Robot](docs/cards/equipment.md) have dedicated visuals, searchable entity fields and configurable actions. Sump Pumps is designed for basement flood-prevention equipment.
 
-**Next collection:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery](docs/cards/equipment.md) add eleven specialist cards. Irrigation supports any number of individually monitored zones.
+**New in 1.2:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery](docs/cards/equipment.md) add eleven specialist cards. Irrigation supports any number of individually monitored zones.
 
 ### Make it yours
 
@@ -70,7 +70,7 @@ La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance com
 
 **Novità 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger e Pool Robot](docs/cards/equipment.md) hanno disegni dedicati, ricerca delle entità e comandi configurabili. Sump Pumps è pensata per le pompe anti-allagamento dei locali interrati.
 
-**Nuova raccolta:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar e Home Battery](docs/cards/equipment.md) aggiungono undici card dedicate. Irrigation gestisce un numero libero di zone monitorate singolarmente.
+**Novità 1.2:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar e Home Battery](docs/cards/equipment.md) aggiungono undici card dedicate. Irrigation gestisce un numero libero di zone monitorate singolarmente.
 
 ### Personalizzala
 

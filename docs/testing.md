@@ -1,8 +1,8 @@
-## v1.2.0 preview — Eleven device cards / Anteprima di undici card
+## v1.2.0 — Eleven device cards / Undici nuove card
 
-English: local tests and bundle build pass. All eleven new cards render in the simulated browser demo at a 390 px viewport without horizontal overflow or console errors. Irrigation displays independent zone states and controls; its editor exposes add/reorder/remove plus separate start/stop entity search. No real equipment was operated and the preview has not been released in HACS.
+English: local tests and bundle build pass. All eleven new cards render in the simulated browser demo at a 390 px viewport without horizontal overflow or console errors. Irrigation displays independent zone states and controls; its editor exposes add/reorder/remove plus separate start/stop entity search. The revised Litter Robot and Chicken Feeder illustrations were visually reviewed at phone width. No real equipment was operated.
 
-Italiano: test locali e pacchetto passano. Tutte le undici nuove card sono visibili nella demo simulata a 390 px senza scorrimento orizzontale né errori nella console. Irrigation mostra zone indipendenti; l'editor permette aggiunta, ordine, rimozione e scelta dei comandi di avvio/arresto. Nessun dispositivo reale è stato comandato e l'anteprima non è pubblicata in HACS.
+Italiano: test locali e pacchetto passano. Tutte le undici nuove card sono visibili nella demo simulata a 390 px senza scorrimento orizzontale né errori nella console. Irrigation mostra zone indipendenti; l'editor permette aggiunta, ordine, rimozione e scelta dei comandi di avvio/arresto. Le illustrazioni aggiornate di Litter Robot e Chicken Feeder sono state controllate alla larghezza di un telefono. Nessun dispositivo reale è stato comandato.
 
 ## v1.1.0 — Nine equipment cards / Nove card per dispositivi
 

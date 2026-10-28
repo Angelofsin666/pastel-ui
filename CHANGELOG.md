@@ -1,20 +1,20 @@
 # Changelog
 
-## 1.2.0 — Preview: eleven more device cards / Anteprima: altre undici card
+## 1.2.0 — Eleven new device cards / Undici nuove card
 
 ### English
 
-- Add dedicated cards for 3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery. Their labels, entities, palettes and actions are configurable; no personal entity IDs are supplied.
+- Add dedicated cards for 3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery. Their labels, entities, palettes and actions are configurable; no personal entity IDs are supplied. The Litter Robot illustration shows a seated cat; the Chicken Feeder illustration includes a hen.
 - Irrigation supports any number of individually named zones with separate state, start and stop entities. Switch-based zone commands call `turn_on` and `turn_off` explicitly. Percentage-based main readings show a level bar.
 - Keep Solar and Home Battery readings tied to selected Home Assistant entities without guessing energy-flow direction from signed values. Preserve all 29 existing card types and configurations; the catalog preview has 40 card types.
-- Validate the bundle and automated tests; render all eleven in the local demo at phone width without horizontal overflow. Physical-device testing remains pending. This preview is not yet published as a HACS release.
+- Validate the bundle and automated tests; render all eleven in the local demo at phone width without horizontal overflow. Physical-device testing remains pending. Update through HACS and reload the Home Assistant frontend to see the new cards.
 
 ### Italiano
 
-- Aggiunge card dedicate per stampante 3D, stampante, raccolta acqua piovana, VMC, cappa cucina, lettiera robot, ciotole acqua/cibo, mangiatoia galline, irrigazione, fotovoltaico e batterie di accumulo. Nomi, entità, colori e comandi sono configurabili, senza ID personali preimpostati.
+- Aggiunge card dedicate per stampante 3D, stampante, raccolta acqua piovana, VMC, cappa cucina, lettiera robot, ciotole acqua/cibo, mangiatoia galline, irrigazione, fotovoltaico e batterie di accumulo. Nomi, entità, colori e comandi sono configurabili, senza ID personali preimpostati. La lettiera mostra un gatto seduto e la mangiatoia include una gallina.
 - Irrigazione gestisce un numero libero di zone con nome, stato, avvio e arresto separati. Gli interruttori di zona usano esplicitamente `turn_on` e `turn_off`. I valori principali in percentuale mostrano anche una barra di livello.
 - Solar e Home Battery mostrano i sensori scelti senza dedurre il verso dei flussi dal segno dei valori. Restano validi i 29 tipi e le configurazioni esistenti; l'anteprima del catalogo ne comprende 40.
-- Pacchetto e test automatici verificati; tutte le undici card sono state renderizzate nella demo locale a larghezza telefono senza scorrimento orizzontale. Restano da provare i dispositivi fisici. L'anteprima non è ancora pubblicata come release HACS.
+- Pacchetto e test automatici verificati; tutte le undici card sono state renderizzate nella demo locale a larghezza telefono senza scorrimento orizzontale. Restano da provare i dispositivi fisici. Aggiorna da HACS e ricarica l'interfaccia Home Assistant per vedere le nuove card.
 
 ## 1.1.0 — Nine new device cards / Nove nuove card
 
