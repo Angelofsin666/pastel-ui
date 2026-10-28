@@ -26,6 +26,12 @@ export const CARD_CATALOG = [
     "preview": true
   },
   {
+    "type": "pastel-radiator-valves-card",
+    "name": "Pastel Radiator Valves",
+    "description": "Multiple thermostatic radiator valves with live room temperatures and native climate controls.",
+    "preview": true
+  },
+  {
     "type": "pastel-stove-card",
     "name": "Pastel Pellet Stove",
     "description": "Pellet stove scripts, value controls, status and pellet level.",

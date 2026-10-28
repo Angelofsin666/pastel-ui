@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.10.0 — Grouped radiator valves / Valvole termostatiche raggruppate
+
+### English
+
+- Add **Pastel Radiator Valves**, bringing the catalog to **103 card types**. A single phone-friendly card holds any number of rooms, with a large radiator illustration, average room temperature, live status and target per valve, and optional battery readings. Rooms can be added, removed, renamed and reordered in the visual editor; colours and labels remain customizable.
+- The card uses user-selected Home Assistant `climate` entities. Each +/− control follows that valve's supported target feature, step and min/max limits and calls `climate.set_temperature` only when available. Displayed values follow reported entity states, including changes made elsewhere. No personal entity IDs are included.
+- Add a fictional demo and bilingual guide. Automated tests and bundle build pass; the mobile layout was checked at 390 px without horizontal overflow. No physical valve was operated.
+
+### Italiano
+
+- Aggiunge **Pastel Radiator Valves**, portando il catalogo a **103 tipi di card**. Una sola card adatta al telefono riunisce quante stanze vuoi, con grande disegno del termosifone, temperatura media, stato e valore impostato di ogni valvola e batteria facoltativa. Nell'editor puoi aggiungere, rimuovere, rinominare e riordinare le stanze e personalizzare colori e nomi.
+- La card usa entità `climate` di Home Assistant scelte dall'utente. I controlli +/− rispettano funzione supportata, passo e limiti di ciascuna valvola e chiamano `climate.set_temperature` solo se disponibile. I valori mostrati seguono gli stati reali, anche quando cambiano altrove. Non sono presenti ID personali.
+- Aggiunte demo fittizia e guida bilingue. Test automatici e compilazione superati; layout mobile verificato a 390 px senza scorrimento laterale. Nessuna valvola fisica è stata comandata.
+
 ## 1.9.0 — Seven new cards / Sette nuove card
 
 ### English

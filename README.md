@@ -1,6 +1,6 @@
 # Pastel UI
 
-**One HACS download. 102 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
+**One HACS download. 103 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
 
 [English](#english) · [Italiano](#italiano) · [Gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Configuration](docs/configuration.md) · [Release notes](CHANGELOG.md)
 
@@ -18,14 +18,16 @@
 
 Pastel UI brings lights, covers, climate, security, appliances and everyday sensors into a consistent visual language: soft colour, clear state, generous touch targets and layouts made for phones. Choose the entities you already have; the cards do not create devices, helpers or automations. Actions use Home Assistant services and the state displayed comes from Home Assistant, including changes made elsewhere.
 
-### Explore the 102 cards
+### Explore the 103 cards
 
 | Home & climate | Security & sensors | Entertainment & seasonal |
 |---|---|---|
-| [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Awning & Curtains](docs/cards/fabric-covers.md) · [Climate AC](docs/cards/script-climate.md) · [Thermostat](docs/cards/thermostat.md) · [Pellet Stove](docs/cards/stove.md) · [Temperature](docs/cards/temp.md) | [Alarm and Security Overview](docs/cards/security.md) · [Openings](docs/cards/openings.md) · [Doors & Windows](docs/cards/doors-windows.md) · [Motion & Presence](docs/cards/motion-presence.md) · [Water Leak](docs/cards/water-leak.md) · [Smoke & CO](docs/cards/smoke-co.md) | [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md) · [Christmas Tree](docs/cards/christmas-tree.md) |
+| [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Awning & Curtains](docs/cards/fabric-covers.md) · [Climate AC](docs/cards/script-climate.md) · [Thermostat](docs/cards/thermostat.md) · [Radiator Valves](docs/cards/radiator-valves.md) · [Pellet Stove](docs/cards/stove.md) · [Temperature](docs/cards/temp.md) | [Alarm and Security Overview](docs/cards/security.md) · [Openings](docs/cards/openings.md) · [Doors & Windows](docs/cards/doors-windows.md) · [Motion & Presence](docs/cards/motion-presence.md) · [Water Leak](docs/cards/water-leak.md) · [Smoke & CO](docs/cards/smoke-co.md) | [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md) · [Christmas Tree](docs/cards/christmas-tree.md) |
 | [Appliance](docs/cards/appliance.md) · [Robot](docs/cards/robot.md) · [Dishwasher](docs/cards/dishwasher.md) · [Lawn Mower](docs/cards/lawn-mower.md) | [Button](docs/cards/button.md) | |
 
 The [gallery](docs/catalog.md) shows every card with fictional example entities. Appliance covers multiple device profiles, including a water purifier, without adding another card type.
+
+**New in 1.10:** [Radiator Valves](docs/cards/radiator-valves.md) groups any number of `climate` valves in one card with a large radiator illustration, live room readings, optional battery sensors and native setpoint controls for each room.
 
 **New in 1.9:** [Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff and Electric Scooter](docs/cards/equipment.md) bring seven distinct, full-size illustrations and editable readings. Energy Tariff lets you switch between today and tomorrow using your selected sensors; E-Bike and Electric Scooter have separate designs.
 
@@ -75,14 +77,16 @@ Pastel UI was developed with assistance from AI tools. Design decisions, code re
 
 Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensori in uno stile coerente: colori tenui, stati leggibili, comandi comodi sul telefono. Scegli le entità già presenti nel tuo Home Assistant; le card non creano dispositivi, aiutanti o automazioni. I comandi usano i servizi di Home Assistant e i valori mostrati seguono le entità, anche quando cambiano altrove.
 
-### Scopri le 102 card
+### Scopri le 103 card
 
 | Casa e clima | Sicurezza e sensori | Intrattenimento e feste |
 |---|---|---|
-| [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Awning & Curtains](docs/cards/fabric-covers.md) · [Climate AC](docs/cards/script-climate.md) · [Thermostat](docs/cards/thermostat.md) · [Pellet Stove](docs/cards/stove.md) · [Temperature](docs/cards/temp.md) | [Alarm e Security Overview](docs/cards/security.md) · [Openings](docs/cards/openings.md) · [Doors & Windows](docs/cards/doors-windows.md) · [Motion & Presence](docs/cards/motion-presence.md) · [Water Leak](docs/cards/water-leak.md) · [Smoke & CO](docs/cards/smoke-co.md) | [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md) · [Christmas Tree](docs/cards/christmas-tree.md) |
+| [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Awning & Curtains](docs/cards/fabric-covers.md) · [Climate AC](docs/cards/script-climate.md) · [Thermostat](docs/cards/thermostat.md) · [Radiator Valves](docs/cards/radiator-valves.md) · [Pellet Stove](docs/cards/stove.md) · [Temperature](docs/cards/temp.md) | [Alarm e Security Overview](docs/cards/security.md) · [Openings](docs/cards/openings.md) · [Doors & Windows](docs/cards/doors-windows.md) · [Motion & Presence](docs/cards/motion-presence.md) · [Water Leak](docs/cards/water-leak.md) · [Smoke & CO](docs/cards/smoke-co.md) | [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md) · [Christmas Tree](docs/cards/christmas-tree.md) |
 | [Appliance](docs/cards/appliance.md) · [Robot](docs/cards/robot.md) · [Dishwasher](docs/cards/dishwasher.md) · [Lawn Mower](docs/cards/lawn-mower.md) | [Button](docs/cards/button.md) | |
 
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
+
+**Novità 1.10:** [Radiator Valves](docs/cards/radiator-valves.md) riunisce quante valvole `climate` vuoi in una card con grande disegno del termosifone, temperature reali, sensori batteria facoltativi e controlli della temperatura per ogni stanza.
 
 **Novità 1.9:** [Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff ed Electric Scooter](docs/cards/equipment.md) aggiungono sette grandi disegni dedicati e valori personalizzabili. Energy Tariff passa tra oggi e domani leggendo i sensori associati; E-Bike ed Electric Scooter sono card distinte.
 

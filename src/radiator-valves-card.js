@@ -1,0 +1,20 @@
+import {html,css} from 'lit-element';
+import {BaseCard} from './base-card.js';
+import {illustration} from './illustrations.js';
+import {valveRooms,valveOverview,valveTargetCommand,valveTemperature} from './radiator-valves-model.js';
+
+export class RadiatorValvesCard extends BaseCard{
+ static get styles(){return [super.styles,css`
+  .hero{min-height:178px;padding:18px}.hero svg{width:148px;height:148px}.hero .reading{font-size:30px}.hero .right{min-width:0}.zone{border-top:1px solid var(--divider-color,#e8ebed);padding:14px 0}.zone:first-of-type{border-top:0}.zone-head,.zone-control{display:flex;align-items:center;justify-content:space-between;gap:12px}.zone-head{margin-bottom:9px}.zone-head strong{font-size:14px;font-weight:650;overflow-wrap:anywhere}.zone-head span{font-size:11px;color:var(--p-muted);text-align:right;overflow-wrap:anywhere}.zone-status{font-size:12px;color:var(--p-muted)}.zone-buttons{display:flex;align-items:center;gap:8px}.zone-buttons button{width:48px;min-width:48px;height:48px;padding:0;font-size:22px}.zone-buttons strong{font-size:15px;min-width:54px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}.zone-buttons button:disabled{opacity:.4}@media(max-width:450px){ha-card{padding:16px}.hero{padding:16px}.hero svg{width:136px;height:136px}.hero .reading{font-size:27px}.zone-buttons button{width:48px;min-width:48px;height:48px}.zone-buttons strong{min-width:48px}}@media(max-width:345px){.hero svg{width:104px;height:104px}.zone-head{align-items:flex-start;flex-direction:column;gap:2px}.zone-head span{text-align:left}}
+ `]}
+ static getConfigElement(){return document.createElement('pastel-radiator-valves-card-editor')}
+ static getStubConfig(){return {title:'',subtitle:'',color:'mint',rooms:[{name:'',entity:'',temp_entity:'',battery_entity:''}]}}
+ setConfig(config){super.setConfig(config);if(config.rooms!==undefined&&(!Array.isArray(config.rooms)||config.rooms.some(room=>!room||typeof room!=='object'||Array.isArray(room))))throw new Error('rooms deve essere una lista di valvole.');}
+ render(){if(!this.config||!this.hass)return html``;const c=this.config,rooms=valveRooms(this.hass,c),overview=valveOverview(rooms),unit=this.hass.config?.unit_system?.temperature||'°C';const custom=`${c.background_color?`--p-surface:${c.background_color};`:''}${c.tint_color?`--p-tint:${c.tint_color};`:''}${c.accent_color?`--p-accent:${c.accent_color};`:''}${c.text_color?`--p-ink:${c.text_color};`:''}${c.secondary_text_color?`--p-muted:${c.secondary_text_color};`:''}`;return html`<ha-card style=${this.palette(c.color||'mint')+custom}>
+  <header><div class="icon"><ha-icon icon=${c.icon||'mdi:radiator'}></ha-icon></div><div class="heading"><h2>${c.title||'Termosifoni'}</h2><div class="subtitle">${c.subtitle||`${overview.total} ${overview.total===1?'stanza':'stanze'}`}</div></div><span class="pill">${overview.active} ${overview.active===1?'attiva':'attive'}</span></header>
+  <div class="hero">${illustration('radiator_valves')}<div class="right"><div class="reading">${valveTemperature(overview.average,unit)}</div><div class="caption">${c.average_label||'Media ambienti'}</div></div></div>
+  ${rooms.map(room=>html`<div class="zone"><div class="zone-head"><strong>${room.name}</strong><span>${valveTemperature(room.temperature,unit)}${room.battery!==null?` · ${Math.round(room.battery)}% batteria`:''}</span></div><div class="zone-control"><span class="zone-status">${room.status}</span><div class="zone-buttons"><button aria-label=${`Abbassa temperatura ${room.name}`} ?disabled=${!valveTargetCommand(this.hass,room,-1)||this.busy} @click=${()=>this.adjust(room,-1)}>−</button><strong>${valveTemperature(room.target,unit)}</strong><button aria-label=${`Alza temperatura ${room.name}`} ?disabled=${!valveTargetCommand(this.hass,room,1)||this.busy} @click=${()=>this.adjust(room,1)}>+</button></div></div></div>`)}
+  ${!rooms.length?html`<div class="empty">Aggiungi le valvole nell’editor della card.</div>`:''}${this.feedback()}
+ </ha-card>`}
+ adjust(room,direction){const command=valveTargetCommand(this.hass,room,direction);if(command)this.call(command.action,command.entity,command.data)}
+}

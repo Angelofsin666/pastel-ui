@@ -79,6 +79,11 @@ examples.push(
  ['curtains','Pastel Curtains',{type:'custom:pastel-curtains-card',title:'Tende soggiorno',color:'lavender',entity:'cover.demo_curtains',metrics:{light:'sensor.demo_curtains_light',power:'sensor.demo_curtains_power'}}]
 );
 examples.push(['thermostat','Pastel Thermostat',{type:'custom:pastel-native-thermostat-card',entity:'climate.demo',humidity_entity:'sensor.demo_humidity',title:'Termostato',color:'blue'}]);
+for(const [id,name,mode,current,target,action,battery] of [['living','Salotto','heat',21.2,22,'heating',91],['bedroom','Camera','heat',20.8,21.5,'heating',84],['study','Studio','off',21.4,20,'off',72]]){
+ add(`climate.demo_valve_${id}`,mode,name,{supported_features:1,current_temperature:current,temperature:target,hvac_action:action,min_temp:18,max_temp:30,target_temp_step:0.5,hvac_modes:['off','heat']});
+ metric(`sensor.demo_valve_${id}_battery`,battery,`Batteria ${name}`,'%','battery');
+}
+examples.push(['radiator-valves','Pastel Radiator Valves',{type:'custom:pastel-radiator-valves-card',title:'Termosifoni',color:'mint',rooms:[{name:'Salotto',entity:'climate.demo_valve_living',battery_entity:'sensor.demo_valve_living_battery'},{name:'Camera',entity:'climate.demo_valve_bedroom',battery_entity:'sensor.demo_valve_bedroom_battery'},{name:'Studio',entity:'climate.demo_valve_study',battery_entity:'sensor.demo_valve_study_battery'}]}]);
 const services={};for(const [domain,names] of Object.entries({alarm_control_panel:['alarm_arm_home','alarm_arm_away','alarm_arm_night','alarm_disarm','alarm_arm_vacation','alarm_arm_custom_bypass','alarm_trigger'],vacuum:['start','pause','stop','return_to_base','set_fan_speed'],lawn_mower:['start_mowing','pause','dock','stop'],climate:['set_temperature','set_hvac_mode','set_fan_mode','set_preset_mode','set_swing_mode'],select:['select_option'],button:['press'],number:['set_value'],homeassistant:['toggle','turn_on','turn_off'],light:['turn_on'],script:['turn_on','demo_on','demo_off'],scene:['turn_on'],switch:['turn_on','turn_off']}))services[domain]=Object.fromEntries(names.map(n=>[n,{}]));
 export const calls=[];
 services.homeassistant={toggle:{},turn_on:{},turn_off:{}};services.light={...services.light,turn_on:{}};services.cover={open_cover:{},close_cover:{},stop_cover:{},set_cover_position:{}};

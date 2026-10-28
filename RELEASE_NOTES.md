@@ -1,3 +1,23 @@
+# Pastel UI v1.10.0
+
+## English
+
+**Pastel Radiator Valves brings the collection to 103 card types.** One card brings together as many thermostatic radiator valves as you need. The large radiator illustration anchors the average room temperature; each room shows its actual temperature, status, target and optional battery level.
+
+Add and reorder rooms in the visual editor, select their Home Assistant `climate` entities and customize names, colours and optional sensors. The +/− controls use each valve's own step and temperature limits. A press does not invent a new state: the displayed target changes when Home Assistant reports it. No personal entity IDs are included, and existing cards remain compatible.
+
+Automated tests, bundle build and phone-width demo checks pass; no physical valves were operated. [Full changelog](CHANGELOG.md) · [Radiator Valves guide](docs/cards/radiator-valves.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Pastel Radiator Valves porta la collezione a 103 tipi di card.** Una card riunisce tutte le valvole termostatiche che vuoi. Il grande disegno del termosifone accompagna la temperatura media; ogni stanza mostra temperatura reale, stato, valore impostato e batteria facoltativa.
+
+Nell'editor visuale aggiungi e riordini le stanze, scegli le entità `climate` di Home Assistant e personalizzi nomi, colori e sensori facoltativi. I controlli +/− rispettano passo e limiti di ciascuna valvola. Il valore mostrato cambia quando Home Assistant lo riporta, senza anticipare lo stato. Non sono presenti ID personali e le card esistenti restano compatibili.
+
+Test automatici, compilazione e verifica della demo su telefono superati; nessuna valvola fisica è stata comandata. [Changelog completo](CHANGELOG.md) · [Guida Radiator Valves](docs/cards/radiator-valves.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.9.0
 
 ## English
