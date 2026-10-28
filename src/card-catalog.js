@@ -49,6 +49,18 @@ export const CARD_CATALOG = [
   "preview": true
 },
   {
+    "type": "pastel-weather-card",
+    "name": "Pastel Weather",
+    "description": "Current weather and daily forecast from a Home Assistant weather entity.",
+    "preview": true
+  },
+  {
+    "type": "pastel-tv-card",
+    "name": "Pastel TV",
+    "description": "Television controls, volume and source when supported by the media player.",
+    "preview": true
+  },
+  {
     "type": "pastel-button-card",
     "name": "Pastel Button",
     "description": "Customizable action buttons.",

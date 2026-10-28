@@ -1,6 +1,6 @@
 # Pastel UI
 
-A coordinated collection of Home Assistant cards for lights, climate, appliances, robots and household sensors. One HACS installation with 17 active card types.
+A coordinated collection of Home Assistant cards for lights, climate, appliances, robots and household sensors. One HACS installation with 19 active card types.
 
 [English](#english) · [Italiano](#italiano) · [Card gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Migration](docs/migration.md)
 
@@ -22,6 +22,7 @@ A coordinated collection of Home Assistant cards for lights, climate, appliances
 
 - **Appliance:** choose a device or entity, review related sensors and controls, and save the associations. Profiles cover laundry, kitchen appliances, air treatment, water heaters and water purifiers.
 - **Robot:** capability-based vacuum and mower controls, optional map image, and room/zone selectors or existing scripts/buttons.
+- **Weather and TV:** live weather forecasts and controls for media players, matched to the features available on each device. [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md).
 - **Existing Pastel cards:** lights, buttons, openings, doors/windows, motion, leaks, smoke/CO, temperature, humidity, dishwasher and mower keep their current type names.
 
 The bundle contains its rendering libraries: there are no runtime CDN imports. Your existing Home Assistant integrations still determine which device functions and data are available.
@@ -31,6 +32,10 @@ The bundle contains its rendering libraries: there are no runtime CDN imports. Y
 **Pastel Lights** now uses the approved mobile list, large controls and full-width sliders. **Pastel Covers** adds roller shutters with native group/individual commands and the approved rolling-shutter illustration. The former `light-card` and `tapparella-card` type IDs remain compatibility aliases inside Pastel UI; remove their standalone resources to load the new versions. [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Migration](docs/migration.md).
 
 All card development is consolidated in **pastel-ui**. Use this repository for HACS and future updates.
+
+### Weather and TV — beta.12
+
+**Pastel Weather** shows actual readings and live daily forecasts from a selected `weather.*` entity. **Pastel TV** offers power, playback, volume and input source from a selected `media_player.*` entity, according to its supported features. Both use visual editors and Pastel colors. The Christmas tree card is still being designed.
 
 ### Temperature redesign — beta.10
 
@@ -46,7 +51,7 @@ Pastel Climate, the old custom-action/IR Climate, and Pastel Thermostat have bee
 
 ### Installation
 
-Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.11`, or explicitly download `main`.
+Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.12`, or explicitly download `main`.
 
 Verify that the JavaScript module resource is registered as:
 
@@ -83,6 +88,7 @@ If you try the beta, please report the integration name, device model and which 
 
 - **Appliance:** scegli un dispositivo o un'entità, controlla sensori e comandi associati, poi salva. I profili comprendono lavanderia, cucina, trattamento aria, scaldacqua e depuratori d'acqua.
 - **Robot:** comandi per aspirapolvere e tagliaerba basati sulle capacità dichiarate, immagine della mappa opzionale e selettori o script/pulsanti per stanze e zone.
+- **Meteo e TV:** previsioni dal meteo di Home Assistant e comandi TV disponibili per il dispositivo scelto. [Meteo](docs/cards/weather.md) · [TV](docs/cards/tv.md).
 - **Card Pastel esistenti:** luci, pulsanti, aperture, porte/finestre, presenza, perdite, fumo/CO, temperatura, umidità, lavastoviglie e tagliaerba mantengono i nomi attuali.
 
 Il pacchetto include le librerie grafiche, senza scaricarle da CDN durante l'uso. Le integrazioni di Home Assistant continuano a determinare le funzioni effettivamente disponibili.
@@ -93,7 +99,7 @@ Rimosse Pastel Climate, la vecchia Climate con azioni personalizzate/IR e Pastel
 
 ### Installazione
 
-Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.11`, oppure scarica esplicitamente `main`.
+Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.12`, oppure scarica esplicitamente `main`.
 
 Verifica la risorsa JavaScript Module `/hacsfiles/pastel-ui/pastel-ui.js`, poi ricarica l'interfaccia. Aggiungi **Pastel Appliance** o **Pastel Robot** dall'editor visuale, seleziona dispositivo o entità principale e avvia la ricerca. Controlla profilo, dati e comandi proposti prima di applicarli.
 

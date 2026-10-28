@@ -290,6 +290,28 @@
     }
   ],
   [
+    "weather",
+    "Pastel Weather",
+    {
+      "type": "custom:pastel-weather-card",
+      "title": "Meteo",
+      "subtitle": "Previsioni locali",
+      "color": "blue",
+      "entity": "weather.demo_home"
+    }
+  ],
+  [
+    "tv",
+    "Pastel TV",
+    {
+      "type": "custom:pastel-tv-card",
+      "title": "TV Soggiorno",
+      "subtitle": "Televisore",
+      "color": "lavender",
+      "entity": "media_player.demo_tv"
+    }
+  ],
+  [
     "button",
     "Pastel Button",
     {

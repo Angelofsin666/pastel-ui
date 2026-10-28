@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0-beta.12
+
+- Add Pastel Weather with current readings and live daily forecasts from the selected Home Assistant weather entity.
+- Add Pastel TV with capability-aware power, playback, volume and source controls for a selected media player.
+- Add visual editors with filtered entity search, editable names and Pastel color settings; 19 public card types.
+- L'albero di Natale resta una proposta grafica da approvare prima dell'integrazione.
+
 ## 0.1.0-beta.11
 
 - Redesign Pastel Lights with the approved smartphone list, large power buttons, full-width sliders and capability-based color/white controls.
