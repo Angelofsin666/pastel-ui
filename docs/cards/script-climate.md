@@ -1,16 +1,18 @@
-# Pastel Clima Script
+# Pastel Climate AC
 
 `custom:pastel-script-climate-card` · Added in **v0.1.0-beta.6**.
 
-![Pastel Clima Script with simulated Home Assistant data](../images/script-climate.png)
+![Pastel Climate AC with simulated Home Assistant data](../images/script-climate.png)
+
+Display name: **Pastel Climate AC** since beta.8. The existing `custom:pastel-script-climate-card` type and saved settings are unchanged.
 
 ## Italiano
 
-Card per climatizzatori comandati da script, con lo stesso stile di Pastel Stufa. Non richiede un’entità `climate` e non sostituisce automaticamente Thermostat o le altre card.
+Card per climatizzatori comandati da script, con lo stesso stile di Pastel pellet stove. Non richiede un’entità `climate` e non sostituisce automaticamente Thermostat o le altre card.
 
 ### Configurazione dall’editor
 
-1. Aggiorna Pastel UI da HACS, ricarica completamente l’interfaccia e scegli **Pastel Clima Script** in “Aggiungi card”.
+1. Aggiorna Pastel UI da HACS, ricarica completamente l’interfaccia e scegli **Pastel Climate AC** in “Aggiungi card”.
 2. Imposta il nome della card e scegli il **sensore di temperatura**. La ricerca propone sensori con classe temperatura o unità °C, °F o K. Puoi anche scrivere l’ID di un tuo sensore non classificato.
 3. Scegli la **palette della card**.
 4. Per ogni pulsante scegli lo **script**, modifica il **nome** e apri **Icona** per scegliere dalla griglia visiva. Puoi assegnare un colore diverso oppure lasciare “Come la card”.
@@ -59,10 +61,10 @@ Le icone dell’editor comprendono accensione, spegnimento, freddo, caldo, deumi
 
 ## English
 
-A script-driven air-conditioner card matching Pastel Stove. No native `climate` entity is required. After updating Pastel UI through HACS and reloading the frontend, choose **Pastel Clima Script** from the card picker.
+A script-driven air-conditioner card matching Pastel Stove. No native `climate` entity is required. After updating Pastel UI through HACS and reloading the frontend, choose **Pastel Climate AC** from the card picker.
 
 The simple visual editor provides the card name, a temperature-only sensor search, the shared Pastel palette, and a configurable list of buttons. Each button has a script-only search, editable name, visual icon grid, optional individual palette, and reorder/remove controls. You can add as many buttons as needed. The YAML example uses fictional entities.
 
 Buttons call `script.turn_on` for the chosen script; scripts remain responsible for operating the device. Temperature follows the selected sensor without optimistic changes. Script running/idle states never imply HVAC power. An optional real `state_entity` supplies a header badge; each button can independently use a real state helper and `active_state` to show an active indicator. Missing readings show a dash and unavailable scripts disable their buttons.
 
-Existing Thermostat, Climate and custom-action cards keep their current types and behavior. Validation uses simulated Home Assistant data; these tests have not operated a physical air conditioner.
+Since beta.8 the old Thermostat, native Climate and custom-action Climate cards have been removed; see [migration](../migration.md). Validation uses simulated Home Assistant data; these tests have not operated a physical air conditioner.

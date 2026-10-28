@@ -1,20 +1,16 @@
+## Prima di aggiornare / Before updating
+
+**Sono state rimosse Pastel Climate nativa, Pastel Climate custom actions/IR e Pastel Thermostat.** Le dashboard che usano ancora `custom:pastel-climate-card`, `custom:pastel-clima-card` o `custom:pastel-thermostat-card` devono passare alla nuova card e associare sensore e script; non c’è conversione automatica. [Guida alla migrazione](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/migration.md).
+
 ## Italiano
 
-Aggiunge le due card approvate nelle anteprime:
+- La nuova card a script si chiama **Pastel Climate AC**.
+- **Pastel Stufa** diventa **Pastel pellet stove**.
+- Gli identificativi delle due nuove card restano invariati: le loro configurazioni già salvate funzionano senza modifiche.
+- Rimossi i tre vecchi tipi, i relativi editor, la vecchia documentazione e gli esempi; il catalogo contiene ora 17 tipi attivi.
 
-- **Pastel Allarme** (`custom:pastel-alarm-card`): nome iniziale Protego sempre modificabile. Ogni pulsante può usare una funzione nativa supportata dal pannello oppure uno script. Nomi, icone, colori e ordine sono configurabili. Lo stato mostrato viene sempre dal pannello allarme. Palette iniziale Blu.
-- **Pastel Riepilogo Sicurezza** (`custom:pastel-security-card`): riquadri personalizzabili per allarme, conteggio porte/finestre e sensori reali. Palette iniziale Menta. Senza sensori associati non viene mostrato un OK fisso; per letture numeriche la soglia va scelta esplicitamente.
-
-I comandi nativi che richiedono un codice lo chiedono al momento dell’azione: il codice non viene salvato nella configurazione. Gli script conservano la propria logica.
-
-Dopo l’aggiornamento **ricarica completamente il frontend** e cerca **Pastel Allarme** e **Pastel Riepilogo Sicurezza** in “Aggiungi card”. Seleziona il pannello e associa i tuoi script/sensori dall’editor. Le card esistenti non vengono sostituite automaticamente.
-
-Abilita le versioni preliminari di Pastel UI in HACS; se la release non compare usa “Aggiorna informazioni”. Test automatici e browser con dati simulati; nessun allarme reale azionato.
-
-[Guida e configurazione](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/cards/security.md).
+Aggiorna da HACS (versioni preliminari abilitate) e **ricarica completamente il frontend** per vedere il selettore ripulito e i nuovi nomi. Test automatici e verifica browser con dati simulati; nessun dispositivo reale azionato.
 
 ## English
 
-Adds **Pastel Allarme** and **Pastel Riepilogo Sicurezza** with visual editors and the approved shared Pastel style. Alarm title, buttons, icons, colors and native/script sources are configurable; panel state stays authoritative. Security tiles use real alarm, count and detector entities and preserve missing-data status. Native codes are transient and numeric detector thresholds are explicit user settings. Existing card types remain compatible.
-
-Reload the frontend after updating, then add and configure the new cards. HACS pre-releases must be enabled. Unit/browser tests use simulated Home Assistant data; no live alarm was operated.
+Removes the old native Climate, custom-action/IR Climate and Thermostat card types. Rename the retained script-driven card to **Pastel Climate AC** and Stove to **Pastel pellet stove**. Their existing type IDs and saved configurations remain unchanged. The picker now contains 17 active types. Read the migration guide for dashboards using retired types; reload the frontend after updating.

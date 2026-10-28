@@ -4,18 +4,17 @@
 
 ## English
 
-Twenty card types, including Alarm and Security Overview. The water-purifier example uses Appliance. Each page contains a rendered example, configuration and Italian translation.
+Seventeen active card types, including Pastel Climate AC and Pastel pellet stove. The water-purifier example uses Appliance. Each page contains a rendered example, configuration and Italian translation.
 
 | Card | Type |
 |---|---|
 | [Pastel Allarme](cards/security.md) | `custom:pastel-alarm-card` |
 | [Pastel Riepilogo Sicurezza](cards/security.md) | `custom:pastel-security-card` |
-| [Pastel Clima Script](cards/script-climate.md) | `custom:pastel-script-climate-card` |
-| [Pastel Stufa](cards/stove.md) | `custom:pastel-stove-card` |
+| [Pastel Climate AC](cards/script-climate.md) | `custom:pastel-script-climate-card` |
+| [Pastel pellet stove](cards/stove.md) | `custom:pastel-stove-card` |
 | [Pastel Appliance](cards/appliance.md) | `custom:pastel-appliance-card` |
 | [Water purifier](cards/water.md) | `custom:pastel-appliance-card` |
 | [Pastel Robot](cards/robot.md) | `custom:pastel-robot-card` |
-| [Pastel Climate](cards/climate.md) | `custom:pastel-climate-card` |
 | [Pastel Lights](cards/lights.md) | `custom:pastel-lights-card` |
 | [Pastel Button](cards/button.md) | `custom:pastel-button-card` |
 | [Pastel Openings](cards/openings.md) | `custom:pastel-openings-card` |
@@ -25,11 +24,11 @@ Twenty card types, including Alarm and Security Overview. The water-purifier exa
 | [Pastel Smoke & CO](cards/smoke-co.md) | `custom:pastel-smoke-co-card` |
 | [Pastel Temperature](cards/temp.md) | `custom:pastel-temp-card` |
 | [Pastel Temperature & Humidity](cards/temp-humidity.md) | `custom:pastel-temp-humidity-card` |
-| [Pastel Thermostat](cards/thermostat.md) | `custom:pastel-thermostat-card` |
-| [Pastel Climate · custom actions](cards/clima.md) | `custom:pastel-clima-card` |
 | [Pastel Dishwasher](cards/dishwasher.md) | `custom:pastel-dishwasher-card` |
 | [Pastel Lawn Mower](cards/lawn-mower.md) | `custom:pastel-lawn-mower-card` |
 
 ## Italiano
 
-Venti tipi di card, incluse Pastel Allarme e Pastel Riepilogo Sicurezza. L’esempio del depuratore usa Appliance. Ogni pagina contiene immagine, configurazione e traduzione italiana. Tutte le immagini usano dati fittizi.
+Diciassette tipi di card attivi, inclusi Pastel Climate AC e Pastel pellet stove. L’esempio del depuratore usa Appliance. Ogni pagina contiene immagine, configurazione e traduzione italiana. Tutte le immagini usano dati fittizi.
+
+The new display names keep their existing type IDs: `pastel-script-climate-card` and `pastel-stove-card`. See [migration](migration.md) for the three retired card types.

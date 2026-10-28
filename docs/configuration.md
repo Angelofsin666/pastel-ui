@@ -1,10 +1,10 @@
 # Configuration / Configurazione
 
-## Pastel Stufa / Pellet Stove
+## Pastel pellet stove / Pellet Stove
 
 See the [Stove configuration and visual editor guide](cards/stove.md) for script buttons, minus/plus controls, pellet sensors and state rules.
 
-## Pastel Clima Script
+## Pastel Climate AC
 
 See the [Script Climate editor and configuration guide](cards/script-climate.md) for script-only buttons, visual icons and temperature sensors.
 
@@ -55,9 +55,9 @@ controls:
 
 A profile is a starting point, not a certified integration adapter. Device inference uses domain and names in English/Italian; select the profile manually when those names are not informative. Measurements are proposed from device class or conservative name matching within one device. Multiple candidates are not silently selected. Reapplying discovery replaces the current proposed association set; review your external sensor overrides afterwards.
 
-### Climate
+### Pastel Climate AC
 
-`custom:pastel-climate-card`: `entity` must be a `climate` entity. Optional fields: `title`, `subtitle`, `color`, `temp_sensor`, `humidity_sensor`. Temperature limits, target step, HVAC modes, fan modes, presets and swing settings are read from the entity. Single temperature and low/high target ranges are supported. Custom-action/IR installations should keep `custom:pastel-clima-card`; see its [page](cards/clima.md).
+Use `custom:pastel-script-climate-card` with a temperature sensor and script buttons. The display name changed in beta.8; its configuration is unchanged. See the [AC guide](cards/script-climate.md). The old native Climate, IR Climate and Thermostat card types have been removed; see [migration](migration.md).
 
 ### Existing cards
 
@@ -85,9 +85,9 @@ Il riconoscimento usa dominio e nomi inglesi/italiani. Le associazioni sono cerc
 
 L'esempio YAML sopra mostra un depuratore con misuratore esterno e un comando personalizzato. Tutte le entità sono fittizie.
 
-### Climate
+### Pastel Climate AC
 
-La nuova `pastel-climate-card` richiede un'entità `climate`. Conserva `title`, `temp_sensor`, `humidity_sensor` e aggiunge `subtitle` e `color`. Legge limiti, passo, modalità e capacità dal dispositivo; supporta obiettivo singolo e intervallo minimo/massimo. Per azioni personalizzate/IR resta disponibile [pastel-clima-card](cards/clima.md).
+Usa `custom:pastel-script-climate-card`, con sensore di temperatura e pulsanti script. Il nome cambia in beta.8, mantenendo la stessa configurazione. La guida è [qui](cards/script-climate.md). Le vecchie Climate nativa, Climate IR e Thermostat sono state rimosse; consulta la [migrazione](migration.md).
 
 ### Card esistenti
 

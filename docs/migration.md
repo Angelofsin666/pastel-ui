@@ -1,33 +1,31 @@
 # Migration / Migrazione
 
-## English
+## Beta.8 — italiano
 
-The suite preserves all fourteen existing `custom:pastel-…` card types. Existing YAML remains the starting point: you do not replace every card with Appliance or Robot.
+I nomi delle due card recenti diventano **Pastel Climate AC** e **Pastel pellet stove**. I rispettivi identificativi restano `custom:pastel-script-climate-card` e `custom:pastel-stove-card`: le configurazioni già salvate per queste due card continuano a funzionare.
 
-1. Save a copy of the dashboard configuration and the current resource URLs.
-2. Download Pastel UI. Before reloading, remove the **resource entries** for the standalone Pastel cards and register the suite resource once. You can retain their downloaded files while testing, but do not load them.
-3. Reload the frontend fully. The card types now resolve from the suite. Validate one example of each card you use.
-4. Keep your current entities, names and actions. Check custom `image_url` values: files in old HACS directories remain external overrides and will disappear if you later uninstall those repositories. Copy custom artwork to your own `/local/` folder or remove the override to use the suite default.
-5. Once verified, uninstall the obsolete standalone HACS packages. Future updates come from Pastel UI.
+Sono state rimosse dal pacchetto e dal selettore:
 
-The native `pastel-climate-card` has a redesigned implementation but retains `entity`, `title`, `temp_sensor` and `humidity_sensor`. `pastel-clima-card` (custom/IR actions), `pastel-dishwasher-card` and `pastel-lawn-mower-card` retain their existing configuration format. Moving an individual card to Appliance or Robot is optional and uses the new editor.
+| Card rimossa | Tipo rimosso |
+|---|---|
+| Pastel Climate nativa | `custom:pastel-climate-card` |
+| Pastel Climate custom actions/IR | `custom:pastel-clima-card` |
+| Pastel Thermostat | `custom:pastel-thermostat-card` |
 
-**Duplicate definitions:** the suite skips elements already registered by another resource and logs a warning. This prevents a suite-side duplicate-definition error, but does not guarantee that the redesigned version wins. A full reload with only the suite resource is required; older standalone files can themselves throw duplicate-definition errors if left loaded.
+Le dashboard che usano ancora questi tre tipi devono essere aggiornate: aggiungi **Pastel Climate AC**, scegli il sensore di temperatura e associa gli script di ogni pulsante. La configurazione non viene convertita automaticamente. La nuova AC è comandata da script: eventuali azioni native precedenti devono essere gestite dai tuoi script Home Assistant.
 
-**Rollback:** remove the suite resource, restore the original resource entries, and reload. Restore the saved dashboard YAML if you converted any cards to the new Appliance/Robot types. Real-installation migration testing is still pending for this beta.
+Per la vecchia Climate IR, `temp_entity` corrisponde al nuovo `temperature_entity`; ogni script precedentemente chiamato da un’azione va scelto nel campo **Script del pulsante**. Le altre opzioni dei tipi rimossi non vanno copiate alla cieca nel nuovo tipo.
 
-## Italiano
+Dopo l’aggiornamento HACS ricarica completamente il frontend. Le altre 15 card, oltre alle due rinominate, mantengono i propri tipi. Per tornare al pacchetto precedente usa la versione beta.7 da HACS e ripristina la configurazione della dashboard se l’hai modificata.
 
-La suite mantiene tutti i quattordici tipi `custom:pastel-…` esistenti. Il tuo YAML resta il punto di partenza: non devi sostituire ogni card con Appliance o Robot.
+## Beta.8 — English
 
-1. Salva una copia della configurazione della dashboard e degli URL delle risorse.
-2. Scarica Pastel UI. Prima di ricaricare, rimuovi le **voci delle risorse** delle card singole e registra una sola volta quella della suite. Durante i test puoi conservare i file precedenti, ma non caricarli.
-3. Ricarica completamente l'interfaccia. Controlla almeno un esempio di ogni card utilizzata.
-4. Mantieni entità, nomi e azioni. Verifica gli `image_url` personalizzati: i file nelle vecchie cartelle HACS spariranno se disinstalli quelle repository. Copia le immagini personalizzate in una tua cartella `/local/`, oppure rimuovi l'override per usare l'immagine della suite.
-5. Dopo la verifica, disinstalla i vecchi pacchetti HACS. Gli aggiornamenti successivi arriveranno da Pastel UI.
+The two recent cards are now named **Pastel Climate AC** and **Pastel pellet stove**. Their existing `custom:pastel-script-climate-card` and `custom:pastel-stove-card` type IDs and settings remain unchanged.
 
-La nuova `pastel-climate-card` conserva `entity`, `title`, `temp_sensor` e `humidity_sensor`. Le configurazioni di `pastel-clima-card` (azioni personalizzate/IR), lavastoviglie e tagliaerba restano disponibili. Passare ad Appliance o Robot è facoltativo e si fa con il nuovo editor.
+The old native `pastel-climate-card`, custom-action/IR `pastel-clima-card`, and `pastel-thermostat-card` have been removed, including their editors. Dashboards that still use these types must be updated to the new AC card. Choose a temperature sensor and script buttons in its editor; no automatic conversion is performed. Native device actions from an old configuration need corresponding Home Assistant scripts because the retained AC card is script-driven.
 
-La suite salta le card già registrate da un'altra risorsa e mostra un avviso nella console. Questo non garantisce quale versione venga usata: serve una ricarica completa con la sola risorsa della suite. I vecchi file possono generare errori se continuano a essere caricati.
+Reload the frontend completely after updating. Other retained card types are unchanged. Roll back to beta.7 through HACS if needed, restoring the prior dashboard configuration if you changed it.
 
-**Per tornare indietro:** rimuovi la risorsa della suite, ripristina quelle originali e ricarica. Ripristina il YAML salvato se hai convertito delle card nei nuovi tipi. La migrazione su un impianto reale resta da verificare durante la beta.
+## Moving from standalone Pastel repositories
+
+Register the suite resource once: `/hacsfiles/pastel-ui/pastel-ui.js` as a JavaScript module. Remove standalone Pastel resource entries before a complete frontend reload to avoid duplicate definitions. Keep custom image assets under your own `/local/` path if you intend to uninstall standalone repositories. Remaining legacy types retain their existing options; the three types listed above are no longer included.

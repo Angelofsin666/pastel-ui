@@ -1,5 +1,192 @@
 [
   [
+    "alarm",
+    "Pastel Allarme",
+    {
+      "type": "custom:pastel-alarm-card",
+      "title": "Protego",
+      "subtitle": "Sistema allarme",
+      "color": "blue",
+      "entity": "alarm_control_panel.demo_security",
+      "buttons": [
+        {
+          "name": "In Casa",
+          "kind": "script",
+          "script": "script.demo_alarm_home",
+          "icon": "mdi:home",
+          "state": "armed_home"
+        },
+        {
+          "name": "Notte",
+          "kind": "panel",
+          "action": "alarm_arm_night",
+          "icon": "mdi:weather-night",
+          "state": "armed_night"
+        },
+        {
+          "name": "Fuori Casa",
+          "kind": "panel",
+          "action": "alarm_arm_away",
+          "icon": "mdi:walk",
+          "state": "armed_away"
+        },
+        {
+          "name": "Disattiva",
+          "kind": "script",
+          "script": "script.demo_alarm_off",
+          "icon": "mdi:shield-off",
+          "state": "disarmed"
+        }
+      ]
+    }
+  ],
+  [
+    "security",
+    "Pastel Riepilogo Sicurezza",
+    {
+      "type": "custom:pastel-security-card",
+      "title": "Riepilogo sicurezza",
+      "subtitle": "Stato della casa",
+      "color": "mint",
+      "tiles": [
+        {
+          "kind": "alarm",
+          "name": "Sistema Protego",
+          "entity": "alarm_control_panel.demo_security",
+          "icon": "mdi:shield-check"
+        },
+        {
+          "kind": "count",
+          "name": "Porte aperte",
+          "entity": "sensor.demo_open_doors",
+          "icon": "mdi:door-open"
+        },
+        {
+          "kind": "count",
+          "name": "Finestre aperte",
+          "entity": "sensor.demo_open_windows",
+          "icon": "mdi:window-open"
+        },
+        {
+          "kind": "detector",
+          "name": "Fumo e CO₂",
+          "entities": [],
+          "icon": "mdi:smoke-detector"
+        }
+      ]
+    }
+  ],
+  [
+    "script-climate",
+    "Pastel Climate AC",
+    {
+      "type": "custom:pastel-script-climate-card",
+      "title": "Piano Terra",
+      "subtitle": "Climatizzatore",
+      "color": "blue",
+      "temperature_entity": "sensor.demo_temp",
+      "state_entity": "input_select.demo_climate_mode",
+      "buttons": [
+        {
+          "name": "Accendi",
+          "script": "script.demo_climate_on",
+          "icon": "mdi:power"
+        },
+        {
+          "name": "Raffreddamento",
+          "script": "script.demo_climate_cool",
+          "icon": "mdi:snowflake"
+        },
+        {
+          "name": "Deumidifica",
+          "script": "script.demo_climate_dry",
+          "icon": "mdi:water"
+        },
+        {
+          "name": "Quiet",
+          "script": "script.demo_climate_quiet",
+          "icon": "mdi:sleep"
+        },
+        {
+          "name": "Spegni",
+          "script": "script.demo_climate_off",
+          "icon": "mdi:power-off"
+        }
+      ]
+    }
+  ],
+  [
+    "stove",
+    "Pastel pellet stove",
+    {
+      "type": "custom:pastel-stove-card",
+      "title": "Stufa",
+      "subtitle": "Stufa a pellet",
+      "hero_caption": "Stufa soggiorno",
+      "color": "peach",
+      "temperature_entity": "counter.demo_stove_temperature",
+      "pellet_entity": "sensor.demo_pellet",
+      "states": [
+        {
+          "id": "active",
+          "label": "Riscaldamento attivo",
+          "badge": "Attiva",
+          "conditions": [
+            {
+              "entity": "input_boolean.demo_stove",
+              "state": "on"
+            }
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "name": "Accendi",
+          "entity": "script.demo_stove_start"
+        },
+        {
+          "name": "Spegni",
+          "entity": "script.demo_stove_stop"
+        },
+        {
+          "name": "Carica pellet",
+          "entity": "script.demo_stove_load"
+        },
+        {
+          "name": "Ventilazione",
+          "entity": "script.demo_stove_ventilation"
+        },
+        {
+          "name": "Modalità notte",
+          "entity": "script.demo_stove_night"
+        }
+      ],
+      "steppers": [
+        {
+          "name": "Fiamma",
+          "entity": "counter.demo_stove_flame",
+          "minus": {
+            "entity": "script.demo_stove_flame_down"
+          },
+          "plus": {
+            "entity": "script.demo_stove_flame_up"
+          }
+        },
+        {
+          "name": "Temperatura",
+          "entity": "counter.demo_stove_temperature",
+          "unit": "°",
+          "minus": {
+            "entity": "script.demo_stove_temperature_down"
+          },
+          "plus": {
+            "entity": "script.demo_stove_temperature_up"
+          }
+        }
+      ]
+    }
+  ],
+  [
     "appliance",
     "Pastel Appliance",
     {
@@ -70,15 +257,6 @@
           "name": "Pulisci cucina"
         }
       ]
-    }
-  ],
-  [
-    "climate",
-    "Pastel Climate",
-    {
-      "type": "custom:pastel-climate-card",
-      "entity": "climate.demo",
-      "title": "Climatizzatore"
     }
   ],
   [
@@ -212,50 +390,6 @@
         {
           "entity": "sensor.demo_room",
           "name": "Soggiorno"
-        }
-      ]
-    }
-  ],
-  [
-    "thermostat",
-    "Pastel Thermostat",
-    {
-      "type": "custom:pastel-thermostat-card",
-      "title": "Termostato",
-      "temperature_entity": "sensor.demo_temp",
-      "humidity_entity": "sensor.demo_humidity",
-      "target_entity": "sensor.demo_target",
-      "target_service": "climate.set_temperature"
-    }
-  ],
-  [
-    "clima",
-    "Pastel Climate · custom actions",
-    {
-      "type": "custom:pastel-clima-card",
-      "title": "Clima IR",
-      "color": "blue",
-      "temp_entity": "sensor.demo_temp",
-      "hum_entity": "sensor.demo_humidity",
-      "power_entity": "switch.demo_ac",
-      "buttons": [
-        {
-          "name": "Accendi",
-          "icon": "mdi:power",
-          "color": "green",
-          "action": {
-            "action": "perform-action",
-            "perform_action": "script.demo_on"
-          }
-        },
-        {
-          "name": "Spegni",
-          "icon": "mdi:power",
-          "color": "red",
-          "action": {
-            "action": "perform-action",
-            "perform_action": "script.demo_off"
-          }
         }
       ]
     }

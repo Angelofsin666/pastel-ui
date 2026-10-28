@@ -1,5 +1,9 @@
 # Compatibility and testing / Compatibilità e test
 
+## Catalog cleanup — v0.1.0-beta.8
+
+The three retired native Climate, IR Climate and Thermostat implementations and their now-obsolete tests are removed. Remaining regression suites pass. Browser verification checks exactly 17 registered card types, absence of the retired elements/editors, the new display names, rendering of the current gallery and operation of existing AC/Stove configurations with unchanged type IDs. Historical sections below describe checks performed before the removals.
+
 ## Alarm & Security — v0.1.0-beta.7
 
 Fourteen added unit tests cover native feature/service gating, mixed script/native dispatch, real panel-state rendering, temporary code handling, counter validation, binary/numeric detectors, missing-data precedence, source filtering and editor configuration. Chromium checks both cards together, native/script calls, synchronized state, PIN request/cancel/clear, detector alarms and missing values, 320px/390px light/dark layouts, and both visual editors. No live alarm was armed, disarmed or triggered; all checks use simulated Home Assistant data.

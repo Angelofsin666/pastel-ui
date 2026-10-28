@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0-beta.8
+
+- **Breaking:** remove the old native Pastel Climate, custom-action/IR Climate and Pastel Thermostat cards, their editors and unused AC image asset.
+- Keep the new script-driven AC card as **Pastel Climate AC**, and rename Pastel Stufa to **Pastel pellet stove** in the picker.
+- Keep `custom:pastel-script-climate-card` and `custom:pastel-stove-card` unchanged so saved configurations of the new cards continue to work.
+- Clean up the catalog, demo and current documentation; 17 active card types remain. See migration notes before updating dashboards that still use retired types.
+
 ## 0.1.0-beta.7
 
 - Add Pastel Allarme with editable Protego title, visual icon/palette controls, and independently configurable native or script buttons.

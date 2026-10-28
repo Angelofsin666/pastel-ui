@@ -15,11 +15,6 @@
     "type": "pastel-doors-windows-card"
   },
   {
-    "file": "pastel-clima-card.js",
-    "repository": "Pastel-Ac-card",
-    "type": "pastel-clima-card"
-  },
-  {
     "file": "pastel-water-leak-card.js",
     "repository": "Pastel-Water-Leak-card",
     "type": "pastel-water-leak-card"
@@ -53,16 +48,6 @@
     "file": "pastel-dishwasher-card.js",
     "repository": "Pastel-Dishwasher-card",
     "type": "pastel-dishwasher-card"
-  },
-  {
-    "file": "pastel-thermostat-card.js",
-    "repository": "Pastel-Thermostat-Card",
-    "type": "pastel-thermostat-card"
-  },
-  {
-    "file": "pastel-climate-card.js",
-    "repository": "Pastel-Climate-Card",
-    "type": "pastel-climate-card-editor"
   },
   {
     "file": "pastel-lights-card.js",
