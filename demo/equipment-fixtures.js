@@ -42,6 +42,36 @@ export function appendEquipmentFixtures(add,examples){
   const buttons=EQUIPMENT[key].buttons.map(([name,icon],i)=>({name,icon,entity:add(`script.demo_${slug}_mode_${i}`,'off',name)}));
   examples.push([slug,EQUIPMENT[key].name,{type:`custom:${equipmentType(key)}`,hero_entity:hero,state_entity:state,metrics:{target:targetEntity,power:powerEntity},power_on_entity:state,power_off_entity:state,temperature_up_entity:up,temperature_down_entity:down,buttons}]);
  }
+ const newDevices=[
+  ['safe','Chiusa','',{battery:['91','%'],last_open:['Ieri','']},'ready'],
+  ['adjustable_bed','32','%',{legs:['12','%'],preset:['Lettura','']},'ready'],
+  ['electric_blanket','2','',{timer:['1 h 20 min',''],power:['48','W']},'on'],
+  ['garden_fountain','In funzione','',{level:['82','%'],power:['36','W']},'on'],
+  ['window_cleaner','In pulizia','',{battery:['76','%'],area:['12','m²']},'running'],
+  ['air_compressor','7.2','bar',{target:['8.0','bar'],motor:['Fermo','']},'ready'],
+  ['stairlift','Piano terra','',{battery:['92','%'],status:['Pronto','']},'ready'],
+  ['fish_feeder','18:00','',{food:['64','%'],last_feed:['08:00','']},'ready'],
+  ['shower','38.5','°C',{flow:['8.2','L/min'],today:['42','L']},'on'],
+  ['smart_desk','112','cm',{preset:['In piedi',''],lock:['Disattivo','']},'ready'],
+  ['outdoor_grill','212','°C',{target:['230','°C'],fuel:['46','%']},'on'],
+  ['snow_melt','2.1','°C',{moisture:['Presente',''],power:['680','W']},'auto'],
+  ['septic_tank','63','%',{pump:['Ferma',''],alarm:['Nessuno','']},'ready'],
+  ['generator','Pronto','',{fuel:['82','%'],power:['0','W']},'ready'],
+  ['nas','Online','',{storage:['6.4','TB'],disks:['4/4 OK','']},'ready'],
+  ['water_meter','128','L',{flow:['0.0','L/min'],month:['4.2','m³']},'ready'],
+  ['gas_meter','1.8','m³',{flow:['0.2','m³/h'],month:['34','m³']},'on'],
+  ['power_panel','2.4','kW',{circuits:['8/10',''],overload:['Assente','']},'ready']
+ ];
+ for(const [key,value,unit,metrics,status] of newDevices){
+  const slug=key.replaceAll('_','-'),hero=add(`sensor.demo_${slug}_hero`,value,EQUIPMENT[key].hero,{unit_of_measurement:unit}),state=add(`sensor.demo_${slug}_status`,status,'Stato '+EQUIPMENT[key].title);
+  const mapped={};for(const [role,[reading,u]] of Object.entries(metrics))mapped[role]=add(`sensor.demo_${slug}_${role}`,reading,EQUIPMENT[key].metrics.find(([k])=>k===role)?.[1]||role,{unit_of_measurement:u});
+  const buttons=EQUIPMENT[key].buttons.map(([name,icon],i)=>({name,icon,entity:add(`script.demo_${slug}_${i}`,'off',name)}));
+  examples.push([slug,EQUIPMENT[key].name,{type:`custom:${equipmentType(key)}`,hero_entity:hero,state_entity:state,metrics:mapped,buttons}]);
+ }
+ add('cover.demo_skylight','open','Lucernario',{current_position:40,supported_features:15});
+ add('binary_sensor.demo_skylight_rain','off','Pioggia');
+ add('sensor.demo_skylight_temperature','24','Temperatura',{unit_of_measurement:'°C'});
+ examples.push(['skylight','Pastel Skylight',{type:`custom:${equipmentType('skylight')}`,hero_entity:'cover.demo_skylight',metrics:{rain:'binary_sensor.demo_skylight_rain',temperature:'sensor.demo_skylight_temperature'}}]);
  add('cover.demo_basculante','closed','Basculante',{supported_features:11});
  add('cover.demo_gate','open','Cancello esterno',{supported_features:11});
  add('binary_sensor.demo_obstacle','off','Ostacolo',{device_class:'problem'});

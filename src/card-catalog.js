@@ -55,6 +55,8 @@ export const CARD_CATALOG = [
   "description": "Roller shutter controls, real positions and group commands.",
   "preview": true
 },
+  {"type":"pastel-awning-card","name":"Pastel Awning","description":"Motorized outdoor awning with live fabric position and cover or script controls.","preview":true},
+  {"type":"pastel-curtains-card","name":"Pastel Curtains","description":"Motorized indoor curtains with live fabric position and cover or script controls.","preview":true},
   {
     "type": "pastel-weather-card",
     "name": "Pastel Weather",

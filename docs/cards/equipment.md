@@ -2,7 +2,9 @@
 
 ## English
 
-Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, version 1.4 added eight more equipment cards, and version 1.5 adds two heating cards. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
+The nineteen new 1.6 profiles use the same large Pastel illustration, editable palette, names, main reading, optional measurements, state badge and any number of script/entity buttons. **Skylight** accepts a native `cover` and shows its live opening percentage and supported position control. No entity is preselected.
+
+Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, version 1.4 added eight more equipment cards, version 1.5 added two heating cards, and version 1.6 adds nineteen more equipment cards. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
 
 | Card | Type | Main reading and optional metrics |
 |---|---|---|
@@ -41,8 +43,27 @@ Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five
 | Pastel Waste Collection | `custom:pastel-waste-collection-card` | Next collection and unlimited calendar/helper/sensor rows |
 | Pastel Fan Heater | `custom:pastel-fan-heater-card` | Room temperature; target temperature and power |
 | Pastel Infrared Panel | `custom:pastel-infrared-panel-card` | Room temperature; target temperature and power |
+| Pastel Safe | `custom:pastel-safe-card` | Lock state; battery and last opening |
+| Pastel Adjustable Bed | `custom:pastel-adjustable-bed-card` | Backrest position; legs and preset |
+| Pastel Electric Blanket | `custom:pastel-electric-blanket-card` | Heat setting; timer and power |
+| Pastel Garden Fountain | `custom:pastel-garden-fountain-card` | Pump state; water level and power |
+| Pastel Window Cleaner | `custom:pastel-window-cleaner-card` | Robot state; battery and cleaned area |
+| Pastel Skylight | `custom:pastel-skylight-card` | Opening percentage; rain and temperature |
+| Pastel Air Compressor | `custom:pastel-air-compressor-card` | Tank pressure; target and motor |
+| Pastel Stairlift | `custom:pastel-stairlift-card` | Position; battery and status |
+| Pastel Fish Feeder | `custom:pastel-fish-feeder-card` | Next feeding; food level and last feeding |
+| Pastel Shower | `custom:pastel-shower-card` | Water temperature; flow and daily use |
+| Pastel Smart Desk | `custom:pastel-smart-desk-card` | Desk height; preset and lock |
+| Pastel Outdoor Grill | `custom:pastel-outdoor-grill-card` | Grill temperature; target and fuel |
+| Pastel Snow Melt | `custom:pastel-snow-melt-card` | Surface temperature; moisture and power |
+| Pastel Septic Tank | `custom:pastel-septic-tank-card` | Tank level; pump and alarm |
+| Pastel Generator | `custom:pastel-generator-card` | Generator state; fuel and output |
+| Pastel NAS | `custom:pastel-nas-card` | System state; storage and disks |
+| Pastel Water Meter | `custom:pastel-water-meter-card` | Daily use; flow and monthly total |
+| Pastel Gas Meter | `custom:pastel-gas-meter-card` | Daily use; flow and monthly total |
+| Pastel Power Panel | `custom:pastel-power-panel-card` | Home power; active circuits and overload |
 
-All thirty-five dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
+All fifty-four dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
 
 ```yaml
 type: custom:pastel-sump-pumps-card
@@ -133,6 +154,8 @@ buttons:
 Doorbell action buttons now use larger touch targets, text and icons on phones. Camera selection and saved button configurations remain the same.
 
 ## Italiano
+
+La versione 1.6 aggiunge diciannove card per dispositivi: Safe, Adjustable Bed, Electric Blanket, Garden Fountain, Window Cleaner, Skylight, Air Compressor, Stairlift, Fish Feeder, Shower, Smart Desk, Outdoor Grill, Snow Melt, Septic Tank, Generator, NAS, Water Meter, Gas Meter e Power Panel. Ognuna offre un disegno grande, colori, nomi, valori ed eventuali pulsanti configurabili. Skylight legge la percentuale di apertura da un’entità `cover` e usa i comandi di posizione supportati. Nessuna entità è preimpostata.
 
 ### Novità 1.5: riscaldamento ambiente
 

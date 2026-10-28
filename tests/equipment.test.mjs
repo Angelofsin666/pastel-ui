@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,heaterCommand,heaterPowerState,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue,wasteReading} from '../src/equipment-model.js';
 
 test('equipment types keep all associations user-supplied',()=>{
- assert.equal(EQUIPMENT_KEYS.length,35);
- assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,35);
+ assert.equal(EQUIPMENT_KEYS.length,54);
+ assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,54);
  for(const profile of Object.values(EQUIPMENT)){
   assert.ok(profile.metrics.length>=2||profile.waste_items);
   assert.ok(Array.isArray(profile.buttons));
@@ -17,6 +17,7 @@ test('equipment types keep all associations user-supplied',()=>{
  assert.equal(EQUIPMENT.doorbell.camera,true);
  assert.equal(EQUIPMENT.fan_heater.heater,true);
  assert.equal(EQUIPMENT.infrared_panel.heater,true);
+ for(const key of ['safe','adjustable_bed','electric_blanket','garden_fountain','window_cleaner','skylight','air_compressor','stairlift','fish_feeder','shower','smart_desk','outdoor_grill','snow_melt','septic_tank','generator','nas','water_meter','gas_meter','power_panel'])assert.ok(EQUIPMENT[key]?.art);
 });
 
 test('heater controls use selected entities and never guess a new temperature',()=>{

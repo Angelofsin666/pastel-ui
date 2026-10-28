@@ -1,3 +1,23 @@
+# Pastel UI v1.6.0
+
+## English
+
+**Twenty-one new cards bring Pastel UI to 77 card types.** Awning and Curtains give motorised fabric covers their own full-size illustrations and comfortable phone controls. The fabric follows the real position from your selected Home Assistant `cover` or percentage sensor, whether changed on the card, by an automation or elsewhere. Use native cover services and a position slider when available, or assign your own scripts to Open, Stop and Close. Names, colours, labels and extra readings are editable.
+
+Nineteen more dedicated cards cover access, comfort, garden, utility and energy devices: Safe, Adjustable Bed, Electric Blanket, Garden Fountain, Window Cleaner, Skylight, Air Compressor, Stairlift, Fish Feeder, Shower, Smart Desk, Outdoor Grill, Snow Melt, Septic Tank, Generator, NAS, Water Meter, Gas Meter and Power Panel. Their full-size Pastel illustrations match the established cards. None assumes your entity IDs; configure the entities and actions in the visual editor. Existing configurations stay compatible.
+
+Tests, build and mobile-width demo checks pass; physical devices were not operated. [Full changelog](CHANGELOG.md) · [Fabric-cover guide](docs/cards/fabric-covers.md) · [Equipment guide](docs/cards/equipment.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Ventuno nuove card portano Pastel UI a 77 tipi.** Awning e Curtains hanno disegni grandi e diversi per tenda da sole e tende interne, con comandi comodi sul telefono. Il tessuto segue la posizione reale della `cover` o del sensore percentuale scelto, anche quando cambia tramite automazioni o altrove. Puoi usare i servizi nativi e il cursore di posizione, quando disponibili, oppure associare i tuoi script ad Apri, Ferma e Chiudi. Nomi, colori, etichette e valori aggiuntivi sono modificabili.
+
+Diciannove altre card dedicate coprono accessi, comfort, giardino, utenze ed energia: Safe, Adjustable Bed, Electric Blanket, Garden Fountain, Window Cleaner, Skylight, Air Compressor, Stairlift, Fish Feeder, Shower, Smart Desk, Outdoor Grill, Snow Melt, Septic Tank, Generator, NAS, Water Meter, Gas Meter e Power Panel. I loro grandi disegni sono coerenti con le altre card Pastel. Nessuna usa entità personali: scegli entità e comandi nell'editor visuale. Le configurazioni precedenti restano compatibili.
+
+Test, compilazione e verifica della demo su telefono superati; nessun dispositivo fisico è stato comandato. [Changelog completo](CHANGELOG.md) · [Guida tende](docs/cards/fabric-covers.md) · [Guida dispositivi](docs/cards/equipment.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.5.0
 
 ## English

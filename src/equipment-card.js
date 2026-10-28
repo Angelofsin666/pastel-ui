@@ -2,6 +2,7 @@ import {html,css} from 'lit-element';
 import {BaseCard,stateLabel} from './base-card.js';
 import {EQUIPMENT,equipmentType,isAvailable,sensorValue,equipmentValue,buttonCommand,heaterCommand,heaterPowerState,percentage,zoneAction,nativeStateLabel,nativeControls,leakSummary,cameraPicture,wasteReading} from './equipment-model.js';
 import {illustration} from './illustrations.js';
+import {coverDevice,coverActionAvailable} from './device-controls-model.js';
 
 export class EquipmentCard extends BaseCard{
  static get properties(){return {...super.properties}}
@@ -36,11 +37,13 @@ export class EquipmentCard extends BaseCard{
   const custom=`${c.background_color?`--p-surface:${c.background_color};`:''}${c.tint_color?`--p-tint:${c.tint_color};`:''}${c.accent_color?`--p-accent:${c.accent_color};`:''}${c.text_color?`--p-ink:${c.text_color};`:''}${c.secondary_text_color?`--p-muted:${c.secondary_text_color};`:''}`;
   const metrics=p.metrics.filter(([key])=>c.metrics?.[key]);
   const native=p.native&&c.hero_entity?nativeControls(p.native,heroState,this.hass.services):[];
+  const cover=p.position&&c.hero_entity?coverDevice(this.hass,{entity:c.hero_entity}):null;
   const cameraAction=p.camera&&c.camera_entity?[{name:'Live',icon:'mdi:video',enabled:isAvailable(this.hass.states[c.camera_entity])}]:[];
   const status=this.status(c,p,heroState);
   return html`<ha-card class=${p.heater?'heater':p.camera?'doorbell':''} style=${accent+custom}>
    <header><div class="icon"><ha-icon icon=${c.icon||p.icon}></ha-icon></div><div class="heading"><h2>${c.title||p.title}</h2><div class="subtitle">${c.subtitle||p.subtitle}</div></div>${status?html`<span class="pill">${status}</span>`:''}</header>
-   ${p.camera?this.camera(c,p):html`<div class="hero">${illustration(p.art)}<div class="right"><div class="reading">${p.native?nativeStateLabel(p.native,heroState?.state):p.waste_items?wasteReading(this.hass,{entity:c.hero_entity}):sensorValue(this.hass,c.hero_entity)}</div><div class="caption">${c.hero_label||p.hero}</div></div></div>`}
+   ${p.camera?this.camera(c,p):html`<div class="hero">${illustration(p.art)}<div class="right"><div class="reading">${p.position?(cover?.position==null?'—':`${cover.position}%`):p.native?nativeStateLabel(p.native,heroState?.state):p.waste_items?wasteReading(this.hass,{entity:c.hero_entity}):sensorValue(this.hass,c.hero_entity)}</div><div class="caption">${c.hero_label||p.hero}</div></div></div>`}
+   ${p.position&&cover?.position!=null?html`<pastel-device-range .value=${cover.position} label="Apertura lucernario" caption="Apertura" .disabled=${this.busy||!coverActionAvailable(this.hass,cover,'set_cover_position')} @value-changed=${e=>this.call('cover.set_cover_position',c.hero_entity,{position:e.detail.value})}></pastel-device-range>`:''}
    ${!p.camera&&percentage(this.hass,c.hero_entity)!==null?html`<div class="level" role="progressbar" aria-label=${c.hero_label||p.hero} aria-valuenow=${percentage(this.hass,c.hero_entity)} aria-valuemin="0" aria-valuemax="100"><span style=${`width:${percentage(this.hass,c.hero_entity)}%`}></span></div>`:''}
    ${metrics.length?html`<div class="metrics">${metrics.map(([key,label])=>html`<button class="metric" @click=${()=>this.info(c.metrics[key])}><small>${c.metric_labels?.[key]||label}</small><strong>${equipmentValue(this.hass,c.metrics[key])}</strong></button>`)}</div>`:''}
    ${p.leak_sensors&&(c.leak_sensors||[]).length?html`<div class="leak-note">${leakSummary(this.hass,c.leak_sensors)}</div>${c.leak_sensors.map(item=>{const state=this.hass.states[item.entity],danger=isAvailable(state)&&state.state==='on';return html`<div class="leak-row"><span>${item.name||state?.attributes?.friendly_name||'Sensore perdita'}</span><strong class=${danger?'danger':''}>${equipmentValue(this.hass,item.entity)}</strong></div>`})}`:''}

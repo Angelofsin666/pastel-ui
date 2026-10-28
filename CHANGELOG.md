@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.6.0 — 21 new cards and moving fabric covers / 21 nuove card e tende animate
+
+### English
+
+- Add **Pastel Awning** and **Pastel Curtains** with large, distinct fabric illustrations. Both follow the actual `cover.current_position` or a user-selected percentage sensor (0–100), including changes made elsewhere in Home Assistant. The fabric transitions visually between reported positions; pressing a button alone does not invent a new state. A native cover can expose a position slider when supported.
+- Both fabric cards have large mobile controls for Open, Stop and Close. Each command can use the native cover service or a selected script, button or switch. Card names, subtitle, icon, palette, button labels/colours and optional metrics are editable. Without a cover, a position sensor plus scripts can drive the card; unconfigured commands remain disabled.
+- Add **19 equipment cards**, bringing the catalog from 56 to **77 types**: Safe, Adjustable Bed, Electric Blanket, Garden Fountain, Window Cleaner, Skylight, Air Compressor, Stairlift, Fish Feeder, Shower, Smart Desk, Outdoor Grill, Snow Melt, Septic Tank, Generator, NAS, Water Meter, Gas Meter and Power Panel. Each has a dedicated full-size Pastel illustration, editable palette, readings, status and flexible controls. Skylight reads a chosen `cover` and exposes its supported native actions and position.
+- Add all 21 types to the Home Assistant card picker and local demo. New defaults contain no personal entity IDs; existing cards and configurations remain compatible. Tests, bundle build and phone-width demo checks pass. Physical devices were not operated during testing.
+
+### Italiano
+
+- Aggiunge **Pastel Awning** e **Pastel Curtains** con grandi disegni diversi per tenda da sole e tende interne. Entrambe seguono la vera posizione `current_position` della `cover` oppure un sensore percentuale scelto dall'utente (0–100), anche se cambia altrove in Home Assistant. Il tessuto si anima tra le posizioni riportate; il pulsante da solo non inventa uno stato. Se supportato dalla `cover`, compare il cursore di posizione.
+- Le due card hanno pulsanti grandi per Apri, Ferma e Chiudi. Ogni comando può usare il servizio nativo o uno script, pulsante o interruttore scelto. Sono modificabili nome, sottotitolo, icona, palette, etichette e colori dei comandi e valori aggiuntivi. Per le tende comandate solo da script puoi associare un sensore di posizione; i comandi non configurati restano disabilitati.
+- Aggiunge **19 card per dispositivi**, portando il catalogo da 56 a **77 tipi**: Safe, Adjustable Bed, Electric Blanket, Garden Fountain, Window Cleaner, Skylight, Air Compressor, Stairlift, Fish Feeder, Shower, Smart Desk, Outdoor Grill, Snow Melt, Septic Tank, Generator, NAS, Water Meter, Gas Meter e Power Panel. Ognuna ha un disegno Pastel grande e dedicato, palette, valori, stato e comandi personalizzabili. Skylight legge una `cover` scelta dall'utente e offre le funzioni native e di posizione supportate.
+- Tutte e 21 sono presenti nel selettore card e nella demo. Nessuna nuova configurazione contiene entità personali; le card e le impostazioni precedenti restano compatibili. Test, compilazione e verifica della demo su schermo di telefono superati. Nessun dispositivo fisico è stato comandato durante i test.
+
 ## 1.5.0 — Room heaters and larger doorbell controls / Riscaldamento ambiente e comandi citofono più grandi
 
 ### English

@@ -18,6 +18,8 @@ import {WeatherEditor,TVEditor} from './weather-tv-editor.js';
 import {ChristmasTreeCard} from './christmas-tree-card.js';
 import {ChristmasTreeEditor} from './christmas-tree-editor.js';
 import {LawnMowerCard,LawnMowerEditor} from './lawn-mower-card.js';
+import {AwningCard,CurtainsCard} from './fabric-cover-card.js';
+import {AwningEditor,CurtainsEditor} from './fabric-cover-editor.js';
 import {EQUIPMENT_CARD_CLASSES} from './equipment-card.js';
 import {EQUIPMENT_EDITOR_CLASSES} from './equipment-editor.js';
 import './legacy/pastel-button-card.js';
@@ -37,6 +39,8 @@ for(const [name,Class] of Object.entries({'pastel-appliance-card':ApplianceCard,
 for(const [name,Class] of [
  ['pastel-device-range',DeviceRange],['pastel-lights-card',LightsCard],['pastel-lights-card-editor',LightsEditor],
  ['pastel-covers-card',CoversCard],['pastel-covers-card-editor',CoversEditor],
+ ['pastel-awning-card',AwningCard],['pastel-awning-card-editor',AwningEditor],
+ ['pastel-curtains-card',CurtainsCard],['pastel-curtains-card-editor',CurtainsEditor],
  ['pastel-weather-card',WeatherCard],['pastel-weather-card-editor',WeatherEditor],
  ['pastel-tv-card',TVCard],['pastel-tv-card-editor',TVEditor],
  ['pastel-christmas-tree-card',ChristmasTreeCard],['pastel-christmas-tree-card-editor',ChristmasTreeEditor],
@@ -52,4 +56,4 @@ for(const [name,Class] of Object.entries({...EQUIPMENT_CARD_CLASSES,...EQUIPMENT
 // Compatibility aliases for the former standalone repositories; no duplicate picker entries.
 for(const [name,Class] of [['light-card',LightsCard],['light-card-editor',LightsEditor],['tapparella-card',CoversCard],['tapparella-card-editor',CoversEditor]])if(!customElements.get(name))customElements.define(name,class extends Class{});
 registerCardCatalog();
-console.info('Pastel UI 1.5.0');
+console.info('Pastel UI 1.6.0');
