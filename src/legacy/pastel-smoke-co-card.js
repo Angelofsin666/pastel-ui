@@ -362,7 +362,7 @@ registerLegacy("pastel-smoke-co-card-editor", PastelSmokeCoCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-smoke-co-card",
-  name: "Pastel Smoke & CO Card",
+  name: "Pastel Smoke & CO",
   description: "Card per sensori fumo/CO con stile pastello, conteggio allarmi e popup dettagli al tap.",
   preview: true,
 });

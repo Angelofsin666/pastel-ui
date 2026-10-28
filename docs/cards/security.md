@@ -1,15 +1,15 @@
-# Pastel Allarme & Riepilogo Sicurezza
+# Pastel Alarm & Riepilogo Sicurezza
 
 Added in **v0.1.0-beta.7**.
 
-![Pastel Allarme with simulated data](../images/alarm.png)
-![Pastel Riepilogo Sicurezza with simulated data](../images/security.png)
+![Pastel Alarm with simulated data](../images/alarm.png)
+![Pastel Security Overview with simulated data](../images/security.png)
 
 ## Italiano
 
 Due card indipendenti nello stile Pastel. Dopo l’aggiornamento HACS ricarica completamente il frontend e cercale in “Aggiungi card”.
 
-### Pastel Allarme
+### Pastel Alarm
 
 Tipo: `custom:pastel-alarm-card`. Il nome iniziale **Protego** è modificabile nel campo **Nome card**. Seleziona il pannello allarme; il suo stato viene mostrato nel badge, nell’illustrazione e nell’evidenziazione dei pulsanti.
 
@@ -55,7 +55,7 @@ buttons:
 
 Per usare solo script, scegli `kind: script` su ogni pulsante e associa lo script corrispondente. `state` serve solo all’evidenziazione e non invia comandi. Non inserire codici o PIN nel file YAML della card.
 
-### Pastel Riepilogo Sicurezza
+### Pastel Security Overview
 
 Tipo: `custom:pastel-security-card`. Titolo, sottotitolo, palette e tutti i riquadri sono personalizzabili. I tipi di riquadro sono:
 
@@ -96,9 +96,9 @@ Le associazioni si fanno dall’editor; non sono richiesti stack-in-card, Mushro
 
 ## English
 
-**Pastel Allarme** (`custom:pastel-alarm-card`) provides an editable title (default Protego), a real alarm-panel state and arbitrary configurable buttons. Each button independently runs a supported native panel action or a chosen script. Names, icons, palettes, ordering and expected active states are editable. State is always read from the panel, never from the last command or the script’s running state. Native capabilities are checked against Home Assistant’s supported-feature bits and available services. Required native codes are requested transiently and never saved in card configuration.
+**Pastel Alarm** (`custom:pastel-alarm-card`) provides an editable title (default Protego), a real alarm-panel state and arbitrary configurable buttons. Each button independently runs a supported native panel action or a chosen script. Names, icons, palettes, ordering and expected active states are editable. State is always read from the panel, never from the last command or the script’s running state. Native capabilities are checked against Home Assistant’s supported-feature bits and available services. Required native codes are requested transiently and never saved in card configuration.
 
-**Pastel Riepilogo Sicurezza** (`custom:pastel-security-card`) supports editable alarm, count and detector tiles. Binary detectors use configured active/normal states; numeric detectors require an explicit user-defined threshold. Separate tiles should be used for different thresholds/units. Missing data is not treated as zero or healthy; unconfigured detectors show “Da associare”. The card displays configured readings and rules rather than assigning environmental safety ratings.
+**Pastel Security Overview** (`custom:pastel-security-card`) supports editable alarm, count and detector tiles. Binary detectors use configured active/normal states; numeric detectors require an explicit user-defined threshold. Separate tiles should be used for different thresholds/units. Missing data is not treated as zero or healthy; unconfigured detectors show “Da associare”. The card displays configured readings and rules rather than assigning environmental safety ratings.
 
 Both cards preserve existing card types and have visual editors. Update Pastel UI through HACS (pre-releases enabled), reload the frontend, then add and configure the cards. Automated/browser validation uses simulated Home Assistant data; no live alarm was armed or disarmed by the tests.
 

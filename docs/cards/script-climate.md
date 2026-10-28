@@ -8,7 +8,7 @@ Display name: **Pastel Climate AC** since beta.8. The existing `custom:pastel-sc
 
 ## Italiano
 
-Card per climatizzatori comandati da script, con lo stesso stile di Pastel pellet stove. Non richiede un’entità `climate` e non sostituisce automaticamente Thermostat o le altre card.
+Card per climatizzatori comandati da script, con lo stesso stile di Pastel Pellet Stove. Non richiede un’entità `climate` e non sostituisce automaticamente Thermostat o le altre card.
 
 ### Configurazione dall’editor
 

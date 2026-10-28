@@ -359,7 +359,7 @@ registerLegacy("pastel-doors-windows-card-editor", PastelDoorsWindowsCardEditor)
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-doors-windows-card",
-  name: "Pastel Doors & Windows Card",
+  name: "Pastel Doors & Windows",
   description: "Card per sensori porte/finestre con stile pastello, conteggio aperti e popup dettagli al tap.",
   preview: true,
 });

@@ -360,7 +360,7 @@ registerLegacy("pastel-motion-presence-card-editor", PastelMotionPresenceCardEdi
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-motion-presence-card",
-  name: "Pastel Motion & Presence Card",
+  name: "Pastel Motion & Presence",
   description: "Card per sensori di movimento/presenza con stile pastello, conteggio attivi e popup dettagli al tap.",
   preview: true,
 });

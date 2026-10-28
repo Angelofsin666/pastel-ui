@@ -1,3 +1,4 @@
+import {registerCardCatalog} from './card-catalog.js';
 import {ApplianceCard,RobotCard} from './appliance-card.js';
 import {ApplianceEditor,RobotEditor} from './appliance-editor.js';
 import {StoveCard} from './stove-card.js';
@@ -21,16 +22,11 @@ import './legacy/pastel-lawn-mower-card.js';
 for(const [name,Class] of Object.entries({'pastel-appliance-card':ApplianceCard,'pastel-appliance-card-editor':ApplianceEditor,'pastel-robot-card':RobotCard,'pastel-robot-card-editor':RobotEditor})){
  if(!customElements.get(name))customElements.define(name,Class);else console.warn(`Pastel UI: ${name} già caricato; rimuovi la vecchia risorsa.`);
 }
-window.customCards=window.customCards||[];
-for(const [type,name,description] of [['pastel-appliance-card','Pastel Appliance','Elettrodomestici, aria e acqua. Associa i controlli del tuo dispositivo.'],['pastel-robot-card','Pastel Robot','Pulizia e giardino, con mappa e zone quando disponibili.']])if(!window.customCards.some(c=>c.type===type))window.customCards.push({type,name,description,preview:true});
-for(const [name,Class] of [['pastel-stove-card',StoveCard],['pastel-stove-card-editor',StoveEditor]])if(!customElements.get(name))customElements.define(name,Class);
-if(!window.customCards.some(c=>c.type==='pastel-stove-card'))window.customCards.push({type:'pastel-stove-card',name:'Pastel pellet stove',description:'Stufa a pellet: script, controlli −/+, stati e livello pellet configurabili.',preview:true});
-console.info('Pastel UI 0.1.0-beta.8');
-
-for(const [name,Class] of [['pastel-script-climate-card',ScriptClimateCard],['pastel-script-climate-card-editor',ScriptClimateEditor]])if(!customElements.get(name))customElements.define(name,Class);
-if(!window.customCards.some(c=>c.type==='pastel-script-climate-card'))window.customCards.push({type:'pastel-script-climate-card',name:'Pastel Climate AC',description:'Climatizzatore comandato da script: pulsanti, icone e sensore temperatura con editor semplice.',preview:true});
-
-const retiredTypes=new Set(['pastel-climate-card','pastel-clima-card','pastel-thermostat-card']);
-window.customCards=window.customCards.filter((card,index,all)=>!retiredTypes.has(card.type)&&all.findIndex(c=>c.type===card.type)===index);
-for(const [name,Class] of [['pastel-alarm-card',AlarmCard],['pastel-alarm-card-editor',AlarmEditor],['pastel-security-card',SecurityCard],['pastel-security-card-editor',SecurityEditor]])if(!customElements.get(name))customElements.define(name,Class);
-for(const [type,name,description] of [['pastel-alarm-card','Pastel Allarme','Nome, script o funzioni native del pannello, icone e colori personalizzabili.'],['pastel-security-card','Pastel Riepilogo Sicurezza','Allarme, aperture e sensori reali con riquadri personalizzabili.']])if(!window.customCards.some(c=>c.type===type))window.customCards.push({type,name,description,preview:true});
+for(const [name,Class] of [
+ ['pastel-stove-card',StoveCard],['pastel-stove-card-editor',StoveEditor],
+ ['pastel-script-climate-card',ScriptClimateCard],['pastel-script-climate-card-editor',ScriptClimateEditor],
+ ['pastel-alarm-card',AlarmCard],['pastel-alarm-card-editor',AlarmEditor],
+ ['pastel-security-card',SecurityCard],['pastel-security-card-editor',SecurityEditor]
+])if(!customElements.get(name))customElements.define(name,Class);
+registerCardCatalog();
+console.info('Pastel UI 0.1.0-beta.9');

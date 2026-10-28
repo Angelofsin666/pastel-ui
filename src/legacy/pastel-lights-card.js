@@ -702,7 +702,7 @@ registerLegacy("pastel-lights-card-editor", PastelLightsCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-lights-card",
-  name: "Pastel Lights Card",
+  name: "Pastel Lights",
   description: "Card per il controllo luci con stile pastello, conteggio SVG e slider luminosità.",
   preview: true,
 });

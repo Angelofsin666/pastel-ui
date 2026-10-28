@@ -437,7 +437,7 @@ registerLegacy("pastel-temp-humidity-card-editor", PastelTempHumidityCardEditor)
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-temp-humidity-card",
-  name: "Pastel Temperature & Humidity Card",
+  name: "Pastel Temperature & Humidity",
   description: "Griglia compatta temperatura/umidità per stanza, ottimizzata per mobile, con stile pastello e colore personalizzabile.",
   preview: true,
 });

@@ -26,13 +26,17 @@ A coordinated collection of Home Assistant cards for lights, climate, appliances
 
 The bundle contains its rendering libraries: there are no runtime CDN imports. Your existing Home Assistant integrations still determine which device functions and data are available.
 
+### Picker fix — beta.9
+
+All 17 card names now use English: **Pastel Alarm**, **Pastel Security Overview**, **Pastel Climate AC**, **Pastel Pellet Stove**, and the same naming convention throughout. This release fixes missing alarm cards in Home Assistant’s picker. Update, fully reload the frontend, and search for **Pastel Alarm** or **Pastel Security Overview**. Saved type IDs and custom titles stay unchanged.
+
 ### Upgrade note — beta.8
 
 Pastel Climate, the old custom-action/IR Climate, and Pastel Thermostat have been removed. Use **Pastel Climate AC**. Existing new AC/Stove configurations keep their type IDs. See [migration](docs/migration.md) before updating a dashboard that still uses a retired type.
 
 ### Installation
 
-Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.8`, or explicitly download `main`.
+Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.9`, or explicitly download `main`.
 
 Verify that the JavaScript module resource is registered as:
 
@@ -79,7 +83,7 @@ Rimosse Pastel Climate, la vecchia Climate con azioni personalizzate/IR e Pastel
 
 ### Installazione
 
-Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.8`, oppure scarica esplicitamente `main`.
+Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.9`, oppure scarica esplicitamente `main`.
 
 Verifica la risorsa JavaScript Module `/hacsfiles/pastel-ui/pastel-ui.js`, poi ricarica l'interfaccia. Aggiungi **Pastel Appliance** o **Pastel Robot** dall'editor visuale, seleziona dispositivo o entità principale e avvia la ricerca. Controlla profilo, dati e comandi proposti prima di applicarli.
 

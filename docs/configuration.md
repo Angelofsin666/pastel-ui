@@ -1,6 +1,6 @@
 # Configuration / Configurazione
 
-## Pastel pellet stove / Pellet Stove
+## Pastel Pellet Stove / Pellet Stove
 
 See the [Stove configuration and visual editor guide](cards/stove.md) for script buttons, minus/plus controls, pellet sensors and state rules.
 

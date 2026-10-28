@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0-beta.9
+
+- Fix missing alarm picker entries: mutate the existing custom-card registry instead of replacing Home Assistant’s retained array.
+- Centralize all 17 public names and English descriptions; use consistent Pastel names without the Card suffix.
+- Preserve type IDs, user configurations, unrelated registry entries and existing metadata extensions.
+- Add regression coverage for cached registry references, duplicate registrations and naming.
+
 ## 0.1.0-beta.8
 
 - **Breaking:** remove the old native Pastel Climate, custom-action/IR Climate and Pastel Thermostat cards, their editors and unused AC image asset.

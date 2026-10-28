@@ -1,14 +1,14 @@
-# Pastel pellet stove / Pellet Stove
+# Pastel Pellet Stove / Pellet Stove
 
 `custom:pastel-stove-card` · Added in **v0.1.0-beta.3**, editor updated in **v0.1.0-beta.5**.
 
-![Pastel pellet stove with simulated Home Assistant data](../images/stove.png)
+![Pastel Pellet Stove with simulated Home Assistant data](../images/stove.png)
 
-Display name: **Pastel pellet stove** since beta.8. The existing `custom:pastel-stove-card` type and saved settings are unchanged.
+Display name: **Pastel Pellet Stove** since beta.8. The existing `custom:pastel-stove-card` type and saved settings are unchanged.
 
 ## Italiano
 
-Una card nello stile delle altre Pastel, con illustrazione a contorno, palette condivisa, stati configurabili, sensore pellet e controlli comandati da script. Dopo l’aggiornamento HACS, ricarica il frontend e scegli **Pastel pellet stove** in “Aggiungi card”.
+Una card nello stile delle altre Pastel, con illustrazione a contorno, palette condivisa, stati configurabili, sensore pellet e controlli comandati da script. Dopo l’aggiornamento HACS, ricarica il frontend e scegli **Pastel Pellet Stove** in “Aggiungi card”.
 
 I campi entità consentono ricerca per nome e inserimento diretto dell’ID. I suggerimenti dei comandi mostrano solo script; il campo pellet accetta qualsiasi entità. Minimo e massimo dei controlli −/+ sono sempre liberi e opzionali.
 
@@ -123,7 +123,7 @@ Per i sensori: `temperature_attribute`, `pellet_attribute`, `ambient_attribute`;
 
 ## English
 
-A configurable pellet-stove card matching the shared Pastel theme. Install **v0.1.0-beta.8** through HACS (pre-releases enabled), reload the frontend and choose **Pastel pellet stove** in the card picker.
+A configurable pellet-stove card matching the shared Pastel theme. Install **v0.1.0-beta.9** through HACS (pre-releases enabled), reload the frontend and choose **Pastel Pellet Stove** in the card picker.
 
 The visual editor supports appearance, arbitrary wrapping action buttons, independent minus/plus script controls, optional pellet and temperature readings, and ordered state rules with AND/OR conditions. Each stepper needs a value entity and separate minus/plus actions. Values update from Home Assistant, never from optimistic frontend increments. Scripts, integrations and helpers remain responsible for operating the stove and reporting its state.
 

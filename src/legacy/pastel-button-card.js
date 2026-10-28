@@ -592,7 +592,7 @@ registerLegacy("pastel-button-card-editor", PastelButtonCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-button-card",
-  name: "Pastel Button Card",
+  name: "Pastel Button",
   description: "Griglia di bottoni pastello personalizzabili: colore, icona, etichetta e azione per ogni bottone. Layout automatico 2 colonne.",
   preview: true,
 });

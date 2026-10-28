@@ -2,7 +2,7 @@
 
 ## Beta.8 — italiano
 
-I nomi delle due card recenti diventano **Pastel Climate AC** e **Pastel pellet stove**. I rispettivi identificativi restano `custom:pastel-script-climate-card` e `custom:pastel-stove-card`: le configurazioni già salvate per queste due card continuano a funzionare.
+I nomi delle due card recenti diventano **Pastel Climate AC** e **Pastel Pellet Stove**. I rispettivi identificativi restano `custom:pastel-script-climate-card` e `custom:pastel-stove-card`: le configurazioni già salvate per queste due card continuano a funzionare.
 
 Sono state rimosse dal pacchetto e dal selettore:
 
@@ -20,7 +20,7 @@ Dopo l’aggiornamento HACS ricarica completamente il frontend. Le altre 15 card
 
 ## Beta.8 — English
 
-The two recent cards are now named **Pastel Climate AC** and **Pastel pellet stove**. Their existing `custom:pastel-script-climate-card` and `custom:pastel-stove-card` type IDs and settings remain unchanged.
+The two recent cards are now named **Pastel Climate AC** and **Pastel Pellet Stove**. Their existing `custom:pastel-script-climate-card` and `custom:pastel-stove-card` type IDs and settings remain unchanged.
 
 The old native `pastel-climate-card`, custom-action/IR `pastel-clima-card`, and `pastel-thermostat-card` have been removed, including their editors. Dashboards that still use these types must be updated to the new AC card. Choose a temperature sensor and script buttons in its editor; no automatic conversion is performed. Native device actions from an old configuration need corresponding Home Assistant scripts because the retained AC card is script-driven.
 

@@ -1,7 +1,7 @@
 [
   [
     "alarm",
-    "Pastel Allarme",
+    "Pastel Alarm",
     {
       "type": "custom:pastel-alarm-card",
       "title": "Protego",
@@ -42,7 +42,7 @@
   ],
   [
     "security",
-    "Pastel Riepilogo Sicurezza",
+    "Pastel Security Overview",
     {
       "type": "custom:pastel-security-card",
       "title": "Riepilogo sicurezza",
@@ -117,7 +117,7 @@
   ],
   [
     "stove",
-    "Pastel pellet stove",
+    "Pastel Pellet Stove",
     {
       "type": "custom:pastel-stove-card",
       "title": "Stufa",

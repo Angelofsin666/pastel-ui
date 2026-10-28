@@ -1,3 +1,7 @@
+## beta.9 registry regression
+
+Home Assistant exports a reference to `window.customCards`; replacing that array leaves subsequent additions invisible to the picker. The regression tests capture the reference before suite registration, verify both alarm entries through that reference, preserve third-party entries and metadata extensions, and check repeat registration and all 17 public names. Browser verification reproduces beta.8’s missing alarm entries and confirms beta.9 renders their default cards and editors using the retained array. The installed Home Assistant resource was checked read-only and matched the published beta.8 bundle before this fix.
+
 # Compatibility and testing / Compatibilità e test
 
 ## Catalog cleanup — v0.1.0-beta.8

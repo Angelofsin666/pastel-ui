@@ -360,7 +360,7 @@ registerLegacy("pastel-water-leak-card-editor", PastelWaterLeakCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-water-leak-card",
-  name: "Pastel Water Leak Card",
+  name: "Pastel Water Leak",
   description: "Card per sensori di perdita acqua con stile pastello, conteggio perdite e popup dettagli al tap.",
   preview: true,
 });

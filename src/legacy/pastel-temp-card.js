@@ -572,7 +572,7 @@ registerLegacy("pastel-temp-card-editor", PastelTempCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type:             "pastel-temp-card",
-  name:             "Pastel Temp Card",
+  name:             "Pastel Temperature",
   description:      "Card temperatura e umidità con sfondo colorato, termometro SVG, media zona e visual editor completo.",
   preview:          true,
   documentationURL: "https://github.com/Angelofsin666/pastel-temp-card",

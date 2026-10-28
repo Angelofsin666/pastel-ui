@@ -366,6 +366,6 @@ registerLegacy("pastel-lawn-mower-card-editor", PastelLawnMowerCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-lawn-mower-card",
-  name: "Pastel Lawn Mower Card",
+  name: "Pastel Lawn Mower",
   description: "Card pastello per robot tagliaerba con controlli, stato lame e zona corrente.",
 });

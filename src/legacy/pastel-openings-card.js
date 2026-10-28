@@ -893,7 +893,7 @@ registerLegacy("pastel-openings-card-editor", PastelOpeningsCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-openings-card",
-  name: "Pastel Openings Card",
+  name: "Pastel Openings",
   description: "Card universale per porte, finestre, cancelli, basculanti — illustrazioni animate, filtri, ordinamento, azioni complete. Parte della suite Pastel.",
   preview: true,
 });

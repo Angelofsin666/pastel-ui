@@ -434,7 +434,7 @@ registerLegacy("pastel-dishwasher-card-editor", PastelDishwasherCardEditor);
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "pastel-dishwasher-card",
-  name: "Pastel Dishwasher Card",
+  name: "Pastel Dishwasher",
   description: "Card lavastoviglie con illustrazione animata, rilevamento stato da consumo o booleano, colore personalizzabile.",
   preview: true,
 });
