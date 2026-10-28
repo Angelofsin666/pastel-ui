@@ -68,7 +68,17 @@ export function appendEquipmentFixtures(add,examples){
   ['toaster','3 / 5','',{remaining:['1 min 20',''],status:['Attivo','']},'In tostatura'],
   ['smart_toothbrush','2','min',{battery:['82','%'],last_brush:['Stamattina','']},'Pronto'],
   ['smart_mirror','21.8','°C',{humidity:['58','%'],light:['70','%']},'Acceso'],
-  ['smart_toilet','37','°C',{water:['38','°C'],lid:['Chiuso','']},'Pronto']
+  ['smart_toilet','37','°C',{water:['38','°C'],lid:['Chiuso','']},'Pronto'],
+  ['humidifier','48','%',{target:['50','%'],water:['72','%'],power:['18','W']},'Automatico'],
+  ['wine_cellar','12.4','°C',{humidity:['58','%'],bottles:['18 / 24',''],target:['12','°C']},'Stabile'],
+  ['water_softener','8','°f',{salt:['64','%'],next_cycle:['2 giorni',''],flow:['12','L/min']},'In servizio'],
+  ['sauna','68','°C',{target:['80','°C'],timer:['25','min'],humidity:['19','%']},'Riscaldamento'],
+  ['electric_fireplace','1.2','kW',{flame:['Livello 3',''],temperature:['22','°C'],target:['23','°C']},'on'],
+  ['parcel_box','1','',{door:['Chiuso',''],last_delivery:['14:20',''],lock:['Bloccata','']},'Pacco presente'],
+  ['smart_scale','72.4','kg',{profile:['Utente 1',''],measured:['Oggi',''],battery:['91','%']},'Pronta'],
+  ['compost_bin','42','°C',{level:['61','%'],humidity:['54','%'],stage:['Maturazione','']},'on'],
+  ['aroma_diffuser','45','min',{water:['55','%'],light:['Calda',''],mode:['Relax','']},'on'],
+  ['bird_feeder','68','%',{visits:['7',''],battery:['82','%'],last_visit:['15:42','']},'Visita recente']
  ];
  for(const [key,value,unit,metrics,status] of newDevices){
   const slug=key.replaceAll('_','-'),hero=add(`sensor.demo_${slug}_hero`,value,EQUIPMENT[key].hero,{unit_of_measurement:unit}),state=add(`sensor.demo_${slug}_status`,status,'Stato '+EQUIPMENT[key].title);
@@ -77,6 +87,7 @@ export function appendEquipmentFixtures(add,examples){
   const config={type:`custom:${equipmentType(key)}`,hero_entity:hero,state_entity:state,metrics:mapped,buttons};
   if(EQUIPMENT[key].fan)config.fan_entity=add(`fan.demo_${slug}`,'on',EQUIPMENT[key].title,{supported_features:3,percentage:40,percentage_step:10,oscillating:true});
   if(key==='air_multiplier'){config.hero_entity='';config.state_entity='';config.buttons=[]}
+  if(key==='bird_feeder')config.camera_entity=add('camera.demo_bird-feeder','idle','Telecamera mangiatoia');
   examples.push([slug,EQUIPMENT[key].name,config]);
  }
  add('cover.demo_skylight','open','Lucernario',{current_position:40,supported_features:15});

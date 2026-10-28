@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.8.0 — Ten more device cards / Dieci nuove card per dispositivi
+
+### English
+
+- Add **Pastel Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser and Bird Feeder**. The catalog now has **95 card types**. All ten have distinct, full-size Pastel line illustrations, editable colours and labels, optional sensor/helper readings and as many configurable action buttons as needed.
+- Bird Feeder can open any user-selected Home Assistant `camera` entity from a dedicated button while retaining its food-level illustration. Every new card reads its status from the selected entity; actions can call scripts, scenes, buttons, switches or automations. Unconfigured actions remain disabled and no personal entity IDs are included.
+- Add the ten cards to the Home Assistant picker and a fictional demo group. Check the mobile layout at 390 px with no horizontal overflow, verify the camera action, run all automated tests and rebuild the bundle. No physical devices were operated.
+
+### Italiano
+
+- Aggiunge **Pastel Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser e Bird Feeder**. Il catalogo arriva a **95 tipi di card**. Tutte e dieci hanno grandi disegni Pastel distinti, colori e nomi modificabili, valori facoltativi da sensori o aiutanti e un numero libero di pulsanti configurabili.
+- Bird Feeder può aprire qualsiasi entità `camera` scelta dall’utente con un pulsante dedicato, mantenendo il disegno e il livello del mangime. Lo stato delle nuove card segue l’entità associata; i comandi possono richiamare script, scene, pulsanti, interruttori o automazioni. I comandi non configurati restano disabilitati e non sono presenti ID personali.
+- Le dieci card sono nel selettore Home Assistant e in una demo con dati fittizi. Verificati layout mobile a 390 px senza scorrimento laterale e comando telecamera; test automatici e compilazione superati. Nessun dispositivo fisico è stato comandato.
+
 ## 1.7.0 — Eight air, kitchen and bathroom cards / Otto card per aria, cucina e bagno
 
 ### English

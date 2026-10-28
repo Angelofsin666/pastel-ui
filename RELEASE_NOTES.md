@@ -1,3 +1,23 @@
+# Pastel UI v1.8.0
+
+## English
+
+**Ten new cards bring Pastel UI to 95 card types:** Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser and Bird Feeder. Each has a large, distinct illustration that matches the collection and controls sized for phones.
+
+Choose your own sensors, helpers, status entity, colours, labels and script or entity actions. Bird Feeder can also open any selected Home Assistant camera without replacing its food-level display. No personal entity IDs are built in. Existing cards and configurations remain compatible.
+
+Automated tests, bundle build and phone-width demo checks pass; physical devices were not operated. [Full changelog](CHANGELOG.md) · [Equipment guide](docs/cards/equipment.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Dieci nuove card portano Pastel UI a 95 tipi:** Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser e Bird Feeder. Ciascuna ha un grande disegno distinto, coerente con la collezione, e comandi comodi sul telefono.
+
+Scegli i tuoi sensori, aiutanti, entità di stato, colori, nomi e azioni script o entità. Bird Feeder può anche aprire qualsiasi telecamera Home Assistant selezionata senza sostituire il livello del mangime. Nessun ID personale è preimpostato. Le card e le configurazioni esistenti restano compatibili.
+
+Test automatici, compilazione e verifica della demo su telefono superati; nessun dispositivo fisico è stato comandato. [Changelog completo](CHANGELOG.md) · [Guida dispositivi](docs/cards/equipment.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.7.0
 
 ## English

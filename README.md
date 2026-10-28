@@ -1,6 +1,6 @@
 # Pastel UI
 
-**One HACS download. 85 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
+**One HACS download. 95 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
 
 [English](#english) · [Italiano](#italiano) · [Gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Configuration](docs/configuration.md) · [Release notes](CHANGELOG.md)
 
@@ -18,7 +18,7 @@
 
 Pastel UI brings lights, covers, climate, security, appliances and everyday sensors into a consistent visual language: soft colour, clear state, generous touch targets and layouts made for phones. Choose the entities you already have; the cards do not create devices, helpers or automations. Actions use Home Assistant services and the state displayed comes from Home Assistant, including changes made elsewhere.
 
-### Explore the 85 cards
+### Explore the 95 cards
 
 | Home & climate | Security & sensors | Entertainment & seasonal |
 |---|---|---|
@@ -27,7 +27,7 @@ Pastel UI brings lights, covers, climate, security, appliances and everyday sens
 
 The [gallery](docs/catalog.md) shows every card with fictional example entities. Appliance covers multiple device profiles, including a water purifier, without adding another card type.
 
-**New in 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot and Waste Collection](docs/cards/equipment.md) join a [native Thermostat](docs/cards/thermostat.md). Waste Collection accepts calendar, sensor, input select or boolean entities; the thermostat adapts to the modes and temperature limits of your chosen `climate` entity.
+**New in 1.8:** [Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser and Bird Feeder](docs/cards/equipment.md) add ten distinct large illustrations and phone-sized controls. Choose your own entities and actions; Bird Feeder can also open any selected Home Assistant camera.
 
 **New in 1.7:** [Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror and Smart Toilet](docs/cards/equipment.md) add eight full-size device cards. The air cards can read and control a selected native `fan` entity, while scripts handle device-specific modes.
 
@@ -35,13 +35,15 @@ The [gallery](docs/catalog.md) shows every card with fictional example entities.
 
 **New in 1.5:** [Fan Heater and Infrared Panel](docs/cards/equipment.md) bring room temperature, target and power readings together with configurable power, temperature and mode commands. Doorbell controls are larger and easier to tap on phones.
 
-**New in 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger and Pool Robot](docs/cards/equipment.md) have dedicated visuals, searchable entity fields and configurable actions. Sump Pumps is designed for basement flood-prevention equipment.
+**New in 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot and Waste Collection](docs/cards/equipment.md) join a [native Thermostat](docs/cards/thermostat.md). Waste Collection accepts calendar, sensor, input select or boolean entities; the thermostat adapts to the modes and temperature limits of your chosen `climate` entity.
 
 **New in 1.3.1:** [Pellet Stove](docs/cards/stove.md) can now show a selected `counter` helper as “Sacchi disponibili”; the card only reads the helper, so your refill automation remains in Home Assistant.
 
 **New in 1.3:** [Garage & Gate, Doorbell, Smart Lock, Air Quality and Water Safety](docs/cards/equipment.md) add native controls, camera selection and leak monitoring. The garage control is labelled “Basculante” by default, and Doorbell accepts any `camera` entity.
 
 **New in 1.2:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery](docs/cards/equipment.md) add eleven specialist cards. Irrigation supports any number of individually monitored zones.
+
+**New in 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger and Pool Robot](docs/cards/equipment.md) have dedicated visuals, searchable entity fields and configurable actions. Sump Pumps is designed for basement flood-prevention equipment.
 
 ### Make it yours
 
@@ -71,7 +73,7 @@ Pastel UI was developed with assistance from AI tools. Design decisions, code re
 
 Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensori in uno stile coerente: colori tenui, stati leggibili, comandi comodi sul telefono. Scegli le entità già presenti nel tuo Home Assistant; le card non creano dispositivi, aiutanti o automazioni. I comandi usano i servizi di Home Assistant e i valori mostrati seguono le entità, anche quando cambiano altrove.
 
-### Scopri le 85 card
+### Scopri le 95 card
 
 | Casa e clima | Sicurezza e sensori | Intrattenimento e feste |
 |---|---|---|
@@ -80,7 +82,7 @@ Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensor
 
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
 
-**Novità 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot e Waste Collection](docs/cards/equipment.md) si aggiungono al [Termostato nativo](docs/cards/thermostat.md). La raccolta rifiuti legge calendari, sensori, `input_select` o booleani; il termostato segue le modalità e i limiti dell’entità `climate` scelta.
+**Novità 1.8:** [Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser e Bird Feeder](docs/cards/equipment.md) aggiungono dieci grandi disegni dedicati e pulsanti comodi sul telefono. Scegli le tue entità e azioni; Bird Feeder può anche aprire qualsiasi telecamera Home Assistant selezionata.
 
 **Novità 1.7:** [Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror e Smart Toilet](docs/cards/equipment.md) aggiungono otto card con disegni grandi. Le card per l’aria possono leggere e comandare un’entità `fan` scelta dall’utente; gli script gestiscono le modalità specifiche.
 
@@ -88,13 +90,15 @@ La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance com
 
 **Novità 1.5:** [Fan Heater e Infrared Panel](docs/cards/equipment.md) mostrano temperatura ambiente, temperatura impostata e consumo, con comandi configurabili per accensione, temperatura e modalità. I pulsanti del citofono sono più grandi e comodi sul telefono.
 
-**Novità 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger e Pool Robot](docs/cards/equipment.md) hanno disegni dedicati, ricerca delle entità e comandi configurabili. Sump Pumps è pensata per le pompe anti-allagamento dei locali interrati.
+**Novità 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot e Waste Collection](docs/cards/equipment.md) si aggiungono al [Termostato nativo](docs/cards/thermostat.md). La raccolta rifiuti legge calendari, sensori, `input_select` o booleani; il termostato segue le modalità e i limiti dell’entità `climate` scelta.
 
 **Novità 1.3.1:** [Pellet Stove](docs/cards/stove.md) può mostrare un aiutante `counter` scelto dall’utente come “Sacchi disponibili”. La card legge solo il valore; l’automazione del rabbocco resta in Home Assistant.
 
 **Novità 1.3:** [Garage & Gate, Doorbell, Smart Lock, Air Quality e Water Safety](docs/cards/equipment.md) aggiungono comandi nativi, scelta della telecamera e monitoraggio perdite. Il comando garage si chiama “Basculante” per impostazione iniziale; Doorbell accetta qualsiasi entità `camera`.
 
 **Novità 1.2:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar e Home Battery](docs/cards/equipment.md) aggiungono undici card dedicate. Irrigation gestisce un numero libero di zone monitorate singolarmente.
+
+**Novità 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger e Pool Robot](docs/cards/equipment.md) hanno disegni dedicati, ricerca delle entità e comandi configurabili. Sump Pumps è pensata per le pompe anti-allagamento dei locali interrati.
 
 ### Personalizzala
 
