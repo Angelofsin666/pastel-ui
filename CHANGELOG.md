@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.6
+
+- Add Pastel Clima Script, a script-driven air-conditioner card matching the shared Pastel/Stove style.
+- Simple visual editor: temperature sensor search, script-only button search, visual icon grid, editable names, card/button palettes and arbitrary wrapping buttons.
+- Optional real-state helpers for the header and button indicators; script running/idle state never implies HVAC power.
+- Preserve existing Thermostat, native Climate and custom-action card types. Add simulated unit/browser coverage and bilingual documentation.
+- Nuova card Clima Script con editor semplice, scelta visiva delle icone, script e sensore di temperatura.
+
 ## 0.1.0-beta.5
 
 - Expose a clearly labelled numeric-helper field in every stove minus/plus control; suggestions include only counter and input_number helpers.

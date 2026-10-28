@@ -1,5 +1,9 @@
 # Compatibility and testing / Compatibilità e test
 
+## Script Climate — v0.1.0-beta.6
+
+Nine added unit tests cover temperature-sensor filtering, script availability and dispatch, service errors, live readings, optional real-state indicators, editor filtering and button edits. Chromium verifies script calls, changing sensor readings, 320px/390px layouts in light/dark themes, fifteen wrapping buttons, unavailable scripts, script/temperature suggestions, visual icon selection, renaming, per-button colors, reordering and saved configurations. All tests use simulated Home Assistant data; no air conditioner was operated.
+
 ## Helper synchronization — v0.1.0-beta.5
 
 Unit coverage verifies per-control helper filtering, a shared helper source for the control and upper temperature metric, compatibility with prior configurations, and exclusive/removable temperature linkage. Chromium checks verify selecting and saving helpers, real script service dispatch with simulated counter updates, external counter changes, and unavailable values. All checks use simulated Home Assistant data, without operating a physical stove.

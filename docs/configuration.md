@@ -4,6 +4,10 @@
 
 See the [Stove configuration and visual editor guide](cards/stove.md) for script buttons, minus/plus controls, pellet sensors and state rules.
 
+## Pastel Clima Script
+
+See the [Script Climate editor and configuration guide](cards/script-climate.md) for script-only buttons, visual icons and temperature sensors.
+
 ## English
 
 ### Appliance and Robot

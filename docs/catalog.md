@@ -4,10 +4,11 @@
 
 ## English
 
-Seventeen card types, including Appliance, Robot and Pellet Stove. The water-purifier example uses Appliance. Each page contains a rendered example, configuration and Italian translation.
+Eighteen card types, including Appliance, Robot, Pellet Stove and Script Climate. The water-purifier example uses Appliance. Each page contains a rendered example, configuration and Italian translation.
 
 | Card | Type |
 |---|---|
+| [Pastel Clima Script](cards/script-climate.md) | `custom:pastel-script-climate-card` |
 | [Pastel Stufa](cards/stove.md) | `custom:pastel-stove-card` |
 | [Pastel Appliance](cards/appliance.md) | `custom:pastel-appliance-card` |
 | [Water purifier](cards/water.md) | `custom:pastel-appliance-card` |
@@ -29,4 +30,4 @@ Seventeen card types, including Appliance, Robot and Pellet Stove. The water-pur
 
 ## Italiano
 
-Diciassette tipi di card, inclusa la nuova Pastel Stufa. L’esempio del depuratore usa Appliance. Ogni pagina contiene immagine, configurazione e traduzione italiana. Tutte le immagini usano dati fittizi.
+Diciotto tipi di card, incluse Pastel Stufa e Pastel Clima Script. L’esempio del depuratore usa Appliance. Ogni pagina contiene immagine, configurazione e traduzione italiana. Tutte le immagini usano dati fittizi.

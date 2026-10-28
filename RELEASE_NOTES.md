@@ -1,17 +1,21 @@
 ## Italiano
 
-Correzione della configurazione e sincronizzazione dei valori in **Pastel Stufa**.
+Nuova **Pastel Clima Script**, coerente con lo stile di Pastel Stufa, per climatizzatori comandati da script.
 
-- Ogni controllo −/+ espone **Aiutante del valore** con ricerca e suggerimenti dei soli `counter` e `input_number`.
-- Seleziona l’aiutante modificato dagli script: il numero tra i tasti segue il suo stato in Home Assistant, anche per modifiche esterne.
-- Per la temperatura attiva **Mostra questo aiutante anche come temperatura impostata**: il riquadro superiore e il controllo leggono la stessa sorgente.
-- Script +/− e aiutante visualizzato rimangono associazioni distinte. La card non modifica direttamente i counter.
-- Minimo e massimo restano liberi e opzionali. Le associazioni già salvate restano compatibili.
+- Scegli il sensore di temperatura da suggerimenti filtrati ai sensori di temperatura, oppure scrivine l’ID.
+- Aggiungi pulsanti, rinominali e scegli lo script da un elenco dei soli script.
+- Scegli le icone da una griglia visiva e la palette della card o dei singoli pulsanti.
+- Riordina o rimuovi i pulsanti; nessun numero fisso di funzioni.
+- Badge e indicatori opzionali usano entità di stato reali. Uno script `off` non viene interpretato come climatizzatore spento.
 
-Dopo l’aggiornamento **ricarica completamente il frontend Home Assistant**, poi apri la configurazione di ogni controllo −/+ e associa il relativo aiutante. Non devi ricreare la card. Seleziona la spunta temperatura solo sul controllo che deve alimentare il riquadro superiore.
+Dopo l’aggiornamento **ricarica completamente il frontend**, quindi scegli **Pastel Clima Script** in “Aggiungi card”. La nuova card non sostituisce automaticamente Pastel Thermostat: associa il tuo sensore e gli script nell’editor. Nessuna modifica necessaria alle card esistenti.
 
-Per questa release abilita le versioni preliminari di Pastel UI in HACS; se non compare, usa “Aggiorna informazioni”. Test automatici e browser eseguiti con dati simulati: nessun dispositivo reale azionato.
+Questa è una release preliminare: abilita le beta di Pastel UI in HACS e usa “Aggiorna informazioni” se non compare. Test automatici e browser con dati simulati; nessun climatizzatore reale azionato.
+
+[Configurazione e guida](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/cards/script-climate.md).
 
 ## English
 
-Each stove stepper now exposes a clearly labelled numeric-helper field with counter/input_number suggestions. Link one stepper to the upper target-temperature metric using `show_as_temperature: true` so both displays follow the same Home Assistant helper. Script actions remain separate and no optimistic increments or direct counter commands are introduced. Existing configurations and optional user-defined bounds are preserved. Reload the frontend after updating, then select the helper in each stepper. Automated and browser tests use simulated Home Assistant data; HACS pre-releases must be enabled.
+Adds **Pastel Clima Script**, a script-driven air-conditioner card with a simple visual editor, temperature-only sensor suggestions, script-only buttons, a visual icon grid, editable names and card/button palettes. Arbitrary button counts and optional real-state helpers are supported. Script idle/running never implies HVAC power. Existing cards remain compatible.
+
+Reload the frontend after updating and add Pastel Clima Script, then choose your sensor and scripts. HACS pre-releases must be enabled. Automated/browser tests use simulated Home Assistant data; no physical air conditioner was operated.
