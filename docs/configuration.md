@@ -1,8 +1,12 @@
-## Lights and Covers — beta.11
+## Lights and Covers
 
 The new mobile controls are documented in [Pastel Lights](cards/lights.md) and [Pastel Covers](cards/covers.md). Standalone `light-card` and `tapparella-card` configurations are accepted by the suite through compatibility aliases; remove the old resource modules to avoid registration conflicts.
 
 # Configuration / Configurazione
+
+## Pastel Christmas Tree / Albero di Natale
+
+See the [Christmas Tree guide](cards/christmas-tree.md) for the configurable garland, script/scene atmospheres, live power state and brightness.
 
 ## Pastel Pellet Stove / Pellet Stove
 

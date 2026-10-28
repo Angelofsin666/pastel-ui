@@ -61,6 +61,12 @@ export const CARD_CATALOG = [
     "preview": true
   },
   {
+    "type": "pastel-christmas-tree-card",
+    "name": "Pastel Christmas Tree",
+    "description": "Christmas garland with live light status, brightness and customizable atmospheres.",
+    "preview": true
+  },
+  {
     "type": "pastel-button-card",
     "name": "Pastel Button",
     "description": "Customizable action buttons.",

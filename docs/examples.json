@@ -312,6 +312,44 @@
     }
   ],
   [
+    "christmas-tree",
+    "Pastel Christmas Tree",
+    {
+      "type": "custom:pastel-christmas-tree-card",
+      "title": "Christmas Tree",
+      "subtitle": "Living room lights",
+      "color": "amber",
+      "entity": "light.demo_tree",
+      "mode_entity": "input_select.demo_tree_mode",
+      "buttons": [
+        {
+          "name": "Warm",
+          "entity": "script.demo_tree_warm",
+          "icon": "mdi:fire",
+          "active_state": "warm"
+        },
+        {
+          "name": "Multicolour",
+          "entity": "script.demo_tree_multicolour",
+          "icon": "mdi:string-lights",
+          "active_state": "multicolour"
+        },
+        {
+          "name": "Sparkle",
+          "entity": "script.demo_tree_sparkle",
+          "icon": "mdi:star-four-points",
+          "active_state": "sparkle"
+        },
+        {
+          "name": "Night",
+          "entity": "script.demo_tree_night",
+          "icon": "mdi:weather-night",
+          "active_state": "night"
+        }
+      ]
+    }
+  ],
+  [
     "button",
     "Pastel Button",
     {

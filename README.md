@@ -1,116 +1,87 @@
 # Pastel UI
 
-A coordinated collection of Home Assistant cards for lights, climate, appliances, robots and household sensors. One HACS installation with 19 active card types.
+**One HACS download. Twenty coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
 
-[English](#english) · [Italiano](#italiano) · [Card gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Migration](docs/migration.md)
+[English](#english) · [Italiano](#italiano) · [Gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Configuration](docs/configuration.md) · [Release notes](CHANGELOG.md)
 
-[![Open your Home Assistant and add Pastel UI to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Angelofsin666&repository=pastel-ui&category=plugin)
+[![Add Pastel UI to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Angelofsin666&repository=pastel-ui&category=plugin)
 
-![Pastel UI with simulated appliance, water purifier and robot data](docs/images/overview.png)
+![Pastel UI cards with simulated Home Assistant data](docs/images/overview.png)
+
+| Mobile lighting | Roller shutters | Christmas garland |
+|---|---|---|
+| ![Pastel Lights demo](docs/images/lights.png) | ![Pastel Covers demo](docs/images/covers.png) | ![Pastel Christmas Tree demo](docs/images/christmas-tree.png) |
 
 ## English
 
-**Status: 0.1 beta.** The cards have been tested with simulated Home Assistant data. Real-device integration testing is the next step. This is a custom HACS repository, not a Home Assistant built-in feature or a HACS default repository.
+### A dashboard that feels like one product
 
-### What's inside
+Pastel UI brings lights, covers, climate, security, appliances and everyday sensors into a consistent visual language: soft colour, clear state, generous touch targets and layouts made for phones. Choose the entities you already have; the cards do not create devices, helpers or automations. Actions use Home Assistant services and the state displayed comes from Home Assistant, including changes made elsewhere.
 
-- **Alarm & Security:** configurable native/script alarm buttons and a security overview with real alarm, opening-count and detector entities. [Configuration](docs/cards/security.md).
+### Explore the 20 cards
 
-- **Script Climate:** script buttons with a visual icon picker, editable labels and colors, and a temperature sensor. [Configuration](docs/cards/script-climate.md).
+| Home & climate | Security & sensors | Entertainment & seasonal |
+|---|---|---|
+| [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Climate AC](docs/cards/script-climate.md) · [Pellet Stove](docs/cards/stove.md) · [Temperature](docs/cards/temp.md) | [Alarm and Security Overview](docs/cards/security.md) · [Openings](docs/cards/openings.md) · [Doors & Windows](docs/cards/doors-windows.md) · [Motion & Presence](docs/cards/motion-presence.md) · [Water Leak](docs/cards/water-leak.md) · [Smoke & CO](docs/cards/smoke-co.md) | [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md) · [Christmas Tree](docs/cards/christmas-tree.md) |
+| [Appliance](docs/cards/appliance.md) · [Robot](docs/cards/robot.md) · [Dishwasher](docs/cards/dishwasher.md) · [Lawn Mower](docs/cards/lawn-mower.md) | [Button](docs/cards/button.md) | |
 
-- **Pellet Stove:** configurable script buttons, independent minus/plus controls, pellet percentage and ordered state rules with timers. [Configuration](docs/cards/stove.md).
+The [gallery](docs/catalog.md) shows every card with fictional example entities. Appliance covers multiple device profiles, including a water purifier, without adding another card type.
 
-- **Appliance:** choose a device or entity, review related sensors and controls, and save the associations. Profiles cover laundry, kitchen appliances, air treatment, water heaters and water purifiers.
-- **Robot:** capability-based vacuum and mower controls, optional map image, and room/zone selectors or existing scripts/buttons.
-- **Weather and TV:** live weather forecasts and controls for media players, matched to the features available on each device. [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md).
-- **Existing Pastel cards:** lights, buttons, openings, doors/windows, motion, leaks, smoke/CO, temperature, humidity, dishwasher and mower keep their current type names.
+### Make it yours
 
-The bundle contains its rendering libraries: there are no runtime CDN imports. Your existing Home Assistant integrations still determine which device functions and data are available.
+Visual editors let you select relevant Home Assistant entities, rename cards and controls, pick palettes, and configure the available options. Script-driven cards are particularly flexible: **Climate AC** can expose any number of script buttons; **Pellet Stove** combines script controls with helper-backed temperature and flame values; **Alarm** supports native panel commands or scripts; **Christmas Tree** accepts any number of script or scene atmospheres. The garland reads its state from your chosen light or switch, supports brightness when the light does, and can highlight an atmosphere through a chosen helper. The examples never point to a personal installation.
 
-### Lights, Covers and one repository — beta.11
+A device's integration still decides which commands and measurements exist. Some advanced configuration uses YAML. Card labels in the current visual editors are primarily Italian; the installation and guides are bilingual.
 
-**Pastel Lights** now uses the approved mobile list, large controls and full-width sliders. **Pastel Covers** adds roller shutters with native group/individual commands and the approved rolling-shutter illustration. The former `light-card` and `tapparella-card` type IDs remain compatibility aliases inside Pastel UI; remove their standalone resources to load the new versions. [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Migration](docs/migration.md).
+### Install in HACS
 
-All card development is consolidated in **pastel-ui**. Use this repository for HACS and future updates.
+Pastel UI is currently a **custom HACS Dashboard repository**. It is not built into Home Assistant or included in HACS by default.
 
-### Weather and TV — beta.12
+1. Install [HACS](https://hacs.xyz/) if needed. Open the blue button above, or add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**.
+2. Download the latest stable release. Confirm that Home Assistant has one JavaScript module resource: `/hacsfiles/pastel-ui/pastel-ui.js`.
+3. Reload the dashboard, add a Pastel card from the picker, then choose **your** entities in its editor.
 
-**Pastel Weather** shows actual readings and live daily forecasts from a selected `weather.*` entity. **Pastel TV** offers power, playback, volume and input source from a selected `media_player.*` entity, according to its supported features. Both use visual editors and Pastel colors. The Christmas tree card is still being designed.
+If you used standalone Pastel cards, read the [migration guide](docs/migration.md) before removing their old resources. Manual installation, cache troubleshooting and resource details are in the [installation guide](docs/installation.md).
 
-### Temperature redesign — beta.10
+### Help shape Pastel UI
 
-**Pastel Temperature** now uses room tiles, shared palettes, a thermometer summary, optional humidity and current minimum/maximum readings. Its saved type ID and sensor associations remain valid. **Pastel Temperature & Humidity** is removed; replace retired cards by choosing separate sensors in Pastel Temperature. [Configuration and migration](docs/cards/temp.md).
+**Card requests, design suggestions, integration reports and fixes are welcome.** [Open an issue](https://github.com/Angelofsin666/pastel-ui/issues) describing the device, integration and desired behaviour; please remove private entity IDs, credentials and addresses. [Contributions](CONTRIBUTING.md) are welcome too. If Pastel UI makes your dashboard better, a [GitHub star](https://github.com/Angelofsin666/pastel-ui) helps others discover it.
 
-### Picker fix — beta.9
-
-All card names use English: **Pastel Alarm**, **Pastel Security Overview**, **Pastel Climate AC**, **Pastel Pellet Stove**, and the same naming convention throughout. This release fixes missing alarm cards in Home Assistant’s picker. Update, fully reload the frontend, and search for **Pastel Alarm** or **Pastel Security Overview**. Saved type IDs and custom titles stay unchanged.
-
-### Upgrade note — beta.8
-
-Pastel Climate, the old custom-action/IR Climate, and Pastel Thermostat have been removed. Use **Pastel Climate AC**. Existing new AC/Stove configurations keep their type IDs. See [migration](docs/migration.md) before updating a dashboard that still uses a retired type.
-
-### Installation
-
-Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.12`, or explicitly download `main`.
-
-Verify that the JavaScript module resource is registered as:
-
-```yaml
-url: /hacsfiles/pastel-ui/pastel-ui.js
-type: module
-```
-
-Reload the frontend, then add a **Pastel Appliance** or **Pastel Robot** card through the visual editor. The editor automatically lists recognized appliances. Choose one to review its related sensors and controls; manual selection remains available. Review the proposed profile, measurements and controls before applying them. The beta editor currently uses Italian labels; the installation and card documentation are bilingual.
-
-Already using individual Pastel cards? Read the [migration guide](docs/migration.md) before switching resources. You should not need to rebuild the dashboard, but resource paths and custom image overrides must be checked.
-
-### Know what is supported
-
-Discovery uses Home Assistant's device and entity registries. Ambiguous matches are left for you to choose. You can assign sensors from an external power meter and add controls manually. A profile does not create entities or unlock unsupported device commands.
-
-Power (W/kW) and energy (Wh/kWh) are separate. Cycle energy requires an existing cycle-energy sensor; this frontend does not calculate persistent cycle totals. Robot maps are images supplied by the integration, not an interactive floor-plan editor. Zone commands use the selectors, buttons or scripts you configure; there are no brand-specific map adapters yet.
-
-[Explore all cards](docs/catalog.md) · [Configuration reference](docs/configuration.md) · [Compatibility and test status](docs/testing.md)
-
-If you try the beta, please report the integration name, device model and which associations worked. Remove personal entity IDs and credentials from reports. If the collection is useful to you, a GitHub star helps others find it.
+Pastel UI was developed with assistance from AI tools. Design decisions, code review and publication remain the maintainer's responsibility. The [test and compatibility notes](docs/testing.md) describe what has and has not been verified. The project is community-maintained and is not affiliated with or endorsed by Home Assistant.
 
 ## Italiano
 
-**Stato: beta 0.1.** Le card sono state provate con dati Home Assistant simulati. Il prossimo passo è la verifica con dispositivi reali. Questa è una repository personalizzata HACS, non una funzionalità ufficiale di Home Assistant né una repository predefinita di HACS.
+### Una dashboard che sembra un unico prodotto
 
-### Cosa include
+Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensori in uno stile coerente: colori tenui, stati leggibili, comandi comodi sul telefono. Scegli le entità già presenti nel tuo Home Assistant; le card non creano dispositivi, aiutanti o automazioni. I comandi usano i servizi di Home Assistant e i valori mostrati seguono le entità, anche quando cambiano altrove.
 
-- **Allarme e Sicurezza:** pulsanti nativi o script e riepilogo di allarme, aperture e sensori reali, con editor visuali. [Configurazione](docs/cards/security.md).
+### Scopri le 20 card
 
-- **Clima Script:** pulsanti script con scelta visiva delle icone, nomi e colori personalizzabili e sensore di temperatura. [Configurazione](docs/cards/script-climate.md).
+| Casa e clima | Sicurezza e sensori | Intrattenimento e feste |
+|---|---|---|
+| [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Climate AC](docs/cards/script-climate.md) · [Pellet Stove](docs/cards/stove.md) · [Temperature](docs/cards/temp.md) | [Alarm e Security Overview](docs/cards/security.md) · [Openings](docs/cards/openings.md) · [Doors & Windows](docs/cards/doors-windows.md) · [Motion & Presence](docs/cards/motion-presence.md) · [Water Leak](docs/cards/water-leak.md) · [Smoke & CO](docs/cards/smoke-co.md) | [Weather](docs/cards/weather.md) · [TV](docs/cards/tv.md) · [Christmas Tree](docs/cards/christmas-tree.md) |
+| [Appliance](docs/cards/appliance.md) · [Robot](docs/cards/robot.md) · [Dishwasher](docs/cards/dishwasher.md) · [Lawn Mower](docs/cards/lawn-mower.md) | [Button](docs/cards/button.md) | |
 
-- **Stufa a pellet:** pulsanti script configurabili, controlli −/+, percentuale pellet e regole di stato con timer. [Configurazione](docs/cards/stove.md).
+La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
 
-- **Appliance:** scegli un dispositivo o un'entità, controlla sensori e comandi associati, poi salva. I profili comprendono lavanderia, cucina, trattamento aria, scaldacqua e depuratori d'acqua.
-- **Robot:** comandi per aspirapolvere e tagliaerba basati sulle capacità dichiarate, immagine della mappa opzionale e selettori o script/pulsanti per stanze e zone.
-- **Meteo e TV:** previsioni dal meteo di Home Assistant e comandi TV disponibili per il dispositivo scelto. [Meteo](docs/cards/weather.md) · [TV](docs/cards/tv.md).
-- **Card Pastel esistenti:** luci, pulsanti, aperture, porte/finestre, presenza, perdite, fumo/CO, temperatura, umidità, lavastoviglie e tagliaerba mantengono i nomi attuali.
+### Personalizzala
 
-Il pacchetto include le librerie grafiche, senza scaricarle da CDN durante l'uso. Le integrazioni di Home Assistant continuano a determinare le funzioni effettivamente disponibili.
+Gli editor visuali permettono di cercare le entità pertinenti, rinominare card e controlli, scegliere palette e configurare le funzioni. **Climate AC** accetta tutti i pulsanti script necessari; **Pellet Stove** abbina script e valori letti dagli aiutanti; **Alarm** usa comandi nativi o script; **Christmas Tree** offre tutte le atmosfere script o scena che vuoi. La ghirlanda legge lo stato dalla luce o dall'interruttore scelto, mostra la luminosità se disponibile e può evidenziare un'atmosfera con un aiutante. Gli esempi non richiamano l'impianto personale dello sviluppatore.
 
-### Aggiornamento beta.8
+Le funzioni disponibili dipendono dall'integrazione del dispositivo. Alcune opzioni avanzate usano YAML. Le etichette degli editor visuali sono soprattutto in italiano; installazione e guide sono bilingui.
 
-Rimosse Pastel Climate, la vecchia Climate con azioni personalizzate/IR e Pastel Thermostat. Resta **Pastel Climate AC**. Le configurazioni delle nuove AC e Stufa mantengono i propri identificativi. Per dashboard con card rimosse leggi la [migrazione](docs/migration.md).
+### Installa da HACS
 
-### Installazione
+Pastel UI è attualmente una **repository personalizzata HACS, categoria Dashboard**. Non è integrata in Home Assistant né nell'elenco predefinito di HACS.
 
-Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.12`, oppure scarica esplicitamente `main`.
+1. Installa [HACS](https://hacs.xyz/) se serve. Usa il pulsante azzurro in alto oppure aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**.
+2. Scarica l'ultima versione stabile. Controlla che ci sia una sola risorsa JavaScript Module: `/hacsfiles/pastel-ui/pastel-ui.js`.
+3. Ricarica la dashboard, aggiungi una card Pastel e associa le **tue** entità nell'editor.
 
-Verifica la risorsa JavaScript Module `/hacsfiles/pastel-ui/pastel-ui.js`, poi ricarica l'interfaccia. Aggiungi **Pastel Appliance** o **Pastel Robot** dall'editor visuale, seleziona dispositivo o entità principale e avvia la ricerca. Controlla profilo, dati e comandi proposti prima di applicarli.
+Se usavi card Pastel singole, segui la [guida alla migrazione](docs/migration.md) prima di togliere le vecchie risorse. Installazione manuale e problemi di cache sono spiegati nella [guida completa](docs/installation.md).
 
-Se usi già le singole card, segui la [guida alla migrazione](docs/migration.md). Non dovrebbe essere necessario ricostruire la dashboard, ma vanno verificati risorse e percorsi delle immagini personalizzate.
+### Facciamola crescere insieme
 
-### Compatibilità
+**Sono benvenute richieste di nuove card, modifiche grafiche, segnalazioni sulle integrazioni e correzioni.** [Apri una issue](https://github.com/Angelofsin666/pastel-ui/issues) indicando dispositivo, integrazione e comportamento desiderato; togli ID privati, credenziali e indirizzi. Puoi anche [contribuire](CONTRIBUTING.md). Se Pastel UI ti piace, una [stella su GitHub](https://github.com/Angelofsin666/pastel-ui) aiuta altre persone a scoprirla.
 
-Il riconoscimento usa i registri dispositivi ed entità. Le corrispondenze ambigue restano da scegliere. Puoi collegare un misuratore esterno e aggiungere comandi manualmente; il profilo non crea nuove entità o capacità.
-
-Potenza ed energia sono separate. L'energia del ciclo richiede un sensore dedicato: la card non conserva totali persistenti. La mappa del robot è un'immagine fornita dall'integrazione; le zone usano selettori, pulsanti o script configurati. Non sono ancora presenti adattatori per mappe specifici dei singoli marchi.
-
-[Galleria](docs/catalog.md) · [Configurazione](docs/configuration.md) · [Stato dei test](docs/testing.md)
-
-Tutte le immagini mostrano dati fittizi. Segnalazioni su modello, integrazione e associazioni ci aiutano a migliorare la compatibilità. Se la suite ti è utile, una stella su GitHub aiuta a farla conoscere.
+Pastel UI è stata sviluppata con l'aiuto di strumenti di IA. Le scelte di design, la revisione del codice e la pubblicazione restano responsabilità del manutentore. Le [note sui test](docs/testing.md) spiegano cosa è stato verificato e cosa no. Il progetto è mantenuto dalla comunità e non è affiliato né approvato da Home Assistant.

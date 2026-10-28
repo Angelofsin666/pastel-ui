@@ -1,3 +1,19 @@
+## v1.0.0 — current validation / verifiche attuali
+
+### English
+
+`npm run check` runs all automated test suites and builds the distributable bundle. The new Christmas Tree tests cover real light/helper readback, external state changes, unavailable entities, action availability and configuration validation. Local Chromium checks rendered the Christmas Tree card at 320, 390 and 430 px with no horizontal overflow or browser errors, and opened its editor with four configurable atmospheres. The screenshot uses fictional demo data. The full suite and its legacy cards have been exercised in simulated browser/tests across the beta releases; this is not a claim that every physical integration has been verified. The maintainer checked HACS download and frontend resource registration on a live Home Assistant installation during beta.12; the 1.0 Christmas Tree has not yet controlled a physical tree.
+
+The source audit found no fixed personal entity IDs in `src/`. All live entity selection comes from user configuration or Home Assistant state/registries. Example `*.demo_*` IDs are confined to demo fixtures/documentation. The generic Alarm stub no longer names the maintainer’s alarm; saved titles are preserved. Some advanced controls require YAML configuration.
+
+### Italiano
+
+`npm run check` esegue tutti i test automatici e costruisce il pacchetto. I nuovi test Christmas Tree coprono lettura reale di luce/aiutante, cambi esterni, entità non disponibili, azioni e configurazione. Chromium locale ha renderizzato la card a 320, 390 e 430 px senza errori né scorrimento orizzontale e ha aperto l’editor con quattro atmosfere. L’immagine usa dati fittizi. Le altre card sono state controllate con test/demo simulati durante le beta; non significa che ogni integrazione fisica sia verificata. Durante la beta.12 il manutentore ha verificato download HACS e risorsa frontend nel proprio Home Assistant; la card Christmas Tree 1.0 non ha comandato un albero fisico.
+
+Nel codice `src/` non ci sono ID fissi di entità personali. Le entità reali sono scelte nella configurazione o lette da Home Assistant. Gli ID `demo_*` restano nella demo/documentazione. Il nome iniziale di Alarm è neutro, senza cambiare i titoli salvati. Alcuni comandi avanzati richiedono YAML.
+
+## Historical beta validation / Verifiche storiche
+
 ## beta.11 Lights and Covers
 
 Tests cover capability-gated light brightness/temperature/RGB and cover commands; invalid or unavailable states; real readback without optimistic changes; group filtering; string/object source compatibility; legacy aliases and energy configuration; filtered editors; and pointer gestures that cancel on scrolling, cancellation and disconnection. Browser checks cover 320/390/430 widths, touch target sizes, keyboard brightness, RGB, native cover service calls, state replacement, legacy single-cover rendering, editors and light/dark rendering. No real devices are operated during these checks.

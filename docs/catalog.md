@@ -4,7 +4,7 @@
 
 ## English
 
-Nineteen active card types, including Pastel Climate AC and Pastel Pellet Stove. The water-purifier example uses Appliance. Each page contains a rendered example, configuration and Italian translation.
+Twenty active card types, including Pastel Climate AC and Pastel Pellet Stove. The water-purifier example uses Appliance. Each page contains configuration and Italian translation; most include a rendered example.
 
 | Card | Type |
 |---|---|
@@ -19,6 +19,9 @@ Nineteen active card types, including Pastel Climate AC and Pastel Pellet Stove.
 | [Pastel Covers](cards/covers.md) | `custom:pastel-covers-card` |
 | [Pastel Weather](cards/weather.md) | `custom:pastel-weather-card` |
 | [Pastel TV](cards/tv.md) | `custom:pastel-tv-card` |
+| [Pastel Christmas Tree](cards/christmas-tree.md) | `custom:pastel-christmas-tree-card` |
+
+![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
 | [Pastel Button](cards/button.md) | `custom:pastel-button-card` |
 | [Pastel Openings](cards/openings.md) | `custom:pastel-openings-card` |
 | [Pastel Doors & Windows](cards/doors-windows.md) | `custom:pastel-doors-windows-card` |
@@ -31,6 +34,6 @@ Nineteen active card types, including Pastel Climate AC and Pastel Pellet Stove.
 
 ## Italiano
 
-Diciannove tipi di card attivi, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Ogni pagina contiene immagine, configurazione e traduzione italiana. Tutte le immagini usano dati fittizi.
+Venti tipi di card attivi, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Ogni pagina contiene configurazione e traduzione italiana; quasi tutte includono un’immagine. Tutte le immagini usano dati fittizi.
 
 The new display names keep their existing type IDs: `pastel-script-climate-card` and `pastel-stove-card`. See [migration](migration.md) for the three retired card types.

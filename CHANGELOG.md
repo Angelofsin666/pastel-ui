@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.0.0 — First stable release / Prima versione stabile
+
+### English
+
+- Add **Pastel Christmas Tree** with a garland illustration, real `light`/`switch` state, capability-aware brightness, unlimited script/scene atmospheres, optional real active-mode helper, editable labels/icons/palettes and optional power scripts.
+- Consolidate **20 public cards** in one HACS Dashboard package. Keep stable card type IDs and the `light-card` / `tapparella-card` compatibility aliases; older retired card types remain retired.
+- Make the default Alarm name generic while preserving any title already saved by a user. Audit source cards for fixed personal entity IDs: none remain; all demo entity IDs are fictional.
+- Rewrite the HACS-facing README and installation experience, add the Christmas Tree guide and contribution guide, and document real-device limits and migration. English appears before Italian. Disclose AI assistance and invite card requests and modifications.
+- Add Christmas Tree state/action tests and include the new card in the demo, catalog and distribution.
+
+### Italiano
+
+- Aggiunge **Pastel Christmas Tree**: ghirlanda, stato reale da `light`/`switch`, luminosità solo se supportata, atmosfere script/scena senza numero fisso, aiutante opzionale per la modalità attiva, testi/icone/colori modificabili e script opzionali per accensione e spegnimento.
+- Riunisce **20 card pubbliche** in un solo pacchetto HACS Dashboard; conserva gli ID attuali e gli alias `light-card` / `tapparella-card`. Le vecchie card ritirate restano ritirate.
+- Rende generico il nome iniziale di Alarm senza cambiare i titoli salvati. Verifica nel codice l’assenza di ID di entità personali fissi; la demo usa ID fittizi.
+- Riscrive README visibile in HACS e istruzioni di installazione, aggiunge la guida Christmas Tree e la guida ai contributi, chiarisce limiti e migrazione. Prima inglese, poi italiano. Dichiara l’aiuto dell’IA e invita a richiedere card e modifiche.
+- Aggiunge test per stato e azioni Christmas Tree e include la card nella demo, nel catalogo e nel pacchetto.
+
+
 ## 0.1.0-beta.12
 
 - Add Pastel Weather with current readings and live daily forecasts from the selected Home Assistant weather entity.

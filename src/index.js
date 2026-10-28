@@ -15,6 +15,8 @@ import {DeviceRange} from './device-range.js';
 import {WeatherCard} from './weather-card.js';
 import {TVCard} from './tv-card.js';
 import {WeatherEditor,TVEditor} from './weather-tv-editor.js';
+import {ChristmasTreeCard} from './christmas-tree-card.js';
+import {ChristmasTreeEditor} from './christmas-tree-editor.js';
 import './legacy/pastel-button-card.js';
 import './legacy/pastel-openings-card.js';
 import './legacy/pastel-doors-windows-card.js';
@@ -33,6 +35,7 @@ for(const [name,Class] of [
  ['pastel-covers-card',CoversCard],['pastel-covers-card-editor',CoversEditor],
  ['pastel-weather-card',WeatherCard],['pastel-weather-card-editor',WeatherEditor],
  ['pastel-tv-card',TVCard],['pastel-tv-card-editor',TVEditor],
+ ['pastel-christmas-tree-card',ChristmasTreeCard],['pastel-christmas-tree-card-editor',ChristmasTreeEditor],
  ['pastel-temp-card',TemperatureCard],['pastel-temp-card-editor',TemperatureEditor],
  ['pastel-stove-card',StoveCard],['pastel-stove-card-editor',StoveEditor],
  ['pastel-script-climate-card',ScriptClimateCard],['pastel-script-climate-card-editor',ScriptClimateEditor],
@@ -42,4 +45,4 @@ for(const [name,Class] of [
 // Compatibility aliases for the former standalone repositories; no duplicate picker entries.
 for(const [name,Class] of [['light-card',LightsCard],['light-card-editor',LightsEditor],['tapparella-card',CoversCard],['tapparella-card-editor',CoversEditor]])if(!customElements.get(name))customElements.define(name,class extends Class{});
 registerCardCatalog();
-console.info('Pastel UI 0.1.0-beta.12');
+console.info('Pastel UI 1.0.0');
