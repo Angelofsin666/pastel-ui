@@ -81,13 +81,7 @@ export const CARD_CATALOG = [
   {
     "type": "pastel-temp-card",
     "name": "Pastel Temperature",
-    "description": "Room temperature sensors.",
-    "preview": true
-  },
-  {
-    "type": "pastel-temp-humidity-card",
-    "name": "Pastel Temperature & Humidity",
-    "description": "Room temperature and humidity sensors.",
+    "description": "Room temperature tiles, optional humidity, averages and history trends.",
     "preview": true
   },
   {
@@ -104,7 +98,7 @@ export const CARD_CATALOG = [
   }
 ];
 
-export const RETIRED_TYPES = new Set(['pastel-climate-card','pastel-clima-card','pastel-thermostat-card']);
+export const RETIRED_TYPES = new Set(['pastel-climate-card','pastel-clima-card','pastel-thermostat-card','pastel-temp-humidity-card']);
 
 export function registerCardCatalog(target = window) {
  const cards = target.customCards ||= [];

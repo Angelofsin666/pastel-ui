@@ -35,16 +35,6 @@
     "type": "pastel-smoke-co-card"
   },
   {
-    "file": "pastel-temp-card.js",
-    "repository": "Pastel-Temp-Card",
-    "type": "pastel-temp-card"
-  },
-  {
-    "file": "pastel-temp-humidity-card.js",
-    "repository": "Pastel-Temp-Humidity-Card",
-    "type": "pastel-temp-humidity-card"
-  },
-  {
     "file": "pastel-dishwasher-card.js",
     "repository": "Pastel-Dishwasher-card",
     "type": "pastel-dishwasher-card"

@@ -1,3 +1,11 @@
+## beta.10 — Temperature tiles / Riquadri temperatura
+
+`custom:pastel-temp-card` keeps its existing ID and room sensor fields. Saved Pastel Temperature cards automatically receive the new tile design. Optional humidity remains inside Temperature.
+
+`custom:pastel-temp-humidity-card` and its editor are removed. Replace those dashboard cards with **Pastel Temperature** and choose temperature and optional humidity sensors for each room; entity/attribute configurations from the retired card are not automatically converted. All thresholds and scales remain user-defined.
+
+L’identificativo e le associazioni sensori di Pastel Temperature restano invariati. Per la vecchia Temperature & Humidity, rimossa, aggiungi Pastel Temperature e scegli sensori separati di temperatura e umidità nell’editor. [Guida](cards/temp.md).
+
 # Migration / Migrazione
 
 ## Beta.8 — italiano

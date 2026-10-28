@@ -367,29 +367,28 @@
     "Pastel Temperature",
     {
       "type": "custom:pastel-temp-card",
-      "title": "Temperature",
+      "title": "Piano Terra",
+      "subtitle": "Comfort degli ambienti",
       "color": "blue",
       "show_trend": false,
       "rooms": [
         {
           "name": "Soggiorno",
+          "icon": "mdi:sofa",
           "temp_entity": "sensor.demo_temp",
           "hum_entity": "sensor.demo_humidity"
-        }
-      ]
-    }
-  ],
-  [
-    "temp-humidity",
-    "Pastel Temperature & Humidity",
-    {
-      "type": "custom:pastel-temp-humidity-card",
-      "title": "Ambienti",
-      "color": "green",
-      "rooms": [
+        },
         {
-          "entity": "sensor.demo_room",
-          "name": "Soggiorno"
+          "name": "Camera",
+          "icon": "mdi:bed-double",
+          "temp_entity": "sensor.demo_bedroom_temp",
+          "hum_entity": "sensor.demo_bedroom_humidity"
+        },
+        {
+          "name": "Ingresso",
+          "icon": "mdi:door",
+          "temp_entity": "sensor.demo_entrance_temp",
+          "hum_entity": "sensor.demo_entrance_humidity"
         }
       ]
     }

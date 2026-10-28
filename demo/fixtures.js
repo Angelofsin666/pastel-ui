@@ -18,6 +18,10 @@ for(const name of ['on','cool','dry','quiet','off'])add('script.demo_climate_'+n
 add('alarm_control_panel.demo_security','armed_night','Protego',{supported_features:1|2|4|8|16|32,code_format:null,code_arm_required:false});
 metric('sensor.demo_open_doors',0,'Porte aperte');metric('sensor.demo_open_windows',0,'Finestre aperte');
 for(const name of ['home','night','away','off'])add('script.demo_alarm_'+name,'off','Allarme '+name);
+add('sensor.demo_bedroom_temp',21.1,'Temperatura camera',{device_class:'temperature',unit_of_measurement:'°C'});
+add('sensor.demo_entrance_temp',19.8,'Temperatura ingresso',{device_class:'temperature',unit_of_measurement:'°C'});
+add('sensor.demo_bedroom_humidity',46,'Umidità camera',{device_class:'humidity',unit_of_measurement:'%'});
+add('sensor.demo_entrance_humidity',55,'Umidità ingresso',{device_class:'humidity',unit_of_measurement:'%'});
 export const examples=[
  ['alarm','Pastel Alarm',{type:'custom:pastel-alarm-card',title:'Protego',subtitle:'Sistema allarme',color:'blue',entity:'alarm_control_panel.demo_security',buttons:[{name:'In Casa',kind:'script',script:'script.demo_alarm_home',icon:'mdi:home',state:'armed_home'},{name:'Notte',kind:'panel',action:'alarm_arm_night',icon:'mdi:weather-night',state:'armed_night'},{name:'Fuori Casa',kind:'panel',action:'alarm_arm_away',icon:'mdi:walk',state:'armed_away'},{name:'Disattiva',kind:'script',script:'script.demo_alarm_off',icon:'mdi:shield-off',state:'disarmed'}]}],
  ['security','Pastel Security Overview',{type:'custom:pastel-security-card',title:'Riepilogo sicurezza',subtitle:'Stato della casa',color:'mint',tiles:[{kind:'alarm',name:'Sistema Protego',entity:'alarm_control_panel.demo_security',icon:'mdi:shield-check'},{kind:'count',name:'Porte aperte',entity:'sensor.demo_open_doors',icon:'mdi:door-open'},{kind:'count',name:'Finestre aperte',entity:'sensor.demo_open_windows',icon:'mdi:window-open'},{kind:'detector',name:'Fumo e CO₂',entities:[],icon:'mdi:smoke-detector'}]}],
@@ -33,8 +37,7 @@ export const examples=[
  ['motion-presence','Pastel Motion & Presence',{type:'custom:pastel-motion-presence-card',title:'Presenza',color:'teal',entities:['binary_sensor.demo_motion']}],
  ['water-leak','Pastel Water Leak',{type:'custom:pastel-water-leak-card',title:'Perdite acqua',color:'blue',entities:['binary_sensor.demo_leak']}],
  ['smoke-co','Pastel Smoke & CO',{type:'custom:pastel-smoke-co-card',title:'Fumo e CO',color:'purple',entities:['binary_sensor.demo_smoke']}],
- ['temp','Pastel Temperature',{type:'custom:pastel-temp-card',title:'Temperature',color:'blue',show_trend:false,rooms:[{name:'Soggiorno',temp_entity:'sensor.demo_temp',hum_entity:'sensor.demo_humidity'}]}],
- ['temp-humidity','Pastel Temperature & Humidity',{type:'custom:pastel-temp-humidity-card',title:'Ambienti',color:'green',rooms:[{entity:'sensor.demo_room',name:'Soggiorno'}]}],
+ ['temp','Pastel Temperature',{type:'custom:pastel-temp-card',title:'Piano Terra',subtitle:'Comfort degli ambienti',color:'blue',show_trend:false,rooms:[{name:'Soggiorno',icon:'mdi:sofa',temp_entity:'sensor.demo_temp',hum_entity:'sensor.demo_humidity'},{name:'Camera',icon:'mdi:bed-double',temp_entity:'sensor.demo_bedroom_temp',hum_entity:'sensor.demo_bedroom_humidity'},{name:'Ingresso',icon:'mdi:door',temp_entity:'sensor.demo_entrance_temp',hum_entity:'sensor.demo_entrance_humidity'}]}],
  ['dishwasher','Pastel Dishwasher',{type:'custom:pastel-dishwasher-card',title:'Lavastoviglie',color:'blue',detection_mode:'power',power_entity:'sensor.demo_washer_power'}],
  ['lawn-mower','Pastel Lawn Mower',{type:'custom:pastel-lawn-mower-card',title:'Tagliaerba',mower_entity:'lawn_mower.demo',battery_entity:'sensor.demo_mower_battery',image_url:'../dist/lawn-mower.png'}],
 ];

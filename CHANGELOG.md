@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0-beta.10
+
+- Redesign Pastel Temperature with the approved room-tile layout, shared theme, thermometer illustration, current min/max, optional humidity and history trends.
+- Add the shared editor with filtered sensor search, room names/icons/colors and reorder controls; retain Temperature type ID and existing room configuration.
+- Handle missing data explicitly and normalize °C/°F/K before averaging.
+- Remove Pastel Temperature & Humidity and its editor, documentation and demo; 16 active card types remain. See migration guidance before updating retired dashboard cards.
+
 ## 0.1.0-beta.9
 
 - Fix missing alarm picker entries: mutate the existing custom-card registry instead of replacing Home Assistant’s retained array.

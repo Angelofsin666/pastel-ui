@@ -1,15 +1,13 @@
 ## Italiano
 
-- Corretto il selettore di Home Assistant: Pastel Alarm e Pastel Security Overview ora vengono aggiunte allo stesso elenco conservato dal frontend, senza sostituirlo. La versione precedente poteva lasciarle fuori dal selettore anche con il file aggiornato.
-- Tutti i 17 nomi delle card sono in inglese, nel formato **Pastel + funzione**, senza il suffisso “Card”. Tra questi: **Pastel Alarm**, **Pastel Security Overview**, **Pastel Climate AC**, **Pastel Pellet Stove** e **Pastel Temperature**.
-- Identificativi, configurazioni e titoli personali restano invariati.
+- **Pastel Temperature** ridisegnata con i **riquadri degli ambienti** approvati nell’anteprima: stesso stile delle nuove card, pannello pastello con termometro, media, minima e massima delle letture attuali.
+- Ogni ambiente può avere nome, icona, colore, sensore temperatura e sensore umidità facoltativo. Editor con ricerca dei sensori appropriati e possibilità di aggiungere, rimuovere e riordinare gli ambienti.
+- Dati aggiornati dagli stati reali; sensori non disponibili espliciti ed esclusi dalla media. Conversione °C/°F/K prima delle medie. Andamento facoltativo dalle ultime due ore di storico.
+- L’identificativo `custom:pastel-temp-card` e le configurazioni esistenti di Pastel Temperature restano validi.
+- **Rimossa Pastel Temperature & Humidity** (`custom:pastel-temp-humidity-card`). Le dashboard che la usano devono sostituirla con Pastel Temperature scegliendo i sensori separati nell’editor. Non c’è conversione automatica dalla vecchia configurazione con attributi. Restano **16 card**.
 
-Aggiorna da HACS alla **v0.1.0-beta.9** (versioni preliminari abilitate), chiudi le altre schede Home Assistant e ricarica completamente l’interfaccia. Nel selettore “Aggiungi card” cerca **Pastel Alarm** oppure **Pastel Security Overview**.
-
-Restano rimossi i tre vecchi tipi Climate/Thermostat ritirati nella beta.8. [Guida alla migrazione](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/migration.md).
-
-Verificato con test automatici e nel browser con dati simulati, riproducendo l’elenco conservato da Home Assistant. Nessun comando inviato all’allarme reale.
+Aggiorna da HACS alla **v0.1.0-beta.10** (versioni preliminari abilitate) e ricarica completamente l’interfaccia. [Configurazione](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/cards/temp.md).
 
 ## English
 
-Fixes missing alarm cards in Home Assistant’s picker by retaining the original custom-card registry array. All 17 card names now follow the same English naming convention: **Pastel + function**, without “Card”. Type IDs, saved configurations and user titles are unchanged. Update and fully reload the frontend; search for **Pastel Alarm** and **Pastel Security Overview**.
+Redesigns **Pastel Temperature** with room tiles matching the shared Pastel theme, filtered sensor selection, configurable names/icons/colors, optional humidity, current min/max and history-based trends. Saved Temperature type IDs and room associations remain valid. **Pastel Temperature & Humidity is removed**; replace retired cards with Temperature and associate separate sensors. There are now **16 active card types**. Update and fully reload the frontend.
