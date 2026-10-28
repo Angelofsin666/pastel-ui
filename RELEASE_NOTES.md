@@ -1,3 +1,19 @@
+# Pastel UI v1.2.0 — preview, not released
+
+## English
+
+Eleven new cards are being prepared: 3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery. Each has a dedicated Pastel illustration, selectable readings and customizable controls. Irrigation supports any number of zones with independent state, start and stop commands. Percentage-based main readings include a level bar. The existing 29 card types remain compatible.
+
+The local bundle and simulated browser demo pass verification. The designs and real-device integrations are awaiting review; this preview has not been published to HACS.
+
+## Italiano
+
+Sono in preparazione undici nuove card: stampante 3D, stampante, raccolta acqua piovana, VMC, cappa cucina, lettiera robot, ciotole acqua/cibo, mangiatoia galline, irrigazione, fotovoltaico e batterie di accumulo. Ognuna ha un disegno Pastel dedicato, valori selezionabili e comandi personalizzabili. Irrigation gestisce un numero libero di zone con stato, avvio e arresto indipendenti. I valori principali in percentuale mostrano una barra di livello. I 29 tipi già esistenti restano compatibili.
+
+Pacchetto locale e demo simulata sono stati verificati. Grafica e integrazioni sui dispositivi reali attendono revisione; questa anteprima non è stata pubblicata su HACS.
+
+---
+
 # Pastel UI v1.1.0
 
 ## English

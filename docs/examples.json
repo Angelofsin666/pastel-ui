@@ -687,5 +687,340 @@
         }
       ]
     }
+  ],
+  [
+    "printer-3d",
+    "Pastel 3D Printer",
+    {
+      "type": "custom:pastel-3d-printer-card",
+      "hero_entity": "sensor.demo_printer-3d_hero",
+      "state_entity": "sensor.demo_printer-3d_status",
+      "metrics": {
+        "nozzle": "sensor.demo_printer-3d_nozzle",
+        "bed": "sensor.demo_printer-3d_bed",
+        "remaining": "sensor.demo_printer-3d_remaining",
+        "filament": "sensor.demo_printer-3d_filament"
+      },
+      "buttons": [
+        {
+          "name": "Pausa",
+          "icon": "mdi:pause",
+          "entity": "script.demo_printer-3d_0"
+        },
+        {
+          "name": "Riprendi",
+          "icon": "mdi:play",
+          "entity": "script.demo_printer-3d_1"
+        },
+        {
+          "name": "Ferma",
+          "icon": "mdi:stop",
+          "entity": "script.demo_printer-3d_2"
+        }
+      ]
+    }
+  ],
+  [
+    "printer",
+    "Pastel Printer",
+    {
+      "type": "custom:pastel-printer-card",
+      "hero_entity": "sensor.demo_printer_hero",
+      "state_entity": "sensor.demo_printer_status",
+      "metrics": {
+        "ink": "sensor.demo_printer_ink",
+        "paper": "sensor.demo_printer_paper",
+        "queue": "sensor.demo_printer_queue",
+        "error": "sensor.demo_printer_error"
+      },
+      "buttons": [
+        {
+          "name": "Pulizia",
+          "icon": "mdi:creation",
+          "entity": "script.demo_printer_0"
+        },
+        {
+          "name": "Scansione",
+          "icon": "mdi:content-copy",
+          "entity": "script.demo_printer_1"
+        }
+      ]
+    }
+  ],
+  [
+    "rain-tank",
+    "Pastel Rainwater Tank",
+    {
+      "type": "custom:pastel-rain-tank-card",
+      "hero_entity": "sensor.demo_rain-tank_hero",
+      "state_entity": "sensor.demo_rain-tank_status",
+      "metrics": {
+        "volume": "sensor.demo_rain-tank_volume",
+        "inflow": "sensor.demo_rain-tank_inflow",
+        "outflow": "sensor.demo_rain-tank_outflow",
+        "overflow": "sensor.demo_rain-tank_overflow"
+      },
+      "buttons": [
+        {
+          "name": "Pompa",
+          "icon": "mdi:water-pump",
+          "entity": "script.demo_rain-tank_0"
+        },
+        {
+          "name": "Irrigazione",
+          "icon": "mdi:sprinkler",
+          "entity": "script.demo_rain-tank_1"
+        }
+      ]
+    }
+  ],
+  [
+    "ventilation",
+    "Pastel Ventilation",
+    {
+      "type": "custom:pastel-ventilation-card",
+      "hero_entity": "sensor.demo_ventilation_hero",
+      "state_entity": "sensor.demo_ventilation_status",
+      "metrics": {
+        "co2": "sensor.demo_ventilation_co2",
+        "humidity": "sensor.demo_ventilation_humidity",
+        "speed": "sensor.demo_ventilation_speed",
+        "filter": "sensor.demo_ventilation_filter"
+      },
+      "buttons": [
+        {
+          "name": "Auto",
+          "icon": "mdi:auto-mode",
+          "entity": "script.demo_ventilation_0"
+        },
+        {
+          "name": "Boost",
+          "icon": "mdi:fan-plus",
+          "entity": "script.demo_ventilation_1"
+        },
+        {
+          "name": "Quiet",
+          "icon": "mdi:weather-night",
+          "entity": "script.demo_ventilation_2"
+        }
+      ]
+    }
+  ],
+  [
+    "range-hood",
+    "Pastel Range Hood",
+    {
+      "type": "custom:pastel-range-hood-card",
+      "hero_entity": "sensor.demo_range-hood_hero",
+      "state_entity": "sensor.demo_range-hood_status",
+      "metrics": {
+        "power": "sensor.demo_range-hood_power",
+        "light": "sensor.demo_range-hood_light",
+        "filter": "sensor.demo_range-hood_filter",
+        "air": "sensor.demo_range-hood_air"
+      },
+      "buttons": [
+        {
+          "name": "Luce",
+          "icon": "mdi:lightbulb",
+          "entity": "script.demo_range-hood_0"
+        },
+        {
+          "name": "Boost",
+          "icon": "mdi:fan-plus",
+          "entity": "script.demo_range-hood_1"
+        },
+        {
+          "name": "Spegni",
+          "icon": "mdi:power-off",
+          "entity": "script.demo_range-hood_2"
+        }
+      ]
+    }
+  ],
+  [
+    "litter-robot",
+    "Pastel Litter Robot",
+    {
+      "type": "custom:pastel-litter-robot-card",
+      "hero_entity": "sensor.demo_litter-robot_hero",
+      "state_entity": "sensor.demo_litter-robot_status",
+      "metrics": {
+        "cycle": "sensor.demo_litter-robot_cycle",
+        "litter": "sensor.demo_litter-robot_litter",
+        "weight": "sensor.demo_litter-robot_weight",
+        "last_clean": "sensor.demo_litter-robot_last_clean"
+      },
+      "buttons": [
+        {
+          "name": "Pulisci",
+          "icon": "mdi:creation",
+          "entity": "script.demo_litter-robot_0"
+        },
+        {
+          "name": "Pausa",
+          "icon": "mdi:pause",
+          "entity": "script.demo_litter-robot_1"
+        },
+        {
+          "name": "Svuota",
+          "icon": "mdi:delete-outline",
+          "entity": "script.demo_litter-robot_2"
+        }
+      ]
+    }
+  ],
+  [
+    "pet-bowls",
+    "Pastel Pet Bowls",
+    {
+      "type": "custom:pastel-pet-bowls-card",
+      "hero_entity": "sensor.demo_pet-bowls_hero",
+      "state_entity": "sensor.demo_pet-bowls_status",
+      "metrics": {
+        "food": "sensor.demo_pet-bowls_food",
+        "water": "sensor.demo_pet-bowls_water",
+        "filter": "sensor.demo_pet-bowls_filter",
+        "last_feed": "sensor.demo_pet-bowls_last_feed"
+      },
+      "buttons": [
+        {
+          "name": "Acqua",
+          "icon": "mdi:water",
+          "entity": "script.demo_pet-bowls_0"
+        },
+        {
+          "name": "Cibo",
+          "icon": "mdi:food-variant",
+          "entity": "script.demo_pet-bowls_1"
+        }
+      ]
+    }
+  ],
+  [
+    "chicken-feeder",
+    "Pastel Chicken Feeder",
+    {
+      "type": "custom:pastel-chicken-feeder-card",
+      "hero_entity": "sensor.demo_chicken-feeder_hero",
+      "state_entity": "sensor.demo_chicken-feeder_status",
+      "metrics": {
+        "next_feed": "sensor.demo_chicken-feeder_next_feed",
+        "today": "sensor.demo_chicken-feeder_today",
+        "motor": "sensor.demo_chicken-feeder_motor",
+        "battery": "sensor.demo_chicken-feeder_battery"
+      },
+      "buttons": [
+        {
+          "name": "Distribuisci",
+          "icon": "mdi:food-variant",
+          "entity": "script.demo_chicken-feeder_0"
+        },
+        {
+          "name": "Pausa",
+          "icon": "mdi:pause",
+          "entity": "script.demo_chicken-feeder_1"
+        },
+        {
+          "name": "Programma",
+          "icon": "mdi:calendar-clock",
+          "entity": "script.demo_chicken-feeder_2"
+        }
+      ]
+    }
+  ],
+  [
+    "irrigation",
+    "Pastel Irrigation",
+    {
+      "type": "custom:pastel-irrigation-card",
+      "hero_entity": "sensor.demo_irrigation_hero",
+      "state_entity": "sensor.demo_irrigation_status",
+      "metrics": {
+        "next_run": "sensor.demo_irrigation_next_run",
+        "water": "sensor.demo_irrigation_water",
+        "rain": "sensor.demo_irrigation_rain"
+      },
+      "buttons": [
+        {
+          "name": "Avvia tutto",
+          "icon": "mdi:play",
+          "entity": "script.demo_irrigation_0"
+        },
+        {
+          "name": "Ferma tutto",
+          "icon": "mdi:stop",
+          "entity": "script.demo_irrigation_1"
+        }
+      ],
+      "zones": [
+        {
+          "name": "Prato",
+          "state_entity": "binary_sensor.demo_zone_0",
+          "start_entity": "script.demo_zone_0_start",
+          "stop_entity": "script.demo_zone_0_stop"
+        },
+        {
+          "name": "Orto",
+          "state_entity": "binary_sensor.demo_zone_1",
+          "start_entity": "script.demo_zone_1_start",
+          "stop_entity": "script.demo_zone_1_stop"
+        },
+        {
+          "name": "Siepe",
+          "state_entity": "binary_sensor.demo_zone_2",
+          "start_entity": "script.demo_zone_2_start",
+          "stop_entity": "script.demo_zone_2_stop"
+        }
+      ]
+    }
+  ],
+  [
+    "solar",
+    "Pastel Solar",
+    {
+      "type": "custom:pastel-solar-card",
+      "hero_entity": "sensor.demo_solar_hero",
+      "state_entity": "sensor.demo_solar_status",
+      "metrics": {
+        "home": "sensor.demo_solar_home",
+        "grid": "sensor.demo_solar_grid",
+        "battery": "sensor.demo_solar_battery",
+        "today": "sensor.demo_solar_today"
+      },
+      "buttons": []
+    }
+  ],
+  [
+    "home-battery",
+    "Pastel Home Battery",
+    {
+      "type": "custom:pastel-home-battery-card",
+      "hero_entity": "sensor.demo_home-battery_hero",
+      "state_entity": "sensor.demo_home-battery_status",
+      "metrics": {
+        "power": "sensor.demo_home-battery_power",
+        "mode": "sensor.demo_home-battery_mode",
+        "autonomy": "sensor.demo_home-battery_autonomy",
+        "energy": "sensor.demo_home-battery_energy"
+      },
+      "buttons": [
+        {
+          "name": "Auto",
+          "icon": "mdi:auto-mode",
+          "entity": "script.demo_home-battery_0"
+        },
+        {
+          "name": "Riserva",
+          "icon": "mdi:battery-lock",
+          "entity": "script.demo_home-battery_1"
+        },
+        {
+          "name": "Scarica",
+          "icon": "mdi:battery-arrow-down",
+          "entity": "script.demo_home-battery_2"
+        }
+      ]
+    }
   ]
 ]

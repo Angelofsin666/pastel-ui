@@ -4,7 +4,7 @@
 
 ## English
 
-29 active card types, including Pastel Climate AC and Pastel Pellet Stove. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
+40 card types in the local 1.2 preview, including Pastel Climate AC and Pastel Pellet Stove. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
 
 | Card | Type |
 |---|---|
@@ -20,7 +20,6 @@
 | [Pastel Weather](cards/weather.md) | `custom:pastel-weather-card` |
 | [Pastel TV](cards/tv.md) | `custom:pastel-tv-card` |
 | [Pastel Christmas Tree](cards/christmas-tree.md) | `custom:pastel-christmas-tree-card` |
-
 | [Pastel Button](cards/button.md) | `custom:pastel-button-card` |
 | [Pastel Openings](cards/openings.md) | `custom:pastel-openings-card` |
 | [Pastel Doors & Windows](cards/doors-windows.md) | `custom:pastel-doors-windows-card` |
@@ -39,11 +38,22 @@
 | [Pastel Hot Water](cards/equipment.md) | `custom:pastel-hot-water-card` |
 | [Pastel EV Charger](cards/equipment.md) | `custom:pastel-ev-charger-card` |
 | [Pastel Pool Robot](cards/equipment.md) | `custom:pastel-pool-robot-card` |
+| [Pastel 3D Printer](cards/equipment.md) | `custom:pastel-3d-printer-card` |
+| [Pastel Printer](cards/equipment.md) | `custom:pastel-printer-card` |
+| [Pastel Rainwater Tank](cards/equipment.md) | `custom:pastel-rain-tank-card` |
+| [Pastel Ventilation](cards/equipment.md) | `custom:pastel-ventilation-card` |
+| [Pastel Range Hood](cards/equipment.md) | `custom:pastel-range-hood-card` |
+| [Pastel Litter Robot](cards/equipment.md) | `custom:pastel-litter-robot-card` |
+| [Pastel Pet Bowls](cards/equipment.md) | `custom:pastel-pet-bowls-card` |
+| [Pastel Chicken Feeder](cards/equipment.md) | `custom:pastel-chicken-feeder-card` |
+| [Pastel Irrigation](cards/equipment.md) | `custom:pastel-irrigation-card` |
+| [Pastel Solar](cards/equipment.md) | `custom:pastel-solar-card` |
+| [Pastel Home Battery](cards/equipment.md) | `custom:pastel-home-battery-card` |
 
 ![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
 
 ## Italiano
 
-29 tipi di card attivi, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Le nove nuove card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
+40 tipi di card nella versione locale 1.2, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Le nuove card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
 
 I nuovi nomi pubblici conservano gli ID `pastel-script-climate-card` e `pastel-stove-card`. Consulta la [migrazione](migration.md) per le card ritirate.

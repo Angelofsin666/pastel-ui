@@ -1,3 +1,4 @@
+import {appendEquipmentFixtures} from './equipment-fixtures.js';
 export const states={};
 export const registry={entities:[],devices:[]};
 function add(id,state,name,attributes={},device='demo') {states[id]={entity_id:id,state:String(state),attributes:{friendly_name:name,...attributes}};registry.entities.push({entity_id:id,device_id:device});return id}
@@ -66,6 +67,7 @@ export const examples=[
  ['ev','Pastel EV Charger',{type:'custom:pastel-ev-charger-card',state_entity:'sensor.demo_ev_state',hero_entity:'sensor.demo_ev_power',metrics:{energy:'sensor.demo_ev_energy'},buttons:[{name:'Pausa',icon:'mdi:pause',entity:'script.demo_ev_pause'}]}],
  ['pool-robot','Pastel Pool Robot',{type:'custom:pastel-pool-robot-card',hero_entity:'sensor.demo_pool_robot_progress',metrics:{battery:'sensor.demo_pool_robot_battery',mode:'sensor.demo_pool_robot_mode'},buttons:[{name:'Avvia',icon:'mdi:play',entity:'script.demo_pool_robot_start'},{name:'Ritorna',icon:'mdi:home',entity:'script.demo_pool_robot_return'}]}],
 ];
+appendEquipmentFixtures(add,examples);
 const services={};for(const [domain,names] of Object.entries({alarm_control_panel:['alarm_arm_home','alarm_arm_away','alarm_arm_night','alarm_disarm','alarm_arm_vacation','alarm_arm_custom_bypass','alarm_trigger'],vacuum:['start','pause','stop','return_to_base','set_fan_speed'],lawn_mower:['start_mowing','pause','dock','stop'],climate:['set_temperature','set_hvac_mode','set_fan_mode','set_preset_mode','set_swing_mode'],select:['select_option'],button:['press'],number:['set_value'],homeassistant:['toggle','turn_on','turn_off'],light:['turn_on'],script:['turn_on','demo_on','demo_off'],scene:['turn_on'],switch:['turn_on','turn_off']}))services[domain]=Object.fromEntries(names.map(n=>[n,{}]));
 export const calls=[];
 services.homeassistant={toggle:{},turn_on:{},turn_off:{}};services.light={...services.light,turn_on:{}};services.cover={open_cover:{},close_cover:{},stop_cover:{},set_cover_position:{}};

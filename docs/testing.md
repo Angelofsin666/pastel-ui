@@ -1,3 +1,9 @@
+## v1.2.0 preview — Eleven device cards / Anteprima di undici card
+
+English: local tests and bundle build pass. All eleven new cards render in the simulated browser demo at a 390 px viewport without horizontal overflow or console errors. Irrigation displays independent zone states and controls; its editor exposes add/reorder/remove plus separate start/stop entity search. No real equipment was operated and the preview has not been released in HACS.
+
+Italiano: test locali e pacchetto passano. Tutte le undici nuove card sono visibili nella demo simulata a 390 px senza scorrimento orizzontale né errori nella console. Irrigation mostra zone indipendenti; l'editor permette aggiunta, ordine, rimozione e scelta dei comandi di avvio/arresto. Nessun dispositivo reale è stato comandato e l'anteprima non è pubblicata in HACS.
+
 ## v1.1.0 — Nine equipment cards / Nove card per dispositivi
 
 English: `npm run check` verifies all 12 test files and builds the bundle. New tests cover nine unique registrations, user-supplied associations, action-service mapping and unavailable readings. The local browser demo rendered all nine with fictional entities and no console errors; Sump Pumps was visually checked at 390 px with no horizontal overflow. These checks do not claim physical-device compatibility for every integration.
