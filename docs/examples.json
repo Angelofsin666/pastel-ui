@@ -495,5 +495,197 @@
         "battery": "sensor.demo_mower_battery"
       }
     }
+  ],
+  [
+    "pool",
+    "Pastel Pool",
+    {
+      "type": "custom:pastel-pool-card",
+      "state_entity": "sensor.demo_pool_filtration",
+      "hero_entity": "sensor.demo_pool_temp",
+      "metrics": {
+        "ph": "sensor.demo_pool_ph",
+        "chlorine": "sensor.demo_pool_chlorine",
+        "filtration": "sensor.demo_pool_filtration"
+      },
+      "buttons": [
+        {
+          "name": "Avvia",
+          "icon": "mdi:play",
+          "entity": "script.demo_pool_start"
+        },
+        {
+          "name": "Ferma",
+          "icon": "mdi:stop",
+          "entity": "script.demo_pool_stop"
+        }
+      ]
+    }
+  ],
+  [
+    "sump",
+    "Pastel Sump Pumps",
+    {
+      "type": "custom:pastel-sump-pumps-card",
+      "state_entity": "sensor.demo_sump_alarm",
+      "hero_entity": "sensor.demo_sump_level",
+      "metrics": {
+        "pump_a": "sensor.demo_sump_pump_a",
+        "pump_b": "sensor.demo_sump_pump_b",
+        "alarm": "sensor.demo_sump_alarm"
+      },
+      "buttons": [
+        {
+          "name": "Test pompa A",
+          "icon": "mdi:water-pump",
+          "entity": "script.demo_sump_test_a"
+        },
+        {
+          "name": "Test pompa B",
+          "icon": "mdi:water-pump",
+          "entity": "script.demo_sump_test_b"
+        }
+      ]
+    }
+  ],
+  [
+    "booster",
+    "Pastel Water Booster",
+    {
+      "type": "custom:pastel-water-booster-card",
+      "state_entity": "sensor.demo_booster_pump",
+      "hero_entity": "sensor.demo_booster_pressure",
+      "metrics": {
+        "flow": "sensor.demo_booster_flow",
+        "pump": "sensor.demo_booster_pump"
+      },
+      "buttons": [
+        {
+          "name": "Automatico",
+          "icon": "mdi:auto-mode",
+          "entity": "script.demo_booster_auto"
+        },
+        {
+          "name": "Ferma",
+          "icon": "mdi:stop",
+          "entity": "script.demo_booster_stop"
+        }
+      ]
+    }
+  ],
+  [
+    "coffee",
+    "Pastel Coffee Machine",
+    {
+      "type": "custom:pastel-coffee-machine-card",
+      "state_entity": "sensor.demo_coffee_state",
+      "hero_entity": "sensor.demo_coffee_state",
+      "buttons": [
+        {
+          "name": "Espresso",
+          "icon": "mdi:coffee",
+          "entity": "script.demo_coffee_espresso"
+        }
+      ]
+    }
+  ],
+  [
+    "fryer",
+    "Pastel Air Fryer",
+    {
+      "type": "custom:pastel-air-fryer-card",
+      "hero_entity": "sensor.demo_fryer_remaining",
+      "metrics": {
+        "temperature": "sensor.demo_fryer_temp"
+      },
+      "buttons": [
+        {
+          "name": "Pausa",
+          "icon": "mdi:pause",
+          "entity": "script.demo_fryer_pause"
+        }
+      ]
+    }
+  ],
+  [
+    "boiler",
+    "Pastel Boiler",
+    {
+      "type": "custom:pastel-boiler-card",
+      "hero_entity": "sensor.demo_boiler_supply",
+      "metrics": {
+        "pressure": "sensor.demo_boiler_pressure",
+        "burner": "sensor.demo_boiler_burner"
+      },
+      "buttons": [
+        {
+          "name": "Inverno",
+          "icon": "mdi:snowflake",
+          "entity": "script.demo_boiler_winter"
+        }
+      ]
+    }
+  ],
+  [
+    "hot-water",
+    "Pastel Hot Water",
+    {
+      "type": "custom:pastel-hot-water-card",
+      "hero_entity": "sensor.demo_hot_water_temp",
+      "metrics": {
+        "target": "sensor.demo_hot_water_target",
+        "heating": "sensor.demo_hot_water_heating"
+      },
+      "buttons": [
+        {
+          "name": "Boost",
+          "icon": "mdi:lightning-bolt",
+          "entity": "script.demo_hot_water_boost"
+        }
+      ]
+    }
+  ],
+  [
+    "ev",
+    "Pastel EV Charger",
+    {
+      "type": "custom:pastel-ev-charger-card",
+      "state_entity": "sensor.demo_ev_state",
+      "hero_entity": "sensor.demo_ev_power",
+      "metrics": {
+        "energy": "sensor.demo_ev_energy"
+      },
+      "buttons": [
+        {
+          "name": "Pausa",
+          "icon": "mdi:pause",
+          "entity": "script.demo_ev_pause"
+        }
+      ]
+    }
+  ],
+  [
+    "pool-robot",
+    "Pastel Pool Robot",
+    {
+      "type": "custom:pastel-pool-robot-card",
+      "hero_entity": "sensor.demo_pool_robot_progress",
+      "metrics": {
+        "battery": "sensor.demo_pool_robot_battery",
+        "mode": "sensor.demo_pool_robot_mode"
+      },
+      "buttons": [
+        {
+          "name": "Avvia",
+          "icon": "mdi:play",
+          "entity": "script.demo_pool_robot_start"
+        },
+        {
+          "name": "Ritorna",
+          "icon": "mdi:home",
+          "entity": "script.demo_pool_robot_return"
+        }
+      ]
+    }
   ]
 ]

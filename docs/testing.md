@@ -1,3 +1,9 @@
+## v1.1.0 — Nine equipment cards / Nove card per dispositivi
+
+English: `npm run check` verifies all 12 test files and builds the bundle. New tests cover nine unique registrations, user-supplied associations, action-service mapping and unavailable readings. The local browser demo rendered all nine with fictional entities and no console errors; Sump Pumps was visually checked at 390 px with no horizontal overflow. These checks do not claim physical-device compatibility for every integration.
+
+Italiano: `npm run check` verifica tutti i 12 file di test e genera il pacchetto. I nuovi test coprono nove registrazioni distinte, entità scelte dall'utente, associazione dei servizi e valori non disponibili. La demo locale ha mostrato tutte e nove le card con entità fittizie e senza errori nella console; Sump Pumps è stata controllata a 390 px senza scorrimento orizzontale. Non equivale a una verifica su tutte le integrazioni fisiche.
+
 ## v1.0.2 — Lawn Mower preview / Anteprima tagliaerba
 
 The screenshot is generated from the new card using fictional demo data. Local Chromium rendered it at 320, 390 and 430 px without page errors or horizontal overflow. Native action buttons were checked against simulated Home Assistant feature flags. No real mower was commanded.

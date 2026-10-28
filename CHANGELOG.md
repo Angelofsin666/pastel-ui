@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.1.0 — Nine new device cards / Nove nuove card
+
+### English
+
+- Add **Pastel Pool**, **Pastel Sump Pumps**, **Pastel Water Booster**, **Pastel Coffee Machine**, **Pastel Air Fryer**, **Pastel Boiler**, **Pastel Hot Water**, **Pastel EV Charger** and **Pastel Pool Robot**. Sump Pumps represents basement flood-prevention equipment, not rainwater collection.
+- Give each card a dedicated line illustration at the same hero scale as the existing Pastel cards, a live main reading, optional status and measurements, and a responsive grid of configurable action buttons.
+- Add visual editors for entity search, labels, palettes, button icons, reordering and scripts or native Home Assistant actions. No personal entity ID is built into the new cards. Readings follow Home Assistant state; unavailable data remains visibly unknown and unconfigured actions are disabled.
+- Expand the public catalog from 20 to 29 card types, and document configuration in English followed by Italian. Existing card IDs and configurations remain unchanged.
+- Verify catalog registration, action mapping and missing-data behavior with automated tests. Device-specific physical operation has not been verified.
+
+### Italiano
+
+- Aggiunge **Pastel Pool**, **Pastel Sump Pumps**, **Pastel Water Booster**, **Pastel Coffee Machine**, **Pastel Air Fryer**, **Pastel Boiler**, **Pastel Hot Water**, **Pastel EV Charger** e **Pastel Pool Robot**. Sump Pumps riguarda le pompe anti-allagamento dei sotterranei, non la raccolta dell'acqua piovana.
+- Ogni card ha un disegno dedicato della stessa dimensione delle altre Pastel, un valore principale aggiornato, stato e misure opzionali e pulsanti adattabili al telefono.
+- Gli editor visuali permettono ricerca delle entità, etichette, palette, icone, ordine dei pulsanti e comandi tramite script o servizi Home Assistant. Nessun ID personale è incorporato. I valori seguono lo stato reale; dati non disponibili restano sconosciuti e comandi non configurati sono disabilitati.
+- Il catalogo passa da 20 a 29 card, con guida prima in inglese e poi in italiano. Gli ID e le configurazioni delle card precedenti restano invariati.
+- Test automatici per catalogo, comandi e dati mancanti. Il funzionamento sui dispositivi fisici specifici non è stato verificato.
+
 ## 1.0.2 — Lawn Mower preview / Anteprima tagliaerba
 
 - English: Replace the outdated Lawn Mower gallery preview and card rendering with the shared green Robot design: line-drawn mower, live status and supported native controls. Keep the existing card type and read legacy entity and sensor settings automatically. Custom `image_url` is replaced by the shared illustration. The public example uses fictional data.

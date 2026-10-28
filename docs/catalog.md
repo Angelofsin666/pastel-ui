@@ -4,7 +4,7 @@
 
 ## English
 
-Twenty active card types, including Pastel Climate AC and Pastel Pellet Stove. The water-purifier example uses Appliance. Each page contains configuration and Italian translation; most include a rendered example.
+29 active card types, including Pastel Climate AC and Pastel Pellet Stove. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
 
 | Card | Type |
 |---|---|
@@ -30,11 +30,20 @@ Twenty active card types, including Pastel Climate AC and Pastel Pellet Stove. T
 | [Pastel Temperature](cards/temp.md) | `custom:pastel-temp-card` |
 | [Pastel Dishwasher](cards/dishwasher.md) | `custom:pastel-dishwasher-card` |
 | [Pastel Lawn Mower](cards/lawn-mower.md) | `custom:pastel-lawn-mower-card` |
+| [Pastel Pool](cards/equipment.md) | `custom:pastel-pool-card` |
+| [Pastel Sump Pumps](cards/equipment.md) | `custom:pastel-sump-pumps-card` |
+| [Pastel Water Booster](cards/equipment.md) | `custom:pastel-water-booster-card` |
+| [Pastel Coffee Machine](cards/equipment.md) | `custom:pastel-coffee-machine-card` |
+| [Pastel Air Fryer](cards/equipment.md) | `custom:pastel-air-fryer-card` |
+| [Pastel Boiler](cards/equipment.md) | `custom:pastel-boiler-card` |
+| [Pastel Hot Water](cards/equipment.md) | `custom:pastel-hot-water-card` |
+| [Pastel EV Charger](cards/equipment.md) | `custom:pastel-ev-charger-card` |
+| [Pastel Pool Robot](cards/equipment.md) | `custom:pastel-pool-robot-card` |
 
 ![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
 
 ## Italiano
 
-Venti tipi di card attivi, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Ogni pagina contiene configurazione e traduzione italiana; quasi tutte includono un’immagine. Tutte le immagini usano dati fittizi.
+29 tipi di card attivi, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Le nove nuove card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
 
 I nuovi nomi pubblici conservano gli ID `pastel-script-climate-card` e `pastel-stove-card`. Consulta la [migrazione](migration.md) per le card ritirate.

@@ -18,6 +18,8 @@ import {WeatherEditor,TVEditor} from './weather-tv-editor.js';
 import {ChristmasTreeCard} from './christmas-tree-card.js';
 import {ChristmasTreeEditor} from './christmas-tree-editor.js';
 import {LawnMowerCard,LawnMowerEditor} from './lawn-mower-card.js';
+import {EQUIPMENT_CARD_CLASSES} from './equipment-card.js';
+import {EQUIPMENT_EDITOR_CLASSES} from './equipment-editor.js';
 import './legacy/pastel-button-card.js';
 import './legacy/pastel-openings-card.js';
 import './legacy/pastel-doors-windows-card.js';
@@ -43,7 +45,8 @@ for(const [name,Class] of [
  ['pastel-alarm-card',AlarmCard],['pastel-alarm-card-editor',AlarmEditor],
  ['pastel-security-card',SecurityCard],['pastel-security-card-editor',SecurityEditor]
 ])if(!customElements.get(name))customElements.define(name,Class);
+for(const [name,Class] of Object.entries({...EQUIPMENT_CARD_CLASSES,...EQUIPMENT_EDITOR_CLASSES}))if(!customElements.get(name))customElements.define(name,Class);
 // Compatibility aliases for the former standalone repositories; no duplicate picker entries.
 for(const [name,Class] of [['light-card',LightsCard],['light-card-editor',LightsEditor],['tapparella-card',CoversCard],['tapparella-card-editor',CoversEditor]])if(!customElements.get(name))customElements.define(name,class extends Class{});
 registerCardCatalog();
-console.info('Pastel UI 1.0.2');
+console.info('Pastel UI 1.1.0');

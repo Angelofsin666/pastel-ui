@@ -1,4 +1,5 @@
 // Public picker names are centralized here; configuration type IDs remain stable.
+import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType} from './equipment-model.js';
 export const CARD_CATALOG = [
   {
     "type": "pastel-alarm-card",
@@ -119,7 +120,8 @@ export const CARD_CATALOG = [
     "name": "Pastel Lawn Mower",
     "description": "Lawn mower controls and battery status.",
     "preview": true
-  }
+  },
+  ...EQUIPMENT_KEYS.map(key=>({type:equipmentType(key),name:EQUIPMENT[key].name,description:`${EQUIPMENT[key].subtitle} with configurable sensors and actions.`,preview:true}))
 ];
 
 export const RETIRED_TYPES = new Set(['pastel-climate-card','pastel-clima-card','pastel-thermostat-card','pastel-temp-humidity-card']);

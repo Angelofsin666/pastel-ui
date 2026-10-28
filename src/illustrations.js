@@ -10,6 +10,14 @@ export function illustration(profile) {
  else if(profile==='hob')art=svg`<rect x="13" y="17" width="94" height="86" rx="12"/><circle cx="38" cy="42" r="15"/><circle cx="80" cy="42" r="13"/><circle cx="39" cy="79" r="13"/><circle cx="80" cy="78" r="16"/>`;
  else if(profile==='hood')art=svg`<path d="M45 12h30v38l30 30H15l30-30Z"/><path d="M15 80v12h90V80M40 107h40M44 69h32"/>`;
  else if(profile==='coffee')art=svg`<rect x="25" y="13" width="70" height="94" rx="12"/><path d="M35 43h50M55 44v14M40 96h42"/><path d="M43 66h31v18H43ZM74 68h10v10H74"/>`;
+ else if(profile==='pool')art=svg`<rect x="14" y="32" width="92" height="69" rx="17"/><path d="M19 48h82M22 80q12-8 24 0t24 0t24 0M30 15v56M30 15q0-9 9-9t9 9v56M30 38h18M30 55h18"/>`;
+ else if(profile==='sump')art=svg`<path d="M16 32h88v68H16ZM21 65q12-9 24 0t24 0t24 0M43 39v37M77 39v37"/><rect x="32" y="72" width="22" height="18" rx="5"/><rect x="66" y="72" width="22" height="18" rx="5"/><path d="M60 16v20M52 23h16"/>`;
+ else if(profile==='booster')art=svg`<circle cx="52" cy="61" r="31"/><circle cx="52" cy="61" r="12"/><path d="M17 61H7M83 61h30M52 30V16h30v16M49 61l19-18M83 74h25v25H83Z"/>`;
+ else if(profile==='fryer')art=svg`<rect x="24" y="15" width="72" height="93" rx="17"/><path d="M24 55h72M35 55v35h50V55M43 75h34M45 100h30"/><circle cx="60" cy="35" r="10"/><path d="M60 28v7l5 3"/>`;
+ else if(profile==='boiler')art=svg`<rect x="24" y="12" width="72" height="95" rx="13"/><circle cx="60" cy="43" r="15"/><path d="M60 43l9-7M38 76h44M43 107v9M77 107v9M31 27h7M82 27h7"/><circle cx="60" cy="83" r="4"/>`;
+ else if(profile==='hot_water')art=svg`<rect x="34" y="10" width="52" height="100" rx="24"/><path d="M34 68q13-8 26 0t26 0M48 35c0 7-8 10-8 19a10 10 0 0 0 20 0c0-9-8-12-8-19M60 110v8"/>`;
+ else if(profile==='ev')art=svg`<rect x="18" y="21" width="56" height="84" rx="12"/><rect x="28" y="31" width="36" height="33" rx="5"/><path d="m49 36-9 15h9l-4 9 14-17h-9l5-7M74 43h14v38q0 11 10 11t10-11V48M99 38v18M106 38v18M29 106h34"/>`;
+ else if(profile==='pool_robot')art=svg`<rect x="18" y="34" width="84" height="58" rx="23"/><circle cx="42" cy="63" r="8"/><circle cx="78" cy="63" r="8"/><path d="M40 92v14M80 92v14M41 106h38M60 34V20M47 20h26M22 76q14-8 28 0t28 0t25 0"/>`;
  else if(profile==='generic')art=svg`<rect x="15" y="20" width="40" height="40" rx="10"/><rect x="65" y="20" width="40" height="40" rx="10"/><rect x="15" y="70" width="40" height="40" rx="10"/><path d="M66 90h38M85 71v38"/>`;
  else if(profile==='water_purifier') art=svg`<rect x="22" y="12" width="72" height="94" rx="18"/><path d="M36 36h44M42 48h32M48 61v18h25V61M48 88h25"/><path d="M60 57c-10-12 0-20 0-20s10 8 0 20Z" fill="currentColor" opacity=".25"/>`;
  else if(['vacuum','floor_cleaner','robot_dock'].includes(profile)) art=svg`<circle cx="60" cy="64" r="42"/><circle cx="60" cy="64" r="32" opacity=".35"/><rect x="47" y="24" width="26" height="20" rx="9"/><path d="M45 82h30M56 57h8"/>`;

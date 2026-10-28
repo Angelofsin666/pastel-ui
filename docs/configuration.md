@@ -4,6 +4,10 @@ The new mobile controls are documented in [Pastel Lights](cards/lights.md) and [
 
 # Configuration / Configurazione
 
+## Pool, pumps, kitchen, heating and charging / Piscina, pompe, cucina, riscaldamento e ricarica
+
+The nine dedicated cards added in 1.1, their visual editors and configuration fields are documented in the [equipment guide](cards/equipment.md). Le nove card dedicate introdotte nella 1.1, i loro editor visuali e i campi di configurazione sono nella [guida bilingue](cards/equipment.md).
+
 ## Pastel Christmas Tree / Albero di Natale
 
 See the [Christmas Tree guide](cards/christmas-tree.md) for the configurable garland, script/scene atmospheres, live power state and brightness.

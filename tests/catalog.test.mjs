@@ -19,16 +19,16 @@ test('registration updates existing metadata in place and is idempotent',()=>{
  const existing={type:'pastel-alarm-card',name:'Old name',getEntitySuggestion:()=>null};
  const target={customCards:[existing,{...existing}]};
  registerCardCatalog(target);registerCardCatalog(target);
- assert.equal(target.customCards.length,20);
+ assert.equal(target.customCards.length,29);
  assert.equal(target.customCards[0],existing);
  assert.equal(existing.name,'Pastel Alarm');
  assert.equal(typeof existing.getEntitySuggestion,'function');
- assert.equal(new Set(target.customCards.map(c=>c.type)).size,20);
+ assert.equal(new Set(target.customCards.map(c=>c.type)).size,29);
 });
 
-test('all 20 picker names use one English naming convention and preserve type IDs',()=>{
- const expected=['Pastel Alarm','Pastel Security Overview','Pastel Climate AC','Pastel Pellet Stove','Pastel Appliance','Pastel Robot','Pastel Lights','Pastel Covers','Pastel Weather','Pastel TV','Pastel Christmas Tree','Pastel Button','Pastel Openings','Pastel Doors & Windows','Pastel Motion & Presence','Pastel Water Leak','Pastel Smoke & CO','Pastel Temperature','Pastel Dishwasher','Pastel Lawn Mower'];
+test('all 29 picker names use one English naming convention and preserve type IDs',()=>{
+ const expected=['Pastel Alarm','Pastel Security Overview','Pastel Climate AC','Pastel Pellet Stove','Pastel Appliance','Pastel Robot','Pastel Lights','Pastel Covers','Pastel Weather','Pastel TV','Pastel Christmas Tree','Pastel Button','Pastel Openings','Pastel Doors & Windows','Pastel Motion & Presence','Pastel Water Leak','Pastel Smoke & CO','Pastel Temperature','Pastel Dishwasher','Pastel Lawn Mower','Pastel Pool','Pastel Sump Pumps','Pastel Water Booster','Pastel Coffee Machine','Pastel Air Fryer','Pastel Boiler','Pastel Hot Water','Pastel EV Charger','Pastel Pool Robot'];
  assert.deepEqual(CARD_CATALOG.map(c=>c.name),expected);
  assert.ok(CARD_CATALOG.every(c=>c.type.startsWith('pastel-')&&c.preview));
- const target={};registerCardCatalog(target);assert.equal(target.customCards.length,20);
+ const target={};registerCardCatalog(target);assert.equal(target.customCards.length,29);
 });

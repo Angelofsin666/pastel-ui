@@ -1,3 +1,23 @@
+# Pastel UI v1.1.0
+
+## English
+
+**Nine new cards in the Pastel style:** Pool, basement Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger and Pool Robot. Each has a dedicated illustration, live values, optional status and phone-friendly controls. Choose your own entities and add as many script or native-action buttons as needed in the visual editor. No personal entity IDs are built in; missing values show `—` and unconfigured commands remain disabled.
+
+Pastel UI now includes **29 card types** in one HACS Dashboard download. Existing card IDs and saved configurations remain unchanged. See the [configuration guide](docs/cards/equipment.md) and [full changelog](CHANGELOG.md). Automated tests cover registration, actions and missing data; the new cards have not been tested with specific physical devices.
+
+To update, download v1.1.0 in HACS and reload your dashboard. Confirm one `/hacsfiles/pastel-ui/pastel-ui.js` JavaScript module resource. [Card requests and contributions](CONTRIBUTING.md) are welcome. AI tools assisted development under maintainer review.
+
+## Italiano
+
+**Nove nuove card nello stile Pastel:** Pool, Sump Pumps per le pompe anti-allagamento dei sotterranei, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger e Pool Robot. Ognuna ha un disegno dedicato, valori aggiornati, stato opzionale e pulsanti comodi sul telefono. Nell'editor scegli le tue entità e aggiungi tutti i comandi script o nativi necessari. Nessun ID personale è incorporato; valori mancanti mostrano `—` e comandi non configurati restano disabilitati.
+
+Pastel UI comprende ora **29 tipi di card** in un solo download HACS. Gli ID e le configurazioni esistenti restano invariati. Consulta la [guida](docs/cards/equipment.md) e il [changelog](CHANGELOG.md). I test coprono registrazione, azioni e dati mancanti; i nuovi tipi non sono stati provati sui singoli dispositivi fisici.
+
+Per aggiornare, scarica la v1.1.0 in HACS e ricarica la dashboard. Verifica che ci sia una sola risorsa JavaScript Module `/hacsfiles/pastel-ui/pastel-ui.js`. Sono benvenute [richieste di card e contributi](CONTRIBUTING.md). Il progetto è stato sviluppato con l'aiuto dell'IA e la revisione del manutentore.
+
+---
+
 # Pastel UI v1.0.2
 
 ## English
