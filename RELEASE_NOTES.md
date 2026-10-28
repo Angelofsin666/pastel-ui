@@ -1,6 +1,8 @@
-# Pastel UI v1.0.0
+# Pastel UI v1.0.1
 
 ## English
+
+**Maintenance update:** fixes the gallery layout and Italian catalog text. Card behaviour and saved configurations are unchanged from v1.0.0.
 
 **Pastel UI reaches its first stable release:** 20 coordinated cards in one HACS Dashboard download, with visual editors, configurable entity associations and phone-friendly controls.
 
@@ -23,6 +25,8 @@ Install or update **Pastel UI** in HACS, then reload the dashboard. Confirm a si
 Automated tests and a local browser demo use simulated Home Assistant state. HACS installation has been checked on the maintainer's Home Assistant, but the new Christmas Tree card has not operated a physical tree. Service support varies by integration. See [testing](docs/testing.md) for exact coverage. Pastel UI is community maintained and not affiliated with Home Assistant.
 
 ## Italiano
+
+**Aggiornamento di manutenzione:** corregge la galleria e il testo italiano del catalogo. Comportamento delle card e configurazioni salvate sono invariati rispetto alla v1.0.0.
 
 **Pastel UI arriva alla prima versione stabile:** 20 card coerenti in un solo download HACS Dashboard, con editor visuali, entità configurabili e comandi pensati per il telefono.
 

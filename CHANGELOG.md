@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 — Gallery layout / Impaginazione galleria
+
+- English: Keep all 20 cards in one continuous catalog table and place the Christmas Tree screenshot below it. Correct the Italian catalog footer. No card behaviour or configuration changes.
+- Italiano: conserva tutte le 20 card in un’unica tabella della galleria e sposta sotto l’immagine Christmas Tree. Corregge la chiusura italiana del catalogo. Nessuna modifica al comportamento o alle configurazioni.
+
 ## 1.0.0 — First stable release / Prima versione stabile
 
 ### English

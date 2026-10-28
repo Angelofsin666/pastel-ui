@@ -21,7 +21,6 @@ Twenty active card types, including Pastel Climate AC and Pastel Pellet Stove. T
 | [Pastel TV](cards/tv.md) | `custom:pastel-tv-card` |
 | [Pastel Christmas Tree](cards/christmas-tree.md) | `custom:pastel-christmas-tree-card` |
 
-![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
 | [Pastel Button](cards/button.md) | `custom:pastel-button-card` |
 | [Pastel Openings](cards/openings.md) | `custom:pastel-openings-card` |
 | [Pastel Doors & Windows](cards/doors-windows.md) | `custom:pastel-doors-windows-card` |
@@ -32,8 +31,10 @@ Twenty active card types, including Pastel Climate AC and Pastel Pellet Stove. T
 | [Pastel Dishwasher](cards/dishwasher.md) | `custom:pastel-dishwasher-card` |
 | [Pastel Lawn Mower](cards/lawn-mower.md) | `custom:pastel-lawn-mower-card` |
 
+![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
+
 ## Italiano
 
 Venti tipi di card attivi, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Ogni pagina contiene configurazione e traduzione italiana; quasi tutte includono un’immagine. Tutte le immagini usano dati fittizi.
 
-The new display names keep their existing type IDs: `pastel-script-climate-card` and `pastel-stove-card`. See [migration](migration.md) for the three retired card types.
+I nuovi nomi pubblici conservano gli ID `pastel-script-climate-card` e `pastel-stove-card`. Consulta la [migrazione](migration.md) per le card ritirate.
