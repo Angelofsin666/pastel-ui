@@ -19,7 +19,12 @@ export const EQUIPMENT = {
  chicken_feeder:{name:'Pastel Chicken Feeder',title:'Mangiatoia galline',subtitle:'Alimentazione automatica',icon:'mdi:food-variant',color:'amber',art:'chicken_feeder',hero:'Mangime disponibile',metrics:[['next_feed','Prossimo pasto'],['today','Pasti oggi'],['motor','Motore'],['battery','Batteria']],buttons:[['Distribuisci','mdi:food-variant'],['Pausa','mdi:pause'],['Programma','mdi:calendar-clock']]},
  irrigation:{name:'Pastel Irrigation',title:'Irrigazione',subtitle:'Zone del giardino',icon:'mdi:sprinkler',color:'mint',art:'irrigation',hero:'Stato impianto',metrics:[['next_run','Prossima irrigazione'],['water','Acqua usata'],['rain','Pioggia rilevata']],buttons:[['Avvia tutto','mdi:play'],['Ferma tutto','mdi:stop']],zones:true},
  solar:{name:'Pastel Solar',title:'Fotovoltaico',subtitle:'Energia solare',icon:'mdi:solar-power',color:'amber',art:'solar',hero:'Produzione attuale',metrics:[['home','Consumo casa'],['grid','Scambio rete'],['battery','Batteria'],['today','Produzione oggi']],buttons:[]},
- home_battery:{name:'Pastel Home Battery',title:'Batterie di accumulo',subtitle:'Energia immagazzinata',icon:'mdi:battery-high',color:'mint',art:'home_battery',hero:'Carica attuale',metrics:[['power','Potenza'],['mode','Modalità'],['autonomy','Autonomia'],['energy','Energia disponibile']],buttons:[['Auto','mdi:auto-mode'],['Riserva','mdi:battery-lock'],['Scarica','mdi:battery-arrow-down']]}
+ home_battery:{name:'Pastel Home Battery',title:'Batterie di accumulo',subtitle:'Energia immagazzinata',icon:'mdi:battery-high',color:'mint',art:'home_battery',hero:'Carica attuale',metrics:[['power','Potenza'],['mode','Modalità'],['autonomy','Autonomia'],['energy','Energia disponibile']],buttons:[['Auto','mdi:auto-mode'],['Riserva','mdi:battery-lock'],['Scarica','mdi:battery-arrow-down']]},
+ garage_gate:{name:'Pastel Garage & Gate',title:'Garage e cancello',subtitle:'Accesso carrabile',icon:'mdi:garage',color:'blue',art:'garage_gate',hero:'Basculante',metrics:[['gate','Cancello esterno'],['obstacle','Sensore ostacoli']],buttons:[],native:'cover'},
+ doorbell:{name:'Pastel Doorbell',title:'Videocitofono',subtitle:'Ingresso principale',icon:'mdi:video',color:'blue',art:'doorbell',hero:'Anteprima telecamera',metrics:[['last_call','Ultima chiamata'],['motion','Movimento']],buttons:[],camera:true},
+ smart_lock:{name:'Pastel Smart Lock',title:'Porta d’ingresso',subtitle:'Serratura intelligente',icon:'mdi:lock',color:'lavender',art:'smart_lock',hero:'Serratura',metrics:[['contact','Contatto porta'],['battery','Batteria'],['last_access','Ultimo accesso']],buttons:[],native:'lock'},
+ air_quality:{name:'Pastel Air Quality',title:'Qualità dell’aria',subtitle:'Ambiente',icon:'mdi:air-filter',color:'mint',art:'air_quality',hero:'CO₂ attuale',metrics:[['pm25','PM2.5'],['humidity','Umidità'],['temperature','Temperatura'],['voc','VOC']],buttons:[]},
+ water_safety:{name:'Pastel Water Safety',title:'Protezione acqua',subtitle:'Casa',icon:'mdi:shield-check',color:'mint',art:'water_safety',hero:'Valvola generale',metrics:[['today','Consumo oggi'],['flow','Portata attuale']],buttons:[],native:'valve',leak_sensors:true}
 };
 export const EQUIPMENT_KEYS=Object.keys(EQUIPMENT);
 const TYPE_SLUGS={sump:'sump-pumps',booster:'water-booster',coffee:'coffee-machine',fryer:'air-fryer',ev:'ev-charger',printer_3d:'3d-printer'};
@@ -27,6 +32,34 @@ export const equipmentType=key=>`pastel-${TYPE_SLUGS[key]||key.replaceAll('_','-
 export const isAvailable=state=>!!state&&!['unknown','unavailable'].includes(state.state);
 export const sensorValue=(hass,id)=>{const state=hass?.states?.[id];if(!isAvailable(state))return '—';const unit=state.attributes?.unit_of_measurement||'';const value=({on:'Acceso',off:'Spento'})[state.state]||state.state;return `${value}${unit?(unit==='%'||unit.startsWith('°')?'':' ')+unit:''}`};
 export const percentage=(hass,id)=>{const s=hass?.states?.[id],n=Number(s?.state);return isAvailable(s)&&s.attributes?.unit_of_measurement==='%'&&Number.isFinite(n)?Math.max(0,Math.min(100,n)):null};
+export const nativeStateLabel=(domain,state)=>({cover:{open:'Aperta',closed:'Chiusa',opening:'In apertura',closing:'In chiusura'},lock:{locked:'Chiusa',unlocked:'Sbloccata',open:'Aperta',locking:'In chiusura',unlocking:'In apertura'},valve:{open:'Aperta',closed:'Chiusa',opening:'In apertura',closing:'In chiusura'}})[domain]?.[state]||({unavailable:'Non disponibile',unknown:'Stato sconosciuto'})[state]||state||'Non configurato';
+export function equipmentValue(hass,id){
+ const state=hass?.states?.[id];if(!isAvailable(state))return '—';
+ const domain=id?.split('.')[0];if(['cover','lock','valve'].includes(domain))return nativeStateLabel(domain,state.state);
+ if(domain==='binary_sensor'){
+  const kind=state.attributes?.device_class;
+  const labels={door:['Aperta','Chiusa'],garage_door:['Aperta','Chiusa'],opening:['Aperta','Chiusa'],window:['Aperta','Chiusa'],moisture:['Perdita','Asciutto'],motion:['Movimento','Assente'],occupancy:['Presente','Assente'],problem:['Problema','Regolare']};
+  if(labels[kind])return labels[kind][state.state==='on'?0:1];
+ }
+ return sensorValue(hass,id);
+}
+export const NATIVE_ACTIONS={cover:[['Apri','mdi:arrow-up','open_cover',1],['Ferma','mdi:stop','stop_cover',8],['Chiudi','mdi:arrow-down','close_cover',2]],lock:[['Blocca','mdi:lock','lock',0],['Sblocca','mdi:lock-open','unlock',0],['Apri porta','mdi:door-open','open',1]],valve:[['Apri acqua','mdi:water','open_valve',1],['Chiudi acqua','mdi:water-off','close_valve',2]]};
+export function nativeControls(domain,state,services){
+ const definitions=NATIVE_ACTIONS[domain]||[];
+ const features=Number(state?.attributes?.supported_features)||0;
+ return definitions.map(([name,icon,service,feature])=>({name,icon,action:`${domain}.${service}`,enabled:isAvailable(state)&&!!services?.[domain]?.[service]&&(!feature||!!(features&feature))}));
+}
+export function leakSummary(hass,sensors=[]){
+ if(!sensors.length)return 'Sensori non configurati';
+ const states=sensors.map(({entity})=>hass?.states?.[entity]);
+ if(states.some(s=>isAvailable(s)&&s.state==='on'))return 'Perdita rilevata';
+ return states.every(isAvailable)?'Tutto asciutto':'Sensori non disponibili';
+}
+export function cameraPicture(hass,id){
+ if(!id?.startsWith('camera.')||!isAvailable(hass?.states?.[id]))return '';
+ const picture=hass.states[id].attributes?.entity_picture||`/api/camera_proxy/${id}`;
+ return /^https?:\/\//.test(picture)?picture:hass.hassUrl?.(picture)||picture;
+}
 export function buttonCommand(button){
  const id=button?.entity||'';
  if(button?.action)return {action:button.action,entity:id||undefined};

@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.3.0 — Access and safety / Accessi e sicurezza
+
+### English
+
+- Add **Pastel Garage & Gate**, **Pastel Doorbell**, **Pastel Smart Lock**, **Pastel Air Quality** and **Pastel Water Safety**. All five use the established rounded Pastel layout and responsive controls. The catalog now contains 45 card types.
+- Garage & Gate calls the main `cover` entity **Basculante** by default. Cover, lock and valve cards read live Home Assistant state and expose native actions only when the entity, service and device feature support them. Names and colours remain configurable; optional script buttons support custom installations.
+- Doorbell accepts **any `camera` entity**. It shows the entity's still picture or the Home Assistant camera proxy and opens the native camera viewer for Live. Add extra buttons, such as a gate-opening script. Water Safety accepts an unlimited list of named leak sensors.
+- No personal entity IDs are built into the new card defaults. Existing card types and saved configurations remain compatible. Automated tests and the bundle build pass; physical devices have not been operated in testing.
+
+### Italiano
+
+- Aggiunge **Pastel Garage & Gate**, **Pastel Doorbell**, **Pastel Smart Lock**, **Pastel Air Quality** e **Pastel Water Safety**, con il consueto stile Pastel e comandi adattabili al telefono. Il catalogo comprende ora 45 card.
+- Garage & Gate chiama **Basculante** il controllo principale. Le card per `cover`, `lock` e `valve` leggono lo stato aggiornato da Home Assistant e attivano i comandi nativi solo se entità, servizio e funzione sono disponibili. Nomi e colori restano modificabili; si possono aggiungere pulsanti script.
+- Doorbell accetta **qualsiasi entità `camera`**. Mostra l'immagine dell'entità o il proxy di Home Assistant; Live apre il visualizzatore nativo. Si possono aggiungere comandi, per esempio uno script per il cancello. Water Safety gestisce un numero libero di sensori perdite con nome personalizzato.
+- Le nuove card non preimpostano entità personali. Le configurazioni esistenti restano compatibili. Test automatici e compilazione superati; nessun dispositivo fisico è stato comandato durante le verifiche.
+
 ## 1.2.0 — Eleven new device cards / Undici nuove card
 
 ### English

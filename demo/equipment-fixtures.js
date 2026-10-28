@@ -24,4 +24,31 @@ export function appendEquipmentFixtures(add,examples){
   if(key==='irrigation')config.zones=['Prato','Orto','Siepe'].map((name,i)=>{const status=`binary_sensor.demo_zone_${i}`,start=`script.demo_zone_${i}_start`,stop=`script.demo_zone_${i}_stop`;add(status,i===1?'on':'off',name);add(start,'off','Avvia '+name);add(stop,'off','Ferma '+name);return {name,state_entity:status,start_entity:start,stop_entity:stop}});
   examples.push([slug,EQUIPMENT[key].name,config]);
  }
+ add('cover.demo_basculante','closed','Basculante',{supported_features:11});
+ add('cover.demo_gate','open','Cancello esterno',{supported_features:11});
+ add('binary_sensor.demo_obstacle','off','Ostacolo',{device_class:'problem'});
+ add('camera.demo_doorbell','idle','Telecamera ingresso',{entity_picture:'/pastel-ui/demo/doorbell-preview.svg'});
+ add('sensor.demo_doorbell_call','Oggi 08:42','Ultima chiamata');
+ add('binary_sensor.demo_doorbell_motion','off','Movimento',{device_class:'motion'});
+ add('script.demo_doorbell_gate','off','Apri cancello');
+ add('lock.demo_front','locked','Serratura ingresso',{supported_features:1});
+ add('sensor.demo_lock_battery','87','Batteria',{unit_of_measurement:'%'});
+ add('sensor.demo_last_access','Ieri 21:10','Ultimo accesso');
+ add('sensor.demo_co2','634','CO₂',{unit_of_measurement:'ppm',device_class:'carbon_dioxide'});
+ add('sensor.demo_pm25','12','PM2.5',{unit_of_measurement:'µg/m³'});
+ add('sensor.demo_air_humidity','47','Umidità',{unit_of_measurement:'%'});
+ add('sensor.demo_air_temperature','22.4','Temperatura',{unit_of_measurement:'°C'});
+ add('sensor.demo_voc','85','VOC',{unit_of_measurement:'ppb'});
+ add('valve.demo_water_main','open','Valvola generale',{supported_features:3});
+ add('sensor.demo_water_today','183','Consumo oggi',{unit_of_measurement:'L'});
+ add('sensor.demo_water_flow','0','Portata attuale',{unit_of_measurement:'L/min'});
+ add('binary_sensor.demo_leak_bath','off','Bagno',{device_class:'moisture'});
+ add('binary_sensor.demo_leak_laundry','off','Lavanderia',{device_class:'moisture'});
+ examples.push(
+  ['garage-gate','Pastel Garage & Gate',{type:`custom:${equipmentType('garage_gate')}`,hero_entity:'cover.demo_basculante',metrics:{gate:'cover.demo_gate',obstacle:'binary_sensor.demo_obstacle'}}],
+  ['doorbell','Pastel Doorbell',{type:`custom:${equipmentType('doorbell')}`,camera_entity:'camera.demo_doorbell',metrics:{last_call:'sensor.demo_doorbell_call',motion:'binary_sensor.demo_doorbell_motion'},buttons:[{name:'Apri cancello',icon:'mdi:gate',entity:'script.demo_doorbell_gate'}]}],
+  ['smart-lock','Pastel Smart Lock',{type:`custom:${equipmentType('smart_lock')}`,hero_entity:'lock.demo_front',metrics:{contact:'binary_sensor.demo_door',battery:'sensor.demo_lock_battery',last_access:'sensor.demo_last_access'}}],
+  ['air-quality','Pastel Air Quality',{type:`custom:${equipmentType('air_quality')}`,hero_entity:'sensor.demo_co2',metrics:{pm25:'sensor.demo_pm25',humidity:'sensor.demo_air_humidity',temperature:'sensor.demo_air_temperature',voc:'sensor.demo_voc'}}],
+  ['water-safety','Pastel Water Safety',{type:`custom:${equipmentType('water_safety')}`,hero_entity:'valve.demo_water_main',metrics:{today:'sensor.demo_water_today',flow:'sensor.demo_water_flow'},leak_sensors:[{name:'Bagno',entity:'binary_sensor.demo_leak_bath'},{name:'Lavanderia',entity:'binary_sensor.demo_leak_laundry'}]}]
+ );
 }

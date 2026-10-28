@@ -1,3 +1,19 @@
+# Pastel UI v1.3.0
+
+## English
+
+Five new cards join Pastel UI: **Garage & Gate**, **Doorbell**, **Smart Lock**, **Air Quality** and **Water Safety**. The suite now includes **45 card types**. Garage & Gate labels its main cover “Basculante” by default. Doorbell accepts any Home Assistant `camera` entity, displays a still preview and opens the native camera viewer for Live. Cover, lock and valve controls follow actual entity state and supported Home Assistant features. Water Safety can show any number of named leak sensors. Names, colours, optional readings and extra script buttons can be configured in the visual editor. No personal entity IDs are included in defaults.
+
+Automated tests and the bundle build pass. These cards have been exercised with simulated Home Assistant entities; operation against physical devices remains unverified. [Full changelog](CHANGELOG.md) · [Configuration guide](docs/cards/equipment.md) · [Install with HACS](docs/installation.md). AI tools assisted development under maintainer review, and [card requests are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+Pastel UI aggiunge cinque card: **Garage & Gate**, **Doorbell**, **Smart Lock**, **Air Quality** e **Water Safety**. La raccolta comprende ora **45 tipi di card**. Garage & Gate chiama “Basculante” il `cover` principale. Doorbell accetta qualsiasi entità `camera`, mostra un'anteprima e apre il visualizzatore nativo con Live. I comandi di `cover`, `lock` e `valve` seguono lo stato reale e le funzioni supportate. Water Safety può mostrare quanti sensori perdite servono. Nomi, colori, valori opzionali e pulsanti script aggiuntivi sono configurabili nell'editor. Nessun ID personale è preimpostato.
+
+Test automatici e compilazione superati. Le card sono state provate con entità Home Assistant simulate; il comando di dispositivi fisici resta da verificare. [Changelog completo](CHANGELOG.md) · [Guida](docs/cards/equipment.md) · [Installazione HACS](docs/installation.md). Il progetto è stato sviluppato con aiuto dell'IA sotto la revisione del manutentore e [accoglie richieste di nuove card](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.2.0
 
 ## English

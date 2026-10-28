@@ -1,6 +1,6 @@
 # Pastel UI
 
-**One HACS download. 40 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
+**One HACS download. 45 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
 
 [English](#english) · [Italiano](#italiano) · [Gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Configuration](docs/configuration.md) · [Release notes](CHANGELOG.md)
 
@@ -18,7 +18,7 @@
 
 Pastel UI brings lights, covers, climate, security, appliances and everyday sensors into a consistent visual language: soft colour, clear state, generous touch targets and layouts made for phones. Choose the entities you already have; the cards do not create devices, helpers or automations. Actions use Home Assistant services and the state displayed comes from Home Assistant, including changes made elsewhere.
 
-### Explore the 40 cards
+### Explore the 45 cards
 
 | Home & climate | Security & sensors | Entertainment & seasonal |
 |---|---|---|
@@ -28,6 +28,8 @@ Pastel UI brings lights, covers, climate, security, appliances and everyday sens
 The [gallery](docs/catalog.md) shows every card with fictional example entities. Appliance covers multiple device profiles, including a water purifier, without adding another card type.
 
 **New in 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger and Pool Robot](docs/cards/equipment.md) have dedicated visuals, searchable entity fields and configurable actions. Sump Pumps is designed for basement flood-prevention equipment.
+
+**New in 1.3:** [Garage & Gate, Doorbell, Smart Lock, Air Quality and Water Safety](docs/cards/equipment.md) add native controls, camera selection and leak monitoring. The garage control is labelled “Basculante” by default, and Doorbell accepts any `camera` entity.
 
 **New in 1.2:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery](docs/cards/equipment.md) add eleven specialist cards. Irrigation supports any number of individually monitored zones.
 
@@ -59,7 +61,7 @@ Pastel UI was developed with assistance from AI tools. Design decisions, code re
 
 Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensori in uno stile coerente: colori tenui, stati leggibili, comandi comodi sul telefono. Scegli le entità già presenti nel tuo Home Assistant; le card non creano dispositivi, aiutanti o automazioni. I comandi usano i servizi di Home Assistant e i valori mostrati seguono le entità, anche quando cambiano altrove.
 
-### Scopri le 40 card
+### Scopri le 45 card
 
 | Casa e clima | Sicurezza e sensori | Intrattenimento e feste |
 |---|---|---|
@@ -69,6 +71,8 @@ Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensor
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
 
 **Novità 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger e Pool Robot](docs/cards/equipment.md) hanno disegni dedicati, ricerca delle entità e comandi configurabili. Sump Pumps è pensata per le pompe anti-allagamento dei locali interrati.
+
+**Novità 1.3:** [Garage & Gate, Doorbell, Smart Lock, Air Quality e Water Safety](docs/cards/equipment.md) aggiungono comandi nativi, scelta della telecamera e monitoraggio perdite. Il comando garage si chiama “Basculante” per impostazione iniziale; Doorbell accetta qualsiasi entità `camera`.
 
 **Novità 1.2:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar e Home Battery](docs/cards/equipment.md) aggiungono undici card dedicate. Irrigation gestisce un numero libero di zone monitorate singolarmente.
 

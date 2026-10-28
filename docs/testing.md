@@ -1,3 +1,9 @@
+## v1.3.0 — Five access and safety cards / Cinque card per accessi e sicurezza
+
+English: automated tests cover native cover/lock/valve feature gating, acceptance of arbitrary `camera` entities, leak-state readback, picker registration and absence of personal entity IDs in defaults. `npm run check` builds the HACS bundle. Demo fixtures use fictional entities; physical devices have not been operated.
+
+Italiano: i test automatici verificano la disponibilità dei comandi nativi per cover/lock/valve, l'accettazione di entità `camera` generiche, la lettura dei sensori perdite, la registrazione nel catalogo e l'assenza di ID personali preimpostati. `npm run check` genera il pacchetto HACS. La demo usa entità fittizie; nessun dispositivo fisico è stato comandato.
+
 ## v1.2.0 — Eleven device cards / Undici nuove card
 
 English: local tests and bundle build pass. All eleven new cards render in the simulated browser demo at a 390 px viewport without horizontal overflow or console errors. Irrigation displays independent zone states and controls; its editor exposes add/reorder/remove plus separate start/stop entity search. The revised Litter Robot and Chicken Feeder illustrations were visually reviewed at phone width. No real equipment was operated.
