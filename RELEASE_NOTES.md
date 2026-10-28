@@ -1,6 +1,8 @@
-# Pastel UI v1.0.1
+# Pastel UI v1.0.2
 
 ## English
+
+**Lawn Mower correction:** the gallery preview and the `custom:pastel-lawn-mower-card` itself now show the green Robot-style card with the correct mower illustration, live status and supported native controls. Previously saved mower and sensor fields are mapped automatically; a custom `image_url` is replaced by the shared illustration. The published example uses fictional data. See [migration](docs/migration.md).
 
 **Maintenance update:** fixes the gallery layout and Italian catalog text. Card behaviour and saved configurations are unchanged from v1.0.0.
 
@@ -25,6 +27,8 @@ Install or update **Pastel UI** in HACS, then reload the dashboard. Confirm a si
 Automated tests and a local browser demo use simulated Home Assistant state. HACS installation has been checked on the maintainer's Home Assistant, but the new Christmas Tree card has not operated a physical tree. Service support varies by integration. See [testing](docs/testing.md) for exact coverage. Pastel UI is community maintained and not affiliated with Home Assistant.
 
 ## Italiano
+
+**Correzione Lawn Mower:** l’anteprima nella galleria e la card `custom:pastel-lawn-mower-card` mostrano il design verde di Robot, con il tagliaerba corretto, stato aggiornato e comandi nativi supportati. Le vecchie associazioni per tagliaerba e sensori sono lette automaticamente; un’eventuale `image_url` viene sostituita dall’illustrazione comune. L’esempio pubblico usa dati fittizi. Consulta la [migrazione](docs/migration.md).
 
 **Aggiornamento di manutenzione:** corregge la galleria e il testo italiano del catalogo. Comportamento delle card e configurazioni salvate sono invariati rispetto alla v1.0.0.
 

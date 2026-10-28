@@ -486,10 +486,14 @@
     "Pastel Lawn Mower",
     {
       "type": "custom:pastel-lawn-mower-card",
-      "title": "Tagliaerba",
-      "mower_entity": "lawn_mower.demo",
-      "battery_entity": "sensor.demo_mower_battery",
-      "image_url": "../dist/lawn-mower.png"
+      "title": "Garden mower",
+      "subtitle": "Lawn mower",
+      "entity": "lawn_mower.demo",
+      "profile": "lawn_mower",
+      "color": "mint",
+      "metrics": {
+        "battery": "sensor.demo_mower_battery"
+      }
     }
   ]
 ]

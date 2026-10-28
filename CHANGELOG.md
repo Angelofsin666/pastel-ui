@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2 — Lawn Mower preview / Anteprima tagliaerba
+
+- English: Replace the outdated Lawn Mower gallery preview and card rendering with the shared green Robot design: line-drawn mower, live status and supported native controls. Keep the existing card type and read legacy entity and sensor settings automatically. Custom `image_url` is replaced by the shared illustration. The public example uses fictional data.
+- Italiano: aggiorna l’anteprima e la card Lawn Mower al design verde della card Robot: tagliaerba disegnato, stato reale e comandi nativi supportati. Restano l’identificativo e le vecchie associazioni di entità e sensori. L’eventuale `image_url` viene sostituito dall’illustrazione comune. L’esempio pubblico usa dati fittizi.
+
 ## 1.0.1 — Gallery layout / Impaginazione galleria
 
 - English: Keep all 20 cards in one continuous catalog table and place the Christmas Tree screenshot below it. Correct the Italian catalog footer. No card behaviour or configuration changes.

@@ -1,3 +1,9 @@
+## v1.0.2 — Lawn Mower preview / Anteprima tagliaerba
+
+The screenshot is generated from the new card using fictional demo data. Local Chromium rendered it at 320, 390 and 430 px without page errors or horizontal overflow. Native action buttons were checked against simulated Home Assistant feature flags. No real mower was commanded.
+
+L’immagine è generata dalla nuova card con dati fittizi. Chromium locale l’ha verificata a 320, 390 e 430 px, senza errori o scorrimento orizzontale. I pulsanti nativi sono stati controllati con funzioni Home Assistant simulate; nessun tagliaerba reale è stato comandato.
+
 ## v1.0.0 — current validation / verifiche attuali
 
 ### English

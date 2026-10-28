@@ -1,3 +1,9 @@
+## 1.0.2 — Lawn Mower / Tagliaerba
+
+Pastel Lawn Mower keeps `custom:pastel-lawn-mower-card` but now uses the shared green Robot design. Existing `mower_entity`, `battery_entity`, `area_entity`, `time_remaining_entity`, `blade_entity` and `zone_entity` fields are automatically mapped to the new card. A custom `image_url` is no longer displayed; the shared mower illustration replaces it. Review your saved card after updating if you depended on that image.
+
+Pastel Lawn Mower mantiene `custom:pastel-lawn-mower-card` e usa il nuovo design verde di Robot. I campi precedenti per tagliaerba, batteria, area, tempo, lame e zona sono associati automaticamente. Un’eventuale `image_url` personalizzata non viene più mostrata: compare l’illustrazione comune. Controlla la card dopo l’aggiornamento se usavi quell’immagine.
+
 ## beta.11 — one suite for lights and covers
 
 Pastel UI is the single repository for these cards. Update the suite before removing old standalone resources. Saved `custom:pastel-lights-card` configurations keep working. `custom:light-card` and `custom:tapparella-card` are compatibility aliases: their existing source fields are accepted, while the picker exposes only **Pastel Lights** and **Pastel Covers**.
