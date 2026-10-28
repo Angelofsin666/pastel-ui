@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.11
+
+- Redesign Pastel Lights with the approved smartphone list, large power buttons, full-width sliders and capability-based color/white controls.
+- Add Pastel Covers with grouped tiles, real open/stop/close and position controls, optional energy, and the approved roller-shutter drawing.
+- Preserve standalone `light-card` and `tapparella-card` configurations with compatibility aliases inside the single suite; 17 public card types.
+- Consolidate picker documentation links on pastel-ui and document standalone resource removal.
+- Add mobile gesture and capability regression coverage. Sliders cancel during scrolling and commit once on release.
+
 ## 0.1.0-beta.10
 
 - Redesign Pastel Temperature with the approved room-tile layout, shared theme, thermometer illustration, current min/max, optional humidity and history trends.

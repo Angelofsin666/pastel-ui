@@ -1,32 +1,32 @@
 # Pastel Lights
 
-[![Open your Home Assistant and add Pastel UI to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Angelofsin666&repository=pastel-ui&category=plugin)
-
-<img src="../images/lights.png" alt="Pastel Lights, rendered with simulated data" width="408">
+<img src="../images/lights.png" alt="Pastel Lights, mobile layout with simulated devices" width="408">
 
 ## English
 
-A room’s lights in one card, with a group toggle and per-light brightness. A stationary hold opens more-info; movement cancels the hold. Vertical scrolling over the brightness control does not send a light command.
+A mobile-oriented light list with the shared Pastel theme, large individual and group power controls, full-width brightness sliders, and expandable color/white controls when supported. Names, icons, order, palette and per-device colors are configurable in the visual editor. Slider gestures commit once on release; vertical scrolling and pointer cancellation send no command. Keyboard changes are supported.
 
-Included in the single Pastel UI installation. [Install the suite](../installation.md) · [Configuration reference](../configuration.md) · [Migration](../migration.md)
-
-### Example
-
-All entity IDs below are fictional. Replace them with your own. The screenshot is a rendered demo, not evidence of compatibility with a particular brand.
+The existing `custom:pastel-lights-card` configuration stays valid, including string entities or `{entity, name, icon}` objects. The former `custom:light-card` type is a compatibility alias inside Pastel UI; its `lights`, `name` and hex `color` fields are accepted. Do not load the old standalone resources alongside the suite.
 
 ```yaml
 type: custom:pastel-lights-card
-title: Luci
-color: teal
+title: Esterni
+subtitle: Illuminazione esterna
+color: mint
 entities:
-- light.demo_reading
-- light.demo_ceiling
+  - entity: light.front_house
+    name: Luce Fronte Casa
+    icon: mdi:outdoor-lamp
+  - light.front_path
+  - switch.porch_light
 ```
+
+The editor suggests `light`, `switch`, and `input_boolean` entities. Brightness, temperature and RGB controls depend on a light's advertised capabilities; plain switches only show power. Color temperature uses the device limits. Group actions exclude missing/unavailable entities, and displayed states come from Home Assistant rather than assumed command results. Tap a device name for its native details.
+
+Optional: `show_brightness: false`, `show_progress_bar: true`, per-item `color`, plus `background_color`, `tint_color`, `accent_color`, `text_color`, `secondary_text_color`. The default palette is mint; existing palette names and custom hex colors remain supported.
 
 ## Italiano
 
-Luci della stanza con comando di gruppo e luminosità per ogni luce. Una pressione ferma apre i dettagli; lo spostamento la annulla. Lo scroll verticale sullo slider non invia comandi.
+Luci in elenco per smartphone: pulsanti grandi, luminosità a tutta larghezza e regolazioni colore/bianco apribili solo dove supportate. Nome, icona, ordine e colori sono configurabili. Gli slider inviano il valore una sola volta al rilascio; uno scorrimento verticale o un gesto annullato non invia comandi.
 
-Inclusa nell’installazione unica di Pastel UI. [Installazione](../installation.md) · [Configurazione](../configuration.md) · [Migrazione](../migration.md)
-
-L’esempio sopra usa soltanto entità fittizie: sostituiscile con le tue. L’immagine mostra la demo e non certifica la compatibilità con un marchio.
+Le configurazioni di Pastel Lights restano valide. Anche `custom:light-card` è riconosciuto dalla suite come compatibilità: rimuovi la vecchia risorsa separata. I valori seguono gli stati reali; i dispositivi non disponibili vengono esclusi dai comandi di gruppo.

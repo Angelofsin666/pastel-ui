@@ -1,3 +1,7 @@
+## beta.11 Lights and Covers
+
+Tests cover capability-gated light brightness/temperature/RGB and cover commands; invalid or unavailable states; real readback without optimistic changes; group filtering; string/object source compatibility; legacy aliases and energy configuration; filtered editors; and pointer gestures that cancel on scrolling, cancellation and disconnection. Browser checks cover 320/390/430 widths, touch target sizes, keyboard brightness, RGB, native cover service calls, state replacement, legacy single-cover rendering, editors and light/dark rendering. No real devices are operated during these checks.
+
 ## beta.10 temperature redesign
 
 Temperature coverage checks live averages and room extremes, unavailable/invalid data, zero and negative readings, mixed-unit conversion, optional thresholds/scales, recorder failures and stale history responses after reconfiguration. Browser checks cover the tile layout, real state replacement, more-info events, the filtered editor, add/reorder/rename, palette changes, light/dark and narrow screens. No real devices are controlled.

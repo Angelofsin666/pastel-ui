@@ -1,13 +1,15 @@
 ## Italiano
 
-- **Pastel Temperature** ridisegnata con i **riquadri degli ambienti** approvati nell’anteprima: stesso stile delle nuove card, pannello pastello con termometro, media, minima e massima delle letture attuali.
-- Ogni ambiente può avere nome, icona, colore, sensore temperatura e sensore umidità facoltativo. Editor con ricerca dei sensori appropriati e possibilità di aggiungere, rimuovere e riordinare gli ambienti.
-- Dati aggiornati dagli stati reali; sensori non disponibili espliciti ed esclusi dalla media. Conversione °C/°F/K prima delle medie. Andamento facoltativo dalle ultime due ore di storico.
-- L’identificativo `custom:pastel-temp-card` e le configurazioni esistenti di Pastel Temperature restano validi.
-- **Rimossa Pastel Temperature & Humidity** (`custom:pastel-temp-humidity-card`). Le dashboard che la usano devono sostituirla con Pastel Temperature scegliendo i sensori separati nell’editor. Non c’è conversione automatica dalla vecchia configurazione con attributi. Restano **16 card**.
+- **Pastel Lights**: redesign per smartphone con elenco delle luci, pulsanti grandi, luminosità a tutta larghezza e regolazioni colore/bianco soltanto per i dispositivi compatibili.
+- **Pastel Covers**: struttura di gruppo approvata, comandi apri/ferma/chiudi singoli e generali, percentuale reale, sensori energia facoltativi e nuovo disegno avvolgibile con cassonetto e guide.
+- Nomi, icone, ordine, palette e colori personalizzati disponibili dall’editor. Slider annullati durante lo scorrimento verticale; nessun movimento o stato inventato dopo un comando.
+- I vecchi identificativi `custom:light-card` e `custom:tapparella-card` restano compatibili nella suite; il selettore propone solo **Pastel Lights** e **Pastel Covers**. Le configurazioni esistenti di Pastel Lights restano valide.
+- Pastel UI contiene ora **17 tipi di card** ed è l’unico repository per lo sviluppo delle card.
 
-Aggiorna da HACS alla **v0.1.0-beta.10** (versioni preliminari abilitate) e ricarica completamente l’interfaccia. [Configurazione](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/cards/temp.md).
+**Aggiorna la suite prima di rimuovere le vecchie risorse** LightCard, tapparella-card- e le card Pastel separate. Mantieni solo la risorsa Pastel UI e ricarica completamente l’interfaccia: se carichi i vecchi file insieme alla suite, possono continuare a registrare il vecchio aspetto. [Migrazione](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/migration.md).
+
+Test automatici e verifica browser con dati simulati, anche a 320/390/430 pixel. Nessun dispositivo reale azionato durante i test.
 
 ## English
 
-Redesigns **Pastel Temperature** with room tiles matching the shared Pastel theme, filtered sensor selection, configurable names/icons/colors, optional humidity, current min/max and history-based trends. Saved Temperature type IDs and room associations remain valid. **Pastel Temperature & Humidity is removed**; replace retired cards with Temperature and associate separate sensors. There are now **16 active card types**. Update and fully reload the frontend.
+Adds the approved mobile redesign for **Pastel Lights** and **Pastel Covers**, including large controls, scroll-safe sliders, capability-based native actions and real state feedback. The roller-shutter drawing replaces the blind-like illustration. Existing Lights configurations and standalone `light-card` / `tapparella-card` types remain compatible inside the suite. There are now **17 public card types**. Update Pastel UI, remove the old standalone resources, then fully reload the frontend. All card development is consolidated in this repository.

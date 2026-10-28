@@ -264,11 +264,28 @@
     "Pastel Lights",
     {
       "type": "custom:pastel-lights-card",
-      "title": "Luci",
-      "color": "teal",
+      "title": "Esterni",
+      "subtitle": "Illuminazione esterna",
+      "color": "mint",
       "entities": [
         "light.demo_reading",
-        "light.demo_ceiling"
+        "light.demo_color",
+        "light.demo_ceiling",
+        "switch.demo_porch"
+      ]
+    }
+  ],
+  [
+    "covers",
+    "Pastel Covers",
+    {
+      "type": "custom:pastel-covers-card",
+      "title": "Tapparelle",
+      "subtitle": "Piano Terra",
+      "color": "blue",
+      "entities": [
+        "cover.demo_living",
+        "cover.demo_kitchen"
       ]
     }
   ],

@@ -38,10 +38,5 @@
     "file": "pastel-dishwasher-card.js",
     "repository": "Pastel-Dishwasher-card",
     "type": "pastel-dishwasher-card"
-  },
-  {
-    "file": "pastel-lights-card.js",
-    "repository": "pastel-lights-card",
-    "type": "pastel-lights-card"
   }
 ]

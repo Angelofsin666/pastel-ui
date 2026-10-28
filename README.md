@@ -1,6 +1,6 @@
 # Pastel UI
 
-A coordinated collection of Home Assistant cards for lights, climate, appliances, robots and household sensors. One HACS installation with 16 active card types.
+A coordinated collection of Home Assistant cards for lights, climate, appliances, robots and household sensors. One HACS installation with 17 active card types.
 
 [English](#english) · [Italiano](#italiano) · [Card gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Migration](docs/migration.md)
 
@@ -26,6 +26,12 @@ A coordinated collection of Home Assistant cards for lights, climate, appliances
 
 The bundle contains its rendering libraries: there are no runtime CDN imports. Your existing Home Assistant integrations still determine which device functions and data are available.
 
+### Lights, Covers and one repository — beta.11
+
+**Pastel Lights** now uses the approved mobile list, large controls and full-width sliders. **Pastel Covers** adds roller shutters with native group/individual commands and the approved rolling-shutter illustration. The former `light-card` and `tapparella-card` type IDs remain compatibility aliases inside Pastel UI; remove their standalone resources to load the new versions. [Lights](docs/cards/lights.md) · [Covers](docs/cards/covers.md) · [Migration](docs/migration.md).
+
+All card development is consolidated in **pastel-ui**. Use this repository for HACS and future updates.
+
 ### Temperature redesign — beta.10
 
 **Pastel Temperature** now uses room tiles, shared palettes, a thermometer summary, optional humidity and current minimum/maximum readings. Its saved type ID and sensor associations remain valid. **Pastel Temperature & Humidity** is removed; replace retired cards by choosing separate sensors in Pastel Temperature. [Configuration and migration](docs/cards/temp.md).
@@ -40,7 +46,7 @@ Pastel Climate, the old custom-action/IR Climate, and Pastel Thermostat have bee
 
 ### Installation
 
-Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.10`, or explicitly download `main`.
+Open the blue button above with HACS installed. Alternatively, add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**. During the beta, enable pre-release versions and choose `v0.1.0-beta.11`, or explicitly download `main`.
 
 Verify that the JavaScript module resource is registered as:
 
@@ -87,7 +93,7 @@ Rimosse Pastel Climate, la vecchia Climate con azioni personalizzate/IR e Pastel
 
 ### Installazione
 
-Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.10`, oppure scarica esplicitamente `main`.
+Con HACS installato, usa il pulsante azzurro in alto. In alternativa aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**. Durante la beta abilita le versioni preliminari e scegli `v0.1.0-beta.11`, oppure scarica esplicitamente `main`.
 
 Verifica la risorsa JavaScript Module `/hacsfiles/pastel-ui/pastel-ui.js`, poi ricarica l'interfaccia. Aggiungi **Pastel Appliance** o **Pastel Robot** dall'editor visuale, seleziona dispositivo o entità principale e avvia la ricerca. Controlla profilo, dati e comandi proposti prima di applicarli.
 

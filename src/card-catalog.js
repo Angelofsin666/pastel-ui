@@ -42,6 +42,12 @@ export const CARD_CATALOG = [
     "description": "Light controls, brightness and status.",
     "preview": true
   },
+{
+  "type": "pastel-covers-card",
+  "name": "Pastel Covers",
+  "description": "Roller shutter controls, real positions and group commands.",
+  "preview": true
+},
   {
     "type": "pastel-button-card",
     "name": "Pastel Button",
@@ -110,8 +116,9 @@ export function registerCardCatalog(target = window) {
  }
  for (const entry of CARD_CATALOG) {
   const existing = cards.find(card => card.type === entry.type);
-  if (existing) Object.assign(existing, entry);
-  else cards.push({...entry});
+  const metadata={...entry,documentationURL:'https://github.com/Angelofsin666/pastel-ui/blob/main/docs/catalog.md'};
+  if (existing) Object.assign(existing, metadata);
+  else cards.push(metadata);
  }
  return cards;
 }

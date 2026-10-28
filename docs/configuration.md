@@ -1,3 +1,7 @@
+## Lights and Covers — beta.11
+
+The new mobile controls are documented in [Pastel Lights](cards/lights.md) and [Pastel Covers](cards/covers.md). Standalone `light-card` and `tapparella-card` configurations are accepted by the suite through compatibility aliases; remove the old resource modules to avoid registration conflicts.
+
 # Configuration / Configurazione
 
 ## Pastel Pellet Stove / Pellet Stove

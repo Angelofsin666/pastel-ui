@@ -1,3 +1,11 @@
+## beta.11 — one suite for lights and covers
+
+Pastel UI is the single repository for these cards. Update the suite before removing old standalone resources. Saved `custom:pastel-lights-card` configurations keep working. `custom:light-card` and `custom:tapparella-card` are compatibility aliases: their existing source fields are accepted, while the picker exposes only **Pastel Lights** and **Pastel Covers**.
+
+Remove `/hacsfiles/LightCard/light-card.js`, `/hacsfiles/tapparella-card-/tapparella-card.js` and all old `/hacsfiles/Pastel-…/…` resource entries after updating. Keep only `/hacsfiles/pastel-ui/pastel-ui.js` for this suite, then fully reload the frontend. Delete resource entries, not dashboard cards. Retired Climate, Thermostat and Temperature & Humidity types still require the replacements described below.
+
+Aggiorna Pastel UI prima di rimuovere le vecchie risorse. I tipi `light-card` e `tapparella-card` rimangono alias di compatibilità nella suite; le nuove voci del selettore sono **Pastel Lights** e **Pastel Covers**. Conserva soltanto la risorsa della suite e ricarica completamente l’interfaccia.
+
 ## beta.10 — Temperature tiles / Riquadri temperatura
 
 `custom:pastel-temp-card` keeps its existing ID and room sensor fields. Saved Pastel Temperature cards automatically receive the new tile design. Optional humidity remains inside Temperature.

@@ -1,7 +1,8 @@
 import {html,svg} from 'lit-element';
 export function illustration(profile) {
  let art;
- if(profile==='temperature')art=svg`<path d="M49 66V25a11 11 0 0 1 22 0v41a23 23 0 1 1-22 0Z"/><path d="M60 40v38"/><circle cx="60" cy="87" r="9" fill="currentColor" opacity=".2"/><path d="M81 28h10M81 42h7M81 56h10"/>`;
+ if(profile==='lights')art=svg`<path d="M41 77c-1-13-18-20-18-39a37 37 0 0 1 74 0c0 19-17 26-18 39M42 89h36M46 101h28M52 111h16"/>`;
+ else if(profile==='temperature')art=svg`<path d="M49 66V25a11 11 0 0 1 22 0v41a23 23 0 1 1-22 0Z"/><path d="M60 40v38"/><circle cx="60" cy="87" r="9" fill="currentColor" opacity=".2"/><path d="M81 28h10M81 42h7M81 56h10"/>`;
  else if(profile==='alarm')art=svg`<path d="M60 10 99 27 95 67 81 88 60 106 39 88 25 67 21 27Z"/><circle cx="60" cy="48" r="5"/><path d="M60 53v17"/>`;
  else if(profile==='dishwasher')art=svg`<rect x="21" y="10" width="78" height="99" rx="14"/><path d="M21 35h78M32 23h20M36 80h48M36 91h48"/><path d="M42 76V49M54 76V45M66 76V45M78 76V49"/>`;
  else if(profile==='oven')art=svg`<rect x="21" y="10" width="78" height="99" rx="14"/><rect x="32" y="44" width="56" height="50" rx="6"/><path d="M38 24h10M69 24h10M40 82h40"/>`;
