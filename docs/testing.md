@@ -1,3 +1,9 @@
+## v1.3.1 — Pellet bag counter / Contatore sacchi pellet
+
+English: tests verify the stove tile reads a selected `counter`, tracks external changes, preserves zero, shows `—` for unavailable data and remains absent in old configurations. The editor suggests only `counter` helpers. The bundle build passes; no physical stove or refill automation was operated.
+
+Italiano: i test verificano che il riquadro legga il `counter` scelto, segua le modifiche esterne, mostri zero e `—` per i dati non disponibili e resti assente nelle vecchie configurazioni. L'editor suggerisce solo aiutanti `counter`. La compilazione passa; non sono state comandate stufe o automazioni reali.
+
 ## v1.3.0 — Five access and safety cards / Cinque card per accessi e sicurezza
 
 English: automated tests cover native cover/lock/valve feature gating, acceptance of arbitrary `camera` entities, leak-state readback, picker registration and absence of personal entity IDs in defaults. `npm run check` builds the HACS bundle. Demo fixtures use fictional entities; physical devices have not been operated.

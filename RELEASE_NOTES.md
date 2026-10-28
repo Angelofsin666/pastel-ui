@@ -1,3 +1,19 @@
+# Pastel UI v1.3.1
+
+## English
+
+**Pellet Stove now supports a pellet-bag counter.** Select a Home Assistant `counter` helper in the new **Aiutante contatore sacchi** field. A “Sacchi disponibili” tile then displays its live value. If you leave the field empty, your stove card looks exactly as before. The card reads the counter but never decrements it; your refill automation remains responsible for that change. Climate AC and the other 44 cards are unchanged.
+
+Automated tests and the bundle build pass. [Full changelog](CHANGELOG.md) · [Pellet Stove guide](docs/cards/stove.md). Development was assisted by AI tools under maintainer review, and [card requests are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Pellet Stove ora mostra il contatore dei sacchi di pellet.** Seleziona un aiutante `counter` nel nuovo campo **Aiutante contatore sacchi**: comparirà il riquadro “Sacchi disponibili” con il valore aggiornato. Lascia il campo vuoto per mantenere la card identica a prima. La card legge il contatore senza scalarlo; se ne occupa la tua automazione al rabbocco. Climate AC e le altre 44 card restano invariate.
+
+Test automatici e compilazione superati. [Changelog completo](CHANGELOG.md) · [Guida Pellet Stove](docs/cards/stove.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [le richieste di card sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.3.0
 
 ## English

@@ -29,6 +29,8 @@ The [gallery](docs/catalog.md) shows every card with fictional example entities.
 
 **New in 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger and Pool Robot](docs/cards/equipment.md) have dedicated visuals, searchable entity fields and configurable actions. Sump Pumps is designed for basement flood-prevention equipment.
 
+**New in 1.3.1:** [Pellet Stove](docs/cards/stove.md) can now show a selected `counter` helper as “Sacchi disponibili”; the card only reads the helper, so your refill automation remains in Home Assistant.
+
 **New in 1.3:** [Garage & Gate, Doorbell, Smart Lock, Air Quality and Water Safety](docs/cards/equipment.md) add native controls, camera selection and leak monitoring. The garage control is labelled “Basculante” by default, and Doorbell accepts any `camera` entity.
 
 **New in 1.2:** [3D Printer, Printer, Rainwater Tank, Ventilation, Range Hood, Litter Robot, Pet Bowls, Chicken Feeder, Irrigation, Solar and Home Battery](docs/cards/equipment.md) add eleven specialist cards. Irrigation supports any number of individually monitored zones.
@@ -71,6 +73,8 @@ Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensor
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
 
 **Novità 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger e Pool Robot](docs/cards/equipment.md) hanno disegni dedicati, ricerca delle entità e comandi configurabili. Sump Pumps è pensata per le pompe anti-allagamento dei locali interrati.
+
+**Novità 1.3.1:** [Pellet Stove](docs/cards/stove.md) può mostrare un aiutante `counter` scelto dall’utente come “Sacchi disponibili”. La card legge solo il valore; l’automazione del rabbocco resta in Home Assistant.
 
 **Novità 1.3:** [Garage & Gate, Doorbell, Smart Lock, Air Quality e Water Safety](docs/cards/equipment.md) aggiungono comandi nativi, scelta della telecamera e monitoraggio perdite. Il comando garage si chiama “Basculante” per impostazione iniziale; Doorbell accetta qualsiasi entità `camera`.
 

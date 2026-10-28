@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.3.1 — Pellet bag counter / Contatore sacchi pellet
+
+### English
+
+- Pastel Pellet Stove optionally displays a **Sacchi disponibili** metric tile sourced from a user-selected Home Assistant `counter` helper. The visual editor suggests only `counter` entities and allows direct entity-ID entry. The tile is absent when the field is empty, preserving existing layouts and configurations.
+- The value follows Home Assistant state, including changes made by automations; zero is shown as zero and unavailable values as `—`. The card does not decrement bags or infer refills. Climate AC and all other cards are unchanged.
+- Add a fictional demo counter, update the bilingual guide and verify the rendering and picker with automated tests.
+
+### Italiano
+
+- Pastel Pellet Stove può mostrare il riquadro **Sacchi disponibili** leggendo un aiutante `counter` scelto dall’utente. Nell’editor la ricerca suggerisce solo entità `counter` e permette anche di scrivere l’ID. Se il campo è vuoto, il riquadro non compare e le configurazioni esistenti restano identiche.
+- Il numero segue lo stato di Home Assistant, comprese le modifiche delle automazioni; zero resta zero e i valori non disponibili mostrano `—`. La card non scala i sacchi e non deduce i rabbocchi. Climate AC e tutte le altre card restano invariate.
+- Aggiunti un contatore fittizio nella demo, guida bilingue e test automatici per riquadro e selettore.
+
 ## 1.3.0 — Access and safety / Accessi e sicurezza
 
 ### English

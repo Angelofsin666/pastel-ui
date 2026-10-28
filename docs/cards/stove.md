@@ -16,6 +16,7 @@ L’editor visuale permette di:
 
 - Cambiare titolo, sottotitolo, icona, palette, colori personalizzati e sfondo. Lo sfondo segue il tema Home Assistant; puoi fissarlo a `#ffffff`.
 - Associare temperatura impostata, temperatura ambiente e percentuale pellet, anche da attributi. Le letture mancanti mostrano un trattino. La barra pellet è limitata a 0–100; la soglia di avviso è configurabile (20% predefinito).
+- Selezionare un aiutante `counter` per **Sacchi disponibili**. Il riquadro compare solo quando lo associ e mostra il valore letto da Home Assistant, anche quando cambia per effetto di un’automazione. La card non decrementa il contatore.
 - Aggiungere, rimuovere e riordinare tutti i pulsanti desiderati. Ogni pulsante può avviare uno script, un button o una scena; la disposizione va a capo automaticamente.
 - Aggiungere controlli **−/+**: entità del valore, script meno, script più, nome, unità e limiti opzionali. I valori vengono riletti dalle entità, senza incrementi fittizi nella card.
 - Definire stati in ordine di priorità. Una regola richiede tutte le condizioni (**E**) oppure almeno una (**O**). Puoi confrontare stato o attributo con “uguale” o “diverso”. Un timer attivo usato nelle condizioni viene mostrato automaticamente; puoi anche selezionarlo esplicitamente.
@@ -42,6 +43,7 @@ hero_caption: Soggiorno
 color: peach
 temperature_entity: counter.example_temperature
 pellet_entity: sensor.example_pellet
+sacks_entity: counter.example_pellet_bags
 pellet_warning_threshold: 20
 fallback_label: Riscaldamento spento
 fallback_badge: Spenta
@@ -123,9 +125,11 @@ Per i sensori: `temperature_attribute`, `pellet_attribute`, `ambient_attribute`;
 
 ## English
 
-A configurable pellet-stove card matching the shared Pastel theme. Install **v0.1.0-beta.9** through HACS (pre-releases enabled), reload the frontend and choose **Pastel Pellet Stove** in the card picker.
+A configurable pellet-stove card matching the shared Pastel theme. Install the latest stable release through HACS, reload the frontend and choose **Pastel Pellet Stove** in the card picker.
 
 The visual editor supports appearance, arbitrary wrapping action buttons, independent minus/plus script controls, optional pellet and temperature readings, and ordered state rules with AND/OR conditions. Each stepper needs a value entity and separate minus/plus actions. Values update from Home Assistant, never from optimistic frontend increments. Scripts, integrations and helpers remain responsible for operating the stove and reporting its state.
+
+Since v1.3.1, the optional `sacks_entity` field suggests `counter` helpers. When configured, a **Sacchi disponibili** tile reads the helper directly; missing or unavailable values display `—`. Your Home Assistant automation can decrement the counter after a pellet refill. The card only displays it and does not run that automation.
 
 The YAML example above uses fictional entities. `states` are evaluated in order; conditions support `entity`, optional `attribute`, `state`, and `operator: equals|not_equals`. The first matching rule wins. Missing data that could affect a higher-priority rule produces an unavailable status. Active timer conditions automatically expose the remaining time from Home Assistant’s `finishes_at`; `timer_entity` can override the timer shown. No command runs during setup.
 
