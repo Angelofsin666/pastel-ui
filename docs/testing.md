@@ -1,5 +1,9 @@
 # Compatibility and testing / Compatibilità e test
 
+## Alarm & Security — v0.1.0-beta.7
+
+Fourteen added unit tests cover native feature/service gating, mixed script/native dispatch, real panel-state rendering, temporary code handling, counter validation, binary/numeric detectors, missing-data precedence, source filtering and editor configuration. Chromium checks both cards together, native/script calls, synchronized state, PIN request/cancel/clear, detector alarms and missing values, 320px/390px light/dark layouts, and both visual editors. No live alarm was armed, disarmed or triggered; all checks use simulated Home Assistant data.
+
 ## Script Climate — v0.1.0-beta.6
 
 Nine added unit tests cover temperature-sensor filtering, script availability and dispatch, service errors, live readings, optional real-state indicators, editor filtering and button edits. Chromium verifies script calls, changing sensor readings, 320px/390px layouts in light/dark themes, fifteen wrapping buttons, unavailable scripts, script/temperature suggestions, visual icon selection, renaming, per-button colors, reordering and saved configurations. All tests use simulated Home Assistant data; no air conditioner was operated.

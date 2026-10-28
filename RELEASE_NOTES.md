@@ -1,21 +1,20 @@
 ## Italiano
 
-Nuova **Pastel Clima Script**, coerente con lo stile di Pastel Stufa, per climatizzatori comandati da script.
+Aggiunge le due card approvate nelle anteprime:
 
-- Scegli il sensore di temperatura da suggerimenti filtrati ai sensori di temperatura, oppure scrivine l’ID.
-- Aggiungi pulsanti, rinominali e scegli lo script da un elenco dei soli script.
-- Scegli le icone da una griglia visiva e la palette della card o dei singoli pulsanti.
-- Riordina o rimuovi i pulsanti; nessun numero fisso di funzioni.
-- Badge e indicatori opzionali usano entità di stato reali. Uno script `off` non viene interpretato come climatizzatore spento.
+- **Pastel Allarme** (`custom:pastel-alarm-card`): nome iniziale Protego sempre modificabile. Ogni pulsante può usare una funzione nativa supportata dal pannello oppure uno script. Nomi, icone, colori e ordine sono configurabili. Lo stato mostrato viene sempre dal pannello allarme. Palette iniziale Blu.
+- **Pastel Riepilogo Sicurezza** (`custom:pastel-security-card`): riquadri personalizzabili per allarme, conteggio porte/finestre e sensori reali. Palette iniziale Menta. Senza sensori associati non viene mostrato un OK fisso; per letture numeriche la soglia va scelta esplicitamente.
 
-Dopo l’aggiornamento **ricarica completamente il frontend**, quindi scegli **Pastel Clima Script** in “Aggiungi card”. La nuova card non sostituisce automaticamente Pastel Thermostat: associa il tuo sensore e gli script nell’editor. Nessuna modifica necessaria alle card esistenti.
+I comandi nativi che richiedono un codice lo chiedono al momento dell’azione: il codice non viene salvato nella configurazione. Gli script conservano la propria logica.
 
-Questa è una release preliminare: abilita le beta di Pastel UI in HACS e usa “Aggiorna informazioni” se non compare. Test automatici e browser con dati simulati; nessun climatizzatore reale azionato.
+Dopo l’aggiornamento **ricarica completamente il frontend** e cerca **Pastel Allarme** e **Pastel Riepilogo Sicurezza** in “Aggiungi card”. Seleziona il pannello e associa i tuoi script/sensori dall’editor. Le card esistenti non vengono sostituite automaticamente.
 
-[Configurazione e guida](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/cards/script-climate.md).
+Abilita le versioni preliminari di Pastel UI in HACS; se la release non compare usa “Aggiorna informazioni”. Test automatici e browser con dati simulati; nessun allarme reale azionato.
+
+[Guida e configurazione](https://github.com/Angelofsin666/pastel-ui/blob/main/docs/cards/security.md).
 
 ## English
 
-Adds **Pastel Clima Script**, a script-driven air-conditioner card with a simple visual editor, temperature-only sensor suggestions, script-only buttons, a visual icon grid, editable names and card/button palettes. Arbitrary button counts and optional real-state helpers are supported. Script idle/running never implies HVAC power. Existing cards remain compatible.
+Adds **Pastel Allarme** and **Pastel Riepilogo Sicurezza** with visual editors and the approved shared Pastel style. Alarm title, buttons, icons, colors and native/script sources are configurable; panel state stays authoritative. Security tiles use real alarm, count and detector entities and preserve missing-data status. Native codes are transient and numeric detector thresholds are explicit user settings. Existing card types remain compatible.
 
-Reload the frontend after updating and add Pastel Clima Script, then choose your sensor and scripts. HACS pre-releases must be enabled. Automated/browser tests use simulated Home Assistant data; no physical air conditioner was operated.
+Reload the frontend after updating, then add and configure the new cards. HACS pre-releases must be enabled. Unit/browser tests use simulated Home Assistant data; no live alarm was operated.

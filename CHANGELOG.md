@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-beta.7
+
+- Add Pastel Allarme with editable Protego title, visual icon/palette controls, and independently configurable native or script buttons.
+- Read alarm state from the selected panel, gate native commands by features/services, and request required codes transiently without saving them in card configuration.
+- Add Pastel Riepilogo Sicurezza with editable/reorderable alarm, opening-count and detector tiles. Missing data is not treated as zero or OK; numeric detectors require explicit thresholds.
+- Include visual editors, bilingual documentation and simulated unit/browser checks. Existing cards remain compatible.
+- Nuove card Allarme e Riepilogo Sicurezza con nomi, icone, colori, comandi e sensori configurabili.
+
 ## 0.1.0-beta.6
 
 - Add Pastel Clima Script, a script-driven air-conditioner card matching the shared Pastel/Stove style.

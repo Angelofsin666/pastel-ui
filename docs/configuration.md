@@ -8,6 +8,10 @@ See the [Stove configuration and visual editor guide](cards/stove.md) for script
 
 See the [Script Climate editor and configuration guide](cards/script-climate.md) for script-only buttons, visual icons and temperature sensors.
 
+## Alarm & Security / Allarme e Sicurezza
+
+See the [Alarm and Security visual-editor guide](cards/security.md) for native/script alarm buttons and configurable security tiles.
+
 ## English
 
 ### Appliance and Robot
