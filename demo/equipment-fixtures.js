@@ -78,7 +78,14 @@ export function appendEquipmentFixtures(add,examples){
   ['smart_scale','72.4','kg',{profile:['Utente 1',''],measured:['Oggi',''],battery:['91','%']},'Pronta'],
   ['compost_bin','42','°C',{level:['61','%'],humidity:['54','%'],stage:['Maturazione','']},'on'],
   ['aroma_diffuser','45','min',{water:['55','%'],light:['Calda',''],mode:['Relax','']},'on'],
-  ['bird_feeder','68','%',{visits:['7',''],battery:['82','%'],last_visit:['15:42','']},'Visita recente']
+  ['bird_feeder','68','%',{visits:['7',''],battery:['82','%'],last_visit:['15:42','']},'Visita recente'],
+  ['chicken_coop','Aperto','',{eggs:['4',''],temperature:['19.8','°C'],birds:['6','']},'Pronto'],
+  ['parking_spot','Libero','',{distance:['2.4','m'],last_arrival:['Ieri 18:40',''],light:['Spenta','']},'Disponibile'],
+  ['hydroponic_garden','74','%',{nutrients:['1.4','mS/cm'],light:['Accesa',''],temperature:['22.1','°C']},'In crescita'],
+  ['treadmill','3.2','km',{speed:['8.5','km/h'],incline:['2','%'],time:['23','min']},'Allenamento'],
+  ['e_bike','82','%',{range:['68','km'],lock:['Bloccata',''],location:['Casa','']},'In sosta'],
+  ['energy_tariff','0.19','€/kWh',{tomorrow:['0.16','€/kWh'],next_period:['22:00',''],today_cost:['2.84','€']},'F1'],
+  ['electric_scooter','67','%',{range:['41','km'],lock:['Bloccato',''],location:['Garage','']},'In sosta']
  ];
  for(const [key,value,unit,metrics,status] of newDevices){
   const slug=key.replaceAll('_','-'),hero=add(`sensor.demo_${slug}_hero`,value,EQUIPMENT[key].hero,{unit_of_measurement:unit}),state=add(`sensor.demo_${slug}_status`,status,'Stato '+EQUIPMENT[key].title);

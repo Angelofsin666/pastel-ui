@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,heaterCommand,heaterPowerState,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue,wasteReading} from '../src/equipment-model.js';
 
 test('equipment types keep all associations user-supplied',()=>{
- assert.equal(EQUIPMENT_KEYS.length,72);
- assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,72);
+ assert.equal(EQUIPMENT_KEYS.length,79);
+ assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,79);
  for(const profile of Object.values(EQUIPMENT)){
   assert.ok(profile.metrics.length>=2||profile.waste_items);
   assert.ok(Array.isArray(profile.buttons));
@@ -17,8 +17,10 @@ test('equipment types keep all associations user-supplied',()=>{
  assert.equal(EQUIPMENT.doorbell.camera,true);
  assert.equal(EQUIPMENT.fan_heater.heater,true);
  assert.equal(EQUIPMENT.infrared_panel.heater,true);
- for(const key of ['safe','adjustable_bed','electric_blanket','garden_fountain','window_cleaner','skylight','air_compressor','stairlift','fish_feeder','shower','smart_desk','outdoor_grill','snow_melt','septic_tank','generator','nas','water_meter','gas_meter','power_panel','air_purifier','air_multiplier','ice_maker','bread_maker','toaster','smart_toothbrush','smart_mirror','smart_toilet','humidifier','wine_cellar','water_softener','sauna','electric_fireplace','parcel_box','smart_scale','compost_bin','aroma_diffuser','bird_feeder'])assert.ok(EQUIPMENT[key]?.art);
+ for(const key of ['safe','adjustable_bed','electric_blanket','garden_fountain','window_cleaner','skylight','air_compressor','stairlift','fish_feeder','shower','smart_desk','outdoor_grill','snow_melt','septic_tank','generator','nas','water_meter','gas_meter','power_panel','air_purifier','air_multiplier','ice_maker','bread_maker','toaster','smart_toothbrush','smart_mirror','smart_toilet','humidifier','wine_cellar','water_softener','sauna','electric_fireplace','parcel_box','smart_scale','compost_bin','aroma_diffuser','bird_feeder','chicken_coop','parking_spot','hydroponic_garden','treadmill','e_bike','energy_tariff','electric_scooter'])assert.ok(EQUIPMENT[key]?.art);
  assert.equal(EQUIPMENT.bird_feeder.camera_action,true);
+ assert.equal(EQUIPMENT.energy_tariff.tariff_views,true);
+ assert.notEqual(EQUIPMENT.e_bike.art,EQUIPMENT.electric_scooter.art);
 });
 
 test('heater controls use selected entities and never guess a new temperature',()=>{

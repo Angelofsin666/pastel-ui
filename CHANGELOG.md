@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.9.0 — Seven new cards / Sette nuove card
+
+### English
+
+- Add **Pastel Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff and Electric Scooter**. The catalog now has **102 card types**. Each new card has a distinct full-size line illustration, a selectable palette and editable names and readings. E-Bike and Electric Scooter are separate designs.
+- Energy Tariff's **Today / Tomorrow** controls switch the main price reading between the two sensors selected by the user; they do not send a service call or invent a price. The other new cards support configurable action buttons. Unconfigured actions remain disabled, and all status and measurements follow the chosen Home Assistant entities. No personal entity IDs are preset.
+- Add all seven to the Home Assistant card picker and fictional demo. Automated tests and bundle build pass; the seven-card demo was checked at a 390 px viewport with no horizontal overflow. No physical devices were operated.
+
+### Italiano
+
+- Aggiunge **Pastel Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff ed Electric Scooter**. Il catalogo arriva a **102 tipi di card**. Ognuna ha un grande disegno dedicato, palette selezionabile e nomi e valori modificabili. E-Bike ed Electric Scooter hanno disegni distinti.
+- I pulsanti **Oggi / Domani** di Energy Tariff cambiano il prezzo principale leggendo i due sensori scelti dall'utente; non chiamano servizi né inventano un prezzo. Le altre nuove card supportano pulsanti configurabili. I comandi non associati restano disabilitati; stato e valori seguono le entità selezionate. Nessun ID personale è preimpostato.
+- Le sette card sono nel selettore Home Assistant e nella demo con dati fittizi. Test automatici e compilazione superati; demo verificata su viewport da 390 px senza scorrimento laterale. Nessun dispositivo fisico è stato comandato.
+
 ## 1.8.0 — Ten more device cards / Dieci nuove card per dispositivi
 
 ### English

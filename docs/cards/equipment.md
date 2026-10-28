@@ -2,13 +2,15 @@
 
 ## English
 
+Version 1.9 adds Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff and Electric Scooter. Each has a large, distinct illustration and configurable readings. Energy Tariff switches between today and tomorrow using the selected price sensors; those view buttons do not call a service. Other new action buttons are disabled until an entity is selected. E-Bike and Electric Scooter are separate designs and card types.
+
 Version 1.8 adds Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser and Bird Feeder. Each has its own full-size line drawing, an editable palette, a chosen main reading and state, optional metrics and any number of configurable buttons. Bird Feeder also accepts an optional `camera` entity; its **Open camera** button opens that entity in Home Assistant while keeping the feeder illustration and food-level reading. No personal entities or services are preset.
 
 Version 1.7 adds eight dedicated cards for air treatment, kitchen appliances and bathroom devices. Air Purifier and Air Multiplier can use a selected native `fan` entity for power, speed and oscillation when supported; the native button labels and colours are editable, and extra mode buttons can call user-selected scripts. The other six cards use the same configurable sensor and script/button controls as the rest of the suite. All eight have large, distinct line illustrations and no preselected entity IDs.
 
 The nineteen new 1.6 profiles use the same large Pastel illustration, editable palette, names, main reading, optional measurements, state badge and any number of script/entity buttons. **Skylight** accepts a native `cover` and shows its live opening percentage and supported position control. No entity is preselected.
 
-Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, version 1.4 added eight more equipment cards, version 1.5 added two heating cards, version 1.6 added nineteen more equipment cards, version 1.7 added eight more, and version 1.8 adds ten. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
+Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, version 1.4 added eight more equipment cards, version 1.5 added two heating cards, version 1.6 added nineteen more equipment cards, version 1.7 added eight more, and version 1.8 adds ten, and version 1.9 adds seven. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
 
 | Card | Type | Main reading and optional metrics |
 |---|---|---|
@@ -84,8 +86,15 @@ Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five
 | Pastel Compost Bin | `custom:pastel-compost-bin-card` | Compost temperature; fill, humidity and stage |
 | Pastel Aroma Diffuser | `custom:pastel-aroma-diffuser-card` | Time remaining; water, light and mode |
 | Pastel Bird Feeder | `custom:pastel-bird-feeder-card` | Food level; visits, battery and last visit |
+| Pastel Chicken Coop | `custom:pastel-chicken-coop-card` | Coop door; eggs, temperature and bird count |
+| Pastel Parking Spot | `custom:pastel-parking-spot-card` | Parking availability; distance, last arrival and light |
+| Pastel Hydroponic Garden | `custom:pastel-hydroponic-garden-card` | Water level; nutrients, light and temperature |
+| Pastel Treadmill | `custom:pastel-treadmill-card` | Distance; speed, incline and duration |
+| Pastel E-Bike | `custom:pastel-e-bike-card` | Battery charge; range, lock and location |
+| Pastel Energy Tariff | `custom:pastel-energy-tariff-card` | Current price; tomorrow's price, next period and today's cost |
+| Pastel Electric Scooter | `custom:pastel-electric-scooter-card` | Battery charge; range, lock and location |
 
-All seventy-two dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
+All seventy-nine dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
 
 ```yaml
 type: custom:pastel-sump-pumps-card
@@ -176,6 +185,8 @@ buttons:
 Doorbell action buttons now use larger touch targets, text and icons on phones. Camera selection and saved button configurations remain the same.
 
 ## Italiano
+
+La versione 1.9 aggiunge Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff ed Electric Scooter. Ognuna ha un grande disegno distinto e valori configurabili. Energy Tariff passa tra oggi e domani leggendo i sensori di prezzo scelti; questi due pulsanti non inviano comandi. Gli altri nuovi pulsanti restano disabilitati finché non scegli un’entità. E-Bike ed Electric Scooter sono card e disegni separati.
 
 La versione 1.8 aggiunge Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser e Bird Feeder. Ciascuna ha un grande disegno dedicato, palette modificabile, valore e stato scelti dall'utente, altri valori facoltativi e quanti pulsanti configurabili servono. Bird Feeder permette anche di scegliere una qualsiasi entità `camera`: il pulsante **Apri camera** la apre in Home Assistant senza sostituire il disegno o il valore del mangime. Nessuna entità personale è preimpostata.
 

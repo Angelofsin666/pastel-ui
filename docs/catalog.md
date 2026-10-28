@@ -4,7 +4,7 @@
 
 ## English
 
-95 card types in Pastel UI 1.8, including Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel and the native Pastel Thermostat. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
+102 card types in Pastel UI 1.9, including Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel and the native Pastel Thermostat. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
 
 | Card | Type |
 |---|---|
@@ -104,11 +104,18 @@
 | [Pastel Compost Bin](cards/equipment.md) | `custom:pastel-compost-bin-card` |
 | [Pastel Aroma Diffuser](cards/equipment.md) | `custom:pastel-aroma-diffuser-card` |
 | [Pastel Bird Feeder](cards/equipment.md) | `custom:pastel-bird-feeder-card` |
+| [Pastel Chicken Coop](cards/equipment.md) | `custom:pastel-chicken-coop-card` |
+| [Pastel Parking Spot](cards/equipment.md) | `custom:pastel-parking-spot-card` |
+| [Pastel Hydroponic Garden](cards/equipment.md) | `custom:pastel-hydroponic-garden-card` |
+| [Pastel Treadmill](cards/equipment.md) | `custom:pastel-treadmill-card` |
+| [Pastel E-Bike](cards/equipment.md) | `custom:pastel-e-bike-card` |
+| [Pastel Energy Tariff](cards/equipment.md) | `custom:pastel-energy-tariff-card` |
+| [Pastel Electric Scooter](cards/equipment.md) | `custom:pastel-electric-scooter-card` |
 
 ![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
 
 ## Italiano
 
-95 tipi di card in Pastel UI 1.8, inclusi Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel e Pastel Thermostat per entità `climate`. L’esempio del depuratore usa Appliance. Le card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
+102 tipi di card in Pastel UI 1.9, inclusi Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel e Pastel Thermostat per entità `climate`. L’esempio del depuratore usa Appliance. Le card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
 
 I nuovi nomi pubblici conservano gli ID `pastel-script-climate-card` e `pastel-stove-card`. Consulta la [migrazione](migration.md) per le card ritirate.

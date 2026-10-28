@@ -1,3 +1,23 @@
+# Pastel UI v1.9.0
+
+## English
+
+**Seven new cards bring Pastel UI to 102 card types:** Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff and Electric Scooter. Each has a large, distinct illustration that fits the collection and a layout checked for phones.
+
+Choose your own sensors, helpers, status entity, colours, labels and actions. The E-Bike and Electric Scooter are separate cards. Energy Tariff's **Today / Tomorrow** buttons show the two price sensors you select; they never send a service command. All other new commands stay disabled until configured, and the displayed state follows Home Assistant rather than assuming a press succeeded. No personal entity IDs are built in. Existing cards and configurations remain compatible.
+
+Automated tests, bundle build and phone-width demo checks pass; physical devices were not operated. [Full changelog](CHANGELOG.md) · [Equipment guide](docs/cards/equipment.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Sette nuove card portano Pastel UI a 102 tipi:** Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff ed Electric Scooter. Ciascuna ha un grande disegno distinto, coerente con la collezione, e un layout verificato su telefono.
+
+Scegli i tuoi sensori, aiutanti, entità di stato, colori, nomi e azioni. E-Bike ed Electric Scooter sono card separate. I pulsanti **Oggi / Domani** di Energy Tariff mostrano i due sensori di prezzo che associ; non inviano comandi. Gli altri nuovi comandi restano disabilitati fino alla configurazione e lo stato mostrato segue Home Assistant. Nessun ID personale è preimpostato. Le card e le configurazioni esistenti restano compatibili.
+
+Test automatici, compilazione e verifica della demo su telefono superati; nessun dispositivo fisico è stato comandato. [Changelog completo](CHANGELOG.md) · [Guida dispositivi](docs/cards/equipment.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.8.0
 
 ## English
