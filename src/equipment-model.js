@@ -32,7 +32,9 @@ export const EQUIPMENT = {
  greenhouse:{name:'Pastel Greenhouse',title:'Serra',subtitle:'Clima e irrigazione',icon:'mdi:greenhouse',color:'mint',art:'greenhouse',hero:'Temperatura interna',metrics:[['humidity','Umidità'],['soil','Terreno'],['light','Luce'],['water','Acqua']],buttons:[['Irriga','mdi:water'],['Ventila','mdi:fan']]},
  mailbox:{name:'Pastel Mailbox',title:'Cassetta postale',subtitle:'Posta in arrivo',icon:'mdi:mailbox',color:'pink',art:'mailbox',hero:'Stato cassetta',metrics:[['last_delivery','Ultima consegna'],['door','Sportello'],['count','Consegne']],buttons:[['Segna letta','mdi:check']]},
  kitchen_robot:{name:'Pastel Kitchen Robot',title:'Robot da cucina',subtitle:'Cottura e preparazione',icon:'mdi:pot-steam-outline',color:'peach',art:'kitchen_robot',hero:'Tempo rimanente',metrics:[['temperature','Temperatura'],['speed','Velocità'],['program','Programma'],['bowl','Stato boccale']],buttons:[['Pausa','mdi:pause'],['Ferma','mdi:stop'],['Velocità +','mdi:plus']]},
- waste_collection:{name:'Pastel Waste Collection',title:'Raccolta rifiuti',subtitle:'Prossime raccolte',icon:'mdi:recycle',color:'blue',art:'waste_collection',hero:'Prossima raccolta',metrics:[],buttons:[],waste_items:true}
+ waste_collection:{name:'Pastel Waste Collection',title:'Raccolta rifiuti',subtitle:'Prossime raccolte',icon:'mdi:recycle',color:'blue',art:'waste_collection',hero:'Prossima raccolta',metrics:[],buttons:[],waste_items:true},
+ fan_heater:{name:'Pastel Fan Heater',title:'Stufetta ad aria',subtitle:'Riscaldamento ambiente',icon:'mdi:fan',color:'peach',art:'fan_heater',hero:'Temperatura ambiente',metrics:[['target','Temperatura impostata'],['power','Assorbimento']],buttons:[['Eco','mdi:leaf'],['Ventola forte','mdi:fan-plus']],heater:true},
+ infrared_panel:{name:'Pastel Infrared Panel',title:'Pannello infrarossi',subtitle:'Riscaldamento radiante',icon:'mdi:radiator',color:'pink',art:'infrared_panel',hero:'Temperatura ambiente',metrics:[['target','Temperatura impostata'],['power','Assorbimento']],buttons:[['Modalità Eco','mdi:leaf']],heater:true}
 };
 export const EQUIPMENT_KEYS=Object.keys(EQUIPMENT);
 const TYPE_SLUGS={sump:'sump-pumps',booster:'water-booster',coffee:'coffee-machine',fryer:'air-fryer',ev:'ev-charger',printer_3d:'3d-printer'};
@@ -74,6 +76,19 @@ export function buttonCommand(button){
  const domain=id.split('.')[0];
  const service={script:'turn_on',scene:'turn_on',button:'press',input_button:'press',switch:'toggle',input_boolean:'toggle',automation:'trigger'}[domain];
  return service?{action:`${domain}.${service}`,entity:id}:null;
+}
+export function heaterCommand(entity,operation,action=''){
+ if(action)return {action,entity:entity||undefined};
+ const domain=(entity||'').split('.')[0];
+ if(['switch','input_boolean'].includes(domain)&&['on','off'].includes(operation))return {action:`${domain}.turn_${operation}`,entity};
+ if(['input_number','counter'].includes(domain)&&['up','down'].includes(operation))return {action:`${domain}.${operation==='up'?'increment':'decrement'}`,entity};
+ return buttonCommand({entity});
+}
+export function heaterPowerState(hass,entity){
+ const state=hass?.states?.[entity]?.state?.toLowerCase();
+ if(!state||['unknown','unavailable'].includes(state))return null;
+ if(['off','spento','spenta','idle','standby','false','0'].includes(state))return false;
+ return true;
 }
 export const zoneAction=(id,start)=>['switch','input_boolean'].includes((id||'').split('.')[0])?`${id.split('.')[0]}.${start?'turn_on':'turn_off'}`:'';
 export function wasteReading(hass,item){

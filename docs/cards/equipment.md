@@ -2,7 +2,7 @@
 
 ## English
 
-Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, and version 1.4 adds eight more equipment cards. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
+Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, version 1.4 added eight more equipment cards, and version 1.5 adds two heating cards. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
 
 | Card | Type | Main reading and optional metrics |
 |---|---|---|
@@ -39,8 +39,10 @@ Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five
 | Pastel Mailbox | `custom:pastel-mailbox-card` | Mailbox state, last delivery, door and count |
 | Pastel Kitchen Robot | `custom:pastel-kitchen-robot-card` | Time remaining, temperature, speed, programme and bowl |
 | Pastel Waste Collection | `custom:pastel-waste-collection-card` | Next collection and unlimited calendar/helper/sensor rows |
+| Pastel Fan Heater | `custom:pastel-fan-heater-card` | Room temperature; target temperature and power |
+| Pastel Infrared Panel | `custom:pastel-infrared-panel-card` | Room temperature; target temperature and power |
 
-All thirty-three dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
+All thirty-five dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
 
 ```yaml
 type: custom:pastel-sump-pumps-card
@@ -105,7 +107,40 @@ waste_items:
     inactive_label: Not scheduled
 ```
 
+### New in 1.5: room heaters
+
+**Pastel Fan Heater** and **Pastel Infrared Panel** each show a user-selected room-temperature sensor, optional status entity, target-temperature helper and power sensor. The fan heater has a large fan illustration; the infrared card has a radiant-panel illustration. Choose your own colours, labels, metrics and mode buttons in the visual editor. No entity is preselected.
+
+The on/off control follows the chosen `state_entity`: when it is on, the card offers **Spegni**; when off, **Accendi**. If no usable state is selected, both commands remain visible. Associate separate scripts or entities with `power_on_entity` and `power_off_entity`. The **+ / −** controls can call scripts, `input_number` helpers or `counter` helpers via `temperature_up_entity` and `temperature_down_entity`. The displayed target always follows `metrics.target`; tapping a button does not fabricate a new reading. The scripts or helpers define the permitted temperature range. An unconfigured command is disabled.
+
+```yaml
+type: custom:pastel-fan-heater-card
+hero_entity: sensor.example_room_temperature
+state_entity: switch.example_fan_heater
+metrics:
+  target: input_number.example_heater_target
+  power: sensor.example_heater_power
+power_on_entity: script.example_heater_on
+power_off_entity: script.example_heater_off
+temperature_up_entity: script.example_target_up
+temperature_down_entity: script.example_target_down
+buttons:
+  - name: Eco
+    icon: mdi:leaf
+    entity: script.example_heater_eco
+```
+
+Doorbell action buttons now use larger touch targets, text and icons on phones. Camera selection and saved button configurations remain the same.
+
 ## Italiano
+
+### Novità 1.5: riscaldamento ambiente
+
+**Pastel Fan Heater** e **Pastel Infrared Panel** mostrano un sensore scelto per la temperatura ambiente, un'entità di stato opzionale, l'aiutante della temperatura impostata e il sensore di assorbimento. La prima raffigura una stufetta ventilata, la seconda un pannello radiante. Colori, nomi, valori e pulsanti per le modalità sono modificabili nell'editor. Non viene preimpostata alcuna entità.
+
+Il comando di accensione segue `state_entity`: quando è accesa la card mostra **Spegni**, quando è spenta mostra **Accendi**. Se lo stato non è disponibile, mostra entrambi. Per i due comandi si possono associare script o entità separati con `power_on_entity` e `power_off_entity`. I tasti **+ / −** richiamano script oppure aiutanti `input_number` o `counter`, scelti con `temperature_up_entity` e `temperature_down_entity`. Il valore visualizzato viene sempre da `metrics.target`; la card non lo cambia per finta dopo una pressione. Limiti e passo sono definiti dagli script o dagli aiutanti. I comandi non configurati restano disabilitati.
+
+Anche i pulsanti del citofono sono più grandi sul telefono, con testo e icone più leggibili. La scelta della telecamera e le configurazioni già salvate restano valide.
 
 ### Novità 1.4: casa e servizi
 

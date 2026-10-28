@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue,wasteReading} from '../src/equipment-model.js';
+import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,heaterCommand,heaterPowerState,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue,wasteReading} from '../src/equipment-model.js';
 
 test('equipment types keep all associations user-supplied',()=>{
- assert.equal(EQUIPMENT_KEYS.length,33);
- assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,33);
+ assert.equal(EQUIPMENT_KEYS.length,35);
+ assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,35);
  for(const profile of Object.values(EQUIPMENT)){
   assert.ok(profile.metrics.length>=2||profile.waste_items);
   assert.ok(Array.isArray(profile.buttons));
@@ -15,6 +15,23 @@ test('equipment types keep all associations user-supplied',()=>{
  assert.equal(EQUIPMENT.irrigation.zones,true);
  assert.equal(EQUIPMENT.garage_gate.hero,'Basculante');
  assert.equal(EQUIPMENT.doorbell.camera,true);
+ assert.equal(EQUIPMENT.fan_heater.heater,true);
+ assert.equal(EQUIPMENT.infrared_panel.heater,true);
+});
+
+test('heater controls use selected entities and never guess a new temperature',()=>{
+ assert.deepEqual(heaterCommand('script.example_up','up'),{action:'script.turn_on',entity:'script.example_up'});
+ assert.deepEqual(heaterCommand('counter.example_target','down'),{action:'counter.decrement',entity:'counter.example_target'});
+ assert.deepEqual(heaterCommand('input_number.example_target','up'),{action:'input_number.increment',entity:'input_number.example_target'});
+ assert.deepEqual(heaterCommand('switch.example_heater','on'),{action:'switch.turn_on',entity:'switch.example_heater'});
+ assert.deepEqual(heaterCommand('switch.example_heater','off'),{action:'switch.turn_off',entity:'switch.example_heater'});
+ assert.deepEqual(heaterCommand('script.example','off','script.turn_off'),{action:'script.turn_off',entity:'script.example'});
+ assert.equal(heaterCommand('','up'),null);
+ const hass={states:{'switch.example_heater':{state:'off'},'input_select.example_mode':{state:'Eco'},'sensor.example_unknown':{state:'unavailable'}}};
+ assert.equal(heaterPowerState(hass,'switch.example_heater'),false);
+ assert.equal(heaterPowerState(hass,'input_select.example_mode'),true);
+ assert.equal(heaterPowerState(hass,'sensor.example_unknown'),null);
+ assert.equal(heaterPowerState(hass,''),null);
 });
 
 test('native cover, lock and valve controls follow entity state and supported features',()=>{

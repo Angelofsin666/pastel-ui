@@ -31,6 +31,17 @@ export function appendEquipmentFixtures(add,examples){
   if(key==='irrigation')config.zones=['Prato','Orto','Siepe'].map((name,i)=>{const status=`binary_sensor.demo_zone_${i}`,start=`script.demo_zone_${i}_start`,stop=`script.demo_zone_${i}_stop`;add(status,i===1?'on':'off',name);add(start,'off','Avvia '+name);add(stop,'off','Ferma '+name);return {name,state_entity:status,start_entity:start,stop_entity:stop}});
   examples.push([slug,EQUIPMENT[key].name,config]);
  }
+ for(const [key,room,target,power] of [['fan_heater','21.5','23','900'],['infrared_panel','20.8','22','550']]){
+  const slug=key.replaceAll('_','-');
+  const hero=add(`sensor.demo_${slug}_room`,room,'Temperatura ambiente',{device_class:'temperature',unit_of_measurement:'°C'});
+  const state=add(`switch.demo_${slug}`,'on',EQUIPMENT[key].title);
+  const targetEntity=add(`counter.demo_${slug}_target`,target,'Temperatura impostata',{unit_of_measurement:'°C'});
+  const powerEntity=add(`sensor.demo_${slug}_power`,power,'Assorbimento',{unit_of_measurement:'W'});
+  const up=add(`script.demo_${slug}_up`,'off','Temperatura +');
+  const down=add(`script.demo_${slug}_down`,'off','Temperatura −');
+  const buttons=EQUIPMENT[key].buttons.map(([name,icon],i)=>({name,icon,entity:add(`script.demo_${slug}_mode_${i}`,'off',name)}));
+  examples.push([slug,EQUIPMENT[key].name,{type:`custom:${equipmentType(key)}`,hero_entity:hero,state_entity:state,metrics:{target:targetEntity,power:powerEntity},power_on_entity:state,power_off_entity:state,temperature_up_entity:up,temperature_down_entity:down,buttons}]);
+ }
  add('cover.demo_basculante','closed','Basculante',{supported_features:11});
  add('cover.demo_gate','open','Cancello esterno',{supported_features:11});
  add('binary_sensor.demo_obstacle','off','Ostacolo',{device_class:'problem'});

@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.5.0 — Room heaters and larger doorbell controls / Riscaldamento ambiente e comandi citofono più grandi
+
+### English
+
+- Add **Pastel Fan Heater** and **Pastel Infrared Panel**, bringing the catalog to **56 card types**. Both use dedicated illustrations at the same scale as other Pastel device cards, with selectable palettes, names, room-temperature sensors, target helpers, power sensors and state entities.
+- Add configurable on/off commands and temperature +/− actions. Scripts, buttons and switches can operate power; scripts or `input_number`/`counter` helpers can operate the temperature controls. The displayed target and status always come from the selected Home Assistant entities, including changes made elsewhere. Unconfigured controls stay disabled.
+- Enlarge **Pastel Doorbell** action buttons, labels and icons on phones, preserving its camera and saved button settings. Automated tests and the bundle build pass; physical heating devices were not operated.
+
+### Italiano
+
+- Aggiunge **Pastel Fan Heater** e **Pastel Infrared Panel**: il catalogo arriva a **56 tipi di card**. Entrambe hanno un disegno dedicato della stessa scala delle altre card Pastel, colori e nomi modificabili e selettori per sensore ambiente, aiutante temperatura impostata, consumo ed entità di stato.
+- Aggiunge comandi configurabili per accensione, spegnimento e temperatura +/−. Script, pulsanti e interruttori possono comandare l’alimentazione; per la temperatura si possono usare script oppure aiutanti `input_number` e `counter`. Valore impostato e stato seguono sempre le entità scelte, anche dopo modifiche esterne. I comandi non configurati restano disabilitati.
+- Ingrandisce pulsanti, etichette e icone dei comandi di **Pastel Doorbell** sul telefono, mantenendo telecamera e configurazioni salvate. Test automatici e compilazione superati; non sono stati comandati dispositivi di riscaldamento reali.
+
 ## 1.4.0 — Nine more cards / Altre nove card
 
 ### English

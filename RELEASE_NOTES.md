@@ -1,3 +1,19 @@
+# Pastel UI v1.5.0
+
+## English
+
+Two new heating cards join Pastel UI: **Fan Heater** and **Infrared Panel**. The suite now has **56 card types**. Both cards offer a large device illustration, room-temperature and power readings, a target-temperature helper, and configurable power and temperature actions. Their visual editors let you choose your own Home Assistant entities, scripts, labels and colours. The displayed status and target always follow the selected entities; unconfigured actions remain disabled.
+
+**Doorbell** buttons are now larger and easier to tap on phones, with clearer icons and labels. Existing card configurations remain compatible. Automated tests and the bundle build pass; physical devices were not operated. [Full changelog](CHANGELOG.md) · [Heating-card guide](docs/cards/equipment.md). Development was assisted by AI tools under maintainer review; [card and improvement requests are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+Arrivano due card per il riscaldamento: **Fan Heater** (stufetta ad aria) e **Infrared Panel** (pannello riscaldante). Pastel UI comprende ora **56 tipi di card**. Entrambe offrono un disegno grande, temperatura ambiente, consumo, aiutante della temperatura impostata e comandi configurabili per alimentazione e temperatura. Nell’editor puoi scegliere entità, script, nomi e colori del tuo impianto. Stato e valore impostato seguono sempre le entità associate; i comandi non configurati restano disabilitati.
+
+I pulsanti del **citofono** sono più grandi e comodi da premere sul telefono, con icone e testi più leggibili. Le configurazioni esistenti restano compatibili. Test automatici e compilazione superati; nessun dispositivo fisico è stato comandato. [Changelog completo](CHANGELOG.md) · [Guida alle card](docs/cards/equipment.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e miglioramenti sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.4.0
 
 ## English

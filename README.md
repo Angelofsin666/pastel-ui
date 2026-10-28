@@ -1,6 +1,6 @@
 # Pastel UI
 
-**One HACS download. 54 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
+**One HACS download. 56 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
 
 [English](#english) · [Italiano](#italiano) · [Gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Configuration](docs/configuration.md) · [Release notes](CHANGELOG.md)
 
@@ -18,7 +18,7 @@
 
 Pastel UI brings lights, covers, climate, security, appliances and everyday sensors into a consistent visual language: soft colour, clear state, generous touch targets and layouts made for phones. Choose the entities you already have; the cards do not create devices, helpers or automations. Actions use Home Assistant services and the state displayed comes from Home Assistant, including changes made elsewhere.
 
-### Explore the 54 cards
+### Explore the 56 cards
 
 | Home & climate | Security & sensors | Entertainment & seasonal |
 |---|---|---|
@@ -28,6 +28,8 @@ Pastel UI brings lights, covers, climate, security, appliances and everyday sens
 The [gallery](docs/catalog.md) shows every card with fictional example entities. Appliance covers multiple device profiles, including a water purifier, without adding another card type.
 
 **New in 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot and Waste Collection](docs/cards/equipment.md) join a [native Thermostat](docs/cards/thermostat.md). Waste Collection accepts calendar, sensor, input select or boolean entities; the thermostat adapts to the modes and temperature limits of your chosen `climate` entity.
+
+**New in 1.5:** [Fan Heater and Infrared Panel](docs/cards/equipment.md) bring room temperature, target and power readings together with configurable power, temperature and mode commands. Doorbell controls are larger and easier to tap on phones.
 
 **New in 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger and Pool Robot](docs/cards/equipment.md) have dedicated visuals, searchable entity fields and configurable actions. Sump Pumps is designed for basement flood-prevention equipment.
 
@@ -65,7 +67,7 @@ Pastel UI was developed with assistance from AI tools. Design decisions, code re
 
 Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensori in uno stile coerente: colori tenui, stati leggibili, comandi comodi sul telefono. Scegli le entità già presenti nel tuo Home Assistant; le card non creano dispositivi, aiutanti o automazioni. I comandi usano i servizi di Home Assistant e i valori mostrati seguono le entità, anche quando cambiano altrove.
 
-### Scopri le 54 card
+### Scopri le 56 card
 
 | Casa e clima | Sicurezza e sensori | Intrattenimento e feste |
 |---|---|---|
@@ -75,6 +77,8 @@ Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensor
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
 
 **Novità 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot e Waste Collection](docs/cards/equipment.md) si aggiungono al [Termostato nativo](docs/cards/thermostat.md). La raccolta rifiuti legge calendari, sensori, `input_select` o booleani; il termostato segue le modalità e i limiti dell’entità `climate` scelta.
+
+**Novità 1.5:** [Fan Heater e Infrared Panel](docs/cards/equipment.md) mostrano temperatura ambiente, temperatura impostata e consumo, con comandi configurabili per accensione, temperatura e modalità. I pulsanti del citofono sono più grandi e comodi sul telefono.
 
 **Novità 1.1:** [Pool, Sump Pumps, Water Booster, Coffee Machine, Air Fryer, Boiler, Hot Water, EV Charger e Pool Robot](docs/cards/equipment.md) hanno disegni dedicati, ricerca delle entità e comandi configurabili. Sump Pumps è pensata per le pompe anti-allagamento dei locali interrati.
 
