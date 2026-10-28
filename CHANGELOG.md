@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.7.0 — Eight air, kitchen and bathroom cards / Otto card per aria, cucina e bagno
+
+### English
+
+- Add **Pastel Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror and Smart Toilet**. The catalog now has **85 card types**. Each new card has its own large line illustration, selectable pastel colours, editable names, readings and buttons, and a mobile-friendly layout.
+- Air Purifier and Air Multiplier can optionally use any Home Assistant `fan` entity. Their native controls read the fan's actual power state, percentage and oscillation attributes, and call the corresponding supported services. Native button names and colours are editable. Speed steps follow the entity's `percentage_step` when supplied. Unsupported or unavailable controls remain disabled; displayed values do not change optimistically after a press. Separate configurable script buttons accommodate device-specific Auto, Boost and other modes.
+- The other six cards accept user-selected sensors/helpers and any number of editable script, button, switch or scene actions. New defaults contain no personal entity IDs and existing Appliance profiles remain available. Add all eight to the card picker and fictional demo. Automated tests and bundle build pass; no physical devices were operated.
+
+### Italiano
+
+- Aggiunge **Pastel Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror e Smart Toilet**. Il catalogo arriva a **85 tipi di card**. Ogni nuova card ha un grande disegno dedicato, colori Pastel selezionabili, nomi, valori e pulsanti modificabili e un layout adatto al telefono.
+- Air Purifier e Air Multiplier possono usare qualsiasi entità `fan` di Home Assistant scelta dall'utente. I controlli nativi leggono lo stato reale, la percentuale e l'oscillazione e richiamano i servizi supportati. Nomi e colori dei pulsanti nativi sono modificabili. Il passo della velocità segue l'attributo `percentage_step` se presente. I comandi non disponibili restano disabilitati; i valori mostrati non vengono anticipati dopo la pressione. Pulsanti script separati coprono Auto, Boost e altre modalità specifiche.
+- Le altre sei card accettano sensori e aiutanti scelti dall'utente e un numero libero di azioni modificabili per script, pulsanti, interruttori o scene. Nessuna nuova configurazione contiene entità personali e i profili Appliance esistenti restano disponibili. Tutte e otto sono nel selettore card e nella demo fittizia. Test e compilazione superati; nessun dispositivo fisico è stato comandato.
+
 ## 1.6.0 — 21 new cards and moving fabric covers / 21 nuove card e tende animate
 
 ### English

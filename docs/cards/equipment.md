@@ -2,9 +2,11 @@
 
 ## English
 
+Version 1.7 adds eight dedicated cards for air treatment, kitchen appliances and bathroom devices. Air Purifier and Air Multiplier can use a selected native `fan` entity for power, speed and oscillation when supported; the native button labels and colours are editable, and extra mode buttons can call user-selected scripts. The other six cards use the same configurable sensor and script/button controls as the rest of the suite. All eight have large, distinct line illustrations and no preselected entity IDs.
+
 The nineteen new 1.6 profiles use the same large Pastel illustration, editable palette, names, main reading, optional measurements, state badge and any number of script/entity buttons. **Skylight** accepts a native `cover` and shows its live opening percentage and supported position control. No entity is preselected.
 
-Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, version 1.4 added eight more equipment cards, version 1.5 added two heating cards, and version 1.6 adds nineteen more equipment cards. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
+Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, version 1.4 added eight more equipment cards, version 1.5 added two heating cards, version 1.6 added nineteen more equipment cards, and version 1.7 adds eight more. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
 
 | Card | Type | Main reading and optional metrics |
 |---|---|---|
@@ -62,8 +64,16 @@ Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five
 | Pastel Water Meter | `custom:pastel-water-meter-card` | Daily use; flow and monthly total |
 | Pastel Gas Meter | `custom:pastel-gas-meter-card` | Daily use; flow and monthly total |
 | Pastel Power Panel | `custom:pastel-power-panel-card` | Home power; active circuits and overload |
+| Pastel Air Purifier | `custom:pastel-air-purifier-card` | Air quality; PM2.5, filter and power |
+| Pastel Air Multiplier | `custom:pastel-air-multiplier-card` | Air speed; oscillation, room temperature and power |
+| Pastel Ice Maker | `custom:pastel-ice-maker-card` | Next ice cycle; water tank and ice bin |
+| Pastel Bread Maker | `custom:pastel-bread-maker-card` | Time remaining; programme and phase |
+| Pastel Toaster | `custom:pastel-toaster-card` | Browning; time remaining and status |
+| Pastel Smart Toothbrush | `custom:pastel-smart-toothbrush-card` | Brushing duration; battery and last use |
+| Pastel Smart Mirror | `custom:pastel-smart-mirror-card` | Bathroom temperature; humidity and mirror light |
+| Pastel Smart Toilet | `custom:pastel-smart-toilet-card` | Seat temperature; water temperature and lid |
 
-All fifty-four dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
+All sixty-two dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
 
 ```yaml
 type: custom:pastel-sump-pumps-card
@@ -154,6 +164,8 @@ buttons:
 Doorbell action buttons now use larger touch targets, text and icons on phones. Camera selection and saved button configurations remain the same.
 
 ## Italiano
+
+La versione 1.7 aggiunge otto card dedicate: Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror e Smart Toilet. Le prime due possono usare un’entità `fan` scelta dall’utente per accensione, velocità e oscillazione native, se supportate; nomi e colori dei pulsanti nativi sono modificabili e gli altri comandi possono richiamare script. Le restanti card usano sensori e comandi configurabili. Tutte hanno disegni grandi e distinti, senza entità preimpostate.
 
 La versione 1.6 aggiunge diciannove card per dispositivi: Safe, Adjustable Bed, Electric Blanket, Garden Fountain, Window Cleaner, Skylight, Air Compressor, Stairlift, Fish Feeder, Shower, Smart Desk, Outdoor Grill, Snow Melt, Septic Tank, Generator, NAS, Water Meter, Gas Meter e Power Panel. Ognuna offre un disegno grande, colori, nomi, valori ed eventuali pulsanti configurabili. Skylight legge la percentuale di apertura da un’entità `cover` e usa i comandi di posizione supportati. Nessuna entità è preimpostata.
 

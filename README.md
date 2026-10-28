@@ -1,6 +1,6 @@
 # Pastel UI
 
-**One HACS download. 77 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
+**One HACS download. 85 coordinated Home Assistant dashboard cards. Your entities, your colours, your controls.**
 
 [English](#english) · [Italiano](#italiano) · [Gallery](docs/catalog.md) · [Installation](docs/installation.md) · [Configuration](docs/configuration.md) · [Release notes](CHANGELOG.md)
 
@@ -18,7 +18,7 @@
 
 Pastel UI brings lights, covers, climate, security, appliances and everyday sensors into a consistent visual language: soft colour, clear state, generous touch targets and layouts made for phones. Choose the entities you already have; the cards do not create devices, helpers or automations. Actions use Home Assistant services and the state displayed comes from Home Assistant, including changes made elsewhere.
 
-### Explore the 77 cards
+### Explore the 85 cards
 
 | Home & climate | Security & sensors | Entertainment & seasonal |
 |---|---|---|
@@ -28,6 +28,8 @@ Pastel UI brings lights, covers, climate, security, appliances and everyday sens
 The [gallery](docs/catalog.md) shows every card with fictional example entities. Appliance covers multiple device profiles, including a water purifier, without adding another card type.
 
 **New in 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot and Waste Collection](docs/cards/equipment.md) join a [native Thermostat](docs/cards/thermostat.md). Waste Collection accepts calendar, sensor, input select or boolean entities; the thermostat adapts to the modes and temperature limits of your chosen `climate` entity.
+
+**New in 1.7:** [Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror and Smart Toilet](docs/cards/equipment.md) add eight full-size device cards. The air cards can read and control a selected native `fan` entity, while scripts handle device-specific modes.
 
 **New in 1.6:** [Awning and Curtains](docs/cards/fabric-covers.md) move their large fabric illustrations with the real cover position or a chosen percentage sensor. Nineteen [new equipment cards](docs/cards/equipment.md) cover access, comfort, garden, utilities and energy. All 21 have editable colours, readings and commands.
 
@@ -69,7 +71,7 @@ Pastel UI was developed with assistance from AI tools. Design decisions, code re
 
 Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensori in uno stile coerente: colori tenui, stati leggibili, comandi comodi sul telefono. Scegli le entità già presenti nel tuo Home Assistant; le card non creano dispositivi, aiutanti o automazioni. I comandi usano i servizi di Home Assistant e i valori mostrati seguono le entità, anche quando cambiano altrove.
 
-### Scopri le 77 card
+### Scopri le 85 card
 
 | Casa e clima | Sicurezza e sensori | Intrattenimento e feste |
 |---|---|---|
@@ -79,6 +81,8 @@ Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensor
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
 
 **Novità 1.4:** [UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot e Waste Collection](docs/cards/equipment.md) si aggiungono al [Termostato nativo](docs/cards/thermostat.md). La raccolta rifiuti legge calendari, sensori, `input_select` o booleani; il termostato segue le modalità e i limiti dell’entità `climate` scelta.
+
+**Novità 1.7:** [Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror e Smart Toilet](docs/cards/equipment.md) aggiungono otto card con disegni grandi. Le card per l’aria possono leggere e comandare un’entità `fan` scelta dall’utente; gli script gestiscono le modalità specifiche.
 
 **Novità 1.6:** [Awning e Curtains](docs/cards/fabric-covers.md) animano il disegno delle tende seguendo la posizione reale della `cover` o di un sensore percentuale scelto. Diciannove [nuove card per dispositivi](docs/cards/equipment.md) coprono accessi, comfort, giardino, utenze ed energia. Tutte e 21 permettono di modificare colori, valori e comandi.
 

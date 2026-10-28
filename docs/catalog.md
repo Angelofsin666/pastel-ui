@@ -4,7 +4,7 @@
 
 ## English
 
-77 card types in Pastel UI 1.6, including Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel and the native Pastel Thermostat. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
+85 card types in Pastel UI 1.7, including Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel and the native Pastel Thermostat. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
 
 | Card | Type |
 |---|---|
@@ -86,11 +86,19 @@
 | [Pastel Water Meter](cards/equipment.md) | `custom:pastel-water-meter-card` |
 | [Pastel Gas Meter](cards/equipment.md) | `custom:pastel-gas-meter-card` |
 | [Pastel Power Panel](cards/equipment.md) | `custom:pastel-power-panel-card` |
+| [Pastel Air Purifier](cards/equipment.md) | `custom:pastel-air-purifier-card` |
+| [Pastel Air Multiplier](cards/equipment.md) | `custom:pastel-air-multiplier-card` |
+| [Pastel Ice Maker](cards/equipment.md) | `custom:pastel-ice-maker-card` |
+| [Pastel Bread Maker](cards/equipment.md) | `custom:pastel-bread-maker-card` |
+| [Pastel Toaster](cards/equipment.md) | `custom:pastel-toaster-card` |
+| [Pastel Smart Toothbrush](cards/equipment.md) | `custom:pastel-smart-toothbrush-card` |
+| [Pastel Smart Mirror](cards/equipment.md) | `custom:pastel-smart-mirror-card` |
+| [Pastel Smart Toilet](cards/equipment.md) | `custom:pastel-smart-toilet-card` |
 
 ![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
 
 ## Italiano
 
-77 tipi di card in Pastel UI 1.6, inclusi Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel e Pastel Thermostat per entità `climate`. L’esempio del depuratore usa Appliance. Le card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
+85 tipi di card in Pastel UI 1.7, inclusi Pastel Climate AC, Pastel Pellet Stove, Pastel Fan Heater, Pastel Infrared Panel e Pastel Thermostat per entità `climate`. L’esempio del depuratore usa Appliance. Le card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
 
 I nuovi nomi pubblici conservano gli ID `pastel-script-climate-card` e `pastel-stove-card`. Consulta la [migrazione](migration.md) per le card ritirate.

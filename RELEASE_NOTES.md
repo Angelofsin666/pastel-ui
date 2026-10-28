@@ -1,3 +1,23 @@
+# Pastel UI v1.7.0
+
+## English
+
+**Eight new cards bring Pastel UI to 85 card types:** Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror and Smart Toilet. Each has a distinct full-size Pastel illustration, editable palette and labels, selectable readings and configurable controls sized for phones.
+
+For Air Purifier and Air Multiplier, select an optional Home Assistant `fan` entity to get native power, speed and oscillation controls when your device supports them. The display follows the entity's actual state; script buttons remain available for brand-specific modes. The other six cards accept your own sensors and actions. No personal entity IDs are built in, and existing cards remain compatible.
+
+Automated tests and the bundle build pass; physical devices were not operated. [Full changelog](CHANGELOG.md) · [Equipment guide](docs/cards/equipment.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Otto nuove card portano Pastel UI a 85 tipi:** Air Purifier, Air Multiplier, Ice Maker, Bread Maker, Toaster, Smart Toothbrush, Smart Mirror e Smart Toilet. Ognuna ha un grande disegno Pastel dedicato, palette e nomi modificabili, valori selezionabili e comandi comodi sul telefono.
+
+Per Air Purifier e Air Multiplier puoi scegliere un'entità `fan` di Home Assistant e usare accensione, velocità e oscillazione native quando il dispositivo le supporta. Il valore mostrato segue lo stato reale; i pulsanti script rimangono disponibili per le modalità specifiche del marchio. Le altre sei card accettano i tuoi sensori e comandi. Nessuna entità personale è preimpostata e le card esistenti restano compatibili.
+
+Test automatici e compilazione superati; nessun dispositivo fisico è stato comandato. [Changelog completo](CHANGELOG.md) · [Guida dispositivi](docs/cards/equipment.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.6.0
 
 ## English

@@ -60,13 +60,24 @@ export function appendEquipmentFixtures(add,examples){
   ['nas','Online','',{storage:['6.4','TB'],disks:['4/4 OK','']},'ready'],
   ['water_meter','128','L',{flow:['0.0','L/min'],month:['4.2','m³']},'ready'],
   ['gas_meter','1.8','m³',{flow:['0.2','m³/h'],month:['34','m³']},'on'],
-  ['power_panel','2.4','kW',{circuits:['8/10',''],overload:['Assente','']},'ready']
+  ['power_panel','2.4','kW',{circuits:['8/10',''],overload:['Assente','']},'ready'],
+  ['air_purifier','Buona','',{pm25:['8','µg/m³'],filter:['76','%'],power:['28','W']},'Automatico'],
+  ['air_multiplier','40','%',{oscillation:['Attiva',''],temperature:['22.4','°C'],power:['24','W']},'on'],
+  ['ice_maker','12','min',{water:['68','%'],ice:['Mezza','']},'In produzione'],
+  ['bread_maker','1 h 35','',{program:['Integrale',''],phase:['Impasto','']},'Impasto'],
+  ['toaster','3 / 5','',{remaining:['1 min 20',''],status:['Attivo','']},'In tostatura'],
+  ['smart_toothbrush','2','min',{battery:['82','%'],last_brush:['Stamattina','']},'Pronto'],
+  ['smart_mirror','21.8','°C',{humidity:['58','%'],light:['70','%']},'Acceso'],
+  ['smart_toilet','37','°C',{water:['38','°C'],lid:['Chiuso','']},'Pronto']
  ];
  for(const [key,value,unit,metrics,status] of newDevices){
   const slug=key.replaceAll('_','-'),hero=add(`sensor.demo_${slug}_hero`,value,EQUIPMENT[key].hero,{unit_of_measurement:unit}),state=add(`sensor.demo_${slug}_status`,status,'Stato '+EQUIPMENT[key].title);
   const mapped={};for(const [role,[reading,u]] of Object.entries(metrics))mapped[role]=add(`sensor.demo_${slug}_${role}`,reading,EQUIPMENT[key].metrics.find(([k])=>k===role)?.[1]||role,{unit_of_measurement:u});
   const buttons=EQUIPMENT[key].buttons.map(([name,icon],i)=>({name,icon,entity:add(`script.demo_${slug}_${i}`,'off',name)}));
-  examples.push([slug,EQUIPMENT[key].name,{type:`custom:${equipmentType(key)}`,hero_entity:hero,state_entity:state,metrics:mapped,buttons}]);
+  const config={type:`custom:${equipmentType(key)}`,hero_entity:hero,state_entity:state,metrics:mapped,buttons};
+  if(EQUIPMENT[key].fan)config.fan_entity=add(`fan.demo_${slug}`,'on',EQUIPMENT[key].title,{supported_features:3,percentage:40,percentage_step:10,oscillating:true});
+  if(key==='air_multiplier'){config.hero_entity='';config.state_entity='';config.buttons=[]}
+  examples.push([slug,EQUIPMENT[key].name,config]);
  }
  add('cover.demo_skylight','open','Lucernario',{current_position:40,supported_features:15});
  add('binary_sensor.demo_skylight_rain','off','Pioggia');
