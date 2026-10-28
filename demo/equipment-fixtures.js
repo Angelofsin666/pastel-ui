@@ -13,7 +13,14 @@ export function appendEquipmentFixtures(add,examples){
   ['chicken_feeder','45','%',{next_feed:['17:30',''],today:['2',''],motor:['Pronto',''],battery:['88','%']},'on'],
   ['irrigation','In attesa','',{next_run:['06:00',''],water:['24','L'],rain:['Spento','']},'off'],
   ['solar','4.8','kW',{home:['2.1','kW'],grid:['1.4','kW'],battery:['1.3','kW'],today:['23.6','kWh']},'producing'],
-  ['home_battery','73','%',{power:['1.3','kW'],mode:['Carica',''],autonomy:['6 h',''],energy:['7.3','kWh']},'charging']
+  ['home_battery','73','%',{power:['1.3','kW'],mode:['Carica',''],autonomy:['6 h',''],energy:['7.3','kWh']},'charging'],
+  ['ups','88','%',{runtime:['42','min'],load:['31','%'],input:['230','V'],output:['320','W']},'ready'],
+  ['home_network','432','Mbps',{upload:['94','Mbps'],latency:['12','ms'],devices:['18',''],signal:['Ottimo','']},'on'],
+  ['electric_car','64','%',{range:['248','km'],charging:['In sosta',''],location:['Casa',''],climate:['Spento','']},'idle'],
+  ['aquarium','25.4','°C',{ph:['7.1',''],filter:['Acceso',''],light:['Accesa',''],level:['86','%']},'on'],
+  ['greenhouse','23.1','°C',{humidity:['63','%'],soil:['48','%'],light:['Buona',''],water:['78','%']},'ready'],
+  ['mailbox','Posta presente','',{last_delivery:['Oggi 10:20',''],door:['Chiusa',''],count:['1','']},'on'],
+  ['kitchen_robot','8','min',{temperature:['95','°C'],speed:['3',''],program:['Crema',''],bowl:['Chiuso','']},'running']
  ];
  for(const [key,value,unit,metrics,status] of devices){
   const slug=key.replaceAll('_','-'),hero=`sensor.demo_${slug}_hero`,state=`sensor.demo_${slug}_status`;
@@ -51,4 +58,8 @@ export function appendEquipmentFixtures(add,examples){
   ['air-quality','Pastel Air Quality',{type:`custom:${equipmentType('air_quality')}`,hero_entity:'sensor.demo_co2',metrics:{pm25:'sensor.demo_pm25',humidity:'sensor.demo_air_humidity',temperature:'sensor.demo_air_temperature',voc:'sensor.demo_voc'}}],
   ['water-safety','Pastel Water Safety',{type:`custom:${equipmentType('water_safety')}`,hero_entity:'valve.demo_water_main',metrics:{today:'sensor.demo_water_today',flow:'sensor.demo_water_flow'},leak_sensors:[{name:'Bagno',entity:'binary_sensor.demo_leak_bath'},{name:'Lavanderia',entity:'binary_sensor.demo_leak_laundry'}]}]
  );
+ add('calendar.demo_paper','off','Carta',{message:'Carta e cartone',start_time:'2026-10-29T08:00:00+01:00'});
+ add('input_select.demo_waste','Vetro','Prossima raccolta',{options:['Vetro','Plastica','Indifferenziato']});
+ add('input_boolean.demo_plastic','on','Plastica domani');
+ examples.push(['waste-collection','Pastel Waste Collection',{type:`custom:${equipmentType('waste_collection')}`,hero_entity:'calendar.demo_paper',waste_items:[{name:'Carta',entity:'calendar.demo_paper'},{name:'Vetro',entity:'input_select.demo_waste'},{name:'Plastica',entity:'input_boolean.demo_plastic'}]}]);
 }

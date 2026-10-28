@@ -1,3 +1,23 @@
+# Pastel UI v1.4.0
+
+## English
+
+Nine new Pastel cards are here: **UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot, Waste Collection and Thermostat**. They bring the suite to **54 card types**, all with configurable colours and user-selected entities. Kitchen Robot has a bowl-and-screen illustration inspired by multifunction cooking appliances.
+
+Waste Collection accepts calendars, sensors, input selects and booleans, with any number of named collection rows. Thermostat controls a selected Home Assistant `climate` entity using only its reported modes and target-temperature limits. Existing cards and configurations remain compatible.
+
+Automated tests and the bundle build pass; real devices have not been operated. [Full changelog](CHANGELOG.md) · [Equipment guide](docs/cards/equipment.md) · [Thermostat guide](docs/cards/thermostat.md). Development was assisted by AI tools under maintainer review; [card requests are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+Arrivano nove card Pastel: **UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox, Kitchen Robot, Waste Collection e Thermostat**. La raccolta comprende ora **54 tipi di card**, con colori ed entità personalizzabili. Kitchen Robot mostra un boccale con manico e base con schermo, nello stile dei robot da cucina multifunzione.
+
+Waste Collection accetta calendari, sensori, `input_select` e booleani, con tutte le raccolte nominate che servono. Thermostat comanda un’entità `climate` scelta dall’utente e mostra solo le modalità e i limiti di temperatura supportati dal dispositivo. Le card e le configurazioni precedenti restano compatibili.
+
+Test automatici e compilazione superati; nessun dispositivo fisico è stato comandato. [Changelog completo](CHANGELOG.md) · [Guida dispositivi](docs/cards/equipment.md) · [Guida termostato](docs/cards/thermostat.md). Lo sviluppo è stato assistito da IA sotto la revisione del manutentore; [le richieste di nuove card sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.3.1
 
 ## English

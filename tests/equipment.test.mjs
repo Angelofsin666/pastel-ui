@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue} from '../src/equipment-model.js';
+import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue,wasteReading} from '../src/equipment-model.js';
 
 test('equipment types keep all associations user-supplied',()=>{
- assert.equal(EQUIPMENT_KEYS.length,25);
- assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,25);
+ assert.equal(EQUIPMENT_KEYS.length,33);
+ assert.equal(new Set(EQUIPMENT_KEYS.map(equipmentType)).size,33);
  for(const profile of Object.values(EQUIPMENT)){
-  assert.ok(profile.metrics.length>=2);
+  assert.ok(profile.metrics.length>=2||profile.waste_items);
   assert.ok(Array.isArray(profile.buttons));
   assert.equal(JSON.stringify(profile).includes('sensor.'),false);
   assert.equal(JSON.stringify(profile).includes('script.'),false);
@@ -52,4 +52,22 @@ test('missing or unavailable sensors remain visibly unknown',()=>{
  assert.equal(sensorValue(hass,'sensor.absent'),'—');
  assert.equal(percentage(hass,'sensor.temperature'),null);
  assert.equal(percentage({states:{'sensor.level':{state:'125',attributes:{unit_of_measurement:'%'}}}},'sensor.level'),100);
+});
+
+test('waste collections accept calendars, sensors, input selects and booleans',()=>{
+ const hass={states:{
+  'calendar.paper':{state:'off',attributes:{message:'Carta',start_time:'2026-10-29T08:00:00+01:00'}},
+  'calendar.empty':{state:'off',attributes:{friendly_name:'Rifiuti'}},
+  'sensor.next_waste':{state:'Plastica',attributes:{}},
+  'input_select.waste':{state:'Vetro',attributes:{}},
+  'input_boolean.paper':{state:'on',attributes:{}},
+  'binary_sensor.glass':{state:'off',attributes:{}}
+ }};
+ assert.match(wasteReading(hass,{entity:'calendar.paper'}),/Carta · 29 ott/);
+ assert.equal(wasteReading(hass,{entity:'calendar.empty'}),'—');
+ assert.equal(wasteReading(hass,{entity:'sensor.next_waste'}),'Plastica');
+ assert.equal(wasteReading(hass,{entity:'input_select.waste'}),'Vetro');
+ assert.equal(wasteReading(hass,{entity:'input_boolean.paper',active_label:'Domani'}),'Domani');
+ assert.equal(wasteReading(hass,{entity:'binary_sensor.glass',inactive_label:'Nessuna'}),'Nessuna');
+ assert.equal(wasteReading(hass,{entity:'sensor.missing'}),'—');
 });

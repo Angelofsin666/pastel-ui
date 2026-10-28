@@ -19,16 +19,18 @@ test('registration updates existing metadata in place and is idempotent',()=>{
  const existing={type:'pastel-alarm-card',name:'Old name',getEntitySuggestion:()=>null};
  const target={customCards:[existing,{...existing}]};
  registerCardCatalog(target);registerCardCatalog(target);
- assert.equal(target.customCards.length,45);
+ assert.equal(target.customCards.length,54);
  assert.equal(target.customCards[0],existing);
  assert.equal(existing.name,'Pastel Alarm');
  assert.equal(typeof existing.getEntitySuggestion,'function');
- assert.equal(new Set(target.customCards.map(c=>c.type)).size,45);
+ assert.equal(new Set(target.customCards.map(c=>c.type)).size,54);
 });
 
-test('all 45 picker names use one English naming convention and preserve type IDs',()=>{
+test('all 54 picker names use one English naming convention and preserve type IDs',()=>{
  const expected=['Pastel Alarm','Pastel Security Overview','Pastel Climate AC','Pastel Pellet Stove','Pastel Appliance','Pastel Robot','Pastel Lights','Pastel Covers','Pastel Weather','Pastel TV','Pastel Christmas Tree','Pastel Button','Pastel Openings','Pastel Doors & Windows','Pastel Motion & Presence','Pastel Water Leak','Pastel Smoke & CO','Pastel Temperature','Pastel Dishwasher','Pastel Lawn Mower','Pastel Pool','Pastel Sump Pumps','Pastel Water Booster','Pastel Coffee Machine','Pastel Air Fryer','Pastel Boiler','Pastel Hot Water','Pastel EV Charger','Pastel Pool Robot','Pastel 3D Printer','Pastel Printer','Pastel Rainwater Tank','Pastel Ventilation','Pastel Range Hood','Pastel Litter Robot','Pastel Pet Bowls','Pastel Chicken Feeder','Pastel Irrigation','Pastel Solar','Pastel Home Battery','Pastel Garage & Gate','Pastel Doorbell','Pastel Smart Lock','Pastel Air Quality','Pastel Water Safety'];
+ expected.splice(3,0,'Pastel Thermostat');
+ expected.push('Pastel UPS','Pastel Home Network','Pastel Electric Car','Pastel Aquarium','Pastel Greenhouse','Pastel Mailbox','Pastel Kitchen Robot','Pastel Waste Collection');
  assert.deepEqual(CARD_CATALOG.map(c=>c.name),expected);
  assert.ok(CARD_CATALOG.every(c=>c.type.startsWith('pastel-')&&c.preview));
- const target={};registerCardCatalog(target);assert.equal(target.customCards.length,45);
+ const target={};registerCardCatalog(target);assert.equal(target.customCards.length,54);
 });

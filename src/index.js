@@ -28,6 +28,8 @@ import './legacy/pastel-water-leak-card.js';
 import './legacy/pastel-smoke-co-card.js';
 import {TemperatureCard} from './temperature-card.js';
 import {TemperatureEditor} from './temperature-editor.js';
+import {ThermostatCard} from './thermostat-card.js';
+import {ThermostatEditor} from './thermostat-editor.js';
 import './legacy/pastel-dishwasher-card.js';
 for(const [name,Class] of Object.entries({'pastel-appliance-card':ApplianceCard,'pastel-appliance-card-editor':ApplianceEditor,'pastel-robot-card':RobotCard,'pastel-robot-card-editor':RobotEditor})){
  if(!customElements.get(name))customElements.define(name,Class);else console.warn(`Pastel UI: ${name} già caricato; rimuovi la vecchia risorsa.`);
@@ -40,6 +42,7 @@ for(const [name,Class] of [
  ['pastel-christmas-tree-card',ChristmasTreeCard],['pastel-christmas-tree-card-editor',ChristmasTreeEditor],
  ['pastel-lawn-mower-card',LawnMowerCard],['pastel-lawn-mower-card-editor',LawnMowerEditor],
  ['pastel-temp-card',TemperatureCard],['pastel-temp-card-editor',TemperatureEditor],
+ ['pastel-native-thermostat-card',ThermostatCard],['pastel-native-thermostat-card-editor',ThermostatEditor],
  ['pastel-stove-card',StoveCard],['pastel-stove-card-editor',StoveEditor],
  ['pastel-script-climate-card',ScriptClimateCard],['pastel-script-climate-card-editor',ScriptClimateEditor],
  ['pastel-alarm-card',AlarmCard],['pastel-alarm-card-editor',AlarmEditor],
@@ -49,4 +52,4 @@ for(const [name,Class] of Object.entries({...EQUIPMENT_CARD_CLASSES,...EQUIPMENT
 // Compatibility aliases for the former standalone repositories; no duplicate picker entries.
 for(const [name,Class] of [['light-card',LightsCard],['light-card-editor',LightsEditor],['tapparella-card',CoversCard],['tapparella-card-editor',CoversEditor]])if(!customElements.get(name))customElements.define(name,class extends Class{});
 registerCardCatalog();
-console.info('Pastel UI 1.3.1');
+console.info('Pastel UI 1.4.0');

@@ -4,13 +4,14 @@
 
 ## English
 
-45 card types in Pastel UI 1.3, including Pastel Climate AC and Pastel Pellet Stove. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
+54 card types in Pastel UI 1.4, including Pastel Climate AC, Pastel Pellet Stove and the native Pastel Thermostat. The water-purifier example uses Appliance. Each linked guide contains configuration and Italian translation.
 
 | Card | Type |
 |---|---|
 | [Pastel Alarm](cards/security.md) | `custom:pastel-alarm-card` |
 | [Pastel Security Overview](cards/security.md) | `custom:pastel-security-card` |
 | [Pastel Climate AC](cards/script-climate.md) | `custom:pastel-script-climate-card` |
+| [Pastel Thermostat](cards/thermostat.md) | `custom:pastel-native-thermostat-card` |
 | [Pastel Pellet Stove](cards/stove.md) | `custom:pastel-stove-card` |
 | [Pastel Appliance](cards/appliance.md) | `custom:pastel-appliance-card` |
 | [Water purifier](cards/water.md) | `custom:pastel-appliance-card` |
@@ -54,11 +55,19 @@
 | [Pastel Smart Lock](cards/equipment.md) | `custom:pastel-smart-lock-card` |
 | [Pastel Air Quality](cards/equipment.md) | `custom:pastel-air-quality-card` |
 | [Pastel Water Safety](cards/equipment.md) | `custom:pastel-water-safety-card` |
+| [Pastel UPS](cards/equipment.md) | `custom:pastel-ups-card` |
+| [Pastel Home Network](cards/equipment.md) | `custom:pastel-home-network-card` |
+| [Pastel Electric Car](cards/equipment.md) | `custom:pastel-electric-car-card` |
+| [Pastel Aquarium](cards/equipment.md) | `custom:pastel-aquarium-card` |
+| [Pastel Greenhouse](cards/equipment.md) | `custom:pastel-greenhouse-card` |
+| [Pastel Mailbox](cards/equipment.md) | `custom:pastel-mailbox-card` |
+| [Pastel Kitchen Robot](cards/equipment.md) | `custom:pastel-kitchen-robot-card` |
+| [Pastel Waste Collection](cards/equipment.md) | `custom:pastel-waste-collection-card` |
 
 ![Pastel Christmas Tree with fictional demo entities](images/christmas-tree.png)
 
 ## Italiano
 
-45 tipi di card in Pastel UI 1.3, inclusi Pastel Climate AC e Pastel Pellet Stove. L’esempio del depuratore usa Appliance. Le nuove card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
+54 tipi di card in Pastel UI 1.4, inclusi Pastel Climate AC, Pastel Pellet Stove e il nuovo Pastel Thermostat per entità `climate`. L’esempio del depuratore usa Appliance. Le nuove card hanno una [guida bilingue](cards/equipment.md). Le immagini esistenti usano dati fittizi.
 
 I nuovi nomi pubblici conservano gli ID `pastel-script-climate-card` e `pastel-stove-card`. Consulta la [migrazione](migration.md) per le card ritirate.

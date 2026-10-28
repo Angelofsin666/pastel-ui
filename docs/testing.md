@@ -1,3 +1,9 @@
+## v1.4.0 — Nine new cards / Nove nuove card
+
+English: automated tests cover 54 unique picker entries, waste readings from calendars, sensors, input selects and booleans, and native thermostat modes, temperature steps and limits. All card defaults leave entity IDs empty. `npm run check` passes and builds the HACS bundle. Demo data uses fictional entities. Physical devices have not been operated in this validation.
+
+Italiano: i test automatici verificano 54 voci distinte nel catalogo, le letture della raccolta rifiuti da calendari, sensori, `input_select` e booleani, e le modalità, i passi e i limiti del termostato nativo. Nessuna entità personale è preimpostata. `npm run check` passa e genera il pacchetto HACS. La demo usa entità fittizie. Questa verifica non ha comandato dispositivi fisici.
+
 ## v1.3.1 — Pellet bag counter / Contatore sacchi pellet
 
 English: tests verify the stove tile reads a selected `counter`, tracks external changes, preserves zero, shows `—` for unavailable data and remains absent in old configurations. The editor suggests only `counter` helpers. The bundle build passes; no physical stove or refill automation was operated.

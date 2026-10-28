@@ -2,7 +2,7 @@
 
 ## English
 
-Pastel UI 1.1 added nine cards, version 1.2 added eleven, and version 1.3 adds five more. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
+Pastel UI 1.1 added nine cards, version 1.2 added eleven, version 1.3 added five, and version 1.4 adds eight more equipment cards. They share a phone-friendly layout: a live main reading, optional status badge, profile-specific measurements and any number of action buttons. The cards do not create sensors or infer that a command succeeded. Every value comes from the Home Assistant entity you choose. A missing or unavailable value displays `—`; an unconfigured button stays disabled.
 
 | Card | Type | Main reading and optional metrics |
 |---|---|---|
@@ -31,8 +31,16 @@ Pastel UI 1.1 added nine cards, version 1.2 added eleven, and version 1.3 adds f
 | Pastel Smart Lock | `custom:pastel-smart-lock-card` | Lock state, door contact, battery and last access |
 | Pastel Air Quality | `custom:pastel-air-quality-card` | CO₂, PM2.5, humidity, temperature and VOC |
 | Pastel Water Safety | `custom:pastel-water-safety-card` | Main valve, water use, flow and any number of leak sensors |
+| Pastel UPS | `custom:pastel-ups-card` | Battery charge, runtime, load, input and output |
+| Pastel Home Network | `custom:pastel-home-network-card` | Download, upload, latency, connected devices and signal |
+| Pastel Electric Car | `custom:pastel-electric-car-card` | Battery charge, range, charging and location |
+| Pastel Aquarium | `custom:pastel-aquarium-card` | Water temperature, pH, filter, light and water level |
+| Pastel Greenhouse | `custom:pastel-greenhouse-card` | Temperature, humidity, soil, light and water |
+| Pastel Mailbox | `custom:pastel-mailbox-card` | Mailbox state, last delivery, door and count |
+| Pastel Kitchen Robot | `custom:pastel-kitchen-robot-card` | Time remaining, temperature, speed, programme and bowl |
+| Pastel Waste Collection | `custom:pastel-waste-collection-card` | Next collection and unlimited calendar/helper/sensor rows |
 
-All twenty-five dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
+All thirty-three dedicated equipment cards have a visual editor. Pick a palette, rename the card and every reading, search for your sensor or helper, then add, rename, reorder and recolour buttons. Buttons can call `script`, `scene`, `button`, `input_button`, `switch`, `input_boolean` or `automation` entities. An optional `action` overrides the inferred service, for example `script.turn_off`. More advanced service `data` and `target` fields can be supplied in YAML. A configured status entity supplies the header badge. The editor never inserts the maintainer's entity IDs.
 
 ```yaml
 type: custom:pastel-sump-pumps-card
@@ -76,7 +84,36 @@ buttons:
     entity: script.example_open_gate
 ```
 
+### New in 1.4: home essentials
+
+UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox and Kitchen Robot use the same configurable `hero_entity`, optional `state_entity`, named `metrics` and `buttons` as the other equipment cards. Their illustrations are scaled to match existing Pastel heroes. The Kitchen Robot illustration depicts a mixing bowl, handle and control screen; it is a generic appliance drawing, not a brand logo. Configure each value and button from your own entities in the visual editor.
+
+**Waste Collection** has an additional **Raccolte** section. Add any number of named rows; each row can use a `calendar`, `sensor`, `binary_sensor`, `input_select`, `select`, `input_boolean`, `switch`, `input_text`, `date` or `input_datetime` entity. The main hero accepts the same kinds of entity. For a calendar, the card shows the current or next event's message and date from its entity attributes. A boolean shows “Da esporre” or “Non prevista” by default; edit the active value and both labels for your setup. Other entities display their state. A missing value is shown as `—`. The card reads the entities and does not modify your calendar or helpers.
+
+```yaml
+type: custom:pastel-waste-collection-card
+title: Waste collection
+hero_entity: calendar.example_collection
+waste_items:
+  - name: Paper
+    entity: calendar.example_paper
+  - name: Glass
+    entity: input_select.example_glass_day
+  - name: Plastic
+    entity: input_boolean.example_plastic_tomorrow
+    active_label: Tomorrow
+    inactive_label: Not scheduled
+```
+
 ## Italiano
+
+### Novità 1.4: casa e servizi
+
+UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox e Kitchen Robot usano `hero_entity`, `state_entity`, `metrics` e `buttons` come le altre card per dispositivi. I disegni hanno la stessa dimensione delle altre card Pastel. Kitchen Robot raffigura un boccale con manico e uno schermo di controllo, senza marchi. Tutti i valori e i comandi si associano alle proprie entità nell’editor.
+
+**Waste Collection** aggiunge la sezione **Raccolte**, con quante righe nominate servono. Ogni riga e il valore principale possono usare un’entità `calendar`, `sensor`, `binary_sensor`, `input_select`, `select`, `input_boolean`, `switch`, `input_text`, `date` o `input_datetime`. Il calendario mostra titolo e data dell’evento corrente o successivo presenti negli attributi dell’entità. Un booleano mostra di norma “Da esporre” o “Non prevista”; valore attivo e testi si possono cambiare. Gli altri tipi mostrano il proprio stato. Se il dato manca appare `—`. La card legge le entità senza modificare calendari o aiutanti.
+
+Per un normale termostato Home Assistant, consulta [Pastel Thermostat](thermostat.md).
 
 Pastel UI 1.1 ha aggiunto nove card e la versione 1.2 ne aggiunge altre undici, tutte comode sul telefono: valore principale aggiornato, stato opzionale, altri valori facoltativi e quanti pulsanti servono. Ogni valore arriva dall'entità Home Assistant scelta; se manca o non è disponibile appare `—`. I pulsanti senza comando associato restano disabilitati.
 

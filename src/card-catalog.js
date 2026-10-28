@@ -20,6 +20,12 @@ export const CARD_CATALOG = [
     "preview": true
   },
   {
+    "type": "pastel-native-thermostat-card",
+    "name": "Pastel Thermostat",
+    "description": "Native Home Assistant climate control with supported modes and target temperature.",
+    "preview": true
+  },
+  {
     "type": "pastel-stove-card",
     "name": "Pastel Pellet Stove",
     "description": "Pellet stove scripts, value controls, status and pellet level.",

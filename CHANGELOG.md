@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.4.0 — Nine more cards / Altre nove card
+
+### English
+
+- Add **Pastel UPS**, **Home Network**, **Electric Car**, **Aquarium**, **Greenhouse**, **Mailbox**, **Kitchen Robot**, **Waste Collection** and **Thermostat**. The kitchen robot illustration now has a mixing bowl, handle and screen. All nine use the existing Pastel layout, editable colours and user-selected Home Assistant entities; the catalog contains 54 cards.
+- Waste Collection supports any number of named collections. Each row can read a `calendar` entity (next event and date), sensor, `input_select`, `select`, `input_boolean` or binary sensor. Boolean labels and active values are editable. Entity IDs can also be typed directly.
+- Thermostat uses a native `climate` entity. Its modes, target temperature, step and minimum/maximum come from the selected device; the optional humidity reading comes from a chosen sensor. Unsupported modes and temperature controls are hidden or disabled. Its new type ID is `pastel-native-thermostat-card`, leaving the retired legacy thermostat ID untouched.
+- Action buttons on the other new equipment cards can be renamed, reordered and mapped to scripts, buttons, switches or supported Home Assistant actions. Readings always follow entity state. Automated tests and the bundle build pass; physical devices were not operated.
+
+### Italiano
+
+- Aggiunge **Pastel UPS**, **Home Network**, **Electric Car**, **Aquarium**, **Greenhouse**, **Mailbox**, **Kitchen Robot**, **Waste Collection** e **Thermostat**. Il robot da cucina ha un disegno con boccale, manico e schermo. Le nove card seguono lo stile Pastel, con colori modificabili ed entità scelte dall’utente; il catalogo arriva a 54 card.
+- Waste Collection gestisce un numero libero di raccolte con nome. Ogni riga può leggere un’entità `calendar` (prossimo evento e data), sensore, `input_select`, `select`, `input_boolean` o sensore binario. Per i booleani si possono modificare le etichette e il valore attivo. È possibile scrivere direttamente gli ID delle entità.
+- Thermostat usa un’entità `climate`. Modalità, temperatura impostata, passo e limiti vengono dal dispositivo scelto; un sensore opzionale mostra l’umidità. Le funzioni non supportate vengono nascoste o disabilitate. Il nuovo ID è `pastel-native-thermostat-card`, senza riattivare quello della vecchia card termostato ritirata.
+- I pulsanti delle altre nuove card possono essere rinominati, riordinati e associati a script, pulsanti, interruttori o azioni Home Assistant supportate. I valori seguono sempre le entità. Test automatici e compilazione superati; i dispositivi fisici non sono stati comandati.
+
 ## 1.3.1 — Pellet bag counter / Contatore sacchi pellet
 
 ### English

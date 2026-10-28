@@ -24,7 +24,15 @@ export const EQUIPMENT = {
  doorbell:{name:'Pastel Doorbell',title:'Videocitofono',subtitle:'Ingresso principale',icon:'mdi:video',color:'blue',art:'doorbell',hero:'Anteprima telecamera',metrics:[['last_call','Ultima chiamata'],['motion','Movimento']],buttons:[],camera:true},
  smart_lock:{name:'Pastel Smart Lock',title:'Porta d’ingresso',subtitle:'Serratura intelligente',icon:'mdi:lock',color:'lavender',art:'smart_lock',hero:'Serratura',metrics:[['contact','Contatto porta'],['battery','Batteria'],['last_access','Ultimo accesso']],buttons:[],native:'lock'},
  air_quality:{name:'Pastel Air Quality',title:'Qualità dell’aria',subtitle:'Ambiente',icon:'mdi:air-filter',color:'mint',art:'air_quality',hero:'CO₂ attuale',metrics:[['pm25','PM2.5'],['humidity','Umidità'],['temperature','Temperatura'],['voc','VOC']],buttons:[]},
- water_safety:{name:'Pastel Water Safety',title:'Protezione acqua',subtitle:'Casa',icon:'mdi:shield-check',color:'mint',art:'water_safety',hero:'Valvola generale',metrics:[['today','Consumo oggi'],['flow','Portata attuale']],buttons:[],native:'valve',leak_sensors:true}
+ water_safety:{name:'Pastel Water Safety',title:'Protezione acqua',subtitle:'Casa',icon:'mdi:shield-check',color:'mint',art:'water_safety',hero:'Valvola generale',metrics:[['today','Consumo oggi'],['flow','Portata attuale']],buttons:[],native:'valve',leak_sensors:true},
+ ups:{name:'Pastel UPS',title:'Gruppo di continuità',subtitle:'Alimentazione di emergenza',icon:'mdi:battery-charging',color:'blue',art:'ups',hero:'Carica batteria',metrics:[['runtime','Autonomia'],['load','Carico'],['input','Tensione ingresso'],['output','Potenza uscita']],buttons:[['Test','mdi:check-circle-outline']]},
+ home_network:{name:'Pastel Home Network',title:'Rete di casa',subtitle:'Connessione e dispositivi',icon:'mdi:router-wireless',color:'mint',art:'home_network',hero:'Velocità download',metrics:[['upload','Upload'],['latency','Latenza'],['devices','Dispositivi'],['signal','Segnale']],buttons:[['Riavvia','mdi:restart']]},
+ electric_car:{name:'Pastel Electric Car',title:'Auto elettrica',subtitle:'Batteria e autonomia',icon:'mdi:car-electric',color:'lavender',art:'electric_car',hero:'Carica batteria',metrics:[['range','Autonomia'],['charging','Ricarica'],['location','Posizione'],['climate','Clima']],buttons:[['Climatizza','mdi:air-conditioner'],['Trova','mdi:map-marker']]},
+ aquarium:{name:'Pastel Aquarium',title:'Acquario',subtitle:'Acqua e attrezzature',icon:'mdi:fish',color:'blue',art:'aquarium',hero:'Temperatura acqua',metrics:[['ph','pH'],['filter','Filtro'],['light','Luce'],['level','Livello acqua']],buttons:[['Luci','mdi:lightbulb'],['Nutrimento','mdi:food-variant']]},
+ greenhouse:{name:'Pastel Greenhouse',title:'Serra',subtitle:'Clima e irrigazione',icon:'mdi:greenhouse',color:'mint',art:'greenhouse',hero:'Temperatura interna',metrics:[['humidity','Umidità'],['soil','Terreno'],['light','Luce'],['water','Acqua']],buttons:[['Irriga','mdi:water'],['Ventila','mdi:fan']]},
+ mailbox:{name:'Pastel Mailbox',title:'Cassetta postale',subtitle:'Posta in arrivo',icon:'mdi:mailbox',color:'pink',art:'mailbox',hero:'Stato cassetta',metrics:[['last_delivery','Ultima consegna'],['door','Sportello'],['count','Consegne']],buttons:[['Segna letta','mdi:check']]},
+ kitchen_robot:{name:'Pastel Kitchen Robot',title:'Robot da cucina',subtitle:'Cottura e preparazione',icon:'mdi:pot-steam-outline',color:'peach',art:'kitchen_robot',hero:'Tempo rimanente',metrics:[['temperature','Temperatura'],['speed','Velocità'],['program','Programma'],['bowl','Stato boccale']],buttons:[['Pausa','mdi:pause'],['Ferma','mdi:stop'],['Velocità +','mdi:plus']]},
+ waste_collection:{name:'Pastel Waste Collection',title:'Raccolta rifiuti',subtitle:'Prossime raccolte',icon:'mdi:recycle',color:'blue',art:'waste_collection',hero:'Prossima raccolta',metrics:[],buttons:[],waste_items:true}
 };
 export const EQUIPMENT_KEYS=Object.keys(EQUIPMENT);
 const TYPE_SLUGS={sump:'sump-pumps',booster:'water-booster',coffee:'coffee-machine',fryer:'air-fryer',ev:'ev-charger',printer_3d:'3d-printer'};
@@ -68,3 +76,18 @@ export function buttonCommand(button){
  return service?{action:`${domain}.${service}`,entity:id}:null;
 }
 export const zoneAction=(id,start)=>['switch','input_boolean'].includes((id||'').split('.')[0])?`${id.split('.')[0]}.${start?'turn_on':'turn_off'}`:'';
+export function wasteReading(hass,item){
+ const id=typeof item==='string'?item:item?.entity;
+ const state=hass?.states?.[id];
+ if(!isAvailable(state))return '—';
+ if(id.startsWith('calendar.')){
+  const date=state.attributes?.start_time;
+  const message=state.attributes?.message;
+  if(!date&&!message)return '—';
+  const when=date?new Date(date):null;
+  const formatted=when&&!Number.isNaN(when.valueOf())?new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'short'}).format(when):'';
+  return [message||'Raccolta',formatted].filter(Boolean).join(' · ');
+ }
+ if(['input_boolean','binary_sensor','switch'].includes(id.split('.')[0]))return state.state===(item?.active_state||'on')?(item?.active_label||'Da esporre'):(item?.inactive_label||'Non prevista');
+ return equipmentValue(hass,id);
+}
