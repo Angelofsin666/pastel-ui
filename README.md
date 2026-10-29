@@ -29,6 +29,8 @@ The [gallery](docs/catalog.md) shows every card with fictional example entities.
 
 **New in 1.10:** [Radiator Valves](docs/cards/radiator-valves.md) groups any number of `climate` valves in one card with a large radiator illustration, live room readings, optional battery sensors and native setpoint controls for each room.
 
+**Fixed in 1.10.1:** [Waste Collection](docs/cards/equipment.md) now shows the nearest upcoming collection beside the bin when the main value entity is left empty. Your configured collection rows provide the dates; a manually selected main value still takes precedence.
+
 **New in 1.9:** [Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff and Electric Scooter](docs/cards/equipment.md) bring seven distinct, full-size illustrations and editable readings. Energy Tariff lets you switch between today and tomorrow using your selected sensors; E-Bike and Electric Scooter have separate designs.
 
 **New in 1.8:** [Humidifier, Wine Cellar, Water Softener, Sauna, Electric Fireplace, Parcel Box, Smart Scale, Compost Bin, Aroma Diffuser and Bird Feeder](docs/cards/equipment.md) add ten distinct large illustrations and phone-sized controls. Choose your own entities and actions; Bird Feeder can also open any selected Home Assistant camera.
@@ -87,6 +89,8 @@ Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensor
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
 
 **Novità 1.10:** [Radiator Valves](docs/cards/radiator-valves.md) riunisce quante valvole `climate` vuoi in una card con grande disegno del termosifone, temperature reali, sensori batteria facoltativi e controlli della temperatura per ogni stanza.
+
+**Corretto nella 1.10.1:** [Waste Collection](docs/cards/equipment.md) ora mostra accanto al bidone la raccolta futura più vicina quando lasci vuota l’entità del valore principale. Le date vengono dalle righe configurate; un valore principale scelto manualmente mantiene la precedenza.
 
 **Novità 1.9:** [Chicken Coop, Parking Spot, Hydroponic Garden, Treadmill, E-Bike, Energy Tariff ed Electric Scooter](docs/cards/equipment.md) aggiungono sette grandi disegni dedicati e valori personalizzabili. Energy Tariff passa tra oggi e domani leggendo i sensori associati; E-Bike ed Electric Scooter sono card distinte.
 

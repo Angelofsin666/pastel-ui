@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,heaterCommand,heaterPowerState,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue,wasteReading} from '../src/equipment-model.js';
+import {EQUIPMENT,EQUIPMENT_KEYS,equipmentType,sensorValue,buttonCommand,heaterCommand,heaterPowerState,percentage,zoneAction,nativeControls,leakSummary,cameraPicture,equipmentValue,wasteReading,nextWasteCollection} from '../src/equipment-model.js';
 
 test('equipment types keep all associations user-supplied',()=>{
  assert.equal(EQUIPMENT_KEYS.length,79);
@@ -91,4 +91,24 @@ test('waste collections accept calendars, sensors, input selects and booleans',(
  assert.equal(wasteReading(hass,{entity:'input_boolean.paper',active_label:'Domani'}),'Domani');
  assert.equal(wasteReading(hass,{entity:'binary_sensor.glass',inactive_label:'Nessuna'}),'Nessuna');
  assert.equal(wasteReading(hass,{entity:'sensor.missing'}),'—');
+});
+
+test('waste hero picks the nearest future collection regardless of row order',()=>{
+ const hass={states:{
+  'calendar.plastic':{state:'off',attributes:{message:'Plastica',start_time:'2026-11-12T08:00:00+01:00'}},
+  'calendar.paper':{state:'off',attributes:{message:'Carta',start_time:'2026-11-05T08:00:00+01:00'}},
+  'calendar.organic':{state:'off',attributes:{message:'Umido',start_time:'2026-10-30T08:00:00+01:00'}},
+  'calendar.old':{state:'off',attributes:{message:'Vetro',start_time:'2026-10-27T08:00:00+01:00'}},
+  'calendar.empty':{state:'off',attributes:{}},
+ }};
+ const items=[{name:'Plastica',entity:'calendar.plastic'},{name:'Carta',entity:'calendar.paper'},{name:'Umido',entity:'calendar.organic'},{name:'Vetro',entity:'calendar.old'},{name:'Verde',entity:'calendar.empty'}];
+ assert.equal(nextWasteCollection(hass,items,new Date('2026-10-29T09:41:00+01:00'))?.name,'Umido');
+ assert.equal(nextWasteCollection(hass,items,new Date('2026-10-31T09:41:00+01:00'))?.name,'Carta');
+ assert.equal(nextWasteCollection(hass,[{name:'Verde',entity:'calendar.empty'}],new Date('2026-10-29T09:41:00+01:00')),null);
+});
+
+test('waste hero can fall back to an active helper when dates are absent',()=>{
+ const hass={states:{'input_boolean.paper':{state:'off',attributes:{}},'input_boolean.glass':{state:'on',attributes:{}},'input_select.next':{state:'Plastica',attributes:{}}}};
+ assert.equal(nextWasteCollection(hass,[{name:'Carta',entity:'input_boolean.paper'},{name:'Vetro',entity:'input_boolean.glass'}])?.name,'Vetro');
+ assert.equal(nextWasteCollection(hass,[{entity:'input_select.next'}])?.name,'Plastica');
 });

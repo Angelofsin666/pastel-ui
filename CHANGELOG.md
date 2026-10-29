@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.10.1 — Waste Collection next pickup / Prossima raccolta rifiuti
+
+### English
+
+- Fix **Pastel Waste Collection** so the large value beside the bin automatically displays the name of the nearest upcoming pickup from the configured rows when `hero_entity` is empty. Dated calendar and helper values are compared regardless of row order; an active helper can be used when no dates are available. A manually selected `hero_entity` still overrides the automatic value.
+- Clarify the option in the visual editor and bilingual guide. The catalog remains at **103 card types**. Automated tests and bundle build pass; no real calendars or devices were changed.
+
+### Italiano
+
+- Corregge **Pastel Waste Collection**: il riquadro grande accanto al bidone mostra automaticamente il nome della raccolta futura più vicina tra le righe configurate quando `hero_entity` è vuoto. Le date di calendari e aiutanti vengono confrontate indipendentemente dall’ordine delle righe; se non ci sono date può essere usato un aiutante attivo. L’entità principale scelta manualmente continua ad avere la precedenza.
+- Chiarita l’opzione nell’editor visuale e nella guida bilingue. Il catalogo resta a **103 tipi di card**. Test automatici e compilazione superati; nessun calendario o dispositivo reale è stato modificato.
+
 ## 1.10.0 — Grouped radiator valves / Valvole termostatiche raggruppate
 
 ### English

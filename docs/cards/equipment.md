@@ -142,12 +142,11 @@ buttons:
 
 UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox and Kitchen Robot use the same configurable `hero_entity`, optional `state_entity`, named `metrics` and `buttons` as the other equipment cards. Their illustrations are scaled to match existing Pastel heroes. The Kitchen Robot illustration depicts a mixing bowl, handle and control screen; it is a generic appliance drawing, not a brand logo. Configure each value and button from your own entities in the visual editor.
 
-**Waste Collection** has an additional **Raccolte** section. Add any number of named rows; each row can use a `calendar`, `sensor`, `binary_sensor`, `input_select`, `select`, `input_boolean`, `switch`, `input_text`, `date` or `input_datetime` entity. The main hero accepts the same kinds of entity. For a calendar, the card shows the current or next event's message and date from its entity attributes. A boolean shows “Da esporre” or “Non prevista” by default; edit the active value and both labels for your setup. Other entities display their state. A missing value is shown as `—`. The card reads the entities and does not modify your calendar or helpers.
+**Waste Collection** has an additional **Raccolte** section. Add any number of named rows; each row can use a `calendar`, `sensor`, `binary_sensor`, `input_select`, `select`, `input_boolean`, `switch`, `input_text`, `date` or `input_datetime` entity. Leave `hero_entity` empty to show the name of the next collection automatically: the card compares upcoming dates in the configured rows, regardless of their order. If no dated collection is available, it can use an active helper or a text value; if nothing is available it shows `—`. Set `hero_entity` only if you want to override the automatic value. For a calendar, each row shows the current or next event's message and date from its entity attributes. A boolean shows “Da esporre” or “Non prevista” by default; edit the active value and both labels for your setup. The card reads the entities and does not modify your calendar or helpers.
 
 ```yaml
 type: custom:pastel-waste-collection-card
 title: Waste collection
-hero_entity: calendar.example_collection
 waste_items:
   - name: Paper
     entity: calendar.example_paper
@@ -206,7 +205,7 @@ Anche i pulsanti del citofono sono più grandi sul telefono, con testo e icone p
 
 UPS, Home Network, Electric Car, Aquarium, Greenhouse, Mailbox e Kitchen Robot usano `hero_entity`, `state_entity`, `metrics` e `buttons` come le altre card per dispositivi. I disegni hanno la stessa dimensione delle altre card Pastel. Kitchen Robot raffigura un boccale con manico e uno schermo di controllo, senza marchi. Tutti i valori e i comandi si associano alle proprie entità nell’editor.
 
-**Waste Collection** aggiunge la sezione **Raccolte**, con quante righe nominate servono. Ogni riga e il valore principale possono usare un’entità `calendar`, `sensor`, `binary_sensor`, `input_select`, `select`, `input_boolean`, `switch`, `input_text`, `date` o `input_datetime`. Il calendario mostra titolo e data dell’evento corrente o successivo presenti negli attributi dell’entità. Un booleano mostra di norma “Da esporre” o “Non prevista”; valore attivo e testi si possono cambiare. Gli altri tipi mostrano il proprio stato. Se il dato manca appare `—`. La card legge le entità senza modificare calendari o aiutanti.
+**Waste Collection** aggiunge la sezione **Raccolte**, con quante righe nominate servono. Ogni riga può usare un’entità `calendar`, `sensor`, `binary_sensor`, `input_select`, `select`, `input_boolean`, `switch`, `input_text`, `date` o `input_datetime`. Lascia vuoto `hero_entity` per mostrare automaticamente nel riquadro grande il nome della raccolta con la data futura più vicina, indipendentemente dall’ordine delle righe. Se non ci sono raccolte datate, la card può usare un aiutante attivo o un valore testuale; se manca ogni dato mostra `—`. Associa `hero_entity` solo se vuoi sostituire il valore automatico. Il calendario mostra titolo e data dell’evento corrente o successivo presenti negli attributi dell’entità. Un booleano mostra di norma “Da esporre” o “Non prevista”; valore attivo e testi si possono cambiare. La card legge le entità senza modificare calendari o aiutanti.
 
 Per un normale termostato Home Assistant, consulta [Pastel Thermostat](thermostat.md).
 

@@ -1,3 +1,19 @@
+# Pastel UI v1.10.1
+
+## English
+
+**Waste Collection now shows the next pickup beside the bin.** Leave the main value entity empty and the card chooses the nearest upcoming collection from your configured rows. In the example where organic waste is collected tomorrow, the large value reads “Umido” today. Your manually selected main value still takes precedence. The collection remains at **103 card types**.
+
+The visual editor and bilingual guide explain this behaviour. Automated tests and the bundle build pass. No real Home Assistant calendar or device was changed. [Full changelog](CHANGELOG.md) · [Waste Collection guide](docs/cards/equipment.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Waste Collection ora mostra la prossima raccolta accanto al bidone.** Lascia vuota l’entità del valore principale: la card sceglie la raccolta futura più vicina tra le righe configurate. Se domani raccolgono l’umido, oggi il riquadro grande mostra “Umido”. Un valore principale scelto manualmente mantiene la precedenza. Il catalogo resta a **103 tipi di card**.
+
+Il comportamento è spiegato nell’editor visuale e nella guida bilingue. Test automatici e compilazione superati. Nessun calendario o dispositivo reale di Home Assistant è stato modificato. [Changelog completo](CHANGELOG.md) · [Guida Waste Collection](docs/cards/equipment.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.10.0
 
 ## English

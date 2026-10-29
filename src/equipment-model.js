@@ -150,3 +150,30 @@ export function wasteReading(hass,item){
  if(['input_boolean','binary_sensor','switch'].includes(id.split('.')[0]))return state.state===(item?.active_state||'on')?(item?.active_label||'Da esporre'):(item?.inactive_label||'Non prevista');
  return equipmentValue(hass,id);
 }
+function wasteDate(value){
+ if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}(?:$|[T ])/u.test(value))return null;
+ const date=new Date(value.length===10?`${value}T00:00:00`:value.replace(' ','T'));
+ return Number.isNaN(date.valueOf())?null:date;
+}
+export function nextWasteCollection(hass,items,now=new Date()){
+ const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+ let next=null,undated=null;
+ for(const item of items||[]){
+  const id=item?.entity||'',state=hass?.states?.[id];
+  if(!isAvailable(state))continue;
+  const domain=id.split('.')[0],attrs=state.attributes||{};
+  const date=wasteDate(attrs.start_time||attrs.next_date||attrs.next_collection||attrs.date||state.state);
+  const name=item.name||attrs.message||attrs.friendly_name||state.state;
+  if(date){
+   const day=new Date(date.getFullYear(),date.getMonth(),date.getDate());
+   const end=wasteDate(attrs.end_time);
+   if(day<today||end&&end<now)continue;
+   if(!next||date<next.date)next={name,date};
+  }else if(!undated&&['input_boolean','binary_sensor','switch'].includes(domain)&&state.state===(item.active_state||'on')){
+   undated={name,date:null};
+  }else if(!undated&&['input_select','select','input_text','sensor'].includes(domain)&&!['','none','nessuna','off','0'].includes(state.state.toLowerCase())){
+   undated={name:item.name||state.state,date:null};
+  }
+ }
+ return next||undated;
+}
