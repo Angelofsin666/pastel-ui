@@ -1,0 +1,17 @@
+import {html,css} from 'lit-element';
+import {BaseCard} from './base-card.js';
+import {cameraItems,cameraLayout} from './cameras-model.js';
+
+export class CamerasCard extends BaseCard{
+ static get styles(){return [super.styles,css`
+  .cameras{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}.cameras.list{grid-template-columns:1fr}.tile{appearance:none;border:0;border-radius:20px;padding:0;background:var(--p-tint);color:var(--p-ink);overflow:hidden;min-width:0;text-align:left;cursor:pointer;position:relative;display:block;box-shadow:none}.tile:focus-visible{outline:3px solid var(--p-accent);outline-offset:3px}.frame{width:100%;aspect-ratio:4/3;position:relative;overflow:hidden;background:var(--p-tint)}.list .frame{aspect-ratio:16/9}.frame hui-image{display:block;width:100%;height:100%;--ha-card-border-width:0}.placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--p-accent)}.placeholder ha-icon{--mdc-icon-size:48px}.label{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:11px 12px;min-height:44px;font-size:13px;font-weight:650;overflow-wrap:anywhere}.label ha-icon{--mdc-icon-size:17px;flex:none;color:var(--p-accent)}.tile:active{transform:scale(.99)}.empty{padding:20px;border-radius:18px;background:var(--p-tint);color:var(--p-muted);font-size:13px}@media(max-width:380px){ha-card{padding:16px}.cameras{gap:9px}.label{padding:10px;font-size:12px}}
+ `]}
+ static getConfigElement(){return document.createElement('pastel-cameras-card-editor')}
+ static getStubConfig(){return {title:'',subtitle:'',color:'blue',layout:'grid',cameras:[]}}
+ setConfig(config){super.setConfig(config);if(config.cameras!==undefined&&(!Array.isArray(config.cameras)||config.cameras.some(item=>!item||typeof item!=='object'||Array.isArray(item))))throw new Error('cameras deve essere una lista di telecamere.');}
+ getCardSize(){return Math.max(3,Math.ceil((this.config?.cameras?.length||0)/2)*2+1)}
+ getGridOptions(){return {columns:12,min_columns:6,rows:'auto'}}
+ render(){if(!this.hass||!this.config)return html``;const c=this.config,items=cameraItems(this.hass,c),online=items.filter(item=>item.available).length;const custom=`${c.background_color?`--p-surface:${c.background_color};`:''}${c.tint_color?`--p-tint:${c.tint_color};`:''}${c.accent_color?`--p-accent:${c.accent_color};`:''}${c.text_color?`--p-ink:${c.text_color};`:''}${c.secondary_text_color?`--p-muted:${c.secondary_text_color};`:''}`;return html`<ha-card style=${this.palette(c.color||'blue')+custom}><header><div class="icon"><ha-icon icon=${c.icon||'mdi:cctv'}></ha-icon></div><div class="heading"><h2>${c.title||'Telecamere'}</h2><div class="subtitle">${c.subtitle||'Vista d’insieme'}</div></div><span class="pill">${online}/${items.length} online</span></header>${items.length?html`<div class=${`cameras ${cameraLayout(c)}`}>
+ ${items.map(item=>html`<button class="tile" aria-label=${`Apri ${item.name}`} @click=${()=>this.info(item.entity)}><div class="frame">${item.available?html`<hui-image .hass=${this.hass} .cameraImage=${item.entity} .cameraView=${'auto'} .aspectRatio=${cameraLayout(c)==='list'?'16:9':'4:3'} fit-mode="cover"></hui-image>`:html`<div class="placeholder"><ha-icon icon="mdi:camera-off-outline"></ha-icon></div>`}</div><div class="label"><span>${item.name}</span><ha-icon icon="mdi:arrow-expand"></ha-icon></div></button>`)}
+ </div>`:html`<div class="empty">Aggiungi le telecamere nell’editor della card.</div>`}</ha-card>`}
+}

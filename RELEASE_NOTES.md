@@ -1,3 +1,19 @@
+# Pastel UI v1.11.0
+
+## English
+
+**Pastel Cameras brings the collection to 104 card types.** See all your chosen cameras together in one Pastel card, as a phone-friendly grid or a full-width list. Tap any preview for Home Assistant's larger camera view and live video when the camera supports it.
+
+The visual editor filters the search to cameras and lets you add, rename, reorder and remove as many as you need. Choose a preset palette or custom colours. No personal entity IDs are included. [Camera guide](docs/cards/cameras.md) · [Full changelog](CHANGELOG.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Pastel Cameras porta la collezione a 104 tipi di card.** Vedi tutte le telecamere scelte insieme in una sola card Pastel, in griglia adatta al telefono o in elenco a larghezza piena. Tocca un'anteprima per aprire la vista grande di Home Assistant e il video dal vivo quando la telecamera lo supporta.
+
+L'editor visuale limita la ricerca alle telecamere e permette di aggiungerne, rinominarne, riordinarne e rimuoverne quante vuoi. Scegli una palette o colori personalizzati. Nessuna entità personale è inclusa. [Guida telecamere](docs/cards/cameras.md) · [Changelog completo](CHANGELOG.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.10.1
 
 ## English

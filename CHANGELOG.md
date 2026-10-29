@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.11.0 — Cameras together / Tutte le telecamere insieme
+
+### English
+
+- Add **Pastel Cameras**, bringing the catalog to **104 card types**. One card displays any number of selected cameras together in a mobile-friendly two-column grid or a full-width list. Home Assistant refreshes the still previews while visible; tapping a tile opens its native larger camera dialog, with live video when supported.
+- The visual editor searches `camera.*` entities only and lets users add, remove, rename and reorder cameras, choose a palette and adjust individual card colours. Unavailable cameras show a placeholder. No personal camera IDs are included. A fictional demo and bilingual guide are included.
+
+### Italiano
+
+- Aggiunge **Pastel Cameras**, portando il catalogo a **104 tipi di card**. Una card mostra insieme quante telecamere vuoi, in griglia a due colonne adatta al telefono o in elenco a larghezza piena. Home Assistant aggiorna le anteprime statiche quando sono visibili; toccando un riquadro si apre la sua finestra grande, con video dal vivo se supportato.
+- L'editor visuale cerca solo entità `camera.*` e permette di aggiungere, rimuovere, rinominare e riordinare le telecamere, scegliere la palette e personalizzare i colori. Le telecamere non disponibili mostrano un segnaposto. Nessun ID personale è incluso. Aggiunte demo fittizia e guida bilingue.
+
 ## 1.10.1 — Waste Collection next pickup / Prossima raccolta rifiuti
 
 ### English

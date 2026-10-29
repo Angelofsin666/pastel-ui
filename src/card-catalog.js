@@ -14,6 +14,12 @@ export const CARD_CATALOG = [
     "preview": true
   },
   {
+    "type": "pastel-cameras-card",
+    "name": "Pastel Cameras",
+    "description": "All your cameras in a customizable grid or list, with full-size viewing on tap.",
+    "preview": true
+  },
+  {
     "type": "pastel-script-climate-card",
     "name": "Pastel Climate AC",
     "description": "Script-controlled air conditioning with a temperature sensor.",
