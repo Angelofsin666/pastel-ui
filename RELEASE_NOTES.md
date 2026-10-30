@@ -1,3 +1,19 @@
+# Pastel UI v1.11.2
+
+## English
+
+**Pastel Security Overview now tells you which doors and windows are open.** The count remains visible, with the open sensors named underneath. Existing door and window tiles look up matching Home Assistant binary sensors automatically. If the count and names differ, the card reports how many openings still need identification.
+
+In the visual editor, choose the opening type or select the exact sensors to include. Existing configurations remain valid. The collection still contains **104 card types**. [Security guide](docs/cards/security.md) · [Full changelog](CHANGELOG.md). Development was assisted by AI tools under maintainer review; [requests for cards and improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Pastel Security Overview ora dice quali porte e finestre sono aperte.** Il conteggio rimane visibile e sotto compaiono i nomi dei sensori aperti. I riquadri esistenti cercano automaticamente i sensori binari corrispondenti di Home Assistant. Se numero e nomi non coincidono, la card segnala quante aperture restano da identificare.
+
+Nell’editor visuale puoi scegliere il tipo di apertura oppure indicare esattamente i sensori da includere. Le configurazioni esistenti restano valide. La collezione contiene ancora **104 tipi di card**. [Guida sicurezza](docs/cards/security.md) · [Changelog completo](CHANGELOG.md). Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di card e migliorie sono benvenute](CONTRIBUTING.md).
+
+---
+
 # Pastel UI v1.11.0
 
 ## English

@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.11.2 — Named open doors and windows / Nomi delle porte e finestre aperte
+
+### English
+
+- **Pastel Security Overview** now shows the names of open doors and windows beneath their count. Existing door and window tiles discover matching Home Assistant binary sensors automatically from their icon and `device_class`. The count sensor remains the source of truth.
+- The visual editor lets users choose the opening type or select an exact list of sensors. When the count exceeds the names found, the tile clearly reports the unnamed openings. Zero and unavailable counts keep their previous behaviour. The catalog remains at **104 card types**.
+
+### Italiano
+
+- **Pastel Security Overview** mostra sotto il conteggio i nomi delle porte e finestre aperte. I riquadri esistenti riconoscono automaticamente i sensori binari corrispondenti usando l’icona e la `device_class` di Home Assistant. Il sensore scelto continua a determinare il numero.
+- Nell’editor visuale si può scegliere il tipo di apertura o un elenco preciso di sensori. Se i nomi trovati sono meno delle aperture contate, il riquadro segnala quante restano senza nome. I conteggi zero e non disponibili mantengono il comportamento precedente. Il catalogo resta a **104 tipi di card**.
+
 ## 1.11.1 — Live time on buttons / Tempo in diretta sui pulsanti
 
 ### English
