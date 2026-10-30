@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.11.1 — Live time on buttons / Tempo in diretta sui pulsanti
+
+### English
+
+- **Pastel Button** can now show an optional elapsed timer on any button. Select a Home Assistant state entity and the state that means “active”; the counter starts from that entity's `last_changed`, updates every second and disappears when the state changes. Alternatively, display the value of an existing duration sensor or template entity.
+- The visual editor exposes these choices per button alongside its existing action, icon, name and colour. Existing buttons behave as before. A fictional demo and bilingual guide explain both options. The catalog remains at **104 card types**.
+
+### Italiano
+
+- **Pastel Button** può mostrare un cronometro facoltativo su ogni pulsante. Seleziona un'entità di stato di Home Assistant e lo stato che significa “attivo”: il conteggio parte dal suo `last_changed`, avanza ogni secondo e scompare quando lo stato cambia. In alternativa puoi mostrare il valore di un sensore di durata o di un'entità template già esistente.
+- L'editor visuale offre queste opzioni per ciascun pulsante, insieme ad azione, icona, nome e colore. I pulsanti esistenti funzionano come prima. Demo fittizia e guida bilingue spiegano entrambe le possibilità. Il catalogo resta a **104 tipi di card**.
+
 ## 1.11.0 — Cameras together / Tutte le telecamere insieme
 
 ### English

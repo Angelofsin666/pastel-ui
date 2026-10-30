@@ -287,3 +287,18 @@ Installa o aggiorna **Pastel UI** in HACS e ricarica la dashboard. Controlla che
 ### Verifiche e limiti
 
 I test automatici e la demo browser usano stati Home Assistant simulati. L'installazione HACS è stata verificata sul sistema del manutentore, ma la nuova card Christmas Tree non ha comandato un albero fisico. Le funzioni disponibili dipendono dall'integrazione. La copertura esatta è nelle [note sui test](docs/testing.md). Pastel UI è un progetto della comunità, non affiliato a Home Assistant.
+# Pastel UI v1.11.1
+
+## English
+
+**Put a live elapsed time on any Pastel Button.** For a sleep button, choose the Home Assistant helper or sensor that reports the sleep state and enter the active state, such as `Sleeping`. The button then shows `02:16:05` and updates each second while that state remains active. If you already have a template sensor that calculates a duration, you can display its value instead. Each button's action, label, icon and colour remain independent. Existing configurations continue to work.
+
+The visual editor now includes the optional time settings for each button. The [Button guide](docs/cards/button.md) gives a fictional example. The collection still has **104 card types**. Automated tests and the bundle build pass. Development was assisted by AI tools under maintainer review; [requests for improvements are welcome](CONTRIBUTING.md).
+
+## Italiano
+
+**Mostra il tempo trascorso su qualsiasi Pastel Button.** Per il pulsante della nanna, scegli l'aiutante o il sensore di Home Assistant che ne indica lo stato e scrivi lo stato attivo, per esempio `Nanna`. Il pulsante mostra così `02:16:05` e si aggiorna ogni secondo finché quello stato resta attivo. Se hai già un sensore template che calcola la durata, puoi mostrare direttamente il suo valore. Azione, nome, icona e colore di ogni pulsante restano indipendenti; le configurazioni esistenti continuano a funzionare.
+
+L'editor visuale include le nuove impostazioni facoltative per ciascun pulsante. La [guida Button](docs/cards/button.md) contiene un esempio fittizio. La collezione resta a **104 tipi di card**. Test automatici e compilazione superati. Lo sviluppo è stato assistito da strumenti di IA sotto la revisione del manutentore; [richieste di migliorie sono benvenute](CONTRIBUTING.md).
+
+---

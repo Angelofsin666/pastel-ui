@@ -4,6 +4,7 @@ import { registerLegacy } from "../legacy-style.js";
 // ============================================================================
 
 import { LitElement, html, css } from "lit-element";
+import { buttonDuration } from "../button-duration.js";
 
 // ----------------------------------------------------------------------------
 // Color palette (same set as the other Pastel cards)
@@ -36,6 +37,20 @@ function isLastAndOdd(index, total) {
 // Card
 // ----------------------------------------------------------------------------
 class PastelButtonCard extends LitElement {
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._durationClock = setInterval(() => {
+      if (this.config?.buttons?.some((button) => button.timer?.entity_id && button.timer.mode === "elapsed")) {
+        this.requestUpdate();
+      }
+    }, 1000);
+  }
+
+  disconnectedCallback() {
+    clearInterval(this._durationClock);
+    super.disconnectedCallback();
+  }
 
   static get properties() {
     return { hass: {}, config: {}, _activating: { state: true } };
@@ -190,6 +205,7 @@ class PastelButtonCard extends LitElement {
             const colors = getColors(btn.color);
             const span = isLastAndOdd(idx, total);
             const activating = this._activating && this._activating[idx];
+            const duration = buttonDuration(this.hass, btn.timer);
 
             return html`
               <button
@@ -207,6 +223,7 @@ class PastelButtonCard extends LitElement {
                   <ha-icon icon=${btn.icon} class="btn-icon"></ha-icon>
                 ` : ""}
                 <span class="btn-label">${btn.label || ""}</span>
+                ${duration ? html`<span class="btn-duration" aria-label="${btn.timer?.mode === "entity" ? "Valore" : "Tempo trascorso"}: ${duration}">${duration}</span>` : ""}
               </button>
             `;
           })}
@@ -273,6 +290,14 @@ class PastelButtonCard extends LitElement {
         text-align: center;
         line-height: 1.3;
       }
+      .btn-duration {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--btn-text);
+        font-variant-numeric: tabular-nums;
+        line-height: 1.2;
+        opacity: 0.82;
+      }
     `;
   }
 }
@@ -335,6 +360,16 @@ class PastelButtonCardEditor extends LitElement {
     buttons[index] = {
       ...buttons[index],
       action: { ...(buttons[index].action || {}), [field]: value },
+    };
+    this._config = { ...this._config, buttons };
+    this._fireChanged();
+  }
+
+  _updateButtonTimer(index, field, value) {
+    const buttons = [...(this._config.buttons || [])];
+    buttons[index] = {
+      ...buttons[index],
+      timer: { ...(buttons[index].timer || {}), [field]: value },
     };
     this._config = { ...this._config, buttons };
     this._fireChanged();
@@ -517,6 +552,34 @@ class PastelButtonCardEditor extends LitElement {
               </div>
 
               ${this._renderActionFields(btn, idx)}
+
+              <div class="action-row">
+                <label>Tempo sul pulsante</label>
+                <select
+                  .value=${btn.timer?.mode || "off"}
+                  @change=${(ev) => this._updateButtonTimer(idx, "mode", ev.target.value)}
+                >
+                  <option value="off">Nascosto</option>
+                  <option value="elapsed">Dal cambio di stato</option>
+                  <option value="entity">Valore di un'entità</option>
+                </select>
+              </div>
+              ${btn.timer?.mode && btn.timer.mode !== "off" ? html`
+                <ha-entity-picker
+                  .hass=${this.hass}
+                  .value=${btn.timer?.entity_id || ""}
+                  label=${btn.timer.mode === "entity" ? "Sensore del tempo" : "Entità che indica lo stato"}
+                  @value-changed=${(ev) => this._updateButtonTimer(idx, "entity_id", ev.detail.value)}
+                ></ha-entity-picker>
+                ${btn.timer.mode === "elapsed" ? html`
+                  <ha-textfield
+                    label="Stato attivo (es. Nanna oppure on)"
+                    .value=${btn.timer.active_state || ""}
+                    placeholder="on"
+                    @change=${(ev) => this._updateButtonTimer(idx, "active_state", ev.target.value)}
+                  ></ha-textfield>
+                ` : ""}
+              ` : ""}
 
             </div>
           `)}

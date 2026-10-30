@@ -27,6 +27,8 @@ Pastel UI brings lights, covers, climate, security, appliances and everyday sens
 
 The [gallery](docs/catalog.md) shows every card with fictional example entities. Appliance covers multiple device profiles, including a water purifier, without adding another card type.
 
+**New in 1.11.1:** [Button](docs/cards/button.md) can show a live elapsed time since a chosen Home Assistant state became active, or display a duration from your existing template sensor.
+
 **New in 1.11:** [Cameras](docs/cards/cameras.md) shows every selected camera together in a grid or list. Add and reorder cameras in the visual editor, choose colours and names, and tap a preview for Home Assistant’s larger camera view.
 
 **New in 1.10:** [Radiator Valves](docs/cards/radiator-valves.md) groups any number of `climate` valves in one card with a large radiator illustration, live room readings, optional battery sensors and native setpoint controls for each room.
@@ -89,6 +91,8 @@ Pastel UI riunisce luci, tapparelle, clima, sicurezza, elettrodomestici e sensor
 | [Appliance](docs/cards/appliance.md) · [Robot](docs/cards/robot.md) · [Dishwasher](docs/cards/dishwasher.md) · [Lawn Mower](docs/cards/lawn-mower.md) | [Button](docs/cards/button.md) | |
 
 La [galleria](docs/catalog.md) mostra esempi con entità fittizie. Appliance comprende diversi profili, incluso il depuratore, senza aggiungere un altro tipo di card.
+
+**Novità 1.11.1:** [Button](docs/cards/button.md) può mostrare il tempo trascorso da quando uno stato scelto è diventato attivo, oppure la durata fornita da un sensore template esistente.
 
 **Novità 1.11:** [Cameras](docs/cards/cameras.md) mostra tutte le telecamere scelte insieme, in griglia o in elenco. Nell’editor puoi aggiungerle e riordinarle, scegliere colori e nomi; tocca un’anteprima per aprire la vista grande di Home Assistant.
 
