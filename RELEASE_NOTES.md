@@ -1,3 +1,15 @@
+# Pastel UI v1.11.3
+
+## English
+
+Open door and window names in **Pastel Security Overview** now appear in larger, bolder labels that are easier to spot on a phone. Sensor matching and saved configurations are unchanged. [Full changelog](CHANGELOG.md).
+
+## Italiano
+
+I nomi delle porte e finestre aperte in **Pastel Security Overview** ora compaiono in etichette più grandi e ben visibili sul telefono. Il riconoscimento dei sensori e le configurazioni salvate non cambiano. [Changelog completo](CHANGELOG.md).
+
+---
+
 # Pastel UI v1.11.2
 
 ## English

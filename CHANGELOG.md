@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.11.3 — Clearer open-window names / Nomi delle finestre più leggibili
+
+### English
+
+- Make open door and window names substantially larger and easier to read in **Pastel Security Overview**, especially on phones. The matching logic and existing configuration remain unchanged. The catalog remains at **104 card types**.
+
+### Italiano
+
+- I nomi delle porte e finestre aperte sono ora molto più grandi e leggibili in **Pastel Security Overview**, soprattutto sul telefono. Il riconoscimento dei sensori e le configurazioni esistenti restano invariati. Il catalogo resta a **104 tipi di card**.
+
 ## 1.11.2 — Named open doors and windows / Nomi delle porte e finestre aperte
 
 ### English
