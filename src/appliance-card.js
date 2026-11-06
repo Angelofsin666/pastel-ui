@@ -14,7 +14,7 @@ export class ApplianceCard extends BaseCard {
    <header><div class="icon"><ha-icon icon=${p[1]}></ha-icon></div><div class="heading"><h2>${title}</h2><div class="subtitle">${c.subtitle||p[0]}</div></div><span class="pill">${stateLabel(s?.state)}</span></header>
    <div class="hero">${illustration(c.profile)}<div class="right"><div class="status">${stateLabel(s?.state)}</div><div class="caption">${s?.attributes?.friendly_name||'Scegli il dispositivo nell’editor'}</div></div></div>
    ${Object.keys(metrics).length?html`<div class="metrics">${Object.entries(metrics).filter(([,id])=>id).map(([role,id])=>{
-     const v=validMetric(role,this.hass.states[id]);return html`<button class="metric" @click=${()=>this.info(id)}><small>${METRICS[role]?.[0]||role}</small><strong>${v?new Intl.NumberFormat(this.hass.locale?.language||'it',{maximumFractionDigits:2}).format(v.value):'—'}<span class="unit">${v?.unit||''}</span></strong></button>`})}</div>`:''}
+     const v=validMetric(role,this.hass.states[id]);return html`<button class="metric" @click=${()=>this.info(id)}><small>${METRICS[role]?.[0]||role}</small><strong>${v?.text??(v?new Intl.NumberFormat(this.hass.locale?.language||'it',{maximumFractionDigits:2}).format(v.value):'—')}<span class="unit">${v?.unit||''}</span></strong></button>`})}</div>`:''}
    <div class="actions">${nativeActions(s,this.hass.services).filter(a=>!(c.hidden_actions||[]).includes(a.action)).map(a=>html`<button ?disabled=${!active||this.busy} @click=${()=>this.call(a.action,a.entity)}>${a.name}</button>`)}</div>
    ${this.nativeSettings(s)}
    ${(c.controls||[]).map(control=>this.control(control))}

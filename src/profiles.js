@@ -77,6 +77,7 @@ export function nativeActions(state,services={}) {
 }
 export function validMetric(role,s) {
  if(!available(s))return null;
+ if(role==='remaining' && /^\d+:\d{2}:\d{2}$/.test(String(s.state)))return {text:String(s.state),unit:''};
  const value=numeric(s.state);if(value===null)return null;
  const unit=s.attributes?.unit_of_measurement||'';
  if(role==='power')return unit==='kW'?{value:value*1000,unit:'W'}:unit==='W'?{value,unit}:null;

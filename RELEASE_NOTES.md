@@ -1,3 +1,15 @@
+# Pastel UI v1.11.5
+
+## English
+
+**Pastel Appliance now displays SmartThinQ remaining time correctly.** Duration sensors in `H:MM:SS` format appear in the main metric tile. Numeric duration sensors and saved card configurations remain compatible. [Full changelog](CHANGELOG.md).
+
+## Italiano
+
+**Pastel Appliance ora mostra correttamente il tempo residuo SmartThinQ.** I sensori di durata in formato `H:MM:SS` compaiono nel riquadro principale. I sensori numerici e le configurazioni salvate restano compatibili. [Changelog completo](CHANGELOG.md).
+
+---
+
 # Pastel UI v1.11.4
 
 ## English

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.11.5 — SmartThinQ remaining time / Tempo residuo SmartThinQ
+
+### English
+
+- **Pastel Appliance** now displays `H:MM:SS` remaining-time sensor values, as supplied by SmartThinQ Sensors, in its main metric tile. Numeric duration sensors continue to work as before. Existing configurations remain compatible.
+
+### Italiano
+
+- **Pastel Appliance** mostra nel riquadro principale il tempo residuo in formato `H:MM:SS` fornito da SmartThinQ Sensors. I sensori numerici continuano a funzionare come prima. Le configurazioni esistenti restano compatibili.
+
+
 ## 1.11.4 — Searchable Appliance entities / Entità Appliance ricercabili
 
 ### English
