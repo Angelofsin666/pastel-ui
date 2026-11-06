@@ -6,7 +6,7 @@
 
 ## English
 
-A device-centred card for household appliances. Review associated sensors, programme selectors and buttons in the visual editor. Power and energy can come from a separate meter.
+A device-centred card for household appliances. Review associated sensors, programme selectors and buttons in the visual editor. Power and energy can come from a separate meter. Every entity field accepts a typed or pasted `entity_id` and suggests matching Home Assistant entities as you type.
 
 Included in the single Pastel UI installation. [Install the suite](../installation.md) · [Configuration reference](../configuration.md) · [Migration](../migration.md)
 
@@ -33,7 +33,7 @@ controls:
 
 ## Italiano
 
-Una card per elettrodomestici configurata a partire dal dispositivo. Controlla sensori, programmi e pulsanti proposti dall’editor; potenza ed energia possono arrivare da un misuratore esterno.
+Una card per elettrodomestici configurata a partire dal dispositivo. Controlla sensori, programmi e pulsanti proposti dall’editor; potenza ed energia possono arrivare da un misuratore esterno. In ogni campo puoi scrivere o incollare un `entity_id` e cercare tra le entità Home Assistant suggerite.
 
 Inclusa nell’installazione unica di Pastel UI. [Installazione](../installation.md) · [Configurazione](../configuration.md) · [Migrazione](../migration.md)
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.11.4 — Searchable Appliance entities / Entità Appliance ricercabili
+
+### English
+
+- Replace the long entity dropdowns in the **Pastel Appliance** and **Pastel Robot** visual editors with searchable text fields. Users can type or paste a complete `entity_id`, while relevant Home Assistant entities remain available as suggestions. This applies to the main entity, readings, controls, maintenance sensors, maps and zones. Existing saved configurations remain compatible.
+
+### Italiano
+
+- I lunghi menu delle entità negli editor visuali di **Pastel Appliance** e **Pastel Robot** diventano campi di testo ricercabili. Si può digitare o incollare un `entity_id` completo, mantenendo i suggerimenti delle entità Home Assistant pertinenti. La modifica riguarda entità principale, valori, comandi, sensori di manutenzione, mappe e zone. Le configurazioni già salvate restano compatibili.
+
 ## 1.11.3 — Clearer open-window names / Nomi delle finestre più leggibili
 
 ### English

@@ -1,3 +1,15 @@
+# Pastel UI v1.11.4
+
+## English
+
+**Pastel Appliance and Pastel Robot are easier to configure on phones.** Entity fields now let you search, type or paste a complete `entity_id` instead of scrolling through a long dropdown. Relevant entities still appear as suggestions. Existing configurations remain compatible. [Full changelog](CHANGELOG.md).
+
+## Italiano
+
+**Pastel Appliance e Pastel Robot sono più facili da configurare sul telefono.** Nei campi delle entità puoi cercare, scrivere o incollare un `entity_id` completo senza scorrere lunghi menu. Le entità pertinenti restano disponibili come suggerimenti. Le configurazioni esistenti restano compatibili. [Changelog completo](CHANGELOG.md).
+
+---
+
 # Pastel UI v1.11.3
 
 ## English
