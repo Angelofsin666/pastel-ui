@@ -1,3 +1,7 @@
+Archive / Archivio: this is the original [community post](https://community.home-assistant.io/t/pastel-ui-103-coordinated-phone-friendly-cards-for-home-assistant/1030634), published when Pastel UI had 103 cards. See the [README](../README.md) for the current count and installation instructions.
+
+Questo è il post originale, pubblicato quando Pastel UI aveva 103 card. Per il numero attuale e le istruzioni d'installazione, consulta il [README](../README.md).
+
 # Pastel UI: 103 coordinated, phone-friendly cards for Home Assistant
 
 I built Pastel UI because my Home Assistant dashboard worked, but its cards did not feel like they belonged together. Lights, roller shutters, climate, security, and appliances each had their own layout. I wanted a softer, consistent interface that still showed the real state of my devices and worked comfortably on a phone.

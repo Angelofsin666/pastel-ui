@@ -1,6 +1,6 @@
 # Community launch draft / Bozza presentazione community
 
-Editorial note: prepared for the Home Assistant Community forum or a personal blog after the beta has been tested on real devices. No forum post has been published and publication on the official Home Assistant blog is not assumed. Update the test status and version before posting. This note is not part of the post.
+Archive note: this was an early beta-era draft and is not the current announcement. The published [community post](https://community.home-assistant.io/t/pastel-ui-103-coordinated-phone-friendly-cards-for-home-assistant/1030634) and the [current README](../README.md) supersede it. Do not reuse the beta claims or version text below.
 
 ## English
 
