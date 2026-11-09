@@ -63,9 +63,9 @@ A device's integration still decides which commands and measurements exist. Some
 
 ### Install in HACS
 
-Pastel UI is currently a **custom HACS Dashboard repository**. It is not built into Home Assistant or included in HACS by default.
+Pastel UI has been [accepted into the default HACS repository list](https://github.com/hacs/default/pull/13773). It is a community project, not a built-in Home Assistant card. HACS may take a little time to show a newly accepted repository in search.
 
-1. Install [HACS](https://hacs.xyz/) if needed. Open the blue button above, or add `https://github.com/Angelofsin666/pastel-ui` under HACS custom repositories, category **Dashboard**.
+1. Install [HACS](https://hacs.xyz/) if needed. Search HACS for **Pastel UI** and open the Dashboard repository. If it does not appear yet, use the blue button above or add `https://github.com/Angelofsin666/pastel-ui` as a custom repository in the **Dashboard** category.
 2. Download the latest stable release. Confirm that Home Assistant has one JavaScript module resource: `/hacsfiles/pastel-ui/pastel-ui.js`.
 3. Reload the dashboard, add a Pastel card from the picker, then choose **your** entities in its editor.
 
@@ -128,9 +128,9 @@ Le funzioni disponibili dipendono dall'integrazione del dispositivo. Alcune opzi
 
 ### Installa da HACS
 
-Pastel UI è attualmente una **repository personalizzata HACS, categoria Dashboard**. Non è integrata in Home Assistant né nell'elenco predefinito di HACS.
+Pastel UI è stata [accettata nell'elenco predefinito delle repository HACS](https://github.com/hacs/default/pull/13773). È un progetto della comunità, non una card integrata in Home Assistant. Potrebbe volerci un po' prima che una repository appena accettata compaia nella ricerca di HACS.
 
-1. Installa [HACS](https://hacs.xyz/) se serve. Usa il pulsante azzurro in alto oppure aggiungi `https://github.com/Angelofsin666/pastel-ui` alle repository personalizzate HACS, categoria **Dashboard**.
+1. Installa [HACS](https://hacs.xyz/) se serve. Cerca **Pastel UI** in HACS e apri la repository Dashboard. Se non compare ancora, usa il pulsante azzurro in alto oppure aggiungi `https://github.com/Angelofsin666/pastel-ui` come repository personalizzata, categoria **Dashboard**.
 2. Scarica l'ultima versione stabile. Controlla che ci sia una sola risorsa JavaScript Module: `/hacsfiles/pastel-ui/pastel-ui.js`.
 3. Ricarica la dashboard, aggiungi una card Pastel e associa le **tue** entità nell'editor.
 
